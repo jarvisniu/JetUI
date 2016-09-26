@@ -55,6 +55,14 @@
     <horizontal-togglebar :theme.sync="theme" v-ref:togglebar></horizontal-togglebar>
     <tab-bar v-ref:tabbar></tab-bar>
     <horizontal-toolbar v-ref:h-toolbar></horizontal-toolbar>
+    <horizontal-splitter v-ref:h-splitter style="width: 500px; height: 400px;">
+        <div slot="left">
+            <strong>Content in left panel</strong>
+        </div>
+        <div slot="right">
+            <strong>Content in right panel</strong>
+        </div>
+    </horizontal-splitter>
 
   </div>
 
@@ -69,6 +77,7 @@
     'horizontal-togglebar',
     'icon-label',
     'horizontal-toolbar',
+    'horizontal-splitter',
     'side-panel'
   ], function () {
     new Vue({
