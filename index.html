@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Vue Lab</title>
+  <title>JetUI demo</title>
   <script src="js/vue.min.js"></script>
   <script src="js/vue-importer.js"></script>
   <style type="text/css">
@@ -32,10 +32,6 @@
       color: #eee;
     }
 
-    #info {
-      margin: 8px;
-    }
-
   </style>
 </head>
 <body>
@@ -47,10 +43,6 @@
   </side-panel>
 
   <div>
-
-    <div id="info">I like the style of JetBrains IDEs very much. So I planed to build a widget set for my projects.
-      These widgets are based on Vue.js
-    </div>
 
     <horizontal-togglebar :theme.sync="theme" v-ref:togglebar></horizontal-togglebar>
     <tab-bar v-ref:tabbar></tab-bar>
