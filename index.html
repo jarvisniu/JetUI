@@ -45,8 +45,13 @@
   <div>
 
     <horizontal-togglebar :theme.sync="theme" v-ref:togglebar></horizontal-togglebar>
+
     <tab-bar v-ref:tabbar></tab-bar>
+
     <horizontal-toolbar v-ref:h-toolbar></horizontal-toolbar>
+
+    <breadcrumb v-ref:breadcrumb></breadcrumb>
+
     <horizontal-splitter v-ref:h-splitter style="width: 500px; height: 400px;">
         <div slot="left">
             <strong>Content in left panel</strong>
@@ -70,6 +75,7 @@
     'icon-label',
     'horizontal-toolbar',
     'horizontal-splitter',
+    'breadcrumb',
     'side-panel'
   ], function () {
     new Vue({
@@ -77,15 +83,16 @@
       props: ['theme'],
       ready: function () {
         this.theme = 'theme-light';
-        this.$refs.vToolbar.items = iconLabelsV;
-        this.$refs.hToolbar.items = iconLabelsH;
+        this.$refs.vToolbar.items = toolbarVData;
+        this.$refs.hToolbar.items = toolbarHData;
+        this.$refs.breadcrumb.items = breadcrumbData;
         this.$refs.tabbar.tabs = tabBarData;
         this.$refs.togglebar.items = toggleBarData;
       }
     })
   });
 
-  var iconLabelsV = [
+  var toolbarVData = [
     {
       icon: './vue/icons/applicationCache.png',
       tip: "Application Cache",
@@ -104,7 +111,7 @@
     }
   ];
 
-  var iconLabelsH = [
+  var toolbarHData = [
     {
       icon: './vue/icons/applicationCache.png',
       tip: "Application Cache",
@@ -120,6 +127,19 @@
       tip: "Local Storage",
       key: 'localStorage',
       selected: false
+    }
+  ];
+
+  var breadcrumbData = [
+    {
+      icon: './vue/icons/folder.png',
+      label: "JetUI"
+    }, {
+      icon: './vue/icons/folder.png',
+      label: "src"
+    }, {
+      icon: './vue/icons/file.png',
+      label: "index.html"
     }
   ];
 

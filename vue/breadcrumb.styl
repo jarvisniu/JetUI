@@ -1,0 +1,42 @@
+@require "_theme.styl"
+
+.breadcrumb
+  -webkit-user-select: none
+  box-sizing: border-box
+  border: solid 1px red
+  height: 30px
+  width: 500px
+  margin: 8px
+  transition: background 0.3s
+
+.breadcrumb-container
+  display: inline-flex
+  height: 24px
+  width: 100%
+  margin: 2px
+  transition: background 0.3s
+
+.breadcrumb-container .icon-label:after
+    content ' '
+    width: 8px
+    margin: 0 2px 0 4px
+
+.theme-light
+  .breadcrumb
+    border-color: L-border-default
+    background-color: L-background-default
+  .breadcrumb-container
+    border-color: L-border-default
+    background-color: L-background-default
+    .icon-label:after
+        background-image: url('images/breadcrumb-separator-light.png')
+
+.theme-dark
+  .breadcrumb
+    border-color: D-border-selected-default
+    background-color: D-background-default
+  .breadcrumb-container
+    border-color: D-border-selected-default
+    background-color: D-background-default
+    .icon-label:after
+        background-image: url('images/breadcrumb-separator-dark.png')
