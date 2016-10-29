@@ -5,7 +5,10 @@
 <template>
     <div class="breadcrumb">
         <div class="breadcrumb-container">
-            <icon-label v-for="item in items" :model="item"></icon-label>
+            <template v-for="item in items">
+                <icon-label :model="item"></icon-label>
+                <div class="separator"></div>
+            </template>
         </div>
     </div>
 </template>
