@@ -6,6 +6,7 @@
     <div class="tab-bar">
         <div class="tab-bar-container">
           <tab-button v-for="tab in tabs" :model="tab"></tab-button>
+          <div class="tabbar-filler"></div>
         </div>
     </div>
 </template>

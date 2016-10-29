@@ -15,16 +15,25 @@
   border-bottom: solid 1px red
   transition: background 0.3s
 
+  .tabbar-filler
+    flex: 1
+
 .theme-light
   .tab-bar
-    background-color: L-tab-background-selected-default // extension of selected tab
+    background-color: L-tab-background-selected-default
   .tab-bar-container
     border-color: L-border-default
-    background-color: L-tab-background-default
+    background-color: L-border-default
+
+    .tabbar-filler
+      background-color: L-tab-background-default
 
 .theme-dark
   .tab-bar
-    background-color: D-tab-background-selected-default // extension of selected tab
+    background-color: D-tab-background-selected-default
   .tab-bar-container
-    border-color: D-border-selected-default
-    background-color: D-tab-background-default
+    border-color: D-border-default
+    background-color: D-border-default
+
+    .tabbar-filler
+      background-color: D-tab-background-default
