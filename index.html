@@ -5,6 +5,7 @@
   <title>JetUI demo</title>
   <script src="js/vue.min.js"></script>
   <script src="js/vue-importer.js"></script>
+  <link rel="stylesheet" href="vue/jetui.css">
   <style type="text/css">
 
     * {
@@ -38,21 +39,21 @@
 
 <div id="app" :class="theme">
 
-  <side-panel>
-    <vertical-toolbar v-ref:v-toolbar></vertical-toolbar>
+  <side-panel class="border">
+    <vertical-toolbar v-ref:v-toolbar class="border"></vertical-toolbar>
   </side-panel>
 
   <div>
 
-    <horizontal-togglebar :theme.sync="theme" v-ref:togglebar></horizontal-togglebar>
+    <horizontal-togglebar :theme.sync="theme" v-ref:togglebar class="border"></horizontal-togglebar>
 
-    <tab-bar v-ref:tabbar></tab-bar>
+    <tab-bar v-ref:tabbar class="border"></tab-bar>
 
-    <horizontal-toolbar v-ref:h-toolbar></horizontal-toolbar>
+    <horizontal-toolbar v-ref:h-toolbar class="border"></horizontal-toolbar>
 
-    <breadcrumb v-ref:breadcrumb></breadcrumb>
+    <breadcrumb v-ref:breadcrumb class="border"></breadcrumb>
 
-    <horizontal-splitter v-ref:h-splitter style="width: 500px; height: 400px;">
+    <horizontal-splitter v-ref:h-splitter class="border" style="width: 500px; height: 400px;">
         <div slot="left">
             <strong>Content in left panel</strong>
         </div>
