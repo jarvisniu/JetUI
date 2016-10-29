@@ -7,14 +7,14 @@
       @mousedown="onMouseDown"
       @mousemove="onMouseMove"
       @mouseup="onMouseUp">
-    <div class="panel">
-      <slot name="left"></slot>
+    <div class="panel" style="flex: 1;">
+      <slot name="left" style="height: 100%;"></slot>
     </div>
     <div class="splitter-handle" v-ref:handle>
       <div class="splitter-line"></div>
     </div>
-    <div class="panel">
-      <slot name="right"></slot>
+    <div class="panel" style="flex: 1;">
+      <slot name="right" style="height: 100%;"></slot>
     </div>
   </div>
 </template>

@@ -37,7 +37,7 @@
 </head>
 <body>
 
-<div id="app" :class="theme">
+<div id="app" :class="theme" style="visibility: hidden;">
 
   <side-panel class="border">
     <vertical-toolbar v-ref:v-toolbar class="border"></vertical-toolbar>
@@ -45,15 +45,15 @@
 
   <div>
 
-    <horizontal-togglebar :theme.sync="theme" v-ref:togglebar class="border"></horizontal-togglebar>
+    <horizontal-togglebar :theme.sync="theme" v-ref:togglebar class="border margin8"></horizontal-togglebar>
 
-    <tab-bar v-ref:tabbar class="border"></tab-bar>
+    <tab-bar v-ref:tabbar class="border margin8"></tab-bar>
 
-    <horizontal-toolbar v-ref:h-toolbar class="border"></horizontal-toolbar>
+    <horizontal-toolbar v-ref:h-toolbar class="border margin8"></horizontal-toolbar>
 
-    <breadcrumb v-ref:breadcrumb class="border"></breadcrumb>
+    <breadcrumb v-ref:breadcrumb class="border margin8"></breadcrumb>
 
-    <horizontal-splitter v-ref:h-splitter class="border" style="width: 500px; height: 400px;">
+    <horizontal-splitter v-ref:h-splitter class="border margin8" style="width: 500px; height: 400px;">
         <div slot="left">
             <strong>Content in left panel</strong>
         </div>
@@ -89,6 +89,8 @@
         this.$refs.breadcrumb.items = breadcrumbData;
         this.$refs.tabbar.tabs = tabBarData;
         this.$refs.togglebar.items = toggleBarData;
+
+        this.$el.style.visibility = "visible";
       }
     })
   });
