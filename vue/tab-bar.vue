@@ -25,7 +25,7 @@ export default {
         }
     },
     events: {
-        "tabClick": function(child) {
+        tabClick: function(child) {
             var tabs = this.$children;
             for (var i in tabs) {
                 if (!tabs.hasOwnProperty(i)) continue;
@@ -39,16 +39,16 @@ export default {
         }
     },
     methods: {
-        "getNodeIndexInParent": function(child) {
-            return Array.prototype.indexOf.call(child.parentNode.children, child);
+        getTabButtonIndex: function(child) {
+            return Array.prototype.indexOf.call(this.$children, child);
         },
-        "isFirst": function(child) {
-            return this.getNodeIndexInParent(child.$el) == 0;
+        isFirst: function(child) {
+            return this.getTabButtonIndex(child) == 0;
         },
-        "isLast": function(child) {
-            return this.getNodeIndexInParent(child.$el) == this.tabs.length - 1;
+        isLast: function(child) {
+            return this.getTabButtonIndex(child) == this.tabs.length - 1;
         },
-        "swapTabs": function(idx1, idx2) {
+        swapTabs: function(idx1, idx2) {
             if (idx2 == undefined) idx2 = idx1 + 1;
             if (idx1 == idx2 || idx1 < 0 || idx2 < 0 || Math.max(idx1, idx2) > this.tabs.length) return;
 
@@ -61,8 +61,8 @@ export default {
 
             this.tabs = tabs;
         },
-        "closeTab": function(child) {
-            var index = this.getNodeIndexInParent(child.$el);
+        closeTab: function(button) {
+            var index = this.getTabButtonIndex(button);
 
             var tabs = [];
             for (var i = 0; i < this.tabs.length; i++) tabs[i] = this.tabs[i];
@@ -70,13 +70,13 @@ export default {
             tabs.splice(index, 1);
             this.tabs = tabs;
         },
-        "swapWithLeft": function(child) {
-            var childIndex = this.getNodeIndexInParent(child.$el);
-            this.swapTabs(childIndex, childIndex - 1);
+        swapWithLeft: function(button) {
+            var index = this.getTabButtonIndex(button);
+            this.swapTabs(index, index - 1);
         },
-        "swapWithRight": function(child) {
-            var childIndex = this.getNodeIndexInParent(child.$el);
-            this.swapTabs(childIndex, childIndex + 1);
+        swapWithRight: function(button) {
+            var index = this.getTabButtonIndex(button);
+            this.swapTabs(index, index + 1);
         }
     }
 }
