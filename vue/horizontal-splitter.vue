@@ -63,8 +63,8 @@
 			widthLeft += delta;
 			widthRight -= delta;
 
-			this.domLeftPanel.style.flex = widthLeft / (widthLeft + widthRight);
-			this.domRightPanel.style.flex = widthRight / (widthLeft + widthRight);
+			this.domLeftPanel.style.flexGrow = widthLeft / (widthLeft + widthRight);
+			this.domRightPanel.style.flexGrow = widthRight / (widthLeft + widthRight);
 		}
     },
     ready: function() {
