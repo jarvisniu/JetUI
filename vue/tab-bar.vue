@@ -61,6 +61,15 @@ export default {
 
             this.tabs = tabs;
         },
+        "closeTab": function(child) {
+            var index = this.getNodeIndexInParent(child.$el);
+
+            var tabs = [];
+            for (var i = 0; i < this.tabs.length; i++) tabs[i] = this.tabs[i];
+
+            tabs.splice(index, 1);
+            this.tabs = tabs;
+        },
         "swapWithLeft": function(child) {
             var childIndex = this.getNodeIndexInParent(child.$el);
             this.swapTabs(childIndex, childIndex - 1);

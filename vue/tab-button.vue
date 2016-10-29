@@ -53,7 +53,7 @@
         this.returnPosition();
       },
       onCloseDown: function (ev) {
-        return false;
+        this.$parent.closeTab(this);
       },
       returnPosition: function () {
         this.isMouseDown = false;
