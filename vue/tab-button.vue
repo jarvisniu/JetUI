@@ -38,15 +38,27 @@
         if (this.isMouseDown) {
           this.lastLeft = ev.screenX / this.pixelRatio - this.mouseDownAtScreenX;
           this.$el.style.left = this.lastLeft + 'px';
+
+          if (this.lastLeft < -50 && !this.$parent.isFirst(this)) {
+            this.$parent.swapWithLeft(this);
+            this.returnPosition();
+          }
+          else if (this.lastLeft > 50 && !this.$parent.isLast(this)) {
+            this.$parent.swapWithRight(this);
+            this.returnPosition();
+          }
         }
       },
       onMouseUp: function (ev) {
-        this.isMouseDown = false;
-        this.lastLeft = 0;
-        this.$el.style.left = this.lastLeft + 'px'
+        this.returnPosition();
       },
       onCloseDown: function (ev) {
-        return false
+        return false;
+      },
+      returnPosition: function () {
+        this.isMouseDown = false;
+        this.lastLeft = 0;
+        this.$el.style.left = this.lastLeft + 'px';
       }
     },
     ready: function () {
