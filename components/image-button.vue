@@ -1,5 +1,5 @@
 <style>
-  @import "vue/image-button.css";
+  @import "components/image-button.css";
 </style>
 
 <template>

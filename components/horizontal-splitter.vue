@@ -1,5 +1,5 @@
 <style>
-  @import "vue/horizontal-splitter.css";
+  @import "components/horizontal-splitter.css";
 </style>
 
 <template>

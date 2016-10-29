@@ -29,7 +29,7 @@ VueImporter.load = function (components, callback, options) {
     this.count = 0;
     this.onLoad = callback;
     options = options || {};
-    var componentPath = './vue/' || options.path;
+    var componentPath = './components/' || options.path;
     var globalName = '_VueImporterTemp_';  //
 
     init();

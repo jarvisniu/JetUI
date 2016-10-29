@@ -15,10 +15,10 @@ var plugins = require('gulp-load-plugins')();
 var port = 3000;
 var paths = {
     stylus: [
-        'vue/*.styl'
+        'components/*.styl'
     ],
     clean: [
-        'vue/*.css'
+        'components/*.css'
     ]
 };
 
@@ -31,7 +31,7 @@ gulp.task('clean', function () {
 gulp.task('stylus', function () {
     return gulp.src(paths.stylus)
         .pipe(plugins.stylus())
-        .pipe(gulp.dest('vue/'));
+        .pipe(gulp.dest('components/'));
 });
 
 gulp.task('serve_examples', ['stylus'], function () {

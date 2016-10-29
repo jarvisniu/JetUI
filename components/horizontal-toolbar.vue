@@ -1,5 +1,5 @@
 <style>
-  @import url("vue/horizontal-toolbar.css");
+  @import "components/horizontal-toolbar.css";
 </style>
 
 <template>

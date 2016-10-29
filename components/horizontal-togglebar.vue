@@ -1,5 +1,5 @@
 <style>
-  @import "vue/horizontal-togglebar.css";
+  @import "components/horizontal-togglebar.css";
 </style>
 <template>
   <div class="horizontal-togglebar">

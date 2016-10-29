@@ -1,5 +1,5 @@
 <style>
-  @import "vue/side-panel.css";
+  @import "components/side-panel.css";
 </style>
 
 <template>

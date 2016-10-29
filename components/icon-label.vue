@@ -1,5 +1,5 @@
 <style>
-  @import url("vue/icon-label.css");
+  @import "components/icon-label.css";
 </style>
 
 <template>

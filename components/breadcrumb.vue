@@ -1,5 +1,5 @@
 <style>
-  @import "vue/breadcrumb.css";
+  @import "components/breadcrumb.css";
 </style>
 
 <template>
