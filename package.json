@@ -1,33 +1,33 @@
 {
-  "name": "JetUI",
-  "version": "0.0.1",
-  "description": "A UI widget set based on vue.js",
-  "scripts": {
-    "examples": "gulp run",
-    "build": "gulp build",
-    "clean": "gulp clean"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jarvisniu/JetUI.git"
-  },
-  "keywords": [
-    "UI",
-    "widget",
-    "vue"
-  ],
-  "author": "Jarvis Niu",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/jarvisniu/JetUI/issues"
-  },
-  "homepage": "https://github.com/jarvisniu/JetUI#readme",
-  "devDependencies": {
-    "del": "^2.2.0",
-    "gulp": "^3.9.1",
-    "gulp-live-server": "0.0.29",
-    "gulp-load-plugins": "^1.2.0",
-    "gulp-stylus": "^2.3.0",
-    "open": "0.0.5"
-  }
+    "name": "JetUI",
+    "version": "0.0.1",
+    "description": "A UI widget set based on vue.js",
+    "scripts": {
+        "examples": "gulp run",
+        "build": "gulp build",
+        "clean": "gulp clean"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jarvisniu/JetUI.git"
+    },
+    "keywords": [
+        "UI",
+        "widget",
+        "vue"
+    ],
+    "author": "Jarvis Niu",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/jarvisniu/JetUI/issues"
+    },
+    "homepage": "https://github.com/jarvisniu/JetUI#readme",
+    "devDependencies": {
+        "del": "^2.2.0",
+        "gulp": "^3.9.1",
+        "gulp-live-server": "0.0.29",
+        "gulp-load-plugins": "^1.2.0",
+        "gulp-stylus": "^2.3.0",
+        "open": "0.0.5"
+    }
 }

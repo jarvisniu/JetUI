@@ -1,30 +1,27 @@
-JetUI
-=====
+# JetUI
 
 A JetBrain-style UI widget set based on Vue.js
-
 
 ## Prerequisite
 
 - NodeJS
 - Gulp
 
-
 ## Usage
 
-	npm install
-	gulp run
-
+```
+npm install
+gulp run
+```
 
 ## Specification
 
 - Support theme
 - Support high-definition screen / zoom
 
-
 ## Components
 
-#### Avialable
+### Avialable
 
 - Icon Label
 - Image Button
@@ -35,12 +32,11 @@ A JetBrain-style UI widget set based on Vue.js
 - Togglebar
 - Splitter
 
-#### In Planning
+### In Planning
 
 - Breadcrumb
 - Menu
 - Tree View
-
 
 ## License
 
