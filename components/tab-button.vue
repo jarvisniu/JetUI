@@ -3,7 +3,7 @@
 </style>
 
 <template>
-<div class="tab-button" :class="{selected: model.selected}" @mousedown="onMouseDown" @mousemove="onMouseMove" @mouseup="onMouseUp">
+<div class="tab-button" :class="{selected: model.selected}" :style="{left: left + 'px'}" @mousedown="onMouseDown" @mousemove="onMouseMove" @mouseup="onMouseUp">
     <img :src="model.icon">
     <span class="tab-button-label"></span>
     <span class="tab-button-close" @click="onCloseDown"></span>
@@ -19,41 +19,32 @@ export default {
         return {
             pixelRatio: window.devicePixelRatio || 1,
             isMouseDown: false,
-            lastLeft: 0,
+            left: 0
         }
     },
     methods: {
+        getTabWidth: function(dom) {
+            return parseInt(window.getComputedStyle(dom).width);
+        },
         onMouseDown: function(ev) {
             // move
             this.isMouseDown = true;
-            this.mouseDownAtScreenX = ev.screenX / this.pixelRatio - this.lastLeft;
+            this.mouseDownAtScreenX = ev.screenX / this.pixelRatio - this.left;
 
             this.$dispatch("tabClick", this);
         },
         onMouseMove: function(ev) {
             if (this.isMouseDown) {
-                this.lastLeft = ev.screenX / this.pixelRatio - this.mouseDownAtScreenX;
-                this.$el.style.left = this.lastLeft + 'px';
-
-                if (this.lastLeft < -50 && !this.$parent.isFirst(this)) {
-                    this.$parent.swapWithLeft(this);
-                    this.returnPosition();
-                } else if (this.lastLeft > 50 && !this.$parent.isLast(this)) {
-                    this.$parent.swapWithRight(this);
-                    this.returnPosition();
-                }
+                this.left = ev.screenX / this.pixelRatio - this.mouseDownAtScreenX;
+                this.$parent.adjuctTabs(this);
             }
         },
         onMouseUp: function(ev) {
-            this.returnPosition();
+            this.$parent.reindexTabs(this);
+            this.$parent.resetAllTabs();
         },
         onCloseDown: function(ev) {
             this.$parent.closeTab(this);
-        },
-        returnPosition: function() {
-            this.isMouseDown = false;
-            this.lastLeft = 0;
-            this.$el.style.left = this.lastLeft + 'px';
         }
     },
     ready: function() {

@@ -48,19 +48,6 @@ export default {
         isLast: function(button) {
             return this.getTabButtonIndex(button) == this.tabs.length - 1;
         },
-        swapTabs: function(idx1, idx2) {
-            if (idx2 == undefined) idx2 = idx1 + 1;
-            if (idx1 == idx2 || idx1 < 0 || idx2 < 0 || Math.max(idx1, idx2) > this.tabs.length) return;
-
-            var tabs = [];
-            for (var i = 0; i < this.tabs.length; i++) tabs[i] = this.tabs[i];
-
-            var t = tabs[idx1];
-            tabs[idx1] = tabs[idx2];
-            tabs[idx2] = t;
-
-            this.tabs = tabs;
-        },
         closeTab: function(button) {
             var index = this.getTabButtonIndex(button);
 
@@ -70,13 +57,59 @@ export default {
             tabs.splice(index, 1);
             this.tabs = tabs;
         },
-        swapWithLeft: function(button) {
+        getDesIndex: function(button) {
             var index = this.getTabButtonIndex(button);
-            this.swapTabs(index, index - 1);
+
+            var delta = 0;
+            var cIndex = index;
+            if (button.left < 0) {
+                for (var i = index - 1; i > -1; i--) {
+                    var widthI = parseInt(window.getComputedStyle(this.$el.children[0].children[i]).width);
+                    if (button.left < delta - widthI / 2) cIndex = i;
+                    delta -= widthI;
+                }
+            } else {
+                for (var i = index + 1; i < this.tabs.length; i++) {
+                    var widthI = parseInt(window.getComputedStyle(this.$el.children[0].children[i]).width);
+                    if (button.left > delta + widthI / 2) cIndex = i;
+                    delta += widthI;
+                }
+            }
+            return cIndex;
         },
-        swapWithRight: function(button) {
+        adjuctTabs: function(button) {
             var index = this.getTabButtonIndex(button);
-            this.swapTabs(index, index + 1);
+            var desIndex = this.getDesIndex(button);
+            var width = parseFloat(window.getComputedStyle(button.$el).width);
+            for (var i = 0; i < this.tabs.length; i++) {
+                if (i != index) {
+                    if ((index - i) * (desIndex - i) <= 0)
+                        this.$children[i].left = width * Math.sign(index - i);
+                    else
+                        this.$children[i].left = 0;
+                }
+            }
+        },
+        resetAllTabs: function(button) {
+            for (var i = 0; i < this.tabs.length; i++) {
+                this.$children[i].left = 0;
+                this.$children[i].isMouseDown = false;
+            }
+        },
+        reindexTabs: function(button) {
+            var index = this.getTabButtonIndex(button);
+            var desIndex = this.getDesIndex(button);
+
+            var tabs = [];
+            for (var i = 0; i < this.tabs.length; i++) tabs[i] = this.tabs[i];
+
+            var tmp = tabs.splice(index, 1)[0];
+            tabs.splice(desIndex, 0, tmp);
+
+            tmp = this.$children.splice(index, 1)[0];
+            this.$children.splice(desIndex, 0, tmp);
+
+            this.tabs = tabs;
         }
     }
 }
