@@ -7,7 +7,7 @@
     <div class="panel" style="flex: 1;">
         <slot name="left" style="height: 100%;"></slot>
     </div>
-    <div class="splitter-handle" v-ref:handle>
+    <div class="splitter-handle">
         <div class="splitter-line"></div>
     </div>
     <div class="panel" style="flex: 1;">

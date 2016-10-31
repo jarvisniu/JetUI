@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>JetUI demo</title>
-  <script src="js/vue.min.js"></script>
+  <script src="js/vue-1.0.28.js"></script>
   <script src="js/vue-importer.js"></script>
   <link rel="stylesheet" href="components/jetui.css">
   <style type="text/css">
@@ -53,7 +53,7 @@
 
     <breadcrumb v-ref:breadcrumb class="border margin8"></breadcrumb>
 
-    <horizontal-splitter v-ref:h-splitter class="border margin8" style="width: 500px; height: 400px;">
+    <horizontal-splitter class="border margin8" style="width: 500px; height: 400px;">
         <div slot="left">
             <strong>Content in left panel</strong>
         </div>
@@ -79,7 +79,7 @@
     'breadcrumb',
     'side-panel'
   ], function () {
-    new Vue({
+    window.appVm = new Vue({
       el: '#app',
       props: ['theme'],
       ready: function () {
