@@ -25,11 +25,11 @@ export default {
         }
     },
     events: {
-        tabClick: function(child) {
+        tabClick: function(button) {
             var tabs = this.$children;
             for (var i in tabs) {
                 if (!tabs.hasOwnProperty(i)) continue;
-                if (tabs[i] !== child) {
+                if (tabs[i] !== button) {
                     tabs[i].model.selected = false
                 } else {
                     tabs[i].model.selected = true;
@@ -39,14 +39,14 @@ export default {
         }
     },
     methods: {
-        getTabButtonIndex: function(child) {
-            return Array.prototype.indexOf.call(this.$children, child);
+        getTabButtonIndex: function(button) {
+            return Array.prototype.indexOf.call(this.$el.children[0].children, button.$el);
         },
-        isFirst: function(child) {
-            return this.getTabButtonIndex(child) == 0;
+        isFirst: function(button) {
+            return this.getTabButtonIndex(button) == 0;
         },
-        isLast: function(child) {
-            return this.getTabButtonIndex(child) == this.tabs.length - 1;
+        isLast: function(button) {
+            return this.getTabButtonIndex(button) == this.tabs.length - 1;
         },
         swapTabs: function(idx1, idx2) {
             if (idx2 == undefined) idx2 = idx1 + 1;
