@@ -21,7 +21,7 @@ var paths = {
     clean: [
         'components/*.css'
     ],
-    outputSrc: [
+    dist: [
         '*.html',
         'js/*.js',
         'components/*.vue',
@@ -29,7 +29,7 @@ var paths = {
         'components/icons/*.*',
         'components/images/*.*'
     ],
-    outputDest: 'output/'
+    distTo: 'dist/'
 };
 
 // atom tasks
@@ -54,7 +54,7 @@ gulp.task('open_examples', ['serve_examples'], function () {
 
 // compound tasks
 
-gulp.task('clean', ['clean_src', 'clean_output']);
+gulp.task('clean', ['clean_src', 'clean_dist']);
 
 gulp.task('build', ['clean', 'stylus']);
 
@@ -68,24 +68,24 @@ gulp.task('run', ['build', 'serve_examples', 'open_examples']);
 
 gulp.task('default', ['watch', 'build', 'run']);
 
-// output
+// distribution
 
-gulp.task('clean_output', function () {
-	return del(paths.outputDest + '**');
+gulp.task('clean_dist', function () {
+	return del(paths.distTo + '**');
 });
 
-gulp.task('build_output', ['clean_output'], function () {
-	for (var i in paths.outputSrc)
-	    gulp.src(paths.outputSrc[i])
-	        .pipe(gulp.dest(paths.outputDest + path.dirname(paths.outputSrc[i])));
+gulp.task('build_dist', ['clean_dist', 'build'], function () {
+	for (var i in paths.dist)
+	    gulp.src(paths.dist[i])
+	        .pipe(gulp.dest(paths.distTo + path.dirname(paths.dist[i])));
 });
 
-gulp.task('serve_output', ['build_output'], function () {
+gulp.task('serve_dist', ['build_dist'], function () {
     plugins.liveServer.static('./', port).start();
 });
 
-gulp.task('open_output', ['serve_output'], function () {
-    open('http://localhost:' + port + '/' + paths.outputDest);
+gulp.task('open_dist', ['serve_dist'], function () {
+    open('http://localhost:' + port + '/' + paths.distTo);
 });
 
-gulp.task('output', ['open_output']);
+gulp.task('dist', ['open_dist']);
