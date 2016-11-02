@@ -46,9 +46,6 @@
 
         <horizontal-splitter v-ref:h-splitter style="height: calc(100% - 55px);">
             <div slot="left" style="display: flex;">
-                <side-panel class="border border-only-right">
-                    <vertical-toolbar v-ref:v-toolbar class="border"></vertical-toolbar>
-                </side-panel>
                 <horizontal-toolbar v-ref:h-toolbar class="border border-only-bottom fill-width"></horizontal-toolbar>
             </div>
             <div slot="right">
@@ -68,15 +65,13 @@
             'icon-label',
             'horizontal-toolbar',
             'horizontal-splitter',
-            'breadcrumb',
-            'side-panel'
+            'breadcrumb'
         ], function() {
             new Vue({
                 el: '#app',
                 props: ['theme'],
                 ready: function() {
                     this.theme = 'theme-light';
-                    this.$refs.vToolbar.items = toolbarVData;
                     this.$refs.hToolbar.items = toolbarHData;
                     this.$refs.breadcrumb.items = breadcrumbData;
                     this.$refs.tabbar.tabs = tabBarData;
@@ -88,23 +83,6 @@
                 }
             })
         });
-
-        var toolbarVData = [{
-            icon: './components/icons/applicationCache.png',
-            tip: "Application Cache",
-            key: 'applicationCache',
-            selected: true
-        }, {
-            icon: './components/icons/cookie.png',
-            tip: "Cookie",
-            key: 'cookie',
-            selected: false
-        }, {
-            icon: './components/icons/localStorage.png',
-            tip: "Local Storage",
-            key: 'localStorage',
-            selected: false
-        }];
 
         var toolbarHData = [{
             icon: './components/icons/applicationCache.png',
