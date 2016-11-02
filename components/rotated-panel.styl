@@ -1,0 +1,15 @@
+@require "_theme.styl"
+
+.rotated-panel
+	display inline-block
+	height 100%
+	transition background 0.3s
+
+.rotated-panel > *
+	transform-origin top left
+
+.theme-light .rotated-panel
+	background-color L-background-default
+
+.theme-dark .rotated-panel
+	background-image D-background-default
