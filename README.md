@@ -2,12 +2,15 @@
 
 A JetBrain-style UI widget set based on Vue.js
 
-## Prerequisite
+[Demo](http://jarvisniu.com/JetUI/ide.html) -
+[Widget Gallery](http://jarvisniu.com/JetUI/)
 
-- NodeJS
-- Gulp
+[![](screenshot.png)](http://jarvisniu.com/JetUI/ide.html)
+
 
 ## Usage
+
+Prerequisite: [Node](https://nodejs.org/), [Gulp](http://gulpjs.com/)
 
 ```
 npm install
@@ -21,8 +24,6 @@ gulp run
 
 ## Components
 
-### Avialable
-
 - Icon Label
 - Image Button
 - Side Panel
@@ -31,10 +32,11 @@ gulp run
 - Toolbar
 - Togglebar
 - Splitter
-
-### In Planning
-
 - Breadcrumb
+- Rotated Panel
+
+### Planning
+
 - Menu
 - Tree View
 
