@@ -13,10 +13,10 @@ export default {
     props: ["model"],
     methods: {
         onClick: function(ev) {
-            this.$dispatch("childClick", this)
+            this.$emit("click", this)
         }
     },
-    ready: function() {
+    mounted: function() {
         var span = this.$el
         var text = this.model.label
         var idxL = text.indexOf('(')

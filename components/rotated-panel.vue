@@ -22,7 +22,7 @@ export default {
             this.childDom.style.width = height;
         }
     },
-    ready: function () {
+    mounted: function () {
         this.childDom = this.$el.children[0];
         var vm = this;
         var onResize = function(ev) {

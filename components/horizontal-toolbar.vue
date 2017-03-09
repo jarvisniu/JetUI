@@ -4,7 +4,7 @@
 
 <template>
 <div class="horizontal-toolbar">
-    <image-button v-for="item in items" :model="item"></image-button>
+    <image-button v-for="item in items" :model="item" @click="childClick"></image-button>
 </div>
 </template>
 
@@ -15,7 +15,7 @@ export default {
             items: []
         }
     },
-    events: {
+    methods: {
         childClick: function(child) {
             var buttons = this.$children;
             for (var i in buttons) {
@@ -24,7 +24,7 @@ export default {
                     buttons[i].model.selected = false
                 } else {
                     buttons[i].model.selected = true;
-                    this.$dispatch("toolChanged", buttons[i].model.key);
+                    this.$emit("toolChanged", buttons[i].model.key);
                 }
             }
         }

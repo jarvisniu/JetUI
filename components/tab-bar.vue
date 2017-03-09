@@ -5,7 +5,7 @@
 <template>
 <div class="tab-bar">
     <div class="tab-bar-container">
-        <tab-button v-for="tab in tabs" :model="tab"></tab-button>
+        <tab-button v-for="tab in tabs" :model="tab" @click="onTabButtonClick"></tab-button>
         <div class="tabbar-filler"></div>
     </div>
 </div>
@@ -24,8 +24,8 @@ export default {
             ]
         }
     },
-    events: {
-        tabClick: function(button) {
+    methods: {
+        onTabButtonClick: function(button) {
             var tabs = this.$children;
             for (var i in tabs) {
                 if (!tabs.hasOwnProperty(i)) continue;
@@ -33,12 +33,10 @@ export default {
                     tabs[i].model.selected = false
                 } else {
                     tabs[i].model.selected = true;
-                    this.$dispatch("tabChanged", tabs[i].model.key);
+                    this.$emit("tabChanged", tabs[i].model.key);
                 }
             }
-        }
-    },
-    methods: {
+        },
         getTabButtonIndex: function(button) {
             return Array.prototype.indexOf.call(this.$el.children[0].children, button.$el);
         },

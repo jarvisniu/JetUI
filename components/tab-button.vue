@@ -31,7 +31,7 @@ export default {
             this.isMouseDown = true;
             this.mouseDownAtScreenX = ev.screenX / this.pixelRatio - this.left;
 
-            this.$dispatch("tabClick", this);
+            this.$emit("click", this);
         },
         onMouseMove: function(ev) {
             if (this.isMouseDown) {
@@ -47,9 +47,9 @@ export default {
             this.$parent.closeTab(this);
         }
     },
-    ready: function() {
+    mounted: function() {
         this.$el.querySelector('span').innerText = this.model.label;
-        this.$dispatch("childChanged");
+        this.$emit("childChanged");
     }
 }
 </script>

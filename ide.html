@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>JetUI IDE</title>
-    <script src="js/vue-1.0.28.js"></script>
+    <script src="js/vue-2.1.4.js"></script>
     <script src="js/vue-importer.js"></script>
     <link rel="stylesheet" href="components/jetui.css">
     <style type="text/css">
@@ -42,26 +42,26 @@
 
     <div id="app" :class="theme" class="fill" style="visibility: hidden;">
 
-        <breadcrumb v-ref:breadcrumb class="border border-only-bottom" style="width: 100%;"></breadcrumb>
+        <breadcrumb ref="breadcrumb" class="border border-only-bottom" style="width: 100%;"></breadcrumb>
 
         <div style="display: flex; height: calc(100% - 55px);">
             <rotated-panel class="border border-only-right">
                 <div style="display: flex;">
-                    <horizontal-togglebar v-ref:togglebar-side-bottom></horizontal-togglebar>
-                    <horizontal-togglebar v-ref:togglebar-side-top class="flex1 align-to-right"></horizontal-togglebar>
+                    <horizontal-togglebar ref="togglebarSideBottom"></horizontal-togglebar>
+                    <horizontal-togglebar ref="togglebarSideTop" class="flex1 align-to-right"></horizontal-togglebar>
                 </div>
             </rotated-panel>
-            <horizontal-splitter v-ref:h-splitter style="flex: 1;">
+            <horizontal-splitter ref="hSplitter" style="flex: 1;">
                 <div slot="left" style="display: flex;">
-                    <horizontal-toolbar v-ref:h-toolbar class="border border-only-bottom fill-width"></horizontal-toolbar>
+                    <horizontal-toolbar ref="hToolbar" class="border border-only-bottom fill-width"></horizontal-toolbar>
                 </div>
                 <div slot="right">
-                    <tab-bar v-ref:tabbar class="border border-only-bottom" style="width: 100%;"></tab-bar>
+                    <tab-bar ref="tabbar" class="border border-only-bottom" style="width: 100%;"></tab-bar>
                 </div>
             </horizontal-splitter>
         </div>
 
-        <horizontal-togglebar :theme.sync="theme" v-ref:togglebar class="border border-only-top"></horizontal-togglebar>
+        <horizontal-togglebar @changed="onThemeChanged" ref="togglebar" class="border border-only-top"></horizontal-togglebar>
 
     </div>
     <script>
@@ -79,9 +79,17 @@
         ], function() {
             new Vue({
                 el: '#app',
-                props: ['theme'],
-                ready: function() {
-                    this.theme = 'theme-light';
+                data: function () {
+                    return {
+                        theme: 'theme-light',
+                    }
+                },
+                methods: {
+                    onThemeChanged: function (label) {
+                        this.theme = 'theme-' + label;
+                    }
+                },
+                mounted: function() {
                     this.$refs.hToolbar.items = toolbarHData;
                     this.$refs.breadcrumb.items = breadcrumbData;
                     this.$refs.tabbar.tabs = tabBarData;

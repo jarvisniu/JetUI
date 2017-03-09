@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>JetUI demo</title>
-    <script src="js/vue-1.0.28.js"></script>
+    <script src="js/vue-2.1.4.js"></script>
     <script src="js/vue-importer.js"></script>
     <link rel="stylesheet" href="components/jetui.css">
     <style type="text/css">
@@ -42,18 +42,18 @@
     <div id="app" :class="theme" style="visibility: hidden;">
 
         <side-panel class="border">
-            <vertical-toolbar v-ref:v-toolbar class="border"></vertical-toolbar>
+            <vertical-toolbar ref="vToolbar" class="border"></vertical-toolbar>
         </side-panel>
 
         <div>
 
-            <horizontal-togglebar :theme.sync="theme" v-ref:togglebar class="border margin8"></horizontal-togglebar>
+            <horizontal-togglebar @changed="onThemeChanged" ref="togglebar" class="border margin8"></horizontal-togglebar>
 
-            <tab-bar v-ref:tabbar class="border margin8"></tab-bar>
+            <tab-bar ref="tabbar" class="border margin8"></tab-bar>
 
-            <horizontal-toolbar v-ref:h-toolbar class="border margin8"></horizontal-toolbar>
+            <horizontal-toolbar ref="hToolbar" class="border margin8"></horizontal-toolbar>
 
-            <breadcrumb v-ref:breadcrumb class="border margin8"></breadcrumb>
+            <breadcrumb ref="breadcrumb" class="border margin8"></breadcrumb>
 
             <horizontal-splitter class="border margin8" style="width: 500px; height: 400px;">
                 <div slot="left">
@@ -83,7 +83,12 @@
             window.appVm = new Vue({
                 el: '#app',
                 props: ['theme'],
-                ready: function() {
+                methods: {
+                    onThemeChanged: function (label) {
+                        this.theme = 'theme-' + label;
+                    }
+                },
+                mounted: function() {
                     this.theme = 'theme-light';
                     this.$refs.vToolbar.items = toolbarVData;
                     this.$refs.hToolbar.items = toolbarHData;

@@ -64,7 +64,7 @@ export default {
             this.domRightPanel.style.flexGrow = widthRight / (widthLeft + widthRight);
         }
     },
-    ready: function() {
+    mounted: function() {
         this.domHandle = this.$el.querySelector(".splitter-handle");
         this.domLeftPanel = this.$el.querySelectorAll(".panel")[0];
         this.domRightPanel = this.$el.querySelectorAll(".panel")[1];

@@ -13,7 +13,7 @@ export default {
     props: ['model'],
     methods: {
         onClick: function() {
-            this.$dispatch("childClick", this);
+            this.$emit("click", this);
         }
     }
 }

@@ -4,7 +4,7 @@
 
 <template>
 <div class="horizontal-togglebar">
-    <icon-label v-for="item in items" :model="item"></icon-label>
+    <icon-label v-for="item in items" :model="item" @click="childClick"></icon-label>
 </div>
 </template>
 
@@ -22,8 +22,7 @@ export default {
             ]
         }
     },
-    props: ['theme'],
-    events: {
+    methods: {
         childClick: function(child) {
             var buttons = this.$children;
             for (var i in buttons) {
@@ -32,10 +31,9 @@ export default {
                     buttons[i].model.selected = false;
                 } else {
                     buttons[i].model.selected = !buttons[i].model.selected;
-                    this.$dispatch("toggleChanged", buttons[i].model.key);
+                    this.$emit("changed", buttons[i].model.key);
                 }
             }
-            this.theme = 'theme-' + child.model.key
         }
     }
 }
