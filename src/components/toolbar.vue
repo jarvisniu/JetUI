@@ -2,20 +2,26 @@
   水平工具栏
 </docs>
 <template>
-  <div class="toolbar">
-    <jt-image-button v-for="item, i in items" :icon="item.icon" :selected="selIndex == i"
-                  @click="selIndex = i"></jt-image-button>
+  <div class="toolbar" :class="direction">
+    <jt-image-button v-for="item, i in items" :icon="item.icon" :tip="item.tip"
+                     :selected="selIndex == i" @click="selIndex = i"></jt-image-button>
   </div>
 </template>
 <script>
   export default {
     props: {
       items: Array,
+      vertical: Boolean,
     },
-    data () {
+    data() {
       return {
         selIndex: 0,
       }
+    },
+    computed: {
+      direction() {
+        return this.vertical ? 'vertical' : 'horizontal'
+      },
     },
   }
 </script>
@@ -23,11 +29,15 @@
   @require "_theme.styl"
 
   .toolbar
-    display inline-flex
     padding 0 1px
     box-sizing border-box
-    height 30px
     transition background 0.3s
+    overflow auto
+    &.horizontal
+      display inline-flex
+      height 30px
+    &.vertical
+      width: 32px
 
     .image-button
       margin 2px 1px

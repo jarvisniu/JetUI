@@ -11,7 +11,6 @@ import Tabbar from './components/tabbar.vue'
 import TabButton from './components/tab-button.vue'
 import Toolbar from './components/toolbar.vue'
 import Tooglebar from './components/togglebar.vue'
-import VerticalToolbar from './components/vertical-toolbar.vue'
 
 export default {
   install (Vue) {
@@ -27,7 +26,6 @@ export default {
     Vue.component('JtTogglebar', Tooglebar)
     Vue.component('JtToolbar', Toolbar)
     Vue.component('JtToolbar', Toolbar)
-    Vue.component('VerticalToolbar', VerticalToolbar)
 
   }
 }

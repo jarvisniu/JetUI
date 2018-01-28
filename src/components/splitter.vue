@@ -2,15 +2,16 @@
   水平分割器
 </docs>
 <template>
-  <div class="splitter" @mousedown="onMouseDown" @mousemove="onMouseMove"
+  <div class="splitter" :class="direction"
+       @mousedown="onMouseDown" @mousemove="onMouseMove"
        @mouseup="onMouseUp">
-    <div class="panel" :style="aStyle">
+    <div class="panel" :class="direction" :style="panelStyle">
       <slot name="a"></slot>
     </div>
-    <div class="splitter-handle">
-      <div class="splitter-line"></div>
+    <div class="splitter-handle" :class="direction">
+      <div class="splitter-line" :class="direction"></div>
     </div>
-    <div class="panel" :style="bStyle">
+    <div class="panel" :class="direction" :style="panelStyle">
       <slot name="b"></slot>
     </div>
   </div>
@@ -19,28 +20,32 @@
   export default {
     data: function () {
       return {
-        pixelRatio: window.devicePixelRatio || 1,
         downOnSplitter: false,
         domHandle: null,
         domLeftPanel: null,
         domRightPanel: null
       }
     },
-    props: ['theme'],
+    props: {
+      theme: String,
+      vertical: Boolean,
+    },
     computed: {
-      aStyle () {
-        return {
-          flex: '1',
-          minWidth: '100px',
-          height: '100%',
-        }
+      direction() {
+        return this.vertical ? 'vertical' : 'horizontal'
       },
-      bStyle() {
-        return {
+      panelStyle() {
+        let style = {
           flex: '1',
-          minWidth: '100px',
-          height: '100%',
         }
+        if (this.direction === 'horizontal') {
+          style.minWidth = '100px'
+          style.height = '100%'
+        } else {
+          style.minHeight = '100px'
+          style.width = '100%'
+        }
+        return style
       },
     },
     methods: {
@@ -50,7 +55,9 @@
         }
       },
       onMouseMove: function (ev) {
-        if (this.downOnSplitter) this.moveSplitter(ev.movementX / this.pixelRatio);
+        if (this.downOnSplitter) {
+          this.moveSplitter(this.direction === 'horizontal' ? ev.movementX : ev.movementY);
+        }
       },
       onMouseUp: function (ev) {
         this.downOnSplitter = false;
@@ -66,11 +73,12 @@
         return false;
       },
       getPxStyle: function (dom, style) {
-        return parseFloat(getComputedStyle(dom)[style]);
+        return parseFloat(window.getComputedStyle(dom)[style]);
       },
       moveSplitter: function (delta) {
-        var widthLeft = this.getPxStyle(this.domLeftPanel, "width");
-        var widthRight = this.getPxStyle(this.domRightPanel, "width");
+        let attr = this.direction === 'horizontal' ? 'width' : 'height'
+        var widthLeft = this.getPxStyle(this.domLeftPanel, attr);
+        var widthRight = this.getPxStyle(this.domRightPanel, attr);
 
         widthLeft += delta;
         widthRight -= delta;
@@ -92,11 +100,14 @@
   .splitter
     display flex
     box-sizing border-box
-    height 100%
     user-select-none()
+    &.horizontal
+      height: 100%
+    &.vertical
+      width: 100%
+      flex-direction column
 
   .splitter > .panel
-    height 100%
     user-select-none()
 
   .splitter > .panel > *
@@ -104,16 +115,28 @@
 
   .splitter-handle
     position relative
-    left 0
-    width 9px
-    height 100%
-    margin 0 -4px
-    cursor w-resize
     z-index 10
+    &.horizontal
+      left 0
+      width 9px
+      height 100%
+      margin 0 -4px
+      cursor w-resize
+    &.vertical
+      top 0
+      height 9px
+      width 100%
+      margin -4px 0
+      cursor n-resize
 
   .splitter-line
-    height 100%
-    width 1px
-    margin-left 4px
     background-color silver
+    &.horizontal
+      height 100%
+      width 1px
+      margin-left 4px
+    &.vertical
+      width 100%
+      height 1px
+      margin-top 4px
 </style>

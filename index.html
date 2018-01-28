@@ -59,7 +59,7 @@
             <span>🔴</span>
           </jt-panel-title>
           <div class="full-width border border-only-bottom">
-            <jt-toolbar class="full-size" :items="toolbarHData"></jt-toolbar>
+            <jt-toolbar class="full-size" :items="toolbarData"></jt-toolbar>
           </div>
         </div>
         <div slot="b" @click="focus = 'right'">
@@ -69,7 +69,7 @@
     </div>
 
     <jt-side-panel class="pull-right border border-only-left">
-      <vertical-toolbar class="border" :items="toolbarVData"></vertical-toolbar>
+      <jt-toolbar class="border" :items="toolbarData" vertical style="border-radius: 5px;"></jt-toolbar>
     </jt-side-panel>
   </div>
 
@@ -97,7 +97,7 @@
           icon: './src/icons/file.png',
           label: "index.html"
         }],
-        toolbarVData: [{
+        toolbarData: [{
           icon: './src/icons/applicationCache.png',
           tip: "Application Cache",
           key: 'applicationCache',
@@ -170,22 +170,6 @@
           meta: {
             path: 'three',
           },
-        }],
-        toolbarHData: [{
-          icon: './src/icons/applicationCache.png',
-          tip: "Application Cache",
-          key: 'applicationCache',
-          selected: false
-        }, {
-          icon: './src/icons/cookie.png',
-          tip: "Cookie",
-          key: 'cookie',
-          selected: true
-        }, {
-          icon: './src/icons/localStorage.png',
-          tip: "Local Storage",
-          key: 'localStorage',
-          selected: false
         }],
       }
     },

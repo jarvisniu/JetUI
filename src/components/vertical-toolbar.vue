@@ -3,9 +3,8 @@
 </docs>
 <template>
   <div class="vertical-toolbar">
-    <jt-image-button v-for="item, i in items" :icon="item.icon" :label="item.label"
-                  :selected="selIndex == i"
-                  @click.native="selIndex = i"></jt-image-button>
+    <jt-image-button v-for="item, i in items" :icon="item.icon" :tip="item.tip"
+                     :selected="selIndex == i" @click="selIndex = i"></jt-image-button>
   </div>
 </template>
 <script>
@@ -13,13 +12,12 @@
     props: {
       items: Array,
     },
-    data () {
+    data() {
       return {
         selIndex: 0,
       }
     },
-    methods: {
-    }
+    methods: {}
   }
 </script>
 <style lang="stylus" scoped>
