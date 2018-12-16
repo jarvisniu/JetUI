@@ -1,14 +1,14 @@
 {
-    "name": "JetUI",
+    "name": "jet-ui",
     "version": "0.1.0",
-    "description": "A UI widget set based on vue.js",
+    "description": "A jetbrains style vue ui library",
     "scripts": {
         "dev": "rollup -cw",
         "build": "rollup -c"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/jarvisniu/JetUI.git"
+        "url": "git+https://github.com/jarvisniu/jet-ui.git"
     },
     "keywords": [
         "UI",
@@ -18,15 +18,14 @@
     "author": "Jarvis Niu",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/jarvisniu/JetUI/issues"
+        "url": "https://github.com/jarvisniu/jet-ui/issues"
     },
-    "homepage": "https://github.com/jarvisniu/JetUI#readme",
-    "dependencies": {
-        "vue": "^2.5.13"
-    },
+    "homepage": "https://github.com/jarvisniu/jet-ui#readme",
     "devDependencies": {
         "rollup": "^0.52.3",
+        "rollup-plugin-serve": "^0.6.0",
         "rollup-plugin-vue": "^3.0.0",
+        "vue": "^2.5.13",
         "vue-template-compiler": "^2.5.13"
     }
 }

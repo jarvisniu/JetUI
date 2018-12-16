@@ -1,4 +1,4 @@
-# JetUI
+# jet-ui
 
 A JetBrain-style UI widget set based on Vue.js
 

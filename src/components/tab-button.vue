@@ -86,11 +86,11 @@
     background-size contain
     transition background 0.3s
 
-    background-image url(../src/icons/close-default.png)
+    background-image url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwwAADsMBx2+oZAAAABh0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC42/Ixj3wAAAOdJREFUWEfFzTEKBDEMQ9G5/1lyxywuBEH5TjwMeIvXCMl+5px/hWEnDDth2AnDThjKGGMGz6sqewyDxpUjpLrH0MfivQxtg/fCFgQai3cdbcS7YQuEDoh3hbriXcFQ6JB86a4wXNFBedPJYOjocIXfIRgSenDi+wyGGXpEfHeC4Qk9XHn/BsMTerry/g2GGXpIfHeCIaFHJ77PYOjoQYXfIRiu6LC86WQwFDooX7orDAMdEu8KdcW7giEdEO862oh3wxYEGgfvZWgbvBe2QCrjk+oeQ7mNbyp7DDth2AnDThh2wrDPfH7k0fp2j3ZOgwAAAABJRU5ErkJggg==")
     &:hover
-      background-image url(../src/icons/close-hover.png)
+      background-image url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAADcSURBVFhH7ZfRCcMwDETdLJnZMkLWywBpUbHAJJJ8p1KcDz8oKTSne7gKpa9j295lIEu9DmMKPFvgXNfvKwuSdwXaYEYCzZsCVoCRYPLUDiASjKhgCiz7Xt/diQqiz7yZ7gmwEplyIfwKUIlsuQD9FkQFEb1yAVpCZNAVNAM/BYwEdW+9QkBHSp4WJfAPKAFkGdmFhQWYwcy9kEDmMUQzXYFokCxctHSIRCjQK1d+kXAF0HIlK2EKsOVKRgJaQiUqUJB7WkwBawgzmMm7J9AGmHIFzc+/ZlNgsEApH/P6bVeFrckCAAAAAElFTkSuQmCC")
     &:active
-      background-image url(../src/icons/close-down.png)
+      background-image url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAADfSURBVFhH7ZdRCoNADETXnstLeIZeppfwDB5RSTGwaJKdiZTtxz4oLdTJPLaR4vSZ57105HW+d2MI/LfAe9u+ryxI3hWogxkJNG8KWAFGgslTO4BIMKKCKbAuy/npTlQQfefNdE+AlciUC+FPgEpkywXovyAqiGiVC9ASIoOuoBn4LmAkmGthAQEZzJ4WJfALKAFkGdmFhQWYwcy1kEDmNkQzTYFokCxctHSIRCjQKleeSLgCaLmSlTAF2HIlIwEtoRIVKMg1NaaANYQZzOTdE6gDTLmC5sej2RDoLFDKATY0aj/EK3qoAAAAAElFTkSuQmCC")
 
   .theme-light .tab-button
     color L-text-default
