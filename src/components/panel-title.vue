@@ -1,6 +1,7 @@
 <docs>
   PanelTitle：面板标题。
 </docs>
+
 <template>
   <div class="panel-title" :class="{selected: selected}">
     <span>{{title}}</span>
@@ -10,14 +11,17 @@
     </div>
   </div>
 </template>
+
 <script>
   export default {
+    name: 'JtPannelTitle',
     props: {
       title: String,
       selected: Boolean,
     },
   }
 </script>
+
 <style lang="stylus" scoped>
   @require "_theme.styl"
 

@@ -1,13 +1,16 @@
 <docs>
   图像按钮
 </docs>
+
 <template>
   <div class="image-button" :class="{selected: selected}" :title="tip" @click="onClick">
     <img :src="icon">
   </div>
 </template>
+
 <script>
   export default {
+    name: 'JtImageButton',
     props: {
       selected: Boolean,
       tip: String,
@@ -20,6 +23,7 @@
     }
   }
 </script>
+
 <style lang="stylus" scoped>
   @require "_theme.styl"
 

@@ -1,6 +1,7 @@
 <docs>
   标签按钮
 </docs>
+
 <template>
   <div class="tab-button" :class="{selected: selected}" :style="{left: left + 'px'}"
        @mousedown="onMouseDown" @mousemove="onMouseMove" @mouseup="onMouseUp">
@@ -9,8 +10,10 @@
     <span ref="close" class="tab-button-close" @click="$emit('close')"></span>
   </div>
 </template>
+
 <script>
   export default {
+    name: 'JtTabButton',
     props: {
       selected: Boolean,
       icon: String,
@@ -48,6 +51,7 @@
     }
   }
 </script>
+
 <style lang="stylus" scoped>
   @require "_theme.styl"
 

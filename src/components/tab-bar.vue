@@ -7,19 +7,23 @@
     close
     sort
 </docs>
+
 <template>
   <div class="tab-bar">
     <div class="tab-bar-container">
-      <jt-tab-button v-for="(tab, i) in tabs" :index="tab.label"
-                     :label="tab.label" :icon="tab.icon"
-                     :selected="selIndex== i" @select="selIndex = i"
-                     @close="closeTab(i)" @move="onButtonMove(i)"></jt-tab-button>
+      <jt-tab-button
+        v-for="(tab, i) in tabs" :key="tab.label"
+        :label="tab.label" :icon="tab.icon"
+        :selected="selIndex== i" @select="selIndex = i"
+        @close="closeTab(i)" @move="onButtonMove(i)"></jt-tab-button>
       <div class="tabbar-filler"></div>
     </div>
   </div>
 </template>
+
 <script>
   export default {
+    name: 'JtTabBar',
     data () {
       return {
         tabs: [],
@@ -112,6 +116,7 @@
     }
   }
 </script>
+
 <style lang="stylus" scoped>
   @require "_theme.styl"
 

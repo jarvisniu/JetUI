@@ -1,14 +1,19 @@
 <docs>
   侧边栏？
 </docs>
+
 <template>
   <div class="side-panel">
     <slot></slot>
   </div>
 </template>
+
 <script>
-  export default {}
+  export default {
+    name: 'JtSidePanel',
+  }
 </script>
+
 <style lang="stylus" scoped>
   @require "_theme.styl"
 

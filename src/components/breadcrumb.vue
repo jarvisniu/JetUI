@@ -1,23 +1,27 @@
 <docs>
   面包屑
 </docs>
+
 <template>
   <div class="breadcrumb">
     <div class="breadcrumb-container">
-      <template v-for="item in items">
-        <jt-icon-label :icon="item.icon" :label="item.label"></jt-icon-label>
-        <div class="separator"></div>
+      <template v-for="(item, index) in items">
+        <jt-icon-label :key="'a' + index" :icon="item.icon" :label="item.label"></jt-icon-label>
+        <div :key="'b' + index" class="separator"></div>
       </template>
     </div>
   </div>
 </template>
+
 <script>
   export default {
+    name: 'JtBreadcrumb',
     props: {
       items: Array,
     }
   }
 </script>
+
 <style lang="stylus" scoped>
   @require "_theme.styl"
 

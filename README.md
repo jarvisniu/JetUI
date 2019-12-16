@@ -1,44 +1,32 @@
 # jet-ui
 
-A JetBrain-style UI widget set based on Vue.js
+JetBrain-style Vue UI components
 
-[Demo](http://jarvisniu.com/JetUI/ide.html) -
-[Widget Gallery](http://jarvisniu.com/JetUI/)
+<!-- [Docs](http://jarvisniu.com/JetUI/ide.html) -->
 
 [![](screenshot.png)](http://jarvisniu.com/JetUI/ide.html)
 
+## Features
 
-## Usage
-
-Prerequisite: [Node](https://nodejs.org/), [Gulp](http://gulpjs.com/)
-
-```
-npm install
-gulp run
-```
-
-## Specification
-
-- Support theme
-- Support high-definition screen / zoom
+- Theme: light & dark
+- High-definition screen support
 
 ## Components
 
-- Icon Label
-- Image Button
-- Side Panel
-- Tab Bar
-- Tab Button
-- Toolbar
-- Togglebar
-- Splitter
-- Breadcrumb
-- Rotated Panel
-
-### Planning
-
-- Menu
-- Tree View
+- [ ] button
+- [ ] input
+- [x] icon-label
+- [x] image-button
+- [x] side-panel
+- [x] tab-bar
+- [x] tab-button
+- [x] tool-bar
+- [x] toggle-bar
+- [x] splitter
+- [x] breadcrumb
+- [x] rotated-panel
+- [ ] menu
+- [ ] tree
 
 ## License
 

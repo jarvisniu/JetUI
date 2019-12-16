@@ -1,13 +1,16 @@
 <docs>
   旋转面板？
 </docs>
+
 <template>
   <div class="rotated-panel">
     <slot></slot>
   </div>
 </template>
+
 <script>
   export default {
+    name: 'JtRotatedPanel',
     data: function () {
       return {
         childDom: null
@@ -32,6 +35,7 @@
     }
   }
 </script>
+
 <style lang="stylus" scoped>
   @require "_theme.styl"
 

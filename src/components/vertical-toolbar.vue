@@ -1,14 +1,23 @@
 <docs>
   垂直工具栏
 </docs>
+
 <template>
   <div class="vertical-toolbar">
-    <jt-image-button v-for="item, i in items" :icon="item.icon" :tip="item.tip"
-                     :selected="selIndex == i" @click="selIndex = i"></jt-image-button>
+    <jt-image-button
+      v-for="(item, i) in items"
+      :key="i"
+      :icon="item.icon"
+      :tip="item.tip"
+      :selected="selIndex == i"
+      @click="selIndex = i"
+    ></jt-image-button>
   </div>
 </template>
+
 <script>
   export default {
+    name: 'JtVerticalToolbar',
     props: {
       items: Array,
     },

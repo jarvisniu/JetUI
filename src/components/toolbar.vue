@@ -1,12 +1,20 @@
 <docs>
   水平工具栏
 </docs>
+
 <template>
   <div class="toolbar" :class="direction">
-    <jt-image-button v-for="item, i in items" :icon="item.icon" :tip="item.tip"
-                     :selected="selIndex == i" @click="selIndex = i"></jt-image-button>
+    <jt-image-button
+      v-for="(item, i) in items"
+      :key="i"
+      :icon="item.icon"
+      :tip="item.tip"
+      :selected="selIndex == i"
+      @click="selIndex = i"
+    ></jt-image-button>
   </div>
 </template>
+
 <script>
   export default {
     props: {
@@ -25,6 +33,7 @@
     },
   }
 </script>
+
 <style lang="stylus" scoped>
   @require "_theme.styl"
 

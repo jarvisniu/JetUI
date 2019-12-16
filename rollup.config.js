@@ -1,20 +1,51 @@
+import resolve from 'rollup-plugin-node-resolve'
+import cjs from 'rollup-plugin-commonjs'
+import postcss from 'rollup-plugin-postcss'
 import vue from 'rollup-plugin-vue'
-import serve from 'rollup-plugin-serve'
+// import serve from 'rollup-plugin-serve'
+import { terser } from 'rollup-plugin-terser'
+
+import pkg from './package.json'
+
+const banner = `// jet-ui v${ pkg.version } - Jarvis Niu
+// https://github.com/jarvisniu/jet-ui\n`
 
 export default {
   input: 'src/index.js',
-  output: {
-    file: 'dist/jetui.js',
-    format: 'umd',
-    name: 'JetUI',
-  },
+  output: [
+    {
+      banner,
+      file: 'dist/jet-ui.esm.js',
+      format: 'esm',
+    },
+    {
+      banner,
+      file: 'dist/jet-ui.js',
+      format: 'umd',
+      name: 'JetUI',
+    },
+    {
+      banner,
+      file: 'dist/jet-ui.min.js',
+      format: 'umd',
+      name: 'JetUI',
+    },
+  ],
   plugins: [
+    resolve(),
+    cjs(),
+    postcss({
+      plugins: [],
+    }),
     vue({
-      css: './dist/jetui.css'
+      needMap: false,
     }),
-    serve({
-      contentBase: ['.'],
-      port: 1234,
+    terser({
+      include: /^.+\.min\.js$/,
     }),
+    // serve({
+    //   contentBase: ['.'],
+    //   port: 1234,
+    // }),
   ],
 }

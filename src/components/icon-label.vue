@@ -1,13 +1,16 @@
 <docs>
   带图标标签
 </docs>
+
 <template>
   <div class="icon-label" :class="{selected: selected}" @click="onClick">
     <img :src="icon">
   </div>
 </template>
+
 <script>
   export default {
+    name: 'JtIconLabel',
     props: {
       selected: Boolean,
       icon: String,

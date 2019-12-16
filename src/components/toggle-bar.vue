@@ -1,14 +1,23 @@
 <docs>
   水平开关栏
 </docs>
+
 <template>
   <div class="togglebar">
-    <jt-icon-label v-for="item, i in items" :icon="item.icon" :label="item.label" :key="item.key"
-                :selected="selIndex == i" @click.native="selIndex = i"></jt-icon-label>
+    <jt-icon-label
+      v-for="(item, i) in items"
+      :key="i"
+      :icon="item.icon"
+      :label="item.label"
+      :selected="selIndex == i"
+      @click.native="selIndex = i"
+    ></jt-icon-label>
   </div>
 </template>
+
 <script>
   export default {
+    name: 'JtToggleBar',
     props: {
       items: Array,
       // {
