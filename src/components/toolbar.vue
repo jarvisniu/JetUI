@@ -17,6 +17,7 @@
 
 <script>
   export default {
+    name: 'JtToolbar',
     props: {
       items: Array,
       vertical: Boolean,
