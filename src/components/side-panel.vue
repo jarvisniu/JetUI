@@ -27,6 +27,6 @@
   .theme-light .side-panel
     background-image L-panel-default
 
-  .theme-dark .side-panel
+  .jt-theme-dark .side-panel
     background-image D-panel-default
 </style>

@@ -41,6 +41,6 @@
   .theme-light .vertical-toolbar
     background-color L-background-default
 
-  .theme-dark .vertical-toolbar
+  .jt-theme-dark .vertical-toolbar
     background-color D-background-default
 </style>

@@ -111,7 +111,7 @@
       &:active
         background-color L-tab-background-selected-active
 
-  .theme-dark .tab-button
+  .jt-theme-dark .tab-button
     color D-text-default
     border-color D-border-default
     background-color D-tab-background-default

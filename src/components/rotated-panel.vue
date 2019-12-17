@@ -50,6 +50,6 @@
   .theme-light .rotated-panel
     background-color L-background-default
 
-  .theme-dark .rotated-panel
+  .jt-theme-dark .rotated-panel
     background-image D-background-default
 </style>

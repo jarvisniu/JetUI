@@ -36,13 +36,7 @@
     height 26px
     margin 2px
     transition background 0.3s
-
-    img
-      margin 2px
-      width 20px
-      height 20px
-
-  .theme-light .image-button
+    // default-theme: light
     border-color L-background-default // hide border
     background-color L-background-default
     &:hover
@@ -50,6 +44,7 @@
       background-color L-background-hover
     &:active
       background-color L-background-active
+      transition: background-color 0.02s, border-color 0.02s;
     &.selected
       border-color L-border-default
       background-color L-background-selected-default
@@ -58,7 +53,12 @@
       &:active
         background-color L-background-selected-active
 
-  .theme-dark .image-button
+    img
+      margin 2px
+      width 20px
+      height 20px
+
+  .jt-theme-dark .image-button
     border-color D-background-default // hide border
     background-color D-background-default
     &:hover

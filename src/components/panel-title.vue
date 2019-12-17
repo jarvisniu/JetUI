@@ -65,7 +65,7 @@
     &.selected
       background: linear-gradient(to top, rgb(194, 203, 219), rgb(202, 211, 227))
 
-  .theme-dark .panel-title
+  .jt-theme-dark .panel-title
     background: linear-gradient(to top, rgb(58, 60, 62), rgb(66, 68, 70))
 
     &.selected

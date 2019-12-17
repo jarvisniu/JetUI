@@ -2,17 +2,9 @@
   水平工具栏
 </docs>
 
-<template>
-  <div class="toolbar" :class="direction">
-    <jt-image-button
-      v-for="(item, i) in items"
-      :key="i"
-      :icon="item.icon"
-      :tip="item.tip"
-      :selected="selIndex == i"
-      @click="selIndex = i"
-    ></jt-image-button>
-  </div>
+<template lang="pug">
+  .toolbar(:class="direction")
+    slot
 </template>
 
 <script>
@@ -36,25 +28,25 @@
 </script>
 
 <style lang="stylus" scoped>
-  @require "_theme.styl"
+@require "_theme.styl"
 
-  .toolbar
-    padding 0 1px
-    box-sizing border-box
-    transition background 0.3s
-    overflow auto
-    &.horizontal
-      display inline-flex
-      height 30px
-    &.vertical
-      width: 32px
+.toolbar
+  padding 0 1px
+  // box-sizing border-box
+  transition background 0.3s
+  overflow auto
+  &.horizontal
+    display inline-flex
+    height 30px
+  &.vertical
+    width: 32px
 
-    .image-button
-      margin 2px 1px
+  // default-theme: light
+  background-color L-background-default
 
-  .theme-light .toolbar
-    background-color L-background-default
+.jt-theme-dark .toolbar
+  background-color D-background-default
 
-  .theme-dark .toolbar
-    background-color D-background-default
+.image-button
+  margin 2px 1px
 </style>

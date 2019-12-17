@@ -52,6 +52,6 @@
   .theme-light .togglebar
     background-color L-background-default
 
-  .theme-dark .togglebar
+  .jt-theme-dark .togglebar
     background-image D-background-default
 </style>

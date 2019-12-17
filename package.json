@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "JetBrain-style Vue UI components",
   "scripts": {
-    "dev": "rollup -cw",
+    "dev": "parcel docs/index.html --port 7788 --out-dir docs/dist",
     "build": "rm -rf dist && rollup -c"
   },
   "repository": {
@@ -23,16 +23,20 @@
   "homepage": "https://github.com/jarvisniu/jet-ui#readme",
   "devDependencies": {
     "node-sass": "^4.13.0",
+    "parcel-bundler": "^1.12.4",
     "rollup": "^1.27.13",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-postcss": "^2.0.3",
-    "rollup-plugin-serve": "^1.0.1",
     "rollup-plugin-stylus-css-modules": "^1.5.0",
     "rollup-plugin-terser": "^5.1.3",
-    "rollup-plugin-vue": "^5.1.4",
+    "rollup-plugin-vue": "5.1.1",
     "stylus": "^0.54.7",
     "vue": "^2.6.11",
     "vue-template-compiler": "^2.6.11"
+  },
+  "dependencies": {
+    "vue-hot-reload-api": "^2.3.4",
+    "vue-router": "^3.1.3"
   }
 }

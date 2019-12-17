@@ -76,7 +76,7 @@
       &:active
         background-color L-background-selected-active
 
-  .theme-dark .icon-label
+  .jt-theme-dark .icon-label
     background-color D-background-default
     &:hover
       background-color D-background-hover

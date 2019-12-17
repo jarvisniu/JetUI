@@ -48,7 +48,7 @@
       .separator
         background-image url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAYCAYAAADH2bwQAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAASBJREFUeNpi+P//P0NaSgo3iMaGmdJTU2UZGBicGHAAppmzZz8G0l+BCo2wKoDSV4DYEqiIE6sCoCmvgNRrILbFZQII7AApAJoiilUB0JRPUKuCcZkAAruA2ARoigRWBUBT3gOp7UBcicsEBqgCFaAp5lgVAE35BqTmA3EuiM8ICk5sAGjCMSA1jQlXEP/79w/iXWwRlJGWFp+cmHgQxGbBYjQXMzNzERCnYXUkDy9vPJC6A3TsSQwFQN2CQGMj/v79m401HKRlZNJYWVnPAnW/wFAA1M0H1G394f37dqxxoaOvX/Tv///VQN2vMRQAdYsxMTEpv3j2bA1GgID8unXbttqmpiZ7bGECStGyQAUTcKZqoCEvNq5bV40ryAECDADVeKlz8PKTYAAAAABJRU5ErkJggg==")
 
-  .theme-dark
+  .jt-theme-dark
     .breadcrumb
       background-color D-background-default
     .breadcrumb-container

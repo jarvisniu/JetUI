@@ -2,7 +2,6 @@ import resolve from 'rollup-plugin-node-resolve'
 import cjs from 'rollup-plugin-commonjs'
 import postcss from 'rollup-plugin-postcss'
 import vue from 'rollup-plugin-vue'
-// import serve from 'rollup-plugin-serve'
 import { terser } from 'rollup-plugin-terser'
 
 import pkg from './package.json'
@@ -43,9 +42,5 @@ export default {
     terser({
       include: /^.+\.min\.js$/,
     }),
-    // serve({
-    //   contentBase: ['.'],
-    //   port: 1234,
-    // }),
   ],
 }

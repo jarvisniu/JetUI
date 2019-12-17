@@ -148,7 +148,7 @@
       .tabbar-filler
         background-color L-tab-background-default
 
-  .theme-dark
+  .jt-theme-dark
     .tab-bar
       background-color D-tab-background-selected-default
     .tab-bar-container
