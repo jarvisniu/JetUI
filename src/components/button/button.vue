@@ -1,6 +1,11 @@
-<template lang="pug">
-.jt-button
-  slot
+<docs>
+Button
+</docs>
+
+<template>
+  <div class="jt-button">
+    <slot></slot>
+  </div>
 </template>
 
 <script>
@@ -12,9 +17,9 @@ export default {
 <style lang="scss" scoped>
 .jt-button {
   display: inline-block;
-  border: solid 1px silver;
+  border: solid 1px var(--jt-border);
   box-sizing: border-box;
-  background-color: #eee;
+  background-color: var(--jt-bg-button);
   height: 24px;
   line-height: 24px;
   /* min-width: 40px;
@@ -28,28 +33,12 @@ export default {
   transition: background-color 0.2s, border-color 0.2s;
   &:hover {
     @media (hover: hover) {
-      background-color: white;
+      background-color: var(--jt-bg-button-hover);
     }
   }
   &:active {
-    background-color: #c0c0c0;
+    background-color: var(--jt-bg-button-active);
     transition: background-color 0.02s, border-color 0.02s;
-  }
-}
-.jt-theme-dark {
-  .jt-button {
-    color: #e0e0e0;
-    background-color: #555;
-    border-color: black;
-    &:hover {
-      @media (hover: hover) {
-        background-color: #666;
-      }
-    }
-    &:active {
-      background-color: #444;
-      transition: background-color 0.02s, border-color 0.02s;
-    }
   }
 }
 </style>

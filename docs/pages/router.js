@@ -1,9 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import Home from './pages/home.vue'
-import Button from './pages/button.vue'
-import ImageButton from './pages/image-button.vue'
+import Home from './home.vue'
+import Button from './button/button-page.vue'
+import ImageButton from './image-button/image-button-page.vue'
+import Toolbar from './toolbar/toolbar-page.vue'
 
 Vue.use(VueRouter)
 
@@ -11,6 +12,7 @@ const routes = [
   { path: '/', component: Home },
   { path: '/button', component: Button },
   { path: '/image-button', component: ImageButton },
+  { path: '/toolbar', component: Toolbar },
   { path: '*', redirect: '/' },
 ]
 

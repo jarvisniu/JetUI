@@ -1,0 +1,18 @@
+:root {
+  --jt-border: silver;
+  --jt-bg-button: #eee;
+  --jt-bg-button-hover: white;
+  --jt-bg-button-active: #c0c0c0;
+  --jt-bg-button-selected: rgb(183, 183, 183);
+  --jt-bg-button-selected-hover: var(--jt-bg-button-selected);
+  --jt-bg-button-selected-active: rgb(170, 170, 170);
+}
+.jt-theme-dark {
+  --jt-border: black;
+  --jt-bg-button: #555;
+  --jt-bg-button-hover: #666;
+  --jt-bg-button-active: #444;
+  --jt-bg-button-selected: rgb(128, 128, 128);
+  --jt-bg-button-selected-hover: var(--jt-bg-button-selected);
+  --jt-bg-button-selected-active: rgb(50, 50, 50);
+}

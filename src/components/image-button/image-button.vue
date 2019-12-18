@@ -1,0 +1,72 @@
+<docs>
+ImageButton
+</docs>
+
+<template>
+  <div
+    class="image-button"
+    :class="{selected: selected}"
+    :title="tip"
+    @click="onClick"
+  >
+    <img :src="icon">
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'JtImageButton',
+  props: {
+    selected: Boolean,
+    tip: String,
+    icon: String,
+  },
+  methods: {
+    onClick: function () {
+      this.$emit("click", this);
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+.image-button {
+  display: flex;
+  border: solid 1px red;
+  border-radius: 2px;
+  box-sizing: border-box;
+  width: 26px;
+  height: 26px;
+  margin: 2px;
+
+  img {
+    margin: 2px;
+    width: 20px;
+    height: 20px;
+    -webkit-user-drag: none;
+  }
+
+  // theme
+  transition: background-color 0.3s;
+  border-color: transparent;
+  background-color: var(--jt-bg-button);
+  &:hover {
+    border-color: var(--jt-border);
+    background-color: var(--jt-bg-button-hover);
+  }
+  &:active {
+    background-color: var(--jt-bg-button-active);
+    transition: background-color 0.02s, border-color 0.02s;
+  }
+  &.selected {
+    border-color: var(--jt-border);
+    background-color: var(--jt-bg-button-selected);
+    &:hover {
+      background-color: var(--jt-bg-button-selected-hover);
+    }
+    &:active {
+      background-color: var(--jt-bg-button-selected-active);
+    }
+  }
+}
+</style>
