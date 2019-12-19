@@ -2,14 +2,21 @@
   <div class="app" :class="`jt-theme-${ theme }`">
     <div class="side">
       <div class="title">jet-ui docs</div>
-      <label>
-        <input v-model="theme" type="radio" value="light"/>
-        <span>Light</span>
-      </label>
-      <label>
-        <input v-model="theme" type="radio" value="dark"/>
-        <span>Dark</span>
-      </label>
+      <jt-border inline all>
+        <jt-toggle-bar>
+          <jt-toggle-bar-button
+            :selected="theme === 'light'"
+            style="width: 89px;"
+            @click="theme = 'light'"
+          >Light</jt-toggle-bar-button>
+          <jt-toggle-bar-button
+            :selected="theme === 'dark'"
+            style="width: 89px;"
+            @click="theme = 'dark'"
+          >Dark</jt-toggle-bar-button>
+        </jt-toggle-bar>
+      </jt-border>
+
       <div v-for="(pageGroup, groupIndex) in pageGroups" :key="groupIndex">
         <div class="section-title">{{ pageGroup.name }}</div>
         <div
@@ -41,9 +48,10 @@ export default {
           name: 'Basic',
           pages: [
             { name: 'Button', path: '/button' },
+            { name: 'Breadcrumb', path: '/breadcrumb' },
             { name: 'Image Button', path: '/image-button' },
-            { name: 'Toolbar', path: '/toolbar' },
             { name: 'Toggle Bar', path: '/toggle-bar' },
+            { name: 'Toolbar', path: '/toolbar' },
           ],
         },
       ],
@@ -83,17 +91,17 @@ export default {
     padding-bottom: 10px;
   }
   .section-title {
-    font-size: 16px;
+    font-size: 20px;
     font-weight: bold;
-    padding: 10px 0;
-    color: #7090b0;
+    padding: 10px 0 5px;
+    color: #6080b0;
   }
   .page-link {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 24px;
     a {
       text-decoration: none;
-      color: black;
+      color: #224466;
       transition: color 0.05s;
       &:hover {
         color: #049EF4;

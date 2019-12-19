@@ -6,10 +6,15 @@ Toggle Bar Button
   <div
     class="toggle-bar-button"
     :class="{selected: selected}"
+    :style="{
+      paddingLeft: icon ? '4px' : '8px',
+    }"
     @click="onClick"
   >
-    <img class="icon" :src="icon">
-    <span class="label">{{ label }}</span>
+    <img v-if="icon" class="icon" :src="icon">
+    <span class="label">
+      <slot></slot>
+    </span>
   </div>
 </template>
 
@@ -18,7 +23,6 @@ Toggle Bar Button
     name: 'JtToggleBarButton',
     props: {
       icon: { type: String, default: '' },
-      label: { type: String, default: '' },
       tip: { type: String, default: '' },
       value: { type: String, default: '' },
       selected: { type: Boolean, default: false },
@@ -35,12 +39,14 @@ Toggle Bar Button
 .toggle-bar-button {
   box-sizing: border-box;
   display: inline-flex;
+  justify-content: center;
   height: 24px;
-  padding: 0 6px 0 2px;
+  padding: 0 8px 0 4px;
   cursor: default;
   user-select: none;
 
-  transition: background-color 0.2s;
+  transition: color 0.2s, background-color 0.2s;
+  color: var(--jt-text);
   background-color: var(--jt-bg-container-dark);
   &:hover {
     background-color: var(--jt-bg-button-hover-dark);
@@ -49,6 +55,7 @@ Toggle Bar Button
     background-color: var(--jt-bg-button-active);
   }
   &.selected {
+    color: var(--jt-text-selected);
     background-color: var(--jt-bg-button-selected);
     &:hover {
       background-color: var(--jt-bg-button-selected-hover);
@@ -62,6 +69,7 @@ Toggle Bar Button
   padding: 4px;
   width: 16px;
   height: 16px;
+  -webkit-user-drag: none;
 }
 .label {
   line-height: 24px;

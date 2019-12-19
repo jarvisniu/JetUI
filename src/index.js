@@ -3,8 +3,7 @@ import './theme.scss'
 
 import Border from './components/border/border.vue'
 import Button from './components/button/button.vue'
-import Breadcrumb from './components/breadcrumb.vue'
-import IconLabel from './components/icon-label.vue'
+import Breadcrumb from './components/breadcrumb/breadcrumb.vue'
 import ImageButton from './components/image-button/image-button.vue'
 import PanelTitle from './components/panel-title.vue'
 import RotatedPanel from './components/rotated-panel.vue'
@@ -21,7 +20,6 @@ export default {
     Vue.component(Border.name, Border)
     Vue.component(Button.name, Button)
     Vue.component(Breadcrumb.name, Breadcrumb)
-    Vue.component(IconLabel.name, IconLabel)
     Vue.component(ImageButton.name, ImageButton)
     Vue.component(PanelTitle.name, PanelTitle)
     Vue.component(RotatedPanel.name, RotatedPanel)

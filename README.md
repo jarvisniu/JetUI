@@ -13,9 +13,8 @@ JetBrain-style Vue UI components
 
 ## Components
 
-- [ ] button
+- [x] button
 - [ ] input
-- [x] icon-label
 - [x] image-button
 - [x] side-panel
 - [x] tab-bar
@@ -23,7 +22,6 @@ JetBrain-style Vue UI components
 - [x] tool-bar
 - [x] toggle-bar
 - [x] splitter
-- [x] breadcrumb
 - [x] rotated-panel
 - [ ] menu
 - [ ] tree

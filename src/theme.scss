@@ -1,17 +1,21 @@
 :root {
-  --jt-border: silver;
+  --jt-border: #c0c0c0;
+  --jt-text: #222222;
+  --jt-text-selected: white;
   --jt-bg-container-dark: #e8e8e8;
   --jt-bg-container-light: #fefefe;
   --jt-bg-button: #eeeeee;
   --jt-bg-button-hover: white;
   --jt-bg-button-hover-dark: #d1d1d1;
   --jt-bg-button-active: #c0c0c0;
-  --jt-bg-button-selected: rgb(183, 183, 183);
+  --jt-bg-button-selected: #888888;
   --jt-bg-button-selected-hover: var(--jt-bg-button-selected);
   --jt-bg-button-selected-active: var(--jt-bg-button-selected); // rgb(170, 170, 170)
 }
 .jt-theme-dark {
   --jt-border: black;
+  --jt-text: #eeeeee;
+  --jt-text-selected: #cdcdcd;
   --jt-bg-container-dark: #444444;
   --jt-bg-container-light: #333333;
   --jt-bg-button: #3b3f41;

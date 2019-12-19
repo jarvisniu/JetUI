@@ -3,7 +3,10 @@ Button
 </docs>
 
 <template>
-  <div class="jt-button">
+  <div
+    class="jt-button"
+    @click="$emit('click')"
+  >
     <slot></slot>
   </div>
 </template>
