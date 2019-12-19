@@ -13,7 +13,8 @@ import Splitter from './components/splitter.vue'
 import TabBar from './components/tab-bar.vue'
 import TabButton from './components/tab-button.vue'
 import Toolbar from './components/toolbar/toolbar.vue'
-import ToggleBar from './components/toggle-bar.vue'
+import ToggleBar from './components/toggle-bar/toggle-bar.vue'
+import ToggleBarButton from './components/toggle-bar/toggle-bar-button.vue'
 
 export default {
   install(Vue) {
@@ -29,6 +30,7 @@ export default {
     Vue.component(TabBar.name, TabBar)
     Vue.component(TabButton.name, TabButton)
     Vue.component(ToggleBar.name, ToggleBar)
+    Vue.component(ToggleBarButton.name, ToggleBarButton)
     Vue.component(Toolbar.name, Toolbar)
   }
 }

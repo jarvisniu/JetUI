@@ -1,0 +1,28 @@
+<docs>
+Toggle Bar
+</docs>
+
+<template>
+  <div class="toggle-bar">
+    <slot></slot>
+  </div>
+</template>
+
+<script>
+  export default {
+    name: 'JtToggleBar',
+  }
+</script>
+
+<style lang="scss" scoped>
+.toggle-bar {
+  box-sizing: border-box;
+  display: inline-flex;
+  height: 24px;
+  user-select: none;
+  vertical-align: top;
+
+  transition: background-color 0.2s;
+  background-color: var(--jt-bg-container-dark);
+}
+</style>

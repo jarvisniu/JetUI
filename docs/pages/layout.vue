@@ -43,6 +43,7 @@ export default {
             { name: 'Button', path: '/button' },
             { name: 'Image Button', path: '/image-button' },
             { name: 'Toolbar', path: '/toolbar' },
+            { name: 'Toggle Bar', path: '/toggle-bar' },
           ],
         },
       ],
@@ -113,6 +114,6 @@ export default {
 }
 .content {
   width: calc(100% - 200px);
-  padding: 0 10px;
+  padding: 10px;
 }
 </style>

@@ -31,10 +31,11 @@ export default {
 
 <style lang="scss" scoped>
 .image-button {
+  box-sizing: border-box;
+  user-select: none;
   display: flex;
   border: solid 1px red;
   border-radius: 2px;
-  box-sizing: border-box;
   width: 26px;
   height: 26px;
   margin: 2px;

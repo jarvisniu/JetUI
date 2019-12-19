@@ -2,7 +2,7 @@
   <div>
     <h2>Toolbar</h2>
 
-    <h4>Basic</h4>
+    <h4>Basic (Horizontal)</h4>
     <jt-border inline all>
       <jt-toolbar>
         <jt-image-button :icon="iconDatabase"></jt-image-button>

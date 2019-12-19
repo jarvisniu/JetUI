@@ -16,12 +16,12 @@ export default {
 
 <style lang="scss" scoped>
 .jt-button {
+  box-sizing: border-box;
   display: inline-block;
   border: solid 1px var(--jt-border);
-  box-sizing: border-box;
   background-color: var(--jt-bg-button);
   height: 24px;
-  line-height: 24px;
+  line-height: 22px;
   /* min-width: 40px;
   text-align: center; */
   font-size: 14px;
