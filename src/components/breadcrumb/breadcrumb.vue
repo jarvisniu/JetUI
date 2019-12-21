@@ -47,7 +47,7 @@ export default {
       height: 0;
       border-top: solid 12px transparent;
       border-bottom: solid 12px transparent;
-      border-left: solid 8px var(--jt-bg-button);
+      border-left: solid 7px var(--jt-bg-button);
       vertical-align: top;
       transition: color 0.2s, border-color 0.2s, border-color 0.2s;
       background-color: transparent;

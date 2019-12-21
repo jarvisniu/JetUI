@@ -24,11 +24,11 @@
           v-for="(page, pageIndex) in pageGroup.pages"
           :key="pageIndex"
         >
-          <router-link
+          <span style="padding-right: 4px;">·</span><router-link
             :to="page.path"
             :class="{selected: $route.path == page.path}"
           >
-            {{ page.name }}
+            <span>{{ page.name }}</span>
           </router-link>
         </div>
       </div>
@@ -44,16 +44,18 @@ export default {
     return {
       theme: 'light',
       pageGroups: [
-        {
-          name: 'Basic',
-          pages: [
-            { name: 'Button', path: '/button' },
-            { name: 'Breadcrumb', path: '/breadcrumb' },
-            { name: 'Image Button', path: '/image-button' },
-            { name: 'Toggle Bar', path: '/toggle-bar' },
-            { name: 'Toolbar', path: '/toolbar' },
-          ],
-        },
+        { name: 'Basic', pages: [
+          { name: 'Button', path: '/button' },
+          { name: 'Input', path: '/input' },
+          { name: 'Image Button', path: '/image-button' },
+        ] },
+        { name: 'Container', pages: [
+          { name: 'Toolbar', path: '/toolbar' },
+          { name: 'Toggle Bar', path: '/toggle-bar' },
+        ] },
+        { name: 'Navigation', pages: [
+          { name: 'Breadcrumb', path: '/breadcrumb' },
+        ] },
       ],
     }
   },
@@ -91,37 +93,46 @@ export default {
     padding-bottom: 10px;
   }
   .section-title {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
-    padding: 10px 0 5px;
-    color: #6080b0;
+    margin: 15px 0 5px 2px;
+    color: hsl(180, 5%, 40%);
+    padding-left: 6px;
+    border-left: solid 2px hsl(180, 50%, 50%);
   }
   .page-link {
     font-size: 15px;
     line-height: 24px;
+    /* padding-left: 4px; */
     a {
       text-decoration: none;
-      color: #224466;
+      color: hsl(180, 10%, 20%);
       transition: color 0.05s;
       &:hover {
-        color: #049EF4;
+        color: hsl(180, 50%, 50%);
       }
       &.selected {
-        color: #049EF4;
+        color: hsl(180, 50%, 50%);
         text-decoration: underline;
       }
     }
   }
 }
-.jt-theme-dark .side {
-  color: white;
-  background-color: #111;
-  a {
+.jt-theme-dark {
+  .side {
+    .section-title {
+      color: hsl(180, 5%, 80%);
+    }
     color: white;
+    background-color: #111;
+    a {
+      color: white;
+    }
   }
 }
 .content {
   width: calc(100% - 200px);
   padding: 10px;
+  background-color: var(--jt-bg-body);
 }
 </style>

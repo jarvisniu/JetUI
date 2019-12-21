@@ -1,28 +1,47 @@
 :root {
-  --jt-border: #c0c0c0;
+  // theme
+  --jt-primary: hsl(180, 66%, 40%);
+  // border
+  --jt-border: #b8c0c8;
+  --jt-border-hover: #a8b0b8;
+  // text
   --jt-text: #222222;
   --jt-text-selected: white;
+  // background
+  --jt-bg-body: hsl(0, 0%, 95%);
   --jt-bg-container-dark: #e8e8e8;
   --jt-bg-container-light: #fefefe;
-  --jt-bg-button: #eeeeee;
-  --jt-bg-button-hover: white;
-  --jt-bg-button-hover-dark: #d1d1d1;
+  // button
+  --jt-bg-button: rgb(227, 227, 227);
+  --jt-bg-button-hover: rgb(247, 247, 247);
   --jt-bg-button-active: #c0c0c0;
   --jt-bg-button-selected: #888888;
   --jt-bg-button-selected-hover: var(--jt-bg-button-selected);
-  --jt-bg-button-selected-active: var(--jt-bg-button-selected); // rgb(170, 170, 170)
+  --jt-bg-button-selected-active: var(--jt-bg-button-selected);
+  // input
+  --jt-bg-input: #fcfcfc;
+  --jt-bg-input-hover: #ffffff;
 }
 .jt-theme-dark {
-  --jt-border: black;
+  // theme
+  // border
+  --jt-border: #000000;
+  --jt-border-hover: #101010;
+  // text
   --jt-text: #eeeeee;
   --jt-text-selected: #cdcdcd;
+  // background
+  --jt-bg-body: rgb(60, 63, 65);
   --jt-bg-container-dark: #444444;
   --jt-bg-container-light: #333333;
-  --jt-bg-button: #3b3f41;
-  --jt-bg-button-hover: #353739;
-  --jt-bg-button-hover-dark: #666666;
+  // button
+  --jt-bg-button: hsl(180, 5%, 33%);
+  --jt-bg-button-hover: hsl(180, 5%, 37%);
   --jt-bg-button-active: #252729;
   --jt-bg-button-selected: #2c2e2f;
   --jt-bg-button-selected-hover: var(--jt-bg-button-selected);
   --jt-bg-button-selected-active: var(--jt-bg-button-selected);
+  // input
+  --jt-bg-input: rgb(69, 73, 77);
+  --jt-bg-input-hover: rgb(79, 83, 87);
 }
