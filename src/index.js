@@ -6,6 +6,7 @@ import Button from './components/button/button.vue'
 import Breadcrumb from './components/breadcrumb/breadcrumb.vue'
 import ImageButton from './components/image-button/image-button.vue'
 import Input from './components/input/input.vue'
+import InputSearch from './components/input-search/input-search.vue'
 import PanelTitle from './components/panel-title.vue'
 import RotatedPanel from './components/rotated-panel.vue'
 import SidePanel from './components/side-panel.vue'
@@ -23,6 +24,7 @@ export default {
     Vue.component(Breadcrumb.name, Breadcrumb)
     Vue.component(ImageButton.name, ImageButton)
     Vue.component(Input.name, Input)
+    Vue.component(InputSearch.name, InputSearch)
     Vue.component(PanelTitle.name, PanelTitle)
     Vue.component(RotatedPanel.name, RotatedPanel)
     Vue.component(SidePanel.name, SidePanel)

@@ -9,7 +9,7 @@
       <jt-breadcrumb
         :labels="labels"
         v-model="selectedIndex"
-      />
+      ></jt-breadcrumb>
     </jt-border>
   </div>
 </template>

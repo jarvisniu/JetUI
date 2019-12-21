@@ -47,6 +47,7 @@ export default {
         { name: 'Basic', pages: [
           { name: 'Button', path: '/button' },
           { name: 'Input', path: '/input' },
+          { name: 'Input Search', path: '/input-search' },
           { name: 'Image Button', path: '/image-button' },
         ] },
         { name: 'Container', pages: [
@@ -63,15 +64,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+:root {
+  --jt-docs-section-title-color: hsl(180, 5%, 40%);
+  --jt-docs-side-link: hsl(180, 10%, 20%);
+}
+.jt-theme-dark {
+  --jt-docs-section-title-color: hsl(180, 5%, 80%);
+  --jt-docs-side-link: white;
+}
+
 .app {
-  background-color: #fefefe;
   height: 100vh;
   overflow: auto;
-
-  &.jt-theme-dark {
-    color: white;
-    background-color: #222;
-  }
 }
 .side,
 .content {
@@ -84,7 +88,6 @@ export default {
 .side {
   width: 200px;
   border-right: solid 1px silver;
-  background-color: #f8f8f8;
   padding: 10px;
   font-family: Inconsolata, Monaco, Consolas, STHeiti, DengXian, monospace, 'Segoe UI Emoji';
 
@@ -96,17 +99,16 @@ export default {
     font-size: 18px;
     font-weight: bold;
     margin: 15px 0 5px 2px;
-    color: hsl(180, 5%, 40%);
+    color: var(--jt-docs-section-title-color);
     padding-left: 6px;
     border-left: solid 2px hsl(180, 50%, 50%);
   }
   .page-link {
     font-size: 15px;
     line-height: 24px;
-    /* padding-left: 4px; */
     a {
       text-decoration: none;
-      color: hsl(180, 10%, 20%);
+      color: var(--jt-docs-side-link);
       transition: color 0.05s;
       &:hover {
         color: hsl(180, 50%, 50%);
@@ -115,18 +117,6 @@ export default {
         color: hsl(180, 50%, 50%);
         text-decoration: underline;
       }
-    }
-  }
-}
-.jt-theme-dark {
-  .side {
-    .section-title {
-      color: hsl(180, 5%, 80%);
-    }
-    color: white;
-    background-color: #111;
-    a {
-      color: white;
     }
   }
 }

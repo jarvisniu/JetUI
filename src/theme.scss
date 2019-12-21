@@ -1,4 +1,6 @@
 :root {
+  color: black;
+  background-color: #fefefe;
   // theme
   --jt-primary: hsl(180, 66%, 40%);
   // border
@@ -23,6 +25,8 @@
   --jt-bg-input-hover: #ffffff;
 }
 .jt-theme-dark {
+  color: white;
+  background-color: var(--jt-bg-body);
   // theme
   // border
   --jt-border: #000000;
