@@ -101,7 +101,7 @@ export default {
     margin: 15px 0 5px 2px;
     color: var(--jt-docs-section-title-color);
     padding-left: 6px;
-    border-left: solid 2px hsl(180, 50%, 50%);
+    border-left: solid 2px var(--jt-primary);
   }
   .page-link {
     font-size: 15px;
@@ -111,10 +111,10 @@ export default {
       color: var(--jt-docs-side-link);
       transition: color 0.05s;
       &:hover {
-        color: hsl(180, 50%, 50%);
+        color: var(--jt-primary);
       }
       &.selected {
-        color: hsl(180, 50%, 50%);
+        color: var(--jt-primary);
         text-decoration: underline;
       }
     }

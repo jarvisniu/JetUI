@@ -4,16 +4,20 @@
     @mouseenter="hovered = true"
     @mouseleave="hovered = false"
   >
-    <div class="search-box">
+    <div
+      class="search-box"
+      :class="{ 'not-empty': text !== '' }"
+    >
       <div class="icon search"></div>
       <div
-        :class="{ hide: text === '' || (!hovered && !focused) }"
+        :class="{
+          hide: text === '' || (!hovered && !focused),
+        }"
         class="icon clear"
         @click="text = ''"
       ></div>
       <input
         v-model="text"
-        :class="{'not-empty': text !== ''}"
         type="text"
         @focus="focused = true"
         @blur="focused = false"
@@ -56,13 +60,27 @@ export default {
   box-sizing: border-box;
   display: inline-block;
   position: relative;
-  border: solid 1px gray;
+  border: solid 1px;
   border-radius: 100px;
   width: 100%;
   height: 22px;
-  transition: border-color 0.2s;
+
+  transition: color 0.2s, border-color 0.2s, background-color 0.2s;
+  background-color: var(--jt-bg-input);
+  border-color: var(--jt-bg-input-border);
+  &.not-empty {
+    background-color: var(--jt-bg-input-warning);
+  }
+  /* &:hover {
+    background-color: var(--jt-bg-input-hover);
+    border-color: var(--jt-bg-input-border-hover);
+  } */
+  &:focus {
+    transition: background-color 0.1s;
+    background-color: hsl(0, 0%, 100%);
+  }
   &:focus-within {
-    border-color: hsl(200, 50%, 50%);
+    border-color: var(--jt-primary);
   }
 
   input[type="text"] {
@@ -76,16 +94,8 @@ export default {
     outline: none;
     border-radius: 10px;
     font-size: 14px;
-
-    transition: background-color 0.15s;
-    background-color: hsl(0, 0%, 94%);
-    &.not-empty {
-      background-color: hsl(60, 75%, 94%);
-    }
-    &:focus {
-      transition: background-color 0.1s;
-      background-color: hsl(0, 0%, 100%);
-    }
+    color: inherit;
+    background-color: transparent;
   }
 }
 

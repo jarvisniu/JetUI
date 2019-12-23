@@ -6,16 +6,10 @@
     <jt-button>确定</jt-button>
     <jt-button>Confirm</jt-button>
 
-    <h4>Dark Theme</h4>
-    <div class="jt-theme-dark" style="padding: 10px;">
-      <jt-button>确定</jt-button>
-      <jt-button>Confirm</jt-button>
-    </div>
-
     <h4>Primary</h4>
-    <div>TODO</div>
+    <jt-button type="primary">Search</jt-button>
 
     <h4>Disabled</h4>
-    <div>TODO</div>
+    <jt-button disabled>Search</jt-button>
   </div>
 </template>

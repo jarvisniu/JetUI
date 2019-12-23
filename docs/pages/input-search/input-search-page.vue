@@ -2,13 +2,13 @@
   <div>
     <h2>Input Search</h2>
 
-    <h4>Basic</h4>
-    <jt-border inline all style="background-color: hsl(0, 0%, 85%);">
+    <h4>Basic <span v-if="keyword">: {{ keyword }}</span></h4>
+    <jt-border inline all style="background-color: var(--jt-bg-container-dark);">
       <jt-input-search v-model="keyword"></jt-input-search>
     </jt-border>
 
     <h4>Dark Theme</h4>
-    <div>TODO</div>
+    <div>TODO Icon Color</div>
 
   </div>
 </template>

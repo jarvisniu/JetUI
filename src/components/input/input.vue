@@ -31,10 +31,10 @@ export default {
   transition: color 0.2s, background-color 0.2s, border-color 0.2s;
   color: var(--jt-text);
   background-color: var(--jt-bg-input);
-  border-color: #b8c0c8;
+  border-color: var(--jt-bg-input-border);
   &:hover {
     background-color: var(--jt-bg-input-hover);
-    border-color: #a8b0b8;
+    border-color: var(--jt-bg-input-border-hover);
   }
   &:focus-within {
     background-color: var(--jt-bg-input-hover);
