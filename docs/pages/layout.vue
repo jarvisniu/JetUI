@@ -44,8 +44,11 @@ export default {
     return {
       theme: 'light',
       pageGroups: [
+        { name: 'Intro', pages: [
+          { name: 'Gallery', path: '/gallery' },
+          { name: 'Design', path: '/design' },
+        ] },
         { name: 'Basic', pages: [
-          { name: 'Home', path: '/' },
           { name: 'Button', path: '/button' },
           { name: 'Input', path: '/input' },
           { name: 'Input Search', path: '/input-search' },

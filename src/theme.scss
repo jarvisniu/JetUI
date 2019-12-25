@@ -1,6 +1,6 @@
 :root {
   color: black;
-  background-color: #fefefe;
+  background-color: var(--jt-bg-container-light);
   // global
   --jt-font-size: 14px;
   // theme colors
@@ -34,7 +34,7 @@
 }
 .jt-theme-dark {
   color: white;
-  background-color: var(--jt-bg-body);
+  background-color: var(--jt-bg-container-light);
   // theme
   // border
   --jt-border: #000000;

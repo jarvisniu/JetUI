@@ -30,7 +30,7 @@
 export default {
   name: 'JtInputSearch',
   props: {
-    value: { type: String, required: true },
+    value: { type: String, default: '' },
   },
   data () {
     return {
