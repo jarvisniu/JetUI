@@ -1,22 +1,16 @@
 import './main.styl'
 import './theme.scss'
 
-import Border from './components/border/border.vue'
-import Button from './components/button/button.vue'
-import Breadcrumb from './components/breadcrumb/breadcrumb.vue'
-import Input from './components/input/input.vue'
-import InputSearch from './components/input-search/input-search.vue'
-import PanelTitle from './components/panel-title.vue'
-import RotatedPanel from './components/rotated-panel.vue'
-import SidePanel from './components/side-panel.vue'
-import Splitter from './components/splitter.vue'
-import TabBar from './components/tab-bar.vue'
-import TabButton from './components/tab-button.vue'
-import Toolbar from './components/toolbar/toolbar.vue'
-import ToolbarButton from './components/toolbar/toolbar-button.vue'
-import ToolbarDivider from './components/toolbar/toolbar-divider.vue'
-import ToggleBar from './components/toggle-bar/toggle-bar.vue'
-import ToggleBarButton from './components/toggle-bar/toggle-bar-button.vue'
+import Border from './components/border/jt-border.vue'
+import Button from './components/button/jt-button.vue'
+import Breadcrumb from './components/breadcrumb/jt-breadcrumb.vue'
+import Input from './components/input/jt-input.vue'
+import InputSearch from './components/input-search/jt-input-search.vue'
+import Toolbar from './components/toolbar/jt-toolbar.vue'
+import ToolbarButton from './components/toolbar/jt-toolbar-button.vue'
+import ToolbarDivider from './components/toolbar/jt-toolbar-divider.vue'
+import ToggleBar from './components/toggle-bar/jt-toggle-bar.vue'
+import ToggleBarButton from './components/toggle-bar/jt-toggle-bar-button.vue'
 
 export default {
   install(Vue) {
@@ -25,12 +19,6 @@ export default {
     Vue.component(Breadcrumb.name, Breadcrumb)
     Vue.component(Input.name, Input)
     Vue.component(InputSearch.name, InputSearch)
-    Vue.component(PanelTitle.name, PanelTitle)
-    Vue.component(RotatedPanel.name, RotatedPanel)
-    Vue.component(SidePanel.name, SidePanel)
-    Vue.component(Splitter.name, Splitter)
-    Vue.component(TabBar.name, TabBar)
-    Vue.component(TabButton.name, TabButton)
     Vue.component(ToggleBar.name, ToggleBar)
     Vue.component(ToggleBarButton.name, ToggleBarButton)
     Vue.component(Toolbar.name, Toolbar)

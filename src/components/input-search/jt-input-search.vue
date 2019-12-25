@@ -1,6 +1,6 @@
 <template>
   <div
-    class="input-search"
+    class="jt-input-search"
     @mouseenter="hovered = true"
     @mouseleave="hovered = false"
   >
@@ -51,7 +51,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.input-search {
+.jt-input-search {
   box-sizing: border-box;
   margin: 4px;
   min-width: 100px;

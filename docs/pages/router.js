@@ -2,13 +2,13 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 import Design from './design.vue'
-import Gallery from './_gallery/gallery-page.vue'
-import Button from './button/button-page.vue'
-import Breadcrumb from './breadcrumb/breadcrumb-page.vue'
-import Input from './input/input-page.vue'
-import InputSearch from './input-search/input-search-page.vue'
-import ToggleBar from './toggle-bar/toggle-bar-page.vue'
-import Toolbar from './toolbar/toolbar-page.vue'
+import Gallery from './_gallery/gallery.vue'
+import Button from './button/button.vue'
+import Breadcrumb from './breadcrumb/breadcrumb.vue'
+import Input from './input/input.vue'
+import InputSearch from './input-search/input-search.vue'
+import ToggleBar from './toggle-bar/toggle-bar.vue'
+import Toolbar from './toolbar/toolbar.vue'
 
 Vue.use(VueRouter)
 

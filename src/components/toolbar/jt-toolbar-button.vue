@@ -4,7 +4,7 @@ Toolbar Button
 
 <template>
   <div
-    class="toolbar-button"
+    class="jt-toolbar-button"
     :class="{selected: selected}"
     :title="tip"
     @click="onClick"
@@ -30,7 +30,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.toolbar-button {
+.jt-toolbar-button {
   box-sizing: border-box;
   user-select: none;
   display: flex;

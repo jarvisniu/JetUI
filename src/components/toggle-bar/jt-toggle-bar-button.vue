@@ -4,8 +4,8 @@ Toggle Bar Button
 
 <template>
   <div
-    class="toggle-bar-button"
-    :class="{selected: selected}"
+    class="jt-toggle-bar-button"
+    :class="{ selected: selected }"
     :style="{
       paddingLeft: icon ? '4px' : '8px',
     }"
@@ -36,7 +36,7 @@ Toggle Bar Button
 </script>
 
 <style lang="scss" scoped>
-.toggle-bar-button {
+.jt-toggle-bar-button {
   box-sizing: border-box;
   display: inline-flex;
   justify-content: center;
@@ -44,6 +44,16 @@ Toggle Bar Button
   padding: 0 8px 0 4px;
   cursor: default;
   user-select: none;
+
+  .icon {
+    padding: 4px;
+    width: 16px;
+    height: 16px;
+    -webkit-user-drag: none;
+  }
+  .label {
+    line-height: 24px;
+  }
 
   transition: color 0.2s, background-color 0.2s;
   color: var(--jt-text);
@@ -64,14 +74,5 @@ Toggle Bar Button
       background-color: var(--jt-bg-button-selected-active);
     }
   }
-}
-.icon {
-  padding: 4px;
-  width: 16px;
-  height: 16px;
-  -webkit-user-drag: none;
-}
-.label {
-  line-height: 24px;
 }
 </style>

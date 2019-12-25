@@ -3,7 +3,7 @@ Toggle Bar
 </docs>
 
 <template>
-  <div class="toggle-bar">
+  <div class="jt-toggle-bar">
     <slot></slot>
   </div>
 </template>
@@ -15,7 +15,7 @@ Toggle Bar
 </script>
 
 <style lang="scss" scoped>
-.toggle-bar {
+.jt-toggle-bar {
   box-sizing: border-box;
   display: inline-flex;
   height: 24px;

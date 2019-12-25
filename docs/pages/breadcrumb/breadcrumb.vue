@@ -24,7 +24,7 @@ export default {
         '3. Review',
         '4. Score',
       ],
-      selectedIndex: 1,
+      selectedIndex: 3,
     }
   },
 }
