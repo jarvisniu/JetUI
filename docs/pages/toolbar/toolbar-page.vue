@@ -5,18 +5,24 @@
     <h4>Basic (Horizontal)</h4>
     <jt-border inline all>
       <jt-toolbar>
-        <jt-image-button :icon="iconDatabase"></jt-image-button>
-        <jt-image-button :icon="iconTable"></jt-image-button>
+        <jt-toolbar-button :icon="iconDatabase"></jt-toolbar-button>
+        <jt-toolbar-button :icon="iconTable"></jt-toolbar-button>
+        <jt-toolbar-divider></jt-toolbar-divider>
+        <jt-toolbar-button :icon="iconDatabase"></jt-toolbar-button>
+        <jt-toolbar-button :icon="iconTable"></jt-toolbar-button>
       </jt-toolbar>
     </jt-border>
 
     <h4>Vertical</h4>
     <jt-border inline all>
       <jt-toolbar vertical>
-        <jt-image-button :icon="iconDatabase"></jt-image-button>
-        <jt-image-button :icon="iconTable"></jt-image-button>
+        <jt-toolbar-button :icon="iconDatabase"></jt-toolbar-button>
+        <jt-toolbar-divider></jt-toolbar-divider>
+        <jt-toolbar-button :icon="iconDatabase"></jt-toolbar-button>
+        <jt-toolbar-button :icon="iconTable"></jt-toolbar-button>
       </jt-toolbar>
     </jt-border>
+
   </div>
 </template>
 

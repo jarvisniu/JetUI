@@ -45,10 +45,10 @@ export default {
       theme: 'light',
       pageGroups: [
         { name: 'Basic', pages: [
+          { name: 'Home', path: '/' },
           { name: 'Button', path: '/button' },
           { name: 'Input', path: '/input' },
           { name: 'Input Search', path: '/input-search' },
-          { name: 'Image Button', path: '/image-button' },
         ] },
         { name: 'Container', pages: [
           { name: 'Toolbar', path: '/toolbar' },

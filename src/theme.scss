@@ -1,7 +1,9 @@
 :root {
   color: black;
   background-color: #fefefe;
-  // theme
+  // global
+  --jt-font-size: 14px;
+  // theme colors
   --jt-primary: hsl(180, 66%, 40%);
   --jt-primary-hover: hsl(180, 66%, 46%);
   --jt-primary-active: hsl(180, 66%, 34%);

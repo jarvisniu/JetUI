@@ -1,10 +1,10 @@
 <docs>
-ImageButton
+Toolbar Button
 </docs>
 
 <template>
   <div
-    class="image-button"
+    class="toolbar-button"
     :class="{selected: selected}"
     :title="tip"
     @click="onClick"
@@ -15,7 +15,7 @@ ImageButton
 
 <script>
 export default {
-  name: 'JtImageButton',
+  name: 'JtToolbarButton',
   props: {
     selected: Boolean,
     tip: String,
@@ -30,7 +30,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.image-button {
+.toolbar-button {
   box-sizing: border-box;
   user-select: none;
   display: flex;
@@ -38,7 +38,7 @@ export default {
   border-radius: 2px;
   width: 26px;
   height: 26px;
-  margin: 2px;
+  margin: 1px;
 
   img {
     margin: 2px;

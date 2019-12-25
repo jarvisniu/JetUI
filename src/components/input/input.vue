@@ -1,12 +1,28 @@
 <template>
   <div class="jt-input">
-    <input type="text">
+    <input
+      type="text"
+      v-model="text"
+    >
   </div>
 </template>
 
 <script>
 export default {
   name: 'JtInput',
+  data() {
+    return {
+      text: this.value,
+    }
+  },
+  watch: {
+    text(val) {
+      this.$emit('input', val)
+    },
+  },
+  props: {
+    value: { type: String, default: '' },
+  },
 }
 </script>
 
@@ -21,7 +37,7 @@ export default {
     display: block;
     line-height: 22px;
     padding: 0 5px;
-    font-size: 12px;
+    font-size: var(--jt-font-size);
     border: none;
     outline: none;
     color: inherit;

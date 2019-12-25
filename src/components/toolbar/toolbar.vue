@@ -3,7 +3,7 @@
 </docs>
 
 <template>
-  <div class="toolbar" :class="direction">
+  <div class="jt-toolbar" :class="direction">
     <slot></slot>
   </div>
 </template>
@@ -28,7 +28,7 @@
 </script>
 
 <style lang="scss" scoped>
-.toolbar {
+.jt-toolbar {
   padding: 1px;
   box-sizing: border-box;
   transition: background-color 0.3s;
@@ -38,12 +38,9 @@
     height: 30px;
   }
   &.vertical {
-    width: 30px
+    width: 30px;
   }
   // theme
   background-color: var(--jt-bg-button);
-}
-.image-button {
-  margin: 1px;
 }
 </style>
