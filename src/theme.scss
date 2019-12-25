@@ -31,6 +31,10 @@
   --jt-bg-input-border: #b8c0c8;
   --jt-bg-input-border-hover: #a8b0b8;
   --jt-bg-input-warning: hsl(60, 74%, 94%);
+  // panel
+  --jt-bg-panel-title: linear-gradient(0deg, hsl(0, 0%, 85%), hsl(0, 0%, 90%));
+  --jt-bg-panel-button-hover: hsla(0, 0%, 100%, .5);
+  --jt-bg-panel-button-active: hsla(0, 0%, 60%, .5);
 }
 .jt-theme-dark {
   color: white;
@@ -60,4 +64,8 @@
   --jt-bg-input-border: hsl(180, 5%, 66%);
   --jt-bg-input-border-hover: hsl(180, 5%, 75%);
   --jt-bg-input-warning: hsl(60, 25%, 25%);
+  // panel
+  --jt-bg-panel-title: linear-gradient(0deg, hsl(0, 0%, 22%), hsl(0, 0%, 25%));
+  --jt-bg-panel-button-hover: hsla(0, 0%, 40%, .5);
+  --jt-bg-panel-button-active: hsla(0, 0%, 20%, .5);
 }

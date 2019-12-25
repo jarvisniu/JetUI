@@ -56,6 +56,7 @@ export default {
         { name: 'Container', pages: [
           { name: 'Toolbar', path: '/toolbar' },
           { name: 'Toggle Bar', path: '/toggle-bar' },
+          { name: 'Panel', path: '/panel' },
         ] },
         { name: 'Navigation', pages: [
           { name: 'Breadcrumb', path: '/breadcrumb' },

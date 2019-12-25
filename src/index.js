@@ -6,6 +6,8 @@ import Button from './components/button/jt-button.vue'
 import Breadcrumb from './components/breadcrumb/jt-breadcrumb.vue'
 import Input from './components/input/jt-input.vue'
 import InputSearch from './components/input-search/jt-input-search.vue'
+import Panel from './components/panel/jt-panel.vue'
+import PanelButton from './components/panel/jt-panel-button.vue'
 import Toolbar from './components/toolbar/jt-toolbar.vue'
 import ToolbarButton from './components/toolbar/jt-toolbar-button.vue'
 import ToolbarDivider from './components/toolbar/jt-toolbar-divider.vue'
@@ -19,6 +21,8 @@ export default {
     Vue.component(Breadcrumb.name, Breadcrumb)
     Vue.component(Input.name, Input)
     Vue.component(InputSearch.name, InputSearch)
+    Vue.component(Panel.name, Panel)
+    Vue.component(PanelButton.name, PanelButton)
     Vue.component(ToggleBar.name, ToggleBar)
     Vue.component(ToggleBarButton.name, ToggleBarButton)
     Vue.component(Toolbar.name, Toolbar)

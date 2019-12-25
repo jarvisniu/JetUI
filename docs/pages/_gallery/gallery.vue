@@ -38,6 +38,15 @@
       </jt-toggle-bar>
     </jt-border>
 
+    <h4>Panel</h4>
+    <jt-border inline all>
+      <jt-panel title="Message" style="width: 250px;">
+        <div style="padding: 10px;">
+          Hello World!
+        </div>
+      </jt-panel>
+    </jt-border>
+
   </div>
 </template>
 
