@@ -3,7 +3,7 @@ Panel
 </docs>
 
 <template>
-  <div class="jt-panel">
+  <div class="jt-panel" tabindex="0">
     <div class="jt-panel-title">
       <div class="jt-panel-slot-title">
         <slot name="title">
@@ -36,6 +36,7 @@ export default {
   height: 100%;
   min-width: 10px;
   min-height: 1px;
+  outline: none;
 }
 .jt-panel-title {
   box-sizing: border-box;
@@ -48,6 +49,9 @@ export default {
   transition: color 0.2s, background-color 0.2s, border-color 0.2s;
   background: var(--jt-bg-panel-title);
 
+  .jt-panel:focus-within & {
+    filter: sepia(25%) hue-rotate(100deg);
+  }
   .default-title-label {
     padding: 0 6px;
     font-size: var(--jt-font-size);

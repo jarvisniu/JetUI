@@ -3,6 +3,11 @@
 
     <h2>Panel</h2>
 
+    <h4>Features</h4>
+    <ul>
+      <li>Highlight title when focused.</li>
+    </ul>
+
     <h4>Basic</h4>
     <jt-border inline all>
       <jt-panel title="Message" style="width: 400px;">
@@ -27,9 +32,6 @@
         </div>
       </jt-panel>
     </jt-border>
-
-    <h4>Focused Title Color</h4>
-    <div>TODO</div>
 
   </div>
 </template>
