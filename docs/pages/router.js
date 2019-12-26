@@ -11,6 +11,7 @@ import InputSearch from './input-search/input-search.vue'
 import ToggleBar from './toggle-bar/toggle-bar.vue'
 import Toolbar from './toolbar/toolbar.vue'
 import Panel from './panel/panel.vue'
+import RotatedView from './rotated-view/rotated-view.vue'
 
 import Breadcrumb from './breadcrumb/breadcrumb.vue'
 
@@ -28,6 +29,7 @@ const routes = [
   { path: '/toggle-bar', component: ToggleBar },
   { path: '/toolbar', component: Toolbar },
   { path: '/panel', component: Panel },
+  { path: '/rotated-view', component: RotatedView },
   // Navigation
   { path: '/breadcrumb', component: Breadcrumb },
   // Other

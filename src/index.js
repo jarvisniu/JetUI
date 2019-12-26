@@ -8,6 +8,7 @@ import Input from './components/input/jt-input.vue'
 import InputSearch from './components/input-search/jt-input-search.vue'
 import Panel from './components/panel/jt-panel.vue'
 import PanelButton from './components/panel/jt-panel-button.vue'
+import RotatedView from './components/rotated-view/jt-rotated-view.vue'
 import Toolbar from './components/toolbar/jt-toolbar.vue'
 import ToolbarButton from './components/toolbar/jt-toolbar-button.vue'
 import ToolbarDivider from './components/toolbar/jt-toolbar-divider.vue'
@@ -23,6 +24,7 @@ export default {
     Vue.component(InputSearch.name, InputSearch)
     Vue.component(Panel.name, Panel)
     Vue.component(PanelButton.name, PanelButton)
+    Vue.component(RotatedView.name, RotatedView)
     Vue.component(ToggleBar.name, ToggleBar)
     Vue.component(ToggleBarButton.name, ToggleBarButton)
     Vue.component(Toolbar.name, Toolbar)

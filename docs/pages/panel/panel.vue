@@ -21,17 +21,31 @@
     <jt-border inline all>
       <jt-panel title="Message" style="width: 400px;">
         <div slot="title">
-          <jt-panel-button>HTML</jt-panel-button>
+          <jt-panel-button
+            style="min-width: 60px;"
+            @click="isHTML = !isHTML"
+          >{{ isHTML ? 'HTML' : 'Pug' }}</jt-panel-button>
         </div>
         <div slot="control">
-          <jt-panel-button>+</jt-panel-button>
-          <jt-panel-button>-</jt-panel-button>
+          <jt-panel-button @click="count++">+</jt-panel-button>
+          <jt-panel-button @click="count--">-</jt-panel-button>
         </div>
         <div style="padding: 10px;">
-          &lt;body&gt;Content&lt;/body&gt;
+          &lt;body&gt;Content {{ count }}&lt;/body&gt;
         </div>
       </jt-panel>
     </jt-border>
 
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      isHTML: true,
+      count: 1,
+    }
+  },
+}
+</script>

@@ -47,6 +47,19 @@
       </jt-panel>
     </jt-border>
 
+    <h4>Rotated View</h4>
+    <jt-border inline all>
+      <jt-rotated-view style="height: 200px; width: 24px; vertical-align: top;">
+        <jt-toggle-bar style="float: right;">
+          <jt-toggle-bar-button>Project</jt-toggle-bar-button>
+        </jt-toggle-bar>
+        <jt-toggle-bar style="float: left;">
+          <jt-toggle-bar-button>Structure</jt-toggle-bar-button>
+          <jt-toggle-bar-button>Git</jt-toggle-bar-button>
+        </jt-toggle-bar>
+      </jt-rotated-view>
+    </jt-border>
+
   </div>
 </template>
 

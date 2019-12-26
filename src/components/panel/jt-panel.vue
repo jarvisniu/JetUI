@@ -50,7 +50,7 @@ export default {
   background: var(--jt-bg-panel-title);
 
   .jt-panel:focus-within & {
-    filter: sepia(25%) hue-rotate(100deg);
+    filter: sepia(25%) hue-rotate(10deg);
   }
   .default-title-label {
     padding: 0 6px;

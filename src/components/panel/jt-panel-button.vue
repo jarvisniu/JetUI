@@ -1,5 +1,8 @@
 <template>
-  <div class="jt-panel-button">
+  <div
+    class="jt-panel-button"
+    @click="$emit('click')"
+  >
     <slot></slot>
   </div>
 </template>

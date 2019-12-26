@@ -57,6 +57,7 @@ export default {
           { name: 'Toolbar', path: '/toolbar' },
           { name: 'Toggle Bar', path: '/toggle-bar' },
           { name: 'Panel', path: '/panel' },
+          { name: 'Rotated View', path: '/rotated-view' },
         ] },
         { name: 'Navigation', pages: [
           { name: 'Breadcrumb', path: '/breadcrumb' },

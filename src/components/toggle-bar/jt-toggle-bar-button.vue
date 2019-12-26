@@ -55,6 +55,7 @@ Toggle Bar Button
     line-height: 24px;
   }
 
+  font-size: var(--jt-font-size);
   transition: color 0.2s, background-color 0.2s;
   color: var(--jt-text);
   background-color: var(--jt-bg-container-dark);
