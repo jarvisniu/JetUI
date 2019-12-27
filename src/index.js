@@ -5,6 +5,7 @@ import Border from './components/border/jt-border.vue'
 import Button from './components/button/jt-button.vue'
 import Breadcrumb from './components/breadcrumb/jt-breadcrumb.vue'
 import Input from './components/input/jt-input.vue'
+import InputNumber from './components/input-number/jt-input-number.vue'
 import InputSearch from './components/input-search/jt-input-search.vue'
 import Panel from './components/panel/jt-panel.vue'
 import PanelButton from './components/panel/jt-panel-button.vue'
@@ -21,6 +22,7 @@ export default {
     Vue.component(Button.name, Button)
     Vue.component(Breadcrumb.name, Breadcrumb)
     Vue.component(Input.name, Input)
+    Vue.component(InputNumber.name, InputNumber)
     Vue.component(InputSearch.name, InputSearch)
     Vue.component(Panel.name, Panel)
     Vue.component(PanelButton.name, PanelButton)

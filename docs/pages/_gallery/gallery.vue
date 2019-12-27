@@ -2,17 +2,6 @@
   <div>
     <h2>Gallery</h2>
 
-    <h4>Button</h4>
-    <jt-button>OK</jt-button>
-
-    <h4>Input</h4>
-    <jt-input></jt-input>
-
-    <h4>Input Search</h4>
-    <jt-border inline all style="background-color: var(--jt-bg-container-dark);">
-      <jt-input-search></jt-input-search>
-    </jt-border>
-
     <h4>Toolbar</h4>
     <jt-border inline all>
       <jt-toolbar>
@@ -40,7 +29,16 @@
 
     <h4>Panel</h4>
     <jt-border inline all>
-      <jt-panel title="Message" style="width: 250px;">
+      <jt-panel title="Message" style="width: 500px;">
+        <jt-border bottom style="
+          background-color: var(--jt-bg-container-dark);
+          padding: 2px; font-size: 0;
+        ">
+          <jt-input-search style="margin: 3px; width: 150px;"></jt-input-search>
+          <jt-input style="margin: 2px; width: 80px;"></jt-input>
+          <jt-button style="margin: 2px;">OK</jt-button>
+        </jt-border>
+
         <div style="padding: 10px;">
           Hello World!
         </div>

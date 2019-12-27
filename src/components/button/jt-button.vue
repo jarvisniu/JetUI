@@ -32,6 +32,7 @@ export default {
   background-color: var(--jt-bg-button);
   height: 24px;
   line-height: 22px;
+  vertical-align: top;
   /* min-width: 40px;
   text-align: center; */
   font-size: 14px;

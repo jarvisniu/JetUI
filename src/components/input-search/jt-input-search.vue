@@ -53,8 +53,10 @@ export default {
 <style lang="scss" scoped>
 .jt-input-search {
   box-sizing: border-box;
+  display: inline-block;
   margin: 4px;
   min-width: 100px;
+  vertical-align: top;
 }
 .search-box {
   box-sizing: border-box;

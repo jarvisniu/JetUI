@@ -10,18 +10,21 @@
 <script>
 export default {
   name: 'JtInput',
+  props: {
+    value: { type: String, default: '' },
+  },
   data() {
     return {
       text: this.value,
     }
   },
   watch: {
+    value(val) {
+      this.num = val
+    },
     text(val) {
       this.$emit('input', val)
     },
-  },
-  props: {
-    value: { type: String, default: '' },
   },
 }
 </script>
@@ -31,10 +34,12 @@ export default {
   box-sizing: border-box;
   display: inline-block;
   border: solid 1px;
+  vertical-align: top;
 
   input[type="text"] {
     box-sizing: border-box;
     display: block;
+    width: 100%;
     line-height: 22px;
     padding: 0 5px;
     font-size: var(--jt-font-size);

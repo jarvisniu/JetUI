@@ -51,6 +51,7 @@ export default {
         { name: 'Basic', pages: [
           { name: 'Button', path: '/button' },
           { name: 'Input', path: '/input' },
+          { name: 'Input Number', path: '/input-number' },
           { name: 'Input Search', path: '/input-search' },
         ] },
         { name: 'Container', pages: [
