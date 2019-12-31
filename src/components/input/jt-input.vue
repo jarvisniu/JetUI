@@ -1,5 +1,11 @@
 <template>
-  <div class="jt-input">
+  <div
+    class="jt-input"
+    :style="{
+      margin: convertSizeToCSS(margin),
+      width: convertSizeToCSS(width),
+    }"
+  >
     <input
       type="text"
       v-model="text"
@@ -8,10 +14,14 @@
 </template>
 
 <script>
+import { convertSizeToCSS } from '../utils'
+
 export default {
   name: 'JtInput',
   props: {
     value: { type: String, default: '' },
+    margin: { type: [Number, String], default: '' },
+    width: { type: [Number, String], default: '' },
   },
   data() {
     return {
@@ -25,6 +35,9 @@ export default {
     text(val) {
       this.$emit('input', val)
     },
+  },
+  methods: {
+    convertSizeToCSS,
   },
 }
 </script>

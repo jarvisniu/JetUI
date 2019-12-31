@@ -1,6 +1,10 @@
 <template>
   <div
     class="jt-input-search"
+    :style="{
+      margin: convertSizeToCSS(margin),
+      width: convertSizeToCSS(width),
+    }"
     @mouseenter="hovered = true"
     @mouseleave="hovered = false"
   >
@@ -27,10 +31,14 @@
 </template>
 
 <script>
+import { convertSizeToCSS } from '../utils'
+
 export default {
   name: 'JtInputSearch',
   props: {
     value: { type: String, default: '' },
+    margin: { type: [Number, String], default: '' },
+    width: { type: [Number, String], default: '' },
   },
   data () {
     return {
@@ -46,6 +54,9 @@ export default {
     text (val) {
       this.$emit('input', val)
     },
+  },
+  methods: {
+    convertSizeToCSS,
   },
 }
 </script>
@@ -65,7 +76,7 @@ export default {
   border: solid 1px;
   border-radius: 100px;
   width: 100%;
-  height: 22px;
+  height: 24px;
 
   transition: color 0.2s, border-color 0.2s, background-color 0.2s;
   background-color: var(--jt-bg-input);
@@ -90,7 +101,8 @@ export default {
     vertical-align: top;
     border: none;
     width: 100%;
-    height: 100%;
+    height: 22px;
+    line-height: 22px;
     padding-left: 20px;
     padding-right: 20px;
     outline: none;
@@ -104,13 +116,13 @@ export default {
 .icon {
   box-sizing: border-box;
   position: absolute;
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   background-size: 12px 12px;
-  background-position: 2px 2px;
+  background-position: 3px 3px;
   background-repeat: no-repeat;
   margin: 2px;
-  border-radius: 50%;
+  border-radius: 9999px;
   line-height: 14px;
   text-align: center;
 

@@ -1,11 +1,17 @@
 <template>
-  <div class="jt-input-number">
+  <div
+    class="jt-input-number"
+    :style="{
+      margin: convertSizeToCSS(margin),
+      width: convertSizeToCSS(width),
+    }"
+  >
     <input
       type="text"
       v-model.number="num"
     ><div class="stepper">
-      <div class="button" @click="num += step">
-        <svg version="1.1" viewBox="0 0 18 09"><path d="M6,5 L9,2 L12,5 Z"></path></svg>
+      <div class="button" style="padding-top: 1px;" @click="num += step">
+        <svg version="1.1" viewBox="0 0 18 10"><path d="M6,6 L9,3 L12,6 Z"></path></svg>
       </div>
       <div class="button" @click="num -= step">
         <svg version="1.1" viewBox="0 0 18 10"><path d="M6,3 L9,6 L12,3 Z"></path></svg>
@@ -15,11 +21,15 @@
 </template>
 
 <script>
+import { convertSizeToCSS } from '../utils'
+
 export default {
   name: 'JtInputNumber',
   props: {
     value: { type: Number, default: '' },
     step: { type: Number, default: 1 },
+    margin: { type: [Number, String], default: '' },
+    width: { type: [Number, String], default: '' },
   },
   data() {
     return {
@@ -33,6 +43,9 @@ export default {
     num(val) {
       this.$emit('input', val)
     },
+  },
+  methods: {
+    convertSizeToCSS,
   },
 }
 </script>
@@ -90,7 +103,12 @@ export default {
       border-top: solid 1px var(--jt-bg-input-border);
     }
 
+    svg {
+      vertical-align: top;
+    }
+
     transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+    background-color: var(--jt-bg-button);
     &:hover {
       @media (hover: hover) {
         background-color: var(--jt-bg-button-hover);

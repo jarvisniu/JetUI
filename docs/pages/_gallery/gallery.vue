@@ -34,9 +34,10 @@
           background-color: var(--jt-bg-container-dark);
           padding: 2px; font-size: 0;
         ">
-          <jt-input-search style="margin: 3px; width: 150px;"></jt-input-search>
-          <jt-input style="margin: 2px; width: 80px;"></jt-input>
-          <jt-button style="margin: 2px;">OK</jt-button>
+          <jt-input-search margin="2" width="150"></jt-input-search>
+          <jt-input margin="2" width="80"></jt-input>
+          <jt-input-number margin="2" width="80" v-model="num1"></jt-input-number>
+          <jt-button margin="2">OK</jt-button>
         </jt-border>
 
         <div style="padding: 10px;">
@@ -75,6 +76,7 @@ export default {
         { icon: iconTable, value: 'table', label: 'List', tip: 'Manage List' },
       ],
       toggleBarValue: 'database',
+      num1: 1,
     }
   },
 }

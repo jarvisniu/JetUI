@@ -5,7 +5,7 @@
     <h4>Basic</h4>
     <jt-input-number v-model="count"></jt-input-number>
 
-    <h4>Step</h4>
+    <h4>Step (=5)</h4>
     <jt-input-number v-model="count" :step="5"></jt-input-number>
 
   </div>

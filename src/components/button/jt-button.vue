@@ -8,6 +8,10 @@ Button
     :class="[type, {
       disabled: disabled,
     }]"
+    :style="{
+      margin: convertSizeToCSS(margin),
+      width: convertSizeToCSS(width),
+    }"
     @click="$emit('click')"
   >
     <slot></slot>
@@ -15,11 +19,18 @@ Button
 </template>
 
 <script>
+import { convertSizeToCSS } from '../utils'
+
 export default {
   name: 'JtButton',
   props: {
     type: { type: String, default: '' },
     disabled: { type: Boolean, default: false },
+    margin: { type: [Number, String], default: '' },
+    width: { type: [Number, String], default: '' },
+  },
+  methods: {
+    convertSizeToCSS,
   },
 }
 </script>
@@ -33,8 +44,7 @@ export default {
   height: 24px;
   line-height: 22px;
   vertical-align: top;
-  /* min-width: 40px;
-  text-align: center; */
+  text-align: center;
   font-size: 14px;
   padding: 0 8px;
   border-radius: 3px;
