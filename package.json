@@ -2,6 +2,8 @@
   "name": "jet-ui",
   "version": "0.1.0",
   "description": "JetBrain-style Vue UI components",
+  "main": "dist/jet-ui.min.js",
+  "module": "dist/jet-ui.esm.js",
   "scripts": {
     "dev": "parcel docs/index.html --port 7789 --out-dir docs/dist",
     "build": "rm -rf dist && rollup -c"
