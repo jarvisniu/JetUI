@@ -35,13 +35,17 @@
           padding: 2px; font-size: 0;
         ">
           <jt-input-search margin="2" width="150"></jt-input-search>
+          <jt-label margin="2">Name:</jt-label>
           <jt-input margin="2" width="80"></jt-input>
+          <jt-label margin="2">Age:</jt-label>
           <jt-input-number margin="2" width="80" v-model="num1"></jt-input-number>
           <jt-button margin="2">OK</jt-button>
         </jt-border>
 
         <div style="padding: 10px;">
-          Hello World!
+          <jt-border inline all>
+            <jt-list style="width: 100px;" :data="list" v-model="selListIndex"></jt-list>
+          </jt-border>
         </div>
       </jt-panel>
     </jt-border>
@@ -77,6 +81,8 @@ export default {
       ],
       toggleBarValue: 'database',
       num1: 1,
+      list: ['Bill', 'Jack', 'Tom'],
+      selListIndex: 0,
     }
   },
 }

@@ -7,6 +7,8 @@ import Breadcrumb from './components/breadcrumb/jt-breadcrumb.vue'
 import Input from './components/input/jt-input.vue'
 import InputNumber from './components/input-number/jt-input-number.vue'
 import InputSearch from './components/input-search/jt-input-search.vue'
+import Label from './components/label/jt-label.vue'
+import List from './components/list/jt-list.vue'
 import Panel from './components/panel/jt-panel.vue'
 import PanelButton from './components/panel/jt-panel-button.vue'
 import RotatedView from './components/rotated-view/jt-rotated-view.vue'
@@ -24,6 +26,8 @@ export default {
     Vue.component(Input.name, Input)
     Vue.component(InputNumber.name, InputNumber)
     Vue.component(InputSearch.name, InputSearch)
+    Vue.component(Label.name, Label)
+    Vue.component(List.name, List)
     Vue.component(Panel.name, Panel)
     Vue.component(PanelButton.name, PanelButton)
     Vue.component(RotatedView.name, RotatedView)

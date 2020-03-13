@@ -3,7 +3,7 @@ Button
 </docs>
 
 <template>
-  <div
+  <button
     class="jt-button"
     :class="[type, {
       disabled: disabled,
@@ -15,7 +15,7 @@ Button
     @click="$emit('click')"
   >
     <slot></slot>
-  </div>
+  </button>
 </template>
 
 <script>
@@ -45,11 +45,14 @@ export default {
   line-height: 22px;
   vertical-align: top;
   text-align: center;
+	color: inherit;
+	font-family: inherit;
   font-size: 14px;
   padding: 0 8px;
   border-radius: 3px;
   cursor: pointer;
   user-select: none;
+  outline: none;
   -webkit-tap-highlight-color: transparent;
 
   transition: color 0.2s, background-color 0.2s, border-color 0.2s;

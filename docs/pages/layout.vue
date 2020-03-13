@@ -53,6 +53,8 @@ export default {
           { name: 'Input', path: '/input' },
           { name: 'Input Number', path: '/input-number' },
           { name: 'Input Search', path: '/input-search' },
+          { name: 'Label', path: '/label' },
+          { name: 'List', path: '/list' },
         ] },
         { name: 'Container', pages: [
           { name: 'Toolbar', path: '/toolbar' },

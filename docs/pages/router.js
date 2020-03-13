@@ -8,6 +8,8 @@ import Button from './button/button.vue'
 import Input from './input/input.vue'
 import InputNumber from './input-number/input-number.vue'
 import InputSearch from './input-search/input-search.vue'
+import Label from './label/label.vue'
+import List from './list/list.vue'
 
 import ToggleBar from './toggle-bar/toggle-bar.vue'
 import Toolbar from './toolbar/toolbar.vue'
@@ -27,6 +29,8 @@ const routes = [
   { path: '/input', component: Input },
   { path: '/input-number', component: InputNumber },
   { path: '/input-search', component: InputSearch },
+  { path: '/label', component: Label },
+  { path: '/list', component: List },
   // Container
   { path: '/toggle-bar', component: ToggleBar },
   { path: '/toolbar', component: Toolbar },
