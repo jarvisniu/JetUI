@@ -14,5 +14,17 @@
       <jt-input></jt-input>
     </jt-border>
 
+    <h4>Set Width</h4>
+    <jt-border inline all>
+      <div style="margin: 4px;">
+        <jt-label width="60">Name:</jt-label>
+        <jt-input></jt-input>
+      </div>
+      <div style="margin: 4px;">
+        <jt-label width="60">Age:</jt-label>
+        <jt-input></jt-input>
+      </div>
+    </jt-border>
+
   </div>
 </template>

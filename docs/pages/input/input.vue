@@ -9,6 +9,10 @@
       <span v-else>Hello {{ name }}.</span>
     </div>
 
+    <h4>Number</h4>
+    <jt-input v-model.number="age"></jt-input>
+    <jt-input v-model.number="age"></jt-input>
+
     <h4>Clearable</h4>
     <!-- <jt-input v-model="name" clearable></jt-input> -->
     <div>TODO</div>
@@ -20,6 +24,7 @@ export default {
   data() {
     return {
       name: '',
+      age: 18,
     }
   },
 }

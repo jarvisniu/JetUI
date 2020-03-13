@@ -30,18 +30,19 @@ export default {
 .jt-list {
   box-sizing: border-box;
   display: inline-block;
-  background-color: var(--jt-bg-button);
   vertical-align: top;
-	color: inherit;
-	font-family: inherit;
   font-size: 14px;
   user-select: none;
+  background-color: var(--jt-bg-workspace);
 }
 .jt-list-item {
   height: 24px;
   padding: 0 6px;
   line-height: 24px;
   -webkit-tap-highlight-color: transparent;
+  &:not(:last-child) {
+    border-bottom: solid 1px var(--jt-border);
+  }
 
   transition: color 0.2s, background-color 0.2s, border-color 0.2s;
   &:hover {

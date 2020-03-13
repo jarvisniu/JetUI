@@ -37,6 +37,7 @@ export default {
   min-width: 10px;
   min-height: 1px;
   outline: none;
+  background-color: var(--jt-bg-workspace);
 }
 .jt-panel-title {
   box-sizing: border-box;

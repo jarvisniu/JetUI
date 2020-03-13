@@ -19,7 +19,7 @@ import { convertSizeToCSS } from '../utils'
 export default {
   name: 'JtInput',
   props: {
-    value: { type: String, default: '' },
+    value: { type: [String, Number], default: '' },
     margin: { type: [Number, String], default: '' },
     width: { type: [Number, String], default: '' },
   },
@@ -30,7 +30,7 @@ export default {
   },
   watch: {
     value(val) {
-      this.num = val
+      this.text = val
     },
     text(val) {
       this.$emit('input', val)

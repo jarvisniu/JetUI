@@ -7,6 +7,7 @@ Label
     class="jt-label"
     :style="{
       margin: convertSizeToCSS(margin),
+      width: convertSizeToCSS(width),
     }">
     <slot></slot>
   </div>
@@ -19,6 +20,7 @@ export default {
   name: 'JtLabel',
   props: {
     margin: { type: [Number, String], default: '' },
+    width: { type: [Number, String], default: '' },
   },
   methods: {
     convertSizeToCSS,
