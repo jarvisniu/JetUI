@@ -1,15 +1,11 @@
 <template>
   <div
-    class="jt-input"
+    class="jt-input jt-inline-component"
     :style="{
-      margin: convertSizeToCSS(margin),
       width: convertSizeToCSS(width),
     }"
   >
-    <input
-      type="text"
-      v-model="text"
-    >
+    <input type="text" v-model="text">
   </div>
 </template>
 
@@ -20,7 +16,6 @@ export default {
   name: 'JtInput',
   props: {
     value: { type: [String, Number], default: '' },
-    margin: { type: [Number, String], default: '' },
     width: { type: [Number, String], default: '' },
   },
   data() {

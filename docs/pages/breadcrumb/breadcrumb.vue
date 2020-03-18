@@ -3,7 +3,7 @@
     <h2>Breadcrumb</h2>
     <div style="margin-bottom: 10px;">
       <jt-button @click="selectedIndex = -1">Clear</jt-button>
-      <span>Selected Index: {{ selectedIndex }}</span>
+      <jt-label>Selected Index: {{ selectedIndex }}</jt-label>
     </div>
     <jt-border inline all>
       <jt-breadcrumb

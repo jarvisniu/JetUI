@@ -1,8 +1,7 @@
 <template>
   <div
-    class="jt-input-search"
+    class="jt-input-search jt-inline-component"
     :style="{
-      margin: convertSizeToCSS(margin),
       width: convertSizeToCSS(width),
     }"
     @mouseenter="hovered = true"
@@ -37,7 +36,6 @@ export default {
   name: 'JtInputSearch',
   props: {
     value: { type: String, default: '' },
-    margin: { type: [Number, String], default: '' },
     width: { type: [Number, String], default: '' },
   },
   data () {

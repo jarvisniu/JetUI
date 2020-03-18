@@ -24,6 +24,6 @@
   width: 24px;
   height: 14px;
   border: solid 1px var(--jt-border);
-  vertical-align: top;
+  vertical-align: middle;
 }
 </style>

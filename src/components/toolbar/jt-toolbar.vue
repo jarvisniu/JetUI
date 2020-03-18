@@ -29,18 +29,23 @@
 
 <style lang="scss" scoped>
 .jt-toolbar {
-  padding: 1px;
+  padding: 2px;
   box-sizing: border-box;
   transition: background-color 0.3s;
   overflow: auto;
   &.horizontal {
-    display: inline-flex;
-    height: 30px;
+    display: flex;
+    height: 32px;
   }
   &.vertical {
-    width: 30px;
+    width: 32px;
   }
   // theme
-  background-color: var(--jt-bg-button);
+  background-color: var(--jt-bg-container-dark);
+
+  // TODO How to use /deep/ or >>>
+  & > .jt-inline-component {
+    margin: 2px;
+  }
 }
 </style>

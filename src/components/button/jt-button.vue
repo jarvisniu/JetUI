@@ -4,12 +4,11 @@ Button
 
 <template>
   <button
-    class="jt-button"
+    class="jt-button jt-inline-component"
     :class="[type, {
       disabled: disabled,
     }]"
     :style="{
-      margin: convertSizeToCSS(margin),
       width: convertSizeToCSS(width),
     }"
     @click="$emit('click')"
@@ -26,7 +25,6 @@ export default {
   props: {
     type: { type: String, default: '' },
     disabled: { type: Boolean, default: false },
-    margin: { type: [Number, String], default: '' },
     width: { type: [Number, String], default: '' },
   },
   methods: {

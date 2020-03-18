@@ -1,8 +1,7 @@
 <template>
   <div
-    class="jt-input-number"
+    class="jt-input-number jt-inline-component"
     :style="{
-      margin: convertSizeToCSS(margin),
       width: convertSizeToCSS(width),
     }"
   >
@@ -28,7 +27,6 @@ export default {
   props: {
     value: { type: Number, default: '' },
     step: { type: Number, default: 1 },
-    margin: { type: [Number, String], default: '' },
     width: { type: [Number, String], default: '' },
   },
   data() {

@@ -36,21 +36,21 @@ export default {
   display: flex;
   border: solid 1px red;
   border-radius: 2px;
-  width: 26px;
-  height: 26px;
-  margin: 1px;
+  width: 24px;
+  height: 24px;
+  margin: 2px;
 
   img {
     margin: 2px;
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     -webkit-user-drag: none;
   }
 
   // theme
   transition: background-color 0.3s;
   border-color: transparent;
-  background-color: var(--jt-bg-button);
+  background-color: transparent;
   &:hover {
     border-color: var(--jt-border);
     background-color: var(--jt-bg-button-hover);
