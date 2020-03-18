@@ -9,6 +9,7 @@
         <jt-toolbar-button :icon="iconTable"></jt-toolbar-button>
         <jt-toolbar-divider></jt-toolbar-divider>
         <jt-toolbar-button :icon="iconDatabase"></jt-toolbar-button>
+        <jt-toolbar-divider through></jt-toolbar-divider>
         <jt-toolbar-button :icon="iconTable"></jt-toolbar-button>
       </jt-toolbar>
     </jt-border>
@@ -19,6 +20,7 @@
         <jt-toolbar-button :icon="iconDatabase"></jt-toolbar-button>
         <jt-toolbar-divider></jt-toolbar-divider>
         <jt-toolbar-button :icon="iconDatabase"></jt-toolbar-button>
+        <jt-toolbar-divider through></jt-toolbar-divider>
         <jt-toolbar-button :icon="iconTable"></jt-toolbar-button>
       </jt-toolbar>
     </jt-border>

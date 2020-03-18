@@ -36,15 +36,15 @@ export default {
       list: ['Bill', 'Jack', 'Tom'],
       selIndex: 0,
       engines: {
-        'google': '谷歌',
-        'bing': '必应',
+        'google': 'Google',
+        'bing': 'Bing',
         'duck': 'DuckDuckGo',
       },
       selKey: 'google',
       students: [
-        { name: '张三', score: 93 },
-        { name: '李四', score: 81 },
-        { name: '王五', score: 100 },
+        { name: 'Zhang', score: 93 },
+        { name: 'Lee', score: 81 },
+        { name: 'Wong', score: 100 },
       ],
       selStudentIndex: 0,
     }

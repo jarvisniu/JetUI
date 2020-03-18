@@ -1,8 +1,8 @@
 <docs>
-  标签栏
-  方法：
+  Tab Bar
+  Methods：
     open(label, icon, meta)
-  事件：
+  Events：
     change
     close
     sort
