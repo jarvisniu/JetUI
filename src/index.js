@@ -3,6 +3,7 @@ import './theme.scss'
 
 import Border from './components/border/jt-border.vue'
 import Button from './components/button/jt-button.vue'
+import ButtonGroup from './components/button/jt-button-group.vue'
 import Breadcrumb from './components/breadcrumb/jt-breadcrumb.vue'
 import Input from './components/input/jt-input.vue'
 import InputNumber from './components/input-number/jt-input-number.vue'
@@ -22,6 +23,7 @@ export default {
   install(Vue) {
     Vue.component(Border.name, Border)
     Vue.component(Button.name, Button)
+    Vue.component(ButtonGroup.name, ButtonGroup)
     Vue.component(Breadcrumb.name, Breadcrumb)
     Vue.component(Input.name, Input)
     Vue.component(InputNumber.name, InputNumber)

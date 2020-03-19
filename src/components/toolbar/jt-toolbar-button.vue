@@ -34,32 +34,32 @@ export default {
   box-sizing: border-box;
   user-select: none;
   display: flex;
-  border: solid 1px red;
-  border-radius: 2px;
+  border: solid 1px var(--jt-border);
   width: 24px;
   height: 24px;
   margin: 2px;
 
   img {
-    margin: 2px;
-    width: 18px;
-    height: 18px;
+    margin: 3px;
+    width: 16px;
+    height: 16px;
     -webkit-user-drag: none;
   }
 
   // theme
-  transition: background-color 0.3s;
+  transition: border-color 0.3s, background-color 0.3s;
   border-color: transparent;
   background-color: transparent;
   &:hover {
     border-color: var(--jt-border);
-    background-color: var(--jt-bg-button-hover);
+    background-color: var(--jt-bg-button-hover-reverse);
   }
   &:active {
     background-color: var(--jt-bg-button-active);
     transition: background-color 0.02s, border-color 0.02s;
   }
   &.selected {
+    color: var(--jt-text-selected);
     border-color: var(--jt-border);
     background-color: var(--jt-bg-button-selected);
     &:hover {

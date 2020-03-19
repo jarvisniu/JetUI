@@ -7,6 +7,7 @@ Button
     class="jt-button jt-inline-component"
     :class="[type, {
       disabled: disabled,
+      selected: selected,
     }]"
     :style="{
       width: convertSizeToCSS(width),
@@ -25,6 +26,7 @@ export default {
   props: {
     type: { type: String, default: '' },
     disabled: { type: Boolean, default: false },
+    selected: { type: Boolean, default: false },
     width: { type: [Number, String], default: '' },
   },
   methods: {
@@ -67,6 +69,18 @@ export default {
   &.disabled {
     opacity: 0.5;
     pointer-events: none;
+  }
+
+  &.selected {
+    color: var(--jt-text-selected);
+    border-color: var(--jt-border);
+    background-color: var(--jt-bg-button-selected);
+    &:hover {
+      background-color: var(--jt-bg-button-selected-hover);
+    }
+    &:active {
+      background-color: var(--jt-bg-button-selected-active);
+    }
   }
 
   &.primary {

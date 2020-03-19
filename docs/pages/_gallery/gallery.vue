@@ -15,13 +15,28 @@
         </jt-border>
         <jt-border bottom>
           <jt-toolbar>
-            <jt-toolbar-button :icon="iconDatabase"></jt-toolbar-button>
-            <jt-toolbar-button :icon="iconTable"></jt-toolbar-button>
+            <jt-toolbar-button :icon="iconDatabase"
+              :selected="selToolIndex == 0" @click="selToolIndex = 0"
+            ></jt-toolbar-button>
+            <jt-toolbar-button :icon="iconTable"
+              :selected="selToolIndex == 1" @click="selToolIndex = 1"
+            ></jt-toolbar-button>
             <jt-toolbar-divider></jt-toolbar-divider>
-            <jt-toolbar-button :icon="iconDatabase"></jt-toolbar-button>
-            <jt-toolbar-button :icon="iconTable"></jt-toolbar-button>
+            <jt-toolbar-button :icon="iconDatabase"
+              :selected="selToolIndex == 2" @click="selToolIndex = 2"
+            ></jt-toolbar-button>
+            <jt-toolbar-button :icon="iconTable"
+              :selected="selToolIndex == 3" @click="selToolIndex = 3"
+            ></jt-toolbar-button>
             <jt-toolbar-divider through></jt-toolbar-divider>
-            <jt-button>Exit</jt-button>
+            <jt-button-group>
+              <jt-button :selected="selCity == 'Beijing'"
+                @click="selCity = 'Beijing'">Beijing</jt-button>
+              <jt-button :selected="selCity == 'Shanghai'"
+                @click="selCity = 'Shanghai'">Shanghai</jt-button>
+              <jt-button :selected="selCity == 'Hong Kong'"
+                @click="selCity = 'Hong Kong'">Hong Kong</jt-button>
+            </jt-button-group>
           </jt-toolbar>
         </jt-border>
 
@@ -76,6 +91,8 @@ export default {
         { icon: iconDatabase, value: 'database', label: 'Database', tip: 'Manage Database' },
         { icon: iconTable, value: 'table', label: 'List', tip: 'Manage List' },
       ],
+      selToolIndex: 0,
+      selCity: 'Beijing',
       toggleBarValue: 'database',
       num1: 1,
       list: ['Bill', 'Jack', 'Tom'],

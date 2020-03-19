@@ -16,5 +16,31 @@
 
     <h4>Disabled</h4>
     <jt-button disabled>Search</jt-button>
+
+    <h4>Selected (Click to toggle)</h4>
+    <jt-button :selected="isOn" @click="isOn = !isOn">
+      {{ isOn ? 'Off' : 'On' }}
+    </jt-button>
+
+    <h4>Button Group</h4>
+    <jt-button-group>
+      <jt-button :selected="selCity == 'Beijing'"
+        @click="selCity = 'Beijing'">Beijing</jt-button>
+      <jt-button :selected="selCity == 'Shanghai'"
+        @click="selCity = 'Shanghai'">Shanghai</jt-button>
+      <jt-button :selected="selCity == 'Hong Kong'"
+        @click="selCity = 'Hong Kong'">Hong Kong</jt-button>
+    </jt-button-group>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      isOn: true,
+      selCity: 'Beijing',
+    }
+  },
+}
+</script>

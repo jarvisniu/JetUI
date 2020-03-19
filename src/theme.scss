@@ -22,8 +22,9 @@
   // button
   --jt-bg-button: rgb(227, 227, 227);
   --jt-bg-button-hover: rgb(247, 247, 247);
-  --jt-bg-button-active: #c0c0c0;
-  --jt-bg-button-selected: #888888;
+  --jt-bg-button-hover-reverse: rgb(200, 200, 200);
+  --jt-bg-button-active: hsl(0, 0%, 54%);
+  --jt-bg-button-selected: hsl(0, 0%, 54%);
   --jt-bg-button-selected-hover: var(--jt-bg-button-selected);
   --jt-bg-button-selected-active: var(--jt-bg-button-selected);
   // input
@@ -56,8 +57,9 @@
   // button
   --jt-bg-button: hsl(180, 5%, 33%);
   --jt-bg-button-hover: hsl(180, 5%, 37%);
-  --jt-bg-button-active: #252729;
-  --jt-bg-button-selected: #2c2e2f;
+  --jt-bg-button-hover-reverse: hsl(180, 5%, 21%);
+  --jt-bg-button-active: hsl(210, 5%, 15%);
+  --jt-bg-button-selected: hsl(200, 3%, 18%);
   --jt-bg-button-selected-hover: var(--jt-bg-button-selected);
   --jt-bg-button-selected-active: var(--jt-bg-button-selected);
   // input
