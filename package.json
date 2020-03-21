@@ -6,7 +6,10 @@
   "module": "dist/jet-ui.esm.js",
   "scripts": {
     "dev": "parcel docs/index.html --port 7789 --out-dir docs/dist",
-    "build": "rm -rf dist && rollup -c"
+    "build-lib": "rm -rf dist && rollup -c",
+    "build-docs": "parcel build docs/index.html --public-url . --out-dir docs/dist --no-source-maps",
+    "upload-docs": "scp -r docs/dist/** root@aliyun:/www/niujunwei.com/jet-ui",
+    "deploy-docs": "npm run build-docs && npm run upload-docs"
   },
   "repository": {
     "type": "git",

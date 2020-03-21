@@ -2,6 +2,7 @@
   <div class="app" :class="`jt-theme-${ theme }`">
     <div class="side">
       <div class="title">jet-ui docs</div>
+      <div class="version">v{{version}}</div>
       <jt-border inline all>
         <jt-toggle-bar>
           <jt-toggle-bar-button
@@ -39,9 +40,12 @@
 </template>
 
 <script>
+import pkg from '../../package.json'
+
 export default {
   data() {
     return {
+      version: pkg.version,
       theme: 'light',
       pageGroups: [
         { name: 'Intro', pages: [
@@ -98,10 +102,16 @@ export default {
   border-right: solid 1px silver;
   padding: 10px;
   font-family: Inconsolata, Monaco, Consolas, STHeiti, DengXian, monospace, 'Segoe UI Emoji';
+  overflow-x: hidden;
+  overflow-y: scroll;
 
   .title {
     font-size: 24px;
-    padding-bottom: 10px;
+  }
+  .version {
+    font-size: 14px;
+    color: var(--jt-text-sub);
+    padding: 5px 0 10px 0;
   }
   .section-title {
     font-size: 18px;

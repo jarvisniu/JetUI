@@ -11,7 +11,8 @@
   --jt-border: #b8c0c8;
   --jt-border-hover: #a8b0b8;
   // text
-  --jt-text: #222222;
+  --jt-text: hsl(0, 0%, 15%);
+  --jt-text-sub: hsl(0, 0%, 50%);
   --jt-text-selected: white;
   // background
   --jt-bg-body: hsl(0, 0%, 95%);
@@ -46,7 +47,8 @@
   --jt-border: #000000;
   --jt-border-hover: #101010;
   // text
-  --jt-text: #eeeeee;
+  --jt-text: hsl(0, 0%, 93%);
+  --jt-text-sub: hsl(0, 0%, 66%);
   --jt-text-selected: #cdcdcd;
   // background
   --jt-bg-body: rgb(60, 63, 65);
