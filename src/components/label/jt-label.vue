@@ -8,6 +8,12 @@ Label
     :style="{
       margin: convertSizeToCSS(margin),
       width: convertSizeToCSS(width),
+      fontWeight: b || bold ? 'bold' : 'normal',
+      fontStyle: i || italic ? 'italic' : 'normal',
+      textDecoration:
+        (u || underline ? 'underline' : '') + ' ' +
+        (s || strikethrough ? 'line-through' : '') + ' ' +
+        (o || overline ? 'overline' : ''),
     }">
     <slot></slot>
   </div>
@@ -21,6 +27,16 @@ export default {
   props: {
     margin: { type: [Number, String], default: '' },
     width: { type: [Number, String], default: '' },
+    b: { type: Boolean, default: false },
+    bold: { type: Boolean, default: false },
+    i: { type: Boolean, default: false },
+    italic: { type: Boolean, default: false },
+    u: { type: Boolean, default: false },
+    underline: { type: Boolean, default: false },
+    s: { type: Boolean, default: false },
+    strikethrough: { type: Boolean, default: false },
+    o: { type: Boolean, default: false },
+    overline: { type: Boolean, default: false },
   },
   methods: {
     convertSizeToCSS,

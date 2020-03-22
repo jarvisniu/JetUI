@@ -4,9 +4,10 @@
   // global
   --jt-font-size: 14px;
   // theme colors
-  --jt-primary: hsl(180, 66%, 40%);
-  --jt-primary-hover: hsl(180, 66%, 46%);
-  --jt-primary-active: hsl(180, 66%, 34%);
+  --jt-primary-hue: 180;
+  --jt-primary: hsl(var(--jt-primary-hue), 66%, 40%);
+  --jt-primary-hover: hsl(var(--jt-primary-hue), 66%, 46%);
+  --jt-primary-active: hsl(var(--jt-primary-hue), 66%, 34%);
   // border
   --jt-border: #b8c0c8;
   --jt-border-hover: #a8b0b8;

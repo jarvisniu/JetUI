@@ -1,20 +1,35 @@
 <template>
-  <div class="app" :class="`jt-theme-${ theme }`">
+  <div class="app" :class="`jt-theme-${ selTheme }`">
     <div class="side">
       <div class="title">jet-ui docs</div>
       <div class="version">v{{version}}</div>
+
       <jt-border inline all>
         <jt-toggle-bar>
           <jt-toggle-bar-button
-            :selected="theme === 'light'"
-            style="width: 89px;"
-            @click="theme = 'light'"
+            v-for="theme in themes" :key="theme.value"
+            :selected="selTheme === theme.value"
+            style="width: 80px;"
+            @click="selTheme = theme.value"
           >Light</jt-toggle-bar-button>
+        </jt-toggle-bar>
+      </jt-border>
+
+      <jt-border inline all style="margin-top: -1px;">
+        <jt-toggle-bar>
           <jt-toggle-bar-button
-            :selected="theme === 'dark'"
-            style="width: 89px;"
-            @click="theme = 'dark'"
-          >Dark</jt-toggle-bar-button>
+            v-for="hue in primaryHues" :key="hue.value"
+            :selected="selPrimaryHue === hue.value"
+            style="width: 32px;"
+            @click="selPrimaryHue = hue.value"
+          >
+          <jt-border all inline style="margin: 5px;">
+            <div
+              :style="{ backgroundColor: `hsl(${ hue.value }, 66%, 40%)` }"
+              style="height: 12px; width: 18px;"
+            ></div>
+          </jt-border>
+          </jt-toggle-bar-button>
         </jt-toggle-bar>
       </jt-border>
 
@@ -46,7 +61,19 @@ export default {
   data() {
     return {
       version: pkg.version,
-      theme: 'light',
+      themes: [
+        { label: 'Light', value: 'light' },
+        { label: 'Dark', value: 'dark' },
+      ],
+      selTheme: 'light',
+      primaryHues: [
+        { label: 'Red', value: 0 },
+        { label: 'Green', value: 120 },
+        { label: 'Default (Cyan)', value: 180 },
+        { label: 'Blue', value: 210 },
+        { label: 'Purple', value: 285 },
+      ],
+      selPrimaryHue: 180,
       pageGroups: [
         { name: 'Intro', pages: [
           { name: 'Gallery', path: '/gallery' },
@@ -72,12 +99,17 @@ export default {
       ],
     }
   },
+  watch: {
+    selPrimaryHue(val) {
+      document.documentElement.style.setProperty('--jt-primary-hue', val)
+    },
+  },
 }
 </script>
 
 <style lang="scss" scoped>
 :root {
-  --jt-docs-section-title-color: hsl(180, 5%, 40%);
+  --jt-docs-section-title-color: #616b6b;
   --jt-docs-side-link: hsl(180, 10%, 20%);
 }
 .jt-theme-dark {

@@ -14,6 +14,16 @@
       <jt-input></jt-input>
     </jt-border>
 
+    <h4>Styles</h4>
+    <jt-border inline all style="padding: 4px;">
+      <jt-label bold>Bold (b)</jt-label>
+      <jt-label italic>Italic (i)</jt-label>
+      <jt-label underline>Underline (u)</jt-label>
+      <jt-label strikethrough>Strikethrough (s)</jt-label>
+      <jt-label overline>Overline (o)</jt-label>
+      <jt-label b i u s o>All Styles (b i u o s)</jt-label>
+    </jt-border>
+
     <h4>Set Width</h4>
     <jt-border inline all>
       <div style="margin: 4px;">
