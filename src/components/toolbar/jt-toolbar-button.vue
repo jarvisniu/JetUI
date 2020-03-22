@@ -7,6 +7,9 @@ Toolbar Button
     class="jt-toolbar-button"
     :class="{selected: selected}"
     :title="tip"
+    :style="{
+      padding: padding + 'px',
+    }"
     @click="onClick"
   >
     <img :src="icon">
@@ -17,9 +20,10 @@ Toolbar Button
 export default {
   name: 'JtToolbarButton',
   props: {
-    selected: Boolean,
-    tip: String,
-    icon: String,
+    selected: { type: Boolean, default: false },
+    tip: { type: String, default: '' },
+    icon: { type: String, default: '' },
+    padding: { type: [String, Number], default: 3 },
   },
   methods: {
     onClick: function () {
@@ -40,9 +44,8 @@ export default {
   margin: 2px;
 
   img {
-    margin: 3px;
-    width: 16px;
-    height: 16px;
+    width: 100%;
+    height: 100%;
     -webkit-user-drag: none;
   }
 

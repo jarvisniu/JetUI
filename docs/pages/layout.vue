@@ -11,7 +11,7 @@
             :selected="selTheme === theme.value"
             style="width: 80px;"
             @click="selTheme = theme.value"
-          >Light</jt-toggle-bar-button>
+          >{{ theme.label }}</jt-toggle-bar-button>
         </jt-toggle-bar>
       </jt-border>
 
