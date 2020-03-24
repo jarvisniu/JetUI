@@ -15,6 +15,7 @@ import ToggleBar from './toggle-bar/toggle-bar.vue'
 import Toolbar from './toolbar/toolbar.vue'
 import Panel from './panel/panel.vue'
 import RotatedView from './rotated-view/rotated-view.vue'
+import SplitView from './split-view/split-view.vue'
 
 import Breadcrumb from './breadcrumb/breadcrumb.vue'
 
@@ -36,6 +37,7 @@ const routes = [
   { path: '/toolbar', component: Toolbar },
   { path: '/panel', component: Panel },
   { path: '/rotated-view', component: RotatedView },
+  { path: '/split-view', component: SplitView },
   // Navigation
   { path: '/breadcrumb', component: Breadcrumb },
   // Other

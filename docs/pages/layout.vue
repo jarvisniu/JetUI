@@ -92,6 +92,7 @@ export default {
           { name: 'Toggle Bar', path: '/toggle-bar' },
           { name: 'Panel', path: '/panel' },
           { name: 'Rotated View', path: '/rotated-view' },
+          { name: 'Split View', path: '/split-view' },
         ] },
         { name: 'Navigation', pages: [
           { name: 'Breadcrumb', path: '/breadcrumb' },
