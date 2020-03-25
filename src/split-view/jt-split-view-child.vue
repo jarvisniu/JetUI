@@ -2,9 +2,9 @@
   <div
     class="jt-split-view-child"
     :style="{
-      flex: this.size == 0 ? actualWeight : '',
-      width: `${ this.size }px`,
-      height: `${ this.size }px`,
+      'flex-grow': this.size == 0 ? actualWeight : '',
+      'width': `${ this.size }px`,
+      'height': `${ this.size }px`,
     }"
   >
     <slot></slot>
@@ -25,9 +25,6 @@ export default {
       else return this.weight
     },
   },
-  data() {
-    return {}
-  },
 }
 </script>
 
@@ -35,5 +32,7 @@ export default {
 .jt-split-view-child {
   box-sizing: border-box;
   background: lightblue;
+  /* flex-basis: 0%; */
+  flex-shrink: 1;
 }
 </style>
