@@ -3,7 +3,12 @@ Icon
 </docs>
 
 <template>
-  <div class="jt-icon">
+  <div
+    class="jt-icon"
+    :style="{
+      margin: convertSizeToCSS(margin),
+    }"
+  >
     <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
       :viewBox="myViewBox"
       :style="{
@@ -29,6 +34,7 @@ export default {
     color: { type: String, default: '' },
     viewBox: { type: String, default: '' },
     size: { type: [Number, String], default: 14 },
+    margin: { type: [Number, String], default: '' },
     width: { type: [Number, String], default: 0 },
     height: { type: [Number, String], default: 0 },
   },
@@ -71,7 +77,7 @@ export default {
 
   svg {
     vertical-align: top;
-    fill: var(--jt-text);
+    fill: var(--jt-icon);
   }
 }
 </style>
