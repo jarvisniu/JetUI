@@ -7,6 +7,7 @@ import Design from './_design/design.vue'
 
 // Basic
 import Button from './button/button.vue'
+import Icon from './icon/icon.vue'
 import Input from './input/input.vue'
 import InputNumber from './input-number/input-number.vue'
 import InputSearch from './input-search/input-search.vue'
@@ -33,6 +34,7 @@ const routes = [
   { path: '/design', component: Design },
   // Basic
   { path: '/button', component: Button },
+  { path: '/icon', component: Icon },
   { path: '/input', component: Input },
   { path: '/input-number', component: InputNumber },
   { path: '/input-search', component: InputSearch },

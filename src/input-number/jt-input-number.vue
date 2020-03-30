@@ -10,10 +10,10 @@
       v-model.number="num"
     ><div class="stepper">
       <div class="button" style="padding-top: 1px;" @click="num += step">
-        <svg version="1.1" viewBox="0 0 18 10"><path d="M6,6 L9,3 L12,6 Z"></path></svg>
+        <jt-icon width="18" height="10" view-box="0 0 18 10" path="M5.5,6 L9,3 L12.5,6 Z"></jt-icon>
       </div>
       <div class="button" @click="num -= step">
-        <svg version="1.1" viewBox="0 0 18 10"><path d="M6,3 L9,6 L12,3 Z"></path></svg>
+        <jt-icon width="18" height="10" view-box="0 0 18 10" path="M5.5,3 L9,6 L12.5,3 Z"></jt-icon>
       </div>
     </div>
   </div>
@@ -60,7 +60,7 @@ export default {
   input[type="text"] {
     box-sizing: border-box;
     display: inline-block;
-    width: calc(100% - 20px);
+    width: calc(100% - 19px);
     line-height: 22px;
     padding: 0 5px;
     font-size: var(--jt-font-size);
@@ -86,7 +86,7 @@ export default {
 .stepper {
   box-sizing: border-box;
   display: inline-block;
-  width: 20px;
+  width: 19px;
   height: 100%;;
   border-left: solid 1px var(--jt-bg-input-border);
   vertical-align: top;
@@ -95,14 +95,9 @@ export default {
     box-sizing: border-box;
     height: 11px;
     user-select: none; /* prevent double click to select */
-    fill: var(--jt-text);  /* svg icon color */
 
     &:last-child {
       border-top: solid 1px var(--jt-bg-input-border);
-    }
-
-    svg {
-      vertical-align: top;
     }
 
     transition: color 0.2s, background-color 0.2s, border-color 0.2s;

@@ -5,6 +5,7 @@ import Button from './button/jt-button.vue'
 import ButtonGroup from './button/jt-button-group.vue'
 import Breadcrumb from './breadcrumb/jt-breadcrumb.vue'
 import ContainView from './contain-view/jt-contain-view.vue'
+import Icon from './icon/jt-icon.vue'
 import Input from './input/jt-input.vue'
 import InputNumber from './input-number/jt-input-number.vue'
 import InputSearch from './input-search/jt-input-search.vue'
@@ -29,6 +30,7 @@ export default {
     Vue.component(ButtonGroup.name, ButtonGroup)
     Vue.component(Breadcrumb.name, Breadcrumb)
     Vue.component(ContainView.name, ContainView)
+    Vue.component(Icon.name, Icon)
     Vue.component(Input.name, Input)
     Vue.component(InputNumber.name, InputNumber)
     Vue.component(InputSearch.name, InputSearch)
