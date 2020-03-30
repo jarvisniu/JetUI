@@ -49,6 +49,7 @@ export default {
 
 <style lang="scss" scoped>
 .jt-border {
+  box-sizing: border-box;
   border: solid 0 var(--jt-border);
 }
 </style>

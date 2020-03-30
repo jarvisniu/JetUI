@@ -1,5 +1,5 @@
 <docs>
-  Rotated
+  Rotated View
 </docs>
 
 <template>

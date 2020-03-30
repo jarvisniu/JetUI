@@ -1,9 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import Design from './_design/design.vue'
+// Intro
 import Gallery from './_gallery/gallery.vue'
+import Design from './_design/design.vue'
 
+// Basic
 import Button from './button/button.vue'
 import Input from './input/input.vue'
 import InputNumber from './input-number/input-number.vue'
@@ -11,12 +13,16 @@ import InputSearch from './input-search/input-search.vue'
 import Label from './label/label.vue'
 import List from './list/list.vue'
 
-import ToggleBar from './toggle-bar/toggle-bar.vue'
+// Container
 import Toolbar from './toolbar/toolbar.vue'
+import ToggleBar from './toggle-bar/toggle-bar.vue'
 import Panel from './panel/panel.vue'
 import RotatedView from './rotated-view/rotated-view.vue'
 import SplitView from './split-view/split-view.vue'
+import ContainView from './contain-view/contain-view.vue'
 
+// Navigation
+import Menu from './menu/menu.vue'
 import Breadcrumb from './breadcrumb/breadcrumb.vue'
 
 Vue.use(VueRouter)
@@ -38,7 +44,9 @@ const routes = [
   { path: '/panel', component: Panel },
   { path: '/rotated-view', component: RotatedView },
   { path: '/split-view', component: SplitView },
+  { path: '/contain-view', component: ContainView },
   // Navigation
+  { path: '/menu', component: Menu },
   { path: '/breadcrumb', component: Breadcrumb },
   // Other
   { path: '*', redirect: '/gallery' },

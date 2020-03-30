@@ -93,8 +93,10 @@ export default {
           { name: 'Panel', path: '/panel' },
           { name: 'Rotated View', path: '/rotated-view' },
           { name: 'Split View', path: '/split-view' },
+          { name: 'Contain View', path: '/contain-view' },
         ] },
         { name: 'Navigation', pages: [
+          { name: 'Menu', path: '/menu' },
           { name: 'Breadcrumb', path: '/breadcrumb' },
         ] },
       ],
