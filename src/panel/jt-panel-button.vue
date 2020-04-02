@@ -21,9 +21,12 @@ export default {
     line-height: 24px;
     cursor: default;
     user-select: none;
-    padding: 0 8px;
-    min-width: 26px;
     text-align: center;
+
+    padding: 0 5px;
+    .jt-panel-slot-title & {
+      padding: 0 8px;
+    }
 
     & + .jt-panel-button {
       border-left: solid 1px var(--jt-border);

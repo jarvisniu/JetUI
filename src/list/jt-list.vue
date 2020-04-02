@@ -31,6 +31,7 @@ export default {
   box-sizing: border-box;
   display: inline-block;
   vertical-align: top;
+  overflow: auto;
   font-size: 14px;
   user-select: none;
   background-color: var(--jt-bg-workspace);

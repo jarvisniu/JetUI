@@ -3,7 +3,10 @@ Panel
 </docs>
 
 <template>
-  <div class="jt-panel" tabindex="0">
+  <div class="jt-panel" tabindex="0"
+    :style="{
+      height: height == 0 ? '' : convertSizeToCSS(fold ? 24 : height),
+    }">
     <div class="jt-panel-title">
       <div class="jt-panel-slot-title">
         <slot name="title">
@@ -15,17 +18,24 @@ Panel
         </slot>
       </div>
     </div>
-    <div class="jt-panel-body">
+    <div class="jt-panel-body" :class="{fold: fold}">
       <slot></slot>
     </div>
   </div>
 </template>
 
 <script>
+import { convertSizeToCSS } from '../utils'
+
 export default {
   name: 'JtPanel',
   props: {
     title: { type: String, default: '' },
+    fold: { type: Boolean, default: false },
+    height: { type: [Number, String], default: 0 },
+  },
+  methods: {
+    convertSizeToCSS,
   },
 }
 </script>
@@ -60,6 +70,11 @@ export default {
 }
 .jt-panel-body {
   height: calc(100% - 25px);
+  overflow: auto;
+
+  &.fold {
+    display: none;
+  }
 }
 .jt-panel-slot-title {
   flex: 1;
