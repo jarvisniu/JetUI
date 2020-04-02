@@ -1,15 +1,16 @@
 {
   "name": "jet-ui",
-  "version": "0.1.4",
+  "version": "0.1.5-wip",
   "description": "JetBrains style Vue UI components",
   "main": "dist/jet-ui.min.js",
   "module": "dist/jet-ui.esm.js",
   "scripts": {
-    "dev": "parcel docs/index.html --port 7789 --out-dir docs/dist",
-    "build-lib": "rm -rf dist && rollup -c",
-    "build-docs": "parcel build docs/index.html --public-url . --out-dir docs/dist --no-source-maps",
-    "upload-docs": "scp -r docs/dist/** root@aliyun:/www/niujunwei.com/jet-ui",
-    "deploy-docs": "npm run build-docs && npm run upload-docs"
+    "dev": "nuxt",
+    "dist": "rm -rf dist && rollup -c",
+    "build": "nuxt build",
+    "upload": "upload-oss --outputDir build --ossBaseDir jet-ui",
+    "index": "scp build/index.html root@aliyun:/www/niujunwei.com/jet-ui",
+    "deploy": "npm run build-docs && npm run upload-docs"
   },
   "repository": {
     "type": "git",
@@ -26,9 +27,10 @@
     "url": "https://github.com/jarvisniu/jet-ui/issues"
   },
   "homepage": "https://github.com/jarvisniu/jet-ui#readme",
-  "devDependencies": {
+  "dependencies": {
+    "@jarvisniu/upload-oss": "^0.2.3",
     "node-sass": "^4.13.0",
-    "parcel-bundler": "^1.12.4",
+    "nuxt": "^2.12.2",
     "rollup": "^1.27.13",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
@@ -36,11 +38,8 @@
     "rollup-plugin-stylus-css-modules": "^1.5.0",
     "rollup-plugin-terser": "^5.1.3",
     "rollup-plugin-vue": "5.1.1",
-    "stylus": "^0.54.7",
-    "vue": "^2.6.11",
-    "vue-hot-reload-api": "^2.3.4",
-    "vue-router": "^3.1.3",
-    "vue-template-compiler": "^2.6.11"
+    "sass-loader": "^8.0.2",
+    "stylus": "^0.54.7"
   },
   "files": [
     "dist/**/*"

@@ -37,6 +37,7 @@ export default {
       plugins: [],
     }),
     vue({
+      // @ts-ignore
       needMap: false,
     }),
     terser({

@@ -55,7 +55,7 @@
 </template>
 
 <script>
-import pkg from '../../package.json'
+import pkg from '../package.json'
 
 export default {
   data() {
@@ -76,29 +76,29 @@ export default {
       selPrimaryHue: 180,
       pageGroups: [
         { name: 'Intro', pages: [
-          { name: 'Gallery', path: '/gallery' },
-          { name: 'Design', path: '/design' },
+          { name: 'Gallery', path: '/intro/gallery' },
+          { name: 'Design', path: '/intro/design' },
         ] },
         { name: 'Basic', pages: [
-          { name: 'Button', path: '/button' },
-          { name: 'Icon', path: '/icon' },
-          { name: 'Input', path: '/input' },
-          { name: 'Input Number', path: '/input-number' },
-          { name: 'Input Search', path: '/input-search' },
-          { name: 'Label', path: '/label' },
-          { name: 'List', path: '/list' },
+          { name: 'Button', path: '/basic/button' },
+          { name: 'Icon', path: '/basic/icon' },
+          { name: 'Input', path: '/basic/input' },
+          { name: 'Input Number', path: '/basic/input-number' },
+          { name: 'Input Search', path: '/basic/input-search' },
+          { name: 'Label', path: '/basic/label' },
+          { name: 'List', path: '/basic/list' },
         ] },
         { name: 'Container', pages: [
-          { name: 'Toolbar', path: '/toolbar' },
-          { name: 'Toggle Bar', path: '/toggle-bar' },
-          { name: 'Panel', path: '/panel' },
-          { name: 'Rotated View', path: '/rotated-view' },
-          { name: 'Split View', path: '/split-view' },
-          { name: 'Contain View', path: '/contain-view' },
+          { name: 'Toolbar', path: '/container/toolbar' },
+          { name: 'Toggle Bar', path: '/container/toggle-bar' },
+          { name: 'Panel', path: '/container/panel' },
+          { name: 'Rotated View', path: '/container/rotated-view' },
+          { name: 'Split View', path: '/container/split-view' },
+          { name: 'Contain View', path: '/container/contain-view' },
         ] },
         { name: 'Navigation', pages: [
-          { name: 'Menu', path: '/menu' },
-          { name: 'Breadcrumb', path: '/breadcrumb' },
+          { name: 'Menu', path: '/nav/menu' },
+          { name: 'Breadcrumb', path: '/nav/breadcrumb' },
         ] },
       ],
     }

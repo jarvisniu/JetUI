@@ -9,6 +9,7 @@
 .cache/
 .nuxt/
 dist/
+# build/
 node_modules/
 .env
 package-lock.json

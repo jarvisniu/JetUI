@@ -50,8 +50,8 @@
 </template>
 
 <script>
-import iconDatabase from '../../assets/database.png'
-import iconTable from '../../assets/table.png'
+import iconDatabase from '~/assets/database.png'
+import iconTable from '~/assets/table.png'
 
 export default {
   data() {
