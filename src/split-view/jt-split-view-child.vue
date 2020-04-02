@@ -34,5 +34,6 @@ export default {
   background: lightblue;
   /* flex-basis: 0%; */
   flex-shrink: 1;
+  overflow: auto;
 }
 </style>

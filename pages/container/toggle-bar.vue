@@ -29,7 +29,6 @@
       </jt-toggle-bar>
     </jt-border>
 
-
     <h4>Set Width</h4>
     <jt-border inline all>
       <jt-toggle-bar>

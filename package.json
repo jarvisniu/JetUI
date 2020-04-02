@@ -27,7 +27,7 @@
     "url": "https://github.com/jarvisniu/jet-ui/issues"
   },
   "homepage": "https://github.com/jarvisniu/jet-ui#readme",
-  "dependencies": {
+  "devDependencies": {
     "@jarvisniu/upload-oss": "^0.2.3",
     "node-sass": "^4.13.0",
     "nuxt": "^2.12.2",

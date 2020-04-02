@@ -34,9 +34,20 @@
             <jt-icon name="minus"></jt-icon>
           </jt-panel-button>
         </div>
-        <div style="padding: 10px;">
-          <li v-for="i in 15" :key="i">Item {{i}}</li>
-        </div>
+        <div style="display: flex; flex-direction: column; height: 100%;">
+          <jt-border bottom style="flex: 0; height:33px;">
+            <jt-toolbar>
+              <jt-button-group>
+                <jt-button>Image</jt-button>
+                <jt-button>Music</jt-button>
+                <jt-button>Video</jt-button>
+              </jt-button-group>
+            </jt-toolbar>
+          </jt-border>
+          <div style="flex: 1; overflow-y: auto; padding: 10px;">
+            <li v-for="i in 15" :key="i">Item {{i}}</li>
+          </div>
+          </div>
       </jt-panel>
     </jt-border>
 

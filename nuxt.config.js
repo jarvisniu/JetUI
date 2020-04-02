@@ -3,7 +3,7 @@ const pkg = require('./package.json')
 module.exports = {
   mode: 'spa',
   server: {
-    port: 5000,
+    port: 7788,
     host: '0.0.0.0',
   },
   router: {

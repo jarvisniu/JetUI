@@ -31,6 +31,24 @@
       <jt-button :selected="selCity == 'Hong Kong'"
         @click="selCity = 'Hong Kong'">Hong Kong</jt-button>
     </jt-button-group>
+
+    <h4>Button Group with Icon</h4>
+    <jt-button-group>
+      <jt-button :selected="selCity == 'Beijing'"
+        @click="selCity = 'Beijing'">
+        <jt-icon name="plus"></jt-icon>
+      </jt-button>
+      <jt-button :selected="selCity == 'Shanghai'"
+        @click="selCity = 'Shanghai'">
+        <jt-icon name="minus"></jt-icon>
+      </jt-button>
+      <jt-button :selected="selCity == 'Hong Kong'"
+        @click="selCity = 'Hong Kong'">
+        <jt-icon name="search"></jt-icon>
+      </jt-button>
+    </jt-button-group>
+
+    <!-- end -->
   </div>
 </template>
 

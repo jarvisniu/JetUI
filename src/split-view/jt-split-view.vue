@@ -77,10 +77,13 @@ export default {
 
 <style lang="scss">
 .jt-split-view {
+  box-sizing: border-box;
+
   &.dragging {
     user-select: none;
   }
   .jt-split-view-handle {
+    box-sizing: border-box;
     position: relative;
     z-index: 10;
   }
