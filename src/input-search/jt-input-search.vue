@@ -1,3 +1,8 @@
+<docs>
+Events:
+- `press-enter`: Filter the IME Enter keys.
+</docs>
+
 <template>
   <div
     class="jt-input-search jt-inline-component"
@@ -28,6 +33,8 @@
         type="text"
         @focus="focused = true"
         @blur="focused = false"
+        @keydown.enter="onKeyDownEnter"
+        @compositionend="onCompositionEnd"
       >
     </div>
   </div>
@@ -47,6 +54,7 @@ export default {
       text: this.value,
       hovered: false,
       focused: false,
+      lastCompositionTime: Date.now(),
     }
   },
   watch: {
@@ -59,6 +67,16 @@ export default {
   },
   methods: {
     convertSizeToCSS,
+    onKeyDownEnter(e) {
+      setTimeout(() => {
+        if (Date.now() - this.lastCompositionTime > 10) {
+          this.$emit('press-enter')
+        }
+      }, 0)
+    },
+    onCompositionEnd() {
+      this.lastCompositionTime = Date.now()
+    },
   },
 }
 </script>

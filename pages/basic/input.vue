@@ -3,7 +3,7 @@
     <h2>Input</h2>
 
     <h4>Basic</h4>
-    <jt-input v-model="name"></jt-input>
+    <jt-input v-model="name" @press-enter="onPressEnter"></jt-input>
     <div style="margin-top: 10px;">
       <span v-if="!name">Enter your name please.</span>
       <span v-else>Hello {{ name }}.</span>
@@ -25,6 +25,11 @@ export default {
       name: '',
       age: 18,
     }
+  },
+  methods: {
+    onPressEnter() {
+      alert('press-enter')
+    },
   },
 }
 </script>

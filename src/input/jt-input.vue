@@ -1,3 +1,8 @@
+<docs>
+Events:
+- `press-enter`: Filter the IME Enter keys.
+</docs>
+
 <template>
   <div
     class="jt-input jt-inline-component"
@@ -5,7 +10,10 @@
       width: convertSizeToCSS(width),
     }"
   >
-    <input type="text" v-model="text">
+    <input type="text" v-model="text"
+      @keydown.enter="onKeyDownEnter"
+      @compositionend="onCompositionEnd"
+    >
   </div>
 </template>
 
@@ -21,6 +29,7 @@ export default {
   data() {
     return {
       text: this.value,
+      lastCompositionTime: Date.now(),
     }
   },
   watch: {
@@ -33,6 +42,16 @@ export default {
   },
   methods: {
     convertSizeToCSS,
+    onKeyDownEnter(e) {
+      setTimeout(() => {
+        if (Date.now() - this.lastCompositionTime > 10) {
+          this.$emit('press-enter')
+        }
+      }, 0)
+    },
+    onCompositionEnd() {
+      this.lastCompositionTime = Date.now()
+    },
   },
 }
 </script>
