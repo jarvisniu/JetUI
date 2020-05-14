@@ -93,6 +93,7 @@ export default {
           { name: 'Toggle Bar', path: '/container/toggle-bar' },
           { name: 'Panel', path: '/container/panel' },
           { name: 'Rotated View', path: '/container/rotated-view' },
+          { name: 'Scroll View', path: '/container/scroll-view' },
           { name: 'Split View', path: '/container/split-view' },
           { name: 'Contain View', path: '/container/contain-view' },
         ] },

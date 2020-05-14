@@ -94,7 +94,7 @@ export default {
     height: 100%;
     width: 9px;
     margin: 0 -4px;
-    cursor: w-resize;
+    cursor: ew-resize;
   }
   &:not(.vertical) .jt-split-view-line {
     height: 100%;
@@ -106,7 +106,7 @@ export default {
     width: 100%;
     height: 9px;
     margin: -4px 0;
-    cursor: n-resize;
+    cursor: ns-resize;
   }
   &.vertical .jt-split-view-line  {
     width: 100%;
