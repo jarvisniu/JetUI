@@ -39,6 +39,7 @@ export default {
 <style lang="scss" scoped>
 .jt-nav-view {
   box-sizing: border-box;
+  height: 100vh;
 
   .side {
     position: absolute;
@@ -78,7 +79,9 @@ export default {
   }
 
   .content {
+    box-sizing: border-box;
     height: 100%;
+    overflow-y: auto; // wrap inner margin
     transition: margin-left 0.2s;
     margin-left: var(--jt-side-width);
   }

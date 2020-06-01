@@ -1,5 +1,5 @@
 <template>
-  <div style="position: relative; overflow: hidden;">
+  <div class="jt-docs-sim-window" style="padding: 10px;">
     <h2 style="margin-top: 30px;">Menu</h2>
 
     <h4>TODO</h4>
@@ -7,9 +7,9 @@
       <li>Icon</li>
     </ol>
 
-    <jt-border top left right style="position: absolute; top: 0; left: 0; width: 100%;">
+    <div style="position: absolute; top: 0; left: 0; width: 100%;">
       <jt-menu :data="menu"></jt-menu>
-  </jt-border>
+    </div>
   </div>
 </template>
 <script>

@@ -1,56 +1,63 @@
 <template>
-  <div class="app" :class="`jt-theme-${ selTheme }`">
-    <div class="side">
-      <div class="title">jet-ui docs</div>
-      <div class="version">v{{version}}</div>
+  <div :class="`jt-theme-${ selTheme }`">
+    <jt-nav-view>
+      <jt-scroll-view style="height: 100%;">
+        <div class="sidebar" style="padding: 10px;">
+          <div class="title">jet-ui docs</div>
+          <div class="version">v{{version}}</div>
 
-      <jt-border inline all>
-        <jt-toggle-bar>
-          <jt-toggle-bar-button
-            v-for="theme in themes" :key="theme.value"
-            :selected="selTheme === theme.value"
-            style="width: 80px;"
-            @click="selTheme = theme.value"
-          >{{ theme.label }}</jt-toggle-bar-button>
-        </jt-toggle-bar>
-      </jt-border>
-
-      <jt-border inline all style="margin-top: -1px;">
-        <jt-toggle-bar>
-          <jt-toggle-bar-button
-            v-for="hue in primaryHues" :key="hue.value"
-            :selected="selPrimaryHue === hue.value"
-            style="width: 32px;"
-            @click="selPrimaryHue = hue.value"
-          >
-          <jt-border all inline style="margin: 5px;">
-            <div
-              :style="{ backgroundColor: `hsl(${ hue.value }, 66%, 40%)` }"
-              style="height: 12px; width: 18px;"
-            ></div>
+          <jt-border inline all>
+            <jt-toggle-bar>
+              <jt-toggle-bar-button
+                v-for="theme in themes" :key="theme.value"
+                :selected="selTheme === theme.value"
+                style="width: 80px;"
+                @click="selTheme = theme.value"
+              >{{ theme.label }}</jt-toggle-bar-button>
+            </jt-toggle-bar>
           </jt-border>
-          </jt-toggle-bar-button>
-        </jt-toggle-bar>
-      </jt-border>
 
-      <div v-for="(pageGroup, groupIndex) in pageGroups" :key="groupIndex">
-        <div class="section-title">{{ pageGroup.name }}</div>
-        <div
-          class="page-link"
-          v-for="(page, pageIndex) in pageGroup.pages"
-          :key="pageIndex"
-        >
-          <span style="padding-right: 4px;">·</span><router-link
-            :to="page.path"
-            :class="{selected: $route.path == page.path}"
-          >
-            <span>{{ page.name }}</span>
-          </router-link>
+          <jt-border inline all style="margin-top: -1px;">
+            <jt-toggle-bar>
+              <jt-toggle-bar-button
+                v-for="hue in primaryHues" :key="hue.value"
+                :selected="selPrimaryHue === hue.value"
+                style="width: 32px;"
+                @click="selPrimaryHue = hue.value"
+              >
+              <jt-border all inline style="margin: 5px;">
+                <div
+                  :style="{ backgroundColor: `hsl(${ hue.value }, 66%, 40%)` }"
+                  style="height: 12px; width: 18px;"
+                ></div>
+              </jt-border>
+              </jt-toggle-bar-button>
+            </jt-toggle-bar>
+          </jt-border>
+
+          <div v-for="(pageGroup, groupIndex) in pageGroups" :key="groupIndex">
+            <div class="section-title">{{ pageGroup.name }}</div>
+            <div
+              class="page-link"
+              v-for="(page, pageIndex) in pageGroup.pages"
+              :key="pageIndex"
+            >
+              <span style="padding-right: 4px;">·</span><router-link
+                :to="page.path"
+                :class="{selected: $route.path == page.path}"
+              >
+                <span>{{ page.name }}</span>
+              </router-link>
+            </div>
+          </div>
         </div>
-      </div>
-    </div><div class="content">
-      <router-view></router-view>
-    </div>
+      </jt-scroll-view>
+      <jt-scroll-view slot="content" style="height: 100%;">
+        <div style="padding: 10px;">
+          <router-view></router-view>
+        </div>
+      </jt-scroll-view>
+    </jt-nav-view>
   </div>
 </template>
 
@@ -123,25 +130,8 @@ export default {
   --jt-docs-side-link: white;
 }
 
-.app {
-  height: 100vh;
-  overflow: auto;
-}
-.side,
-.content {
-  box-sizing: border-box;
-  display: inline-block;
-  height: 100%;
-  overflow-y: auto;
-  vertical-align: top;
-}
-.side {
-  width: 200px;
-  border-right: solid 1px silver;
-  padding: 10px;
+.sidebar {
   font-family: Inconsolata, Monaco, Consolas, STHeiti, DengXian, monospace, 'Segoe UI Emoji';
-  overflow-x: hidden;
-  overflow-y: scroll;
 
   .title {
     font-size: 24px;
@@ -175,10 +165,5 @@ export default {
       }
     }
   }
-}
-.content {
-  width: calc(100% - 200px);
-  padding: 10px;
-  background-color: var(--jt-bg-body);
 }
 </style>

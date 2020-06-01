@@ -1,7 +1,7 @@
 <template>
   <div
     :class="{ active: active }"
-    class="menu-top"
+    class="jt-menu"
     @click.stop="active = !active">
     <div
       v-for="(menu1, index1) in data"
@@ -92,20 +92,22 @@ $vertical-gap: 4px;
 .float-right {
   float: right;
 }
-.menu-top {
+.jt-menu {
   font-size: $font-size;
   display: flex;
   padding-left: 8px;
   user-select: none;
   border-bottom: solid 1px var(--jt-border);
   background-color: var(--jt-bg-menu);
+  z-index: 1;
 }
 .menu-item {
   cursor: default;
 
   & > .button {
     display: inline-block;
-    padding: 1px 6px;
+    padding: 0 6px;
+    line-height: 20px;
     transition: background-color 0.15s;
     &:hover{
       background-color: var(--jt-bg-menu-hover);
@@ -138,7 +140,7 @@ $vertical-gap: 4px;
     position: relative;
   }
 }
-.menu-top.active .menu-item:hover > .menu-down {
+.jt-menu.active .menu-item:hover > .menu-down {
   visibility: visible;
 }
 
@@ -150,13 +152,15 @@ $vertical-gap: 4px;
   }
 }
 .menu-down .button {
-  padding: 1px 6px;
+  padding: 0 6px;
+  line-height: 20px;
   &:active {
     background-color: var(--jt-bg-menu-active);
   }
 }
 .menu-right .button {
-  padding: 1px 6px;
+  padding: 0 6px;
+  line-height: 20px;
   transition: background-color 0.15s;
   &:hover {
     background-color: var(--jt-bg-menu-hover);
@@ -182,7 +186,7 @@ $vertical-gap: 4px;
   background-color: var(--jt-bg-menu);
   padding: $vertical-gap 0;
 }
-.menu-top.active li:hover > .menu-right {
+.jt-menu.active li:hover > .menu-right {
   visibility: visible;
 }
 

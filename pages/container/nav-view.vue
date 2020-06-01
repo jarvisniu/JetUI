@@ -16,7 +16,7 @@
     </ul>
 
     <h4>Basic</h4>
-    <jt-border all style="position: relative;">
+    <div class="jt-docs-sim-window">
       <jt-button class="btn-show-side" @click="$refs.side.open()">≡</jt-button>
       <jt-nav-view ref="side" :width="150" style="height: 150px;">
         <div style="padding: 10px;">
@@ -29,7 +29,7 @@
         </div>
         <div slot="content" style="padding: 10px;">Content</div>
       </jt-nav-view>
-    </jt-border>
+    </div>
 
   </div>
 </template>

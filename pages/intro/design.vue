@@ -9,13 +9,30 @@
 
     <h4>Theme Colors</h4>
     <ul>
-      <li>
-        <span>Primary: </span>
-        <div class="color-cell" style="background-color: var(--jt-primary);"></div>
+      <li v-for="(color, index) in colors" :key="index">
+        <span>{{ color.label }}: </span>
+        <div class="color-cell" :style="{ backgroundColor: `var(${ color.var })` }"></div>
       </li>
     </ul>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      colors: [
+        { label: 'Primary', var: '--jt-primary' },
+        { label: 'Background Body', var: '--jt-bg-body' },
+        { label: 'Background workspace', var: '--jt-bg-workspace' },
+        { label: 'Background Container Light', var: '--jt-bg-container-light' },
+        { label: 'Background Container Dark', var: '--jt-bg-container-dark' },
+        { label: 'Background Container Darker', var: '--jt-bg-container-darker' },
+      ],
+    }
+  },
+}
+</script>
 
 <style lang="scss" scoped>
 .color-cell {

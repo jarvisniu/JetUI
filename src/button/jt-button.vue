@@ -73,6 +73,7 @@ export default {
 
   &.selected {
     color: var(--jt-text-selected);
+    --jt-icon: var(--jt-text-selected);
     border-color: var(--jt-border);
     background-color: var(--jt-bg-button-selected);
     &:hover {

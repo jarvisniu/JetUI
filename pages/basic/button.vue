@@ -5,6 +5,9 @@
     <h4>Basic</h4>
     <jt-button>确定</jt-button>
     <jt-button>Confirm</jt-button>
+    <jt-button>
+        <jt-icon name="plus"></jt-icon>
+    </jt-button>
 
     <h4>Height & Width</h4>
     <jt-button style="width: 100px;">Set Width</jt-button>
@@ -18,8 +21,11 @@
     <jt-button disabled>Search</jt-button>
 
     <h4>Selected (Click to toggle)</h4>
-    <jt-button :selected="isOn" @click="isOn = !isOn">
+    <jt-button :selected="isOn" @click="isOn = !isOn" style="width: 40px">
       {{ isOn ? 'Off' : 'On' }}
+    </jt-button>
+    <jt-button :selected="isOn" @click="isOn = !isOn">
+        <jt-icon name="plus"></jt-icon>
     </jt-button>
 
     <h4>Button Group</h4>

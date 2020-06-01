@@ -6,3 +6,11 @@ body {
   margin: 0;
   font-family: DengXian, PingFang, Arial, Helvetica, sans-serif;
 }
+
+.jt-docs-sim-window {
+  box-sizing: border-box;
+  position: relative;
+  height: 100%;
+  overflow: auto;
+  border: double 3px var(--jt-border);
+}
