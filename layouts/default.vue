@@ -96,6 +96,7 @@ export default {
           { name: 'Scroll View', path: '/container/scroll-view' },
           { name: 'Split View', path: '/container/split-view' },
           { name: 'Contain View', path: '/container/contain-view' },
+          { name: 'Nav View', path: '/container/nav-view' },
         ] },
         { name: 'Navigation', pages: [
           { name: 'Menu', path: '/nav/menu' },

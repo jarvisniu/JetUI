@@ -12,6 +12,7 @@ import InputSearch from './input-search/jt-input-search.vue'
 import Label from './label/jt-label.vue'
 import List from './list/jt-list.vue'
 import Menu from './menu/jt-menu.vue'
+import NavView from './nav-view/jt-nav-view.vue'
 import Panel from './panel/jt-panel.vue'
 import PanelButton from './panel/jt-panel-button.vue'
 import RotatedView from './rotated-view/jt-rotated-view.vue'
@@ -38,6 +39,7 @@ export default {
     Vue.component(Label.name, Label)
     Vue.component(List.name, List)
     Vue.component(Menu.name, Menu)
+    Vue.component(NavView.name, NavView)
     Vue.component(Panel.name, Panel)
     Vue.component(PanelButton.name, PanelButton)
     Vue.component(RotatedView.name, RotatedView)
