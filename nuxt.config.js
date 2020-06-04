@@ -14,7 +14,7 @@ module.exports = {
     title: 'jet-ui docs',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' },
       { hid: 'description', name: 'description', content: pkg.description }
     ],
     link: [
@@ -25,7 +25,7 @@ module.exports = {
   loading: { color: '#fff' },
   // Global CSS
   css: [
-    // "modern-normalize",
+    "modern-normalize",
     // "jol",
     // "@jarvisniu/unstyle",
     // "@jarvisniu/unstyle/font-size.css",

@@ -46,9 +46,10 @@ Toggle Bar Button
   user-select: none;
 
   .icon {
+    box-sizing: border-box;
     padding: 4px;
-    width: 16px;
-    height: 16px;
+    width: 24px;
+    height: 24px;
     -webkit-user-drag: none;
   }
   .label {

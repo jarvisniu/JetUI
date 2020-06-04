@@ -29,6 +29,7 @@
   "homepage": "https://github.com/jarvisniu/jet-ui#readme",
   "devDependencies": {
     "@jarvisniu/upload-oss": "^0.2.3",
+    "modern-normalize": "^0.6.0",
     "node-sass": "^4.13.0",
     "nuxt": "^2.12.2",
     "rollup": "^1.27.13",

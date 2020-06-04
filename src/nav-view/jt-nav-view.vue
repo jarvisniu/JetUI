@@ -32,6 +32,9 @@ export default {
     open() {
       this.sideOpen = true
     },
+    close() {
+      this.sideOpen = false
+    },
   },
 }
 </script>
@@ -43,10 +46,10 @@ export default {
 
   .side {
     position: absolute;
+    z-index: 2;
     border-right: solid 1px red;
     top: 0;
     height: 100%;
-    z-index: 1;
     transform: translateX(0%);
     width: var(--jt-side-width);
     border-right: solid 1px var(--jt-border);
@@ -64,6 +67,7 @@ export default {
 
   .side-mask {
     position: absolute;
+    z-index: 1;
     left: 0;
     top: 0;
     bottom: 0;

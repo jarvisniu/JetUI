@@ -5,6 +5,7 @@ html {
 body {
   margin: 0;
   font-family: DengXian, PingFang, Arial, Helvetica, sans-serif;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); // disable mobile tap outline
 }
 
 .jt-docs-sim-window {

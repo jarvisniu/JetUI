@@ -1,6 +1,7 @@
 <template>
   <div :class="`jt-theme-${ selTheme }`">
-    <jt-nav-view>
+    <jt-button class="btn-show-side" @click="$refs.side.open()">≡</jt-button>
+    <jt-nav-view ref="side">
       <jt-scroll-view style="height: 100%;">
         <div class="sidebar" style="padding: 10px;">
           <div class="title">jet-ui docs</div>
@@ -53,7 +54,7 @@
         </div>
       </jt-scroll-view>
       <jt-scroll-view slot="content" style="height: 100%;">
-        <div style="padding: 10px;">
+        <div style="padding: 10px; overflow-x: auto;">
           <router-view></router-view>
         </div>
       </jt-scroll-view>
@@ -113,9 +114,16 @@ export default {
     }
   },
   watch: {
+    '$route.path' () {
+      this.$refs.side.close()
+    },
     selPrimaryHue(val) {
       document.documentElement.style.setProperty('--jt-primary-hue', val)
     },
+  },
+  mounted() {
+    // enable css :active on some mobile browser
+    document.addEventListener("touchstart", function() {}, false);
   },
 }
 </script>
@@ -130,8 +138,20 @@ export default {
   --jt-docs-side-link: white;
 }
 
+.btn-show-side {
+  position: absolute;
+  margin: 5px;
+  width: 40px;
+  height: 40px;
+  opacity: 0.85;
+  @media screen and (min-width: 600px) {
+    display: none;
+  }
+}
+
 .sidebar {
   font-family: Inconsolata, Monaco, Consolas, STHeiti, DengXian, monospace, 'Segoe UI Emoji';
+  background-color: var(--jt-bg-container-dark);
 
   .title {
     font-size: 24px;
