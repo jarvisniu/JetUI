@@ -34,7 +34,7 @@ export default {
   overflow: auto;
   font-size: 14px;
   user-select: none;
-  background-color: var(--jt-bg-workspace);
+  background-color: var(--jt-bg-container);
 }
 .jt-list-item {
   height: 24px;
@@ -45,7 +45,8 @@ export default {
     border-bottom: solid 1px var(--jt-border);
   }
 
-  transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+  background-color: var(--jt-bg-button);
+  transition: color var(--jt-duration), background-color var(--jt-duration), border-color var(--jt-duration);
   &:hover {
     @media (hover: hover) {
       background-color: var(--jt-bg-button-hover);
@@ -53,11 +54,10 @@ export default {
   }
   &:active {
     background-color: var(--jt-bg-button-active);
-    transition: background-color 0.02s, border-color 0.02s;
+    transition: background-color var(--jt-duration-active), border-color var(--jt-duration-active);
   }
 
   &.selected {
-    color: var(--jt-text-selected);
     background-color: var(--jt-bg-button-selected);
     &:hover {
       background-color: var(--jt-bg-button-selected-hover);

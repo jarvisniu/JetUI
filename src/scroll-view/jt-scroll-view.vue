@@ -31,7 +31,7 @@ export default {
   }
   &::-webkit-scrollbar-thumb {
     border: 2px solid hsl(0, 0%, 95%);
-    // transition background-color 0.2s // not work
+    // transition background-color var(--jt-duration) // not work
     background-color: hsl(0, 0%, 70%);
     &:hover {
       background-color: hsl(0, 0%, 60%);

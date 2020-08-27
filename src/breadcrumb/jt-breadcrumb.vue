@@ -49,11 +49,11 @@ export default {
       border-bottom: solid 12px transparent;
       border-left: solid 7px var(--jt-bg-button);
       vertical-align: top;
-      transition: color 0.2s, border-color 0.2s, border-color 0.2s;
+      transition: color var(--jt-duration), border-color var(--jt-duration), border-color var(--jt-duration);
       background-color: transparent;
     }
 
-    transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+    transition: color var(--jt-duration), background-color var(--jt-duration), border-color var(--jt-duration);
     color: var(--jt-text);
     background-color: var(--jt-bg-button);
     &:hover {
@@ -63,7 +63,6 @@ export default {
       background-color: var(--jt-bg-button-active);
     }
     &.selected {
-      color: var(--jt-text-selected);
       background-color: var(--jt-bg-button-selected);
     }
     &:hover:after {

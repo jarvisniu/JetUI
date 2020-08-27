@@ -50,19 +50,18 @@ export default {
   }
 
   // theme
-  transition: border-color 0.3s, background-color 0.3s;
+  transition: border-color var(--jt-duration), background-color var(--jt-duration);
   border-color: transparent;
   background-color: transparent;
   &:hover {
     border-color: var(--jt-border);
-    background-color: var(--jt-bg-button-hover-reverse);
+    background-color: var(--jt-bg-button-hover);
   }
   &:active {
     background-color: var(--jt-bg-button-active);
-    transition: background-color 0.02s, border-color 0.02s;
+    transition: background-color var(--jt-duration-active), border-color var(--jt-duration-active);
   }
   &.selected {
-    color: var(--jt-text-selected);
     border-color: var(--jt-border);
     background-color: var(--jt-bg-button-selected);
     &:hover {

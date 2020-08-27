@@ -41,6 +41,14 @@ export default {
     },
   },
   methods: {
+    // public
+    focus() {
+      this.$refs.input.focus()
+    },
+    select() {
+      this.$refs.input.select()
+    },
+    // private
     convertSizeToCSS,
     onKeyDownEnter(e) {
       setTimeout(() => {
@@ -76,14 +84,10 @@ export default {
     background-color: inherit;
   }
 
-  transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+  transition: color var(--jt-duration), background-color var(--jt-duration), border-color var(--jt-duration);
   color: var(--jt-text);
   background-color: var(--jt-bg-input);
   border-color: var(--jt-bg-input-border);
-  &:hover {
-    background-color: var(--jt-bg-input-hover);
-    border-color: var(--jt-bg-input-border-hover);
-  }
   &:focus-within {
     background-color: var(--jt-bg-input-hover);
     border-color: var(--jt-primary);

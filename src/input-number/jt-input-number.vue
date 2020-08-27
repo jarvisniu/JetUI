@@ -70,14 +70,10 @@ export default {
     background-color: inherit;
   }
 
-  transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+  transition: color var(--jt-duration), background-color var(--jt-duration), border-color var(--jt-duration);
   color: var(--jt-text);
   background-color: var(--jt-bg-input);
   border-color: var(--jt-bg-input-border);
-  &:hover {
-    background-color: var(--jt-bg-input-hover);
-    border-color: var(--jt-bg-input-border-hover);
-  }
   &:focus-within {
     background-color: var(--jt-bg-input-hover);
     border-color: var(--jt-primary);
@@ -100,7 +96,7 @@ export default {
       border-top: solid 1px var(--jt-bg-input-border);
     }
 
-    transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+    transition: color var(--jt-duration), background-color var(--jt-duration), border-color var(--jt-duration);
     background-color: var(--jt-bg-button);
     &:hover {
       @media (hover: hover) {
@@ -109,7 +105,7 @@ export default {
     }
     &:active {
       background-color: var(--jt-bg-button-active);
-      transition: background-color 0.02s, border-color 0.02s;
+      transition: background-color var(--jt-duration-active), border-color var(--jt-duration-active);
     }
 
     &.disabled {

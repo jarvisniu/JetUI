@@ -53,8 +53,8 @@ export default {
     transform: translateX(0%);
     width: var(--jt-side-width);
     border-right: solid 1px var(--jt-border);
-    background-color: var(--jt-bg-container-light);
-    transition: transform 0.2s;
+    background-color: var(--jt-bg-container-dark);
+    transition: transform var(--jt-duration);
     &.open {
       transform: translateX(0);
     }
@@ -75,7 +75,7 @@ export default {
     background-color: black;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.2s;
+    transition: opacity var(--jt-duration);
   }
   .side.open + .side-mask {
     opacity: 0.5;
@@ -86,7 +86,7 @@ export default {
     box-sizing: border-box;
     height: 100%;
     overflow-y: auto; // wrap inner margin
-    transition: margin-left 0.2s;
+    transition: margin-left var(--jt-duration);
     margin-left: var(--jt-side-width);
   }
   @media screen and (max-width: 600px) {

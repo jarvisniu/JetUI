@@ -41,7 +41,7 @@
 <style lang="scss" scoped>
 .body {
   border: solid 1px silver;
-  background-color: var(--jt-bg-workspace);
+  background-color: var(--jt-bg-container);
   padding: 10px;
 }
 </style>

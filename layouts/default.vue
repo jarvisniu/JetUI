@@ -2,8 +2,8 @@
   <div :class="`jt-theme-${ selTheme }`">
     <jt-button class="btn-show-side" @click="$refs.side.open()">≡</jt-button>
     <jt-nav-view ref="side">
-      <jt-scroll-view style="height: 100%;">
-        <div class="sidebar" style="padding: 10px;">
+      <jt-scroll-view class="sidebar" style="height: 100%;">
+        <div style="padding: 10px;">
           <div class="title">jet-ui docs</div>
           <div class="version">v{{version}}</div>
 

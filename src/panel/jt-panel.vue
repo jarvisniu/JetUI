@@ -47,7 +47,7 @@ export default {
   min-width: 10px;
   min-height: 1px;
   outline: none;
-  background-color: var(--jt-bg-workspace);
+  background-color: var(--jt-bg-container);
 }
 .jt-panel-title {
   box-sizing: border-box;
@@ -57,7 +57,7 @@ export default {
   user-select: none;
   border-bottom: solid 1px var(--jt-border);
 
-  transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+  transition: color var(--jt-duration), background-color var(--jt-duration), border-color var(--jt-duration);
   background: var(--jt-bg-panel-title);
 
   .jt-panel:focus-within & {

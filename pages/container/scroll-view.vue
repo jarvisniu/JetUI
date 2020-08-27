@@ -17,7 +17,7 @@
 
     <h4>Basic</h4>
     <jt-border all>
-      <jt-scroll-view style="height: 150px; background: var(--jt-bg-workspace);">
+      <jt-scroll-view style="height: 150px; background: var(--jt-bg-container);">
         <div style="padding: 5px;">
           <div v-for="i in 15" :key="i">{{ i }}</div>
         </div>
@@ -26,7 +26,7 @@
 
     <h4>Invalid</h4>
     <jt-border all>
-      <jt-scroll-view style="height: 150px; background: var(--jt-bg-workspace); ">
+      <jt-scroll-view style="height: 150px; background: var(--jt-bg-container); ">
         <div style="padding: 5px;">
           <div v-for="i in 2" :key="i">{{ i }}</div>
         </div>

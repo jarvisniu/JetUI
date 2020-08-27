@@ -22,7 +22,7 @@ export default {
     margin: -2px 2px;
   }
 
-  transition: background-color 0.2s;
+  transition: background-color var(--jt-duration);
   background-color: var(--jt-border);
 }
 

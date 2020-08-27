@@ -33,7 +33,7 @@ export default {
     }
 
     font-size: var(--jt-font-size);
-    transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+    transition: color var(--jt-duration), background-color var(--jt-duration), border-color var(--jt-duration);
     &:hover {
       background-color: var(--jt-bg-panel-button-hover);
     }

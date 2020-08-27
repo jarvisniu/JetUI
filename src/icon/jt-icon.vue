@@ -77,7 +77,7 @@ export default {
 
   svg {
     vertical-align: top;
-    transition: fill 0.2s;
+    transition: fill var(--jt-duration);
     fill: var(--jt-icon);
   }
 }

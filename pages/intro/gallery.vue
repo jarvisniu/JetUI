@@ -7,7 +7,7 @@
       <jt-panel title="Message" style="width: 500px;">
         <jt-border bottom>
           <jt-toolbar>
-            <jt-input-search width="150"></jt-input-search>
+            <jt-input-search ref="inputSearch" width="150"></jt-input-search>
             <jt-input width="80"></jt-input>
             <jt-input-number width="80" v-model="num1"></jt-input-number>
             <jt-button>OK</jt-button>

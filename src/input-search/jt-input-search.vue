@@ -29,11 +29,13 @@ Events:
         <jt-icon name="cross" margin="2"></jt-icon>
       </div>
       <input
+        ref="input"
         v-model="text"
         type="text"
         @focus="focused = true"
         @blur="focused = false"
         @keydown.enter="onKeyDownEnter"
+        @keydown.esc="text = ''"
         @compositionend="onCompositionEnd"
       >
     </div>
@@ -66,6 +68,14 @@ export default {
     },
   },
   methods: {
+    // public
+    focus() {
+      this.$refs.input.focus()
+    },
+    select() {
+      this.$refs.input.select()
+    },
+    // private
     convertSizeToCSS,
     onKeyDownEnter(e) {
       setTimeout(() => {
@@ -98,16 +108,12 @@ export default {
   width: 100%;
   height: 24px;
 
-  transition: color 0.2s, border-color 0.2s, background-color 0.2s;
+  transition: color var(--jt-duration), border-color var(--jt-duration), background-color var(--jt-duration);
   background-color: var(--jt-bg-input);
   border-color: var(--jt-bg-input-border);
   &.not-empty {
     background-color: var(--jt-bg-input-warning);
   }
-  /* &:hover {
-    background-color: var(--jt-bg-input-hover);
-    border-color: var(--jt-bg-input-border-hover);
-  } */
   &:focus {
     transition: background-color 0.1s;
     background-color: hsl(0, 0%, 100%);

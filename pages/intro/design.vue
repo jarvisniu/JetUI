@@ -23,9 +23,7 @@ export default {
     return {
       colors: [
         { label: 'Primary', var: '--jt-primary' },
-        { label: 'Background Body', var: '--jt-bg-body' },
-        { label: 'Background workspace', var: '--jt-bg-workspace' },
-        { label: 'Background Container Light', var: '--jt-bg-container-light' },
+        { label: 'Background Container', var: '--jt-bg-container' },
         { label: 'Background Container Dark', var: '--jt-bg-container-dark' },
         { label: 'Background Container Darker', var: '--jt-bg-container-darker' },
       ],

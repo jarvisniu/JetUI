@@ -1,8 +1,8 @@
 :root {
-  color: black;
-  background-color: var(--jt-bg-container-light);
   // global
   --jt-font-size: 14px;
+  --jt-duration: 0.2s;
+  --jt-duration-active: 0.05s;
   // theme colors
   --jt-primary-hue: 180;
   --jt-primary: hsl(var(--jt-primary-hue), 66%, 40%);
@@ -15,39 +15,35 @@
   --jt-text: hsl(0, 0%, 15%);
   --jt-icon: hsl(0, 0%, 30%);
   --jt-text-sub: hsl(0, 0%, 50%);
-  --jt-text-selected: hsl(0, 0%, 100%);
   // background
-  --jt-bg-body: hsl(0, 0%, 95%);
-  --jt-bg-workspace: hsl(0, 0%, 98%);
-  --jt-bg-container-light: hsl(0, 0%, 100%);
-  --jt-bg-container-dark: hsl(0, 0%, 91%);
-  --jt-bg-container-darker: hsl(0, 0%, 85%);
+  --jt-bg-container: hsl(0, 0%, 98%);
+  --jt-bg-container-dark: hsl(0, 0%, 94%);
+  --jt-bg-container-darker: hsl(0, 0%, 88%);
   // button
   --jt-bg-button: hsl(0, 0%, 89%);
-  --jt-bg-button-hover: hsl(0, 0%, 97%);
-  --jt-bg-button-hover-reverse: hsl(0, 0%, 78%);
-  --jt-bg-button-active: hsl(0, 0%, 54%);
-  --jt-bg-button-selected: hsl(0, 0%, 54%);
-  --jt-bg-button-selected-hover: var(--jt-bg-button-selected);
-  --jt-bg-button-selected-active: var(--jt-bg-button-selected);
+  --jt-bg-button-hover: hsl(0, 0%, 85%);
+  --jt-bg-button-active: hsl(0, 0%, 74%);
+  --jt-bg-button-selected: hsl(0, 0%, 74%);
+  --jt-bg-button-selected-hover: hsl(0, 0%, 66%);
+  --jt-bg-button-selected-active: hsl(0, 0%, 55%);
   // menu
-  --jt-bg-menu: var(--jt-bg-workspace);
+  --jt-bg-menu: var(--jt-bg-container);
   --jt-bg-menu-hover: hsl(0, 0%, 95%);
   --jt-bg-menu-active: hsl(0, 0%, 80%);
   // input
   --jt-bg-input: hsl(0, 0%, 99%);
   --jt-bg-input-hover: hsl(0, 0%, 100%);
   --jt-bg-input-border: hsl(210, 13%, 75%);
-  --jt-bg-input-border-hover: hsl(210, 10%, 69%);
   --jt-bg-input-warning: hsl(60, 74%, 94%);
   // panel
   --jt-bg-panel-title: linear-gradient(0deg, hsl(0, 0%, 85%), hsl(0, 0%, 90%));
-  --jt-bg-panel-button-hover: hsla(0, 0%, 100%, .5);
+  --jt-bg-panel-button-hover: hsla(0, 0%, 80%, .5);
   --jt-bg-panel-button-active: hsla(0, 0%, 60%, .5);
 }
 .jt-theme-dark {
+  // TODO remove this, add to control styles
   color: white;
-  background-color: var(--jt-bg-container-light);
+  background-color: var(--jt-bg-container);
   // theme
   // border
   --jt-border: hsl(0, 0%, 0%);
@@ -56,30 +52,26 @@
   --jt-text: hsl(0, 0%, 93%);
   --jt-icon: hsl(0, 0%, 80%);
   --jt-text-sub: hsl(0, 0%, 66%);
-  --jt-text-selected: hsl(0, 0%, 80%);
   // background
-  --jt-bg-body: rgb(60, 63, 65);
-  --jt-bg-workspace: hsl(0, 0%, 30%);
-  --jt-bg-container-light: hsl(0, 0%, 20%);
+  --jt-bg-container: hsl(0, 0%, 30%);
+  --jt-bg-container: hsl(0, 0%, 20%);
   --jt-bg-container-dark: hsl(0, 0%, 27%);
   --jt-bg-container-darker: hsl(0, 0%, 33%);
   // button
   --jt-bg-button: hsl(180, 5%, 33%);
   --jt-bg-button-hover: hsl(180, 5%, 37%);
-  --jt-bg-button-hover-reverse: hsl(180, 5%, 21%);
   --jt-bg-button-active: hsl(210, 5%, 15%);
   --jt-bg-button-selected: hsl(200, 3%, 18%);
   --jt-bg-button-selected-hover: var(--jt-bg-button-selected);
   --jt-bg-button-selected-active: var(--jt-bg-button-selected);
   // menu
-  --jt-bg-menu: var(--jt-bg-workspace);
+  --jt-bg-menu: var(--jt-bg-container);
   --jt-bg-menu-hover: hsl(0, 0%, 40%);
   --jt-bg-menu-active: hsl(0, 0%, 20%);
   // input
   --jt-bg-input: rgb(69, 73, 77);
   --jt-bg-input-hover: rgb(79, 83, 87);
   --jt-bg-input-border: hsl(180, 5%, 66%);
-  --jt-bg-input-border-hover: hsl(180, 5%, 75%);
   --jt-bg-input-warning: hsl(60, 25%, 25%);
   // panel
   --jt-bg-panel-title: linear-gradient(0deg, hsl(0, 0%, 22%), hsl(0, 0%, 25%));

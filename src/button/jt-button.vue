@@ -55,15 +55,21 @@ export default {
   outline: none;
   -webkit-tap-highlight-color: transparent;
 
-  transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+  transition:
+    color var(--jt-duration),
+    background-color var(--jt-duration),
+    border-color var(--jt-duration);
   &:hover {
     @media (hover: hover) {
       background-color: var(--jt-bg-button-hover);
     }
   }
   &:active {
+    color: var(--jt-text);
     background-color: var(--jt-bg-button-active);
-    transition: background-color 0.02s, border-color 0.02s;
+    transition:
+      background-color var(--jt-duration-active),
+      border-color var(--jt-duration-active);
   }
 
   &.disabled {
@@ -72,8 +78,6 @@ export default {
   }
 
   &.selected {
-    color: var(--jt-text-selected);
-    --jt-icon: var(--jt-text-selected);
     border-color: var(--jt-border);
     background-color: var(--jt-bg-button-selected);
     &:hover {
@@ -95,7 +99,7 @@ export default {
     }
     &:active {
       background-color: var(--jt-primary-active);
-      transition: background-color 0.02s, border-color 0.02s;
+      transition: background-color var(--jt-duration-active), border-color var(--jt-duration-active);
     }
   }
 }
