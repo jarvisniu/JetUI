@@ -100,6 +100,7 @@ export default {
           { name: 'Toolbar', path: '/container/toolbar' },
           { name: 'Toggle Bar', path: '/container/toggle-bar' },
           { name: 'Panel', path: '/container/panel' },
+          { name: 'Popover', path: '/container/popover' },
           { name: 'Rotated View', path: '/container/rotated-view' },
           { name: 'Scroll View', path: '/container/scroll-view' },
           { name: 'Split View', path: '/container/split-view' },

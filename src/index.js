@@ -15,6 +15,7 @@ import Menu from './menu/jt-menu.vue'
 import NavView from './nav-view/jt-nav-view.vue'
 import Panel from './panel/jt-panel.vue'
 import PanelButton from './panel/jt-panel-button.vue'
+import Popover from './popover/jt-popover.vue'
 import RotatedView from './rotated-view/jt-rotated-view.vue'
 import ScrollView from './scroll-view/jt-scroll-view.vue'
 import SplitView from './split-view/jt-split-view.vue'
@@ -42,6 +43,7 @@ export default {
     Vue.component(NavView.name, NavView)
     Vue.component(Panel.name, Panel)
     Vue.component(PanelButton.name, PanelButton)
+    Vue.component(Popover.name, Popover)
     Vue.component(RotatedView.name, RotatedView)
     Vue.component(ToggleBar.name, ToggleBar)
     Vue.component(ScrollView.name, ScrollView)
