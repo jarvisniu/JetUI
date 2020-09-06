@@ -10,7 +10,7 @@
       v-model.number="num"
     ><div class="stepper">
       <div class="button" style="padding-top: 1px;" @click="num += step">
-        <jt-icon width="18" height="10" view-box="0 0 18 10" path="M5.5,6 L9,3 L12.5,6 Z"></jt-icon>
+        <jt-icon width="18" height="10" view-box="0 0 18 10" path="M5.5,5 L9,2 L12.5,5 Z"></jt-icon>
       </div>
       <div class="button" @click="num -= step">
         <jt-icon width="18" height="10" view-box="0 0 18 10" path="M5.5,3 L9,6 L12.5,3 Z"></jt-icon>

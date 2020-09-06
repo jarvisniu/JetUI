@@ -26,10 +26,13 @@
   --jt-bg-button-selected: hsl(0, 0%, 74%);
   --jt-bg-button-selected-hover: hsl(0, 0%, 66%);
   --jt-bg-button-selected-active: hsl(0, 0%, 55%);
-  // menu
+  // menu: menu, list, breadcrumb
   --jt-bg-menu: var(--jt-bg-container);
-  --jt-bg-menu-hover: hsl(0, 0%, 95%);
+  --jt-bg-menu-hover: hsl(0, 0%, 90%);
   --jt-bg-menu-active: hsl(0, 0%, 80%);
+  --jt-bg-menu-selected: hsl(0, 0%, 85%);
+  --jt-bg-menu-selected-hover: hsl(0, 0%, 80%);
+  --jt-bg-menu-selected-active: hsl(0, 0%, 75%);
   // input
   --jt-bg-input: hsl(0, 0%, 99%);
   --jt-bg-input-hover: hsl(0, 0%, 100%);
@@ -59,15 +62,18 @@
   --jt-bg-container-darker: hsl(0, 0%, 33%);
   // button
   --jt-bg-button: hsl(180, 5%, 33%);
-  --jt-bg-button-hover: hsl(180, 5%, 37%);
+  --jt-bg-button-hover: hsl(180, 5%, 28%);
   --jt-bg-button-active: hsl(210, 5%, 15%);
   --jt-bg-button-selected: hsl(200, 3%, 18%);
   --jt-bg-button-selected-hover: var(--jt-bg-button-selected);
   --jt-bg-button-selected-active: var(--jt-bg-button-selected);
-  // menu
+  // menu: menu, list, breadcrumb
   --jt-bg-menu: var(--jt-bg-container);
-  --jt-bg-menu-hover: hsl(0, 0%, 40%);
-  --jt-bg-menu-active: hsl(0, 0%, 20%);
+  --jt-bg-menu-hover: hsl(0, 0%, 17%);
+  --jt-bg-menu-active: hsl(0, 0%, 8%);
+  --jt-bg-menu-selected: hsl(0, 0%, 12%);
+  --jt-bg-menu-selected-hover: hsl(0, 0%, 10%);
+  --jt-bg-menu-selected-active: hsl(0, 0%, 4%);
   // input
   --jt-bg-input: rgb(69, 73, 77);
   --jt-bg-input-hover: rgb(79, 83, 87);

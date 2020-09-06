@@ -45,25 +45,25 @@ export default {
     border-bottom: solid 1px var(--jt-border);
   }
 
-  background-color: var(--jt-bg-button);
+  background-color: var(--jt-bg-menu);
   transition: color var(--jt-duration), background-color var(--jt-duration), border-color var(--jt-duration);
   &:hover {
     @media (hover: hover) {
-      background-color: var(--jt-bg-button-hover);
+      background-color: var(--jt-bg-menu-hover);
     }
   }
   &:active {
-    background-color: var(--jt-bg-button-active);
+    background-color: var(--jt-bg-menu-active);
     transition: background-color var(--jt-duration-active), border-color var(--jt-duration-active);
   }
 
   &.selected {
-    background-color: var(--jt-bg-button-selected);
+    background-color: var(--jt-bg-menu-selected);
     &:hover {
-      background-color: var(--jt-bg-button-selected-hover);
+      background-color: var(--jt-bg-menu-selected-hover);
     }
     &:active {
-      background-color: var(--jt-bg-button-selected-active);
+      background-color: var(--jt-bg-menu-selected-active);
     }
   }
 }
