@@ -96,6 +96,9 @@ export default {
           { name: 'Label', path: '/basic/label' },
           { name: 'List', path: '/basic/list' },
         ] },
+        { name: 'Form', pages: [
+          { name: 'Switch', path: '/form/switch' },
+        ] },
         { name: 'Container', pages: [
           { name: 'Toolbar', path: '/container/toolbar' },
           { name: 'Toggle Bar', path: '/container/toggle-bar' },
