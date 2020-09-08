@@ -10,7 +10,8 @@ List
       class="jt-list-item"
       @click="$emit('input', i)"
     >
-      {{ prop ? item[prop] : item }}
+      <template v-if="prop">{{ prop ? item[prop] : item }}</template>
+      <slot v-else name="item" :$index="i" :item="item">{{ prop ? item[prop] : item }}</slot>
     </div>
   </div>
 </template>
@@ -19,8 +20,8 @@ List
 export default {
   name: 'JtList',
   props: {
-    data: { type: [Array, Object], required: true },
-    value: { type: [Number, String], default: -1 },
+    data: { type: Array, required: true },
+    value: { type: Number, default: -1 },
     prop: { type: String, default: '' },
   },
 }

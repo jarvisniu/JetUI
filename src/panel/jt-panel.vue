@@ -5,7 +5,7 @@ Panel
 <template>
   <div class="jt-panel" tabindex="0"
     :style="{
-      height: height == 0 ? '' : convertSizeToCSS(fold ? 24 : height),
+      height: height == 0 ? '' : (fold ? '' : convertSizeToCSS(height)),
     }">
     <div class="jt-panel-title">
       <div class="jt-panel-slot-title">
@@ -52,10 +52,9 @@ export default {
 .jt-panel-title {
   box-sizing: border-box;
   display: flex;
-  height: 25px;
+  height: 24px;
   line-height: 24px;
   user-select: none;
-  border-bottom: solid 1px var(--jt-border);
 
   transition: color var(--jt-duration), background-color var(--jt-duration), border-color var(--jt-duration);
   background: var(--jt-bg-panel-title);
@@ -71,6 +70,7 @@ export default {
 .jt-panel-body {
   height: calc(100% - 25px);
   overflow: auto;
+  border-top: solid 1px var(--jt-border);
 
   &.fold {
     display: none;

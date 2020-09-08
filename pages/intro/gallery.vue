@@ -2,9 +2,18 @@
   <div>
     <h2>Gallery</h2>
 
-    <h4>Panel</h4>
     <jt-border inline all>
-      <jt-panel title="Message" style="width: 500px;">
+
+      <!-- Panel 1 -->
+      <jt-panel title="Form" style="width: 500px;" :fold="isPanelFormFolded">
+        <div slot="control">
+          <jt-panel-button v-if="isPanelFormFolded" @click="isPanelFormFolded = false">
+            <jt-icon name="plus"></jt-icon>
+          </jt-panel-button>
+          <jt-panel-button v-else @click="isPanelFormFolded = true">
+            <jt-icon name="minus"></jt-icon>
+          </jt-panel-button>
+        </div>
         <jt-border bottom>
           <jt-toolbar>
             <jt-input-search ref="inputSearch" width="150"></jt-input-search>
@@ -13,66 +22,85 @@
             <jt-button>OK</jt-button>
           </jt-toolbar>
         </jt-border>
-        <jt-border bottom>
-          <jt-toolbar>
-            <jt-toolbar-button :icon="iconDatabase"
-              :selected="selToolIndex == 0" @click="selToolIndex = 0"
-            ></jt-toolbar-button>
-            <jt-toolbar-button :icon="iconTable"
-              :selected="selToolIndex == 1" @click="selToolIndex = 1"
-            ></jt-toolbar-button>
-            <jt-toolbar-divider></jt-toolbar-divider>
-            <jt-toolbar-button :icon="iconDatabase"
-              :selected="selToolIndex == 2" @click="selToolIndex = 2"
-            ></jt-toolbar-button>
-            <jt-toolbar-button :icon="iconTable"
-              :selected="selToolIndex == 3" @click="selToolIndex = 3"
-            ></jt-toolbar-button>
-            <jt-toolbar-divider through></jt-toolbar-divider>
-            <jt-button-group>
-              <jt-button :selected="selCity == 'Beijing'"
-                @click="selCity = 'Beijing'">Beijing</jt-button>
-              <jt-button :selected="selCity == 'Shanghai'"
-                @click="selCity = 'Shanghai'">Shanghai</jt-button>
-              <jt-button :selected="selCity == 'Hong Kong'"
-                @click="selCity = 'Hong Kong'">Hong Kong</jt-button>
-            </jt-button-group>
-          </jt-toolbar>
-        </jt-border>
 
         <div style="padding: 10px;">
-          <jt-border inline all>
-            <jt-list style="width: 100px;" :data="list" v-model="selListIndex"></jt-list>
-          </jt-border>
+          <jt-switch v-model="isDarkMode" label="Dark Mode"></jt-switch>
         </div>
       </jt-panel>
-    </jt-border>
 
-    <h4>Toggle Bar</h4>
-    <jt-border inline all>
-      <jt-toggle-bar>
-        <jt-toggle-bar-button
-          v-for="(button, index) in toggleBarButtons" :key="index"
-          :icon="button.icon"
-          :value="button.value"
-          :tip="button.tip"
-          :selected="toggleBarValue === button.value"
-          @click="toggleBarValue = button.value"
-        >{{ button.label }}</jt-toggle-bar-button>
-      </jt-toggle-bar>
-    </jt-border>
+      <!-- Panel 2 -->
+      <jt-border top>
+        <jt-panel title="Toolbar" style="width: 500px;" :fold="isPanelToolbarFolded">
+          <div slot="control">
+            <jt-panel-button v-if="isPanelToolbarFolded" @click="isPanelToolbarFolded = false">
+              <jt-icon name="plus"></jt-icon>
+            </jt-panel-button>
+            <jt-panel-button v-else @click="isPanelToolbarFolded = true">
+              <jt-icon name="minus"></jt-icon>
+            </jt-panel-button>
+          </div>
+          <jt-border bottom>
+            <jt-toolbar>
+              <jt-toolbar-button :icon="iconDatabase"
+                :selected="selToolIndex == 0" @click="selToolIndex = 0"
+              ></jt-toolbar-button>
+              <jt-toolbar-button :icon="iconTable"
+                :selected="selToolIndex == 1" @click="selToolIndex = 1"
+              ></jt-toolbar-button>
+              <jt-toolbar-divider></jt-toolbar-divider>
+              <jt-toolbar-button :icon="iconDatabase"
+                :selected="selToolIndex == 2" @click="selToolIndex = 2"
+              ></jt-toolbar-button>
+              <jt-toolbar-button :icon="iconTable"
+                :selected="selToolIndex == 3" @click="selToolIndex = 3"
+              ></jt-toolbar-button>
+              <jt-toolbar-divider through></jt-toolbar-divider>
+              <jt-button-group>
+                <jt-button :selected="selCity == 'Beijing'"
+                  @click="selCity = 'Beijing'">Beijing</jt-button>
+                <jt-button :selected="selCity == 'Shanghai'"
+                  @click="selCity = 'Shanghai'">Shanghai</jt-button>
+                <jt-button :selected="selCity == 'Hong Kong'"
+                  @click="selCity = 'Hong Kong'">Hong Kong</jt-button>
+              </jt-button-group>
+            </jt-toolbar>
+          </jt-border>
 
-    <h4>Rotated View</h4>
-    <jt-border inline all>
-      <jt-rotated-view style="height: 200px; width: 24px; vertical-align: top;">
-        <jt-toggle-bar style="float: right;">
-          <jt-toggle-bar-button>Project</jt-toggle-bar-button>
-        </jt-toggle-bar>
-        <jt-toggle-bar style="float: left;">
-          <jt-toggle-bar-button>Structure</jt-toggle-bar-button>
-          <jt-toggle-bar-button>Git</jt-toggle-bar-button>
-        </jt-toggle-bar>
-      </jt-rotated-view>
+          <div style="padding: 10px;">
+            <jt-border inline all>
+              <jt-toggle-bar>
+                <jt-toggle-bar-button
+                  v-for="(button, index) in toggleBarButtons" :key="index"
+                  :icon="button.icon"
+                  :value="button.value"
+                  :tip="button.tip"
+                  :selected="toggleBarValue === button.value"
+                  @click="toggleBarValue = button.value"
+                >{{ button.label }}</jt-toggle-bar-button>
+              </jt-toggle-bar>
+            </jt-border>
+          </div>
+        </jt-panel>
+      </jt-border>
+
+      <!-- Panel 3 -->
+      <jt-border top>
+        <jt-panel title="List" style="width: 500px;" :fold="isPanelListFolded">
+          <div slot="control">
+            <jt-panel-button v-if="isPanelListFolded" @click="isPanelListFolded = false">
+              <jt-icon name="plus"></jt-icon>
+            </jt-panel-button>
+            <jt-panel-button v-else @click="isPanelListFolded = true">
+              <jt-icon name="minus"></jt-icon>
+            </jt-panel-button>
+          </div>
+          <div style="padding: 10px;">
+            <jt-border inline all>
+              <jt-list style="width: 100px;" :data="list" v-model="selListIndex"></jt-list>
+            </jt-border>
+          </div>
+        </jt-panel>
+      </jt-border>
     </jt-border>
 
   </div>
@@ -97,6 +125,10 @@ export default {
       num1: 1,
       list: ['Bill', 'Jack', 'Tom'],
       selListIndex: 0,
+      isPanelFormFolded: false,
+      isPanelToolbarFolded: false,
+      isPanelListFolded: false,
+      isDarkMode: false,
     }
   },
 }

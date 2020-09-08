@@ -22,10 +22,13 @@ import SplitView from './split-view/jt-split-view.vue'
 import SplitViewChild from './split-view/jt-split-view-child.vue'
 import Switch from './switch/jt-switch.vue'
 import Toolbar from './toolbar/jt-toolbar.vue'
+import Table from './table/jt-table.vue'
+import TableColumn from './table/jt-table-column.vue'
 import ToolbarButton from './toolbar/jt-toolbar-button.vue'
 import ToolbarDivider from './toolbar/jt-toolbar-divider.vue'
 import ToggleBar from './toggle-bar/jt-toggle-bar.vue'
 import ToggleBarButton from './toggle-bar/jt-toggle-bar-button.vue'
+import TreeTable from './tree-table/jt-tree-table.vue'
 
 export default {
   install(Vue) {
@@ -47,13 +50,16 @@ export default {
     Vue.component(Popover.name, Popover)
     Vue.component(RotatedView.name, RotatedView)
     Vue.component(ToggleBar.name, ToggleBar)
-    Vue.component(ScrollView.name, ScrollView)
-    Vue.component(SplitView.name, SplitView)
-    Vue.component(SplitViewChild.name, SplitViewChild)
-    Vue.component(Switch.name, Switch)
+    Vue.component(Table.name, Table)
+    Vue.component(TableColumn.name, TableColumn)
     Vue.component(ToggleBarButton.name, ToggleBarButton)
     Vue.component(Toolbar.name, Toolbar)
     Vue.component(ToolbarButton.name, ToolbarButton)
     Vue.component(ToolbarDivider.name, ToolbarDivider)
+    Vue.component(TreeTable.name, TreeTable)
+    Vue.component(ScrollView.name, ScrollView)
+    Vue.component(SplitView.name, SplitView)
+    Vue.component(SplitViewChild.name, SplitViewChild)
+    Vue.component(Switch.name, Switch)
   }
 }

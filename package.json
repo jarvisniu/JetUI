@@ -29,6 +29,8 @@
   "homepage": "https://github.com/jarvisniu/jet-ui#readme",
   "devDependencies": {
     "@jarvisniu/upload-oss": "^0.2.3",
+    "lodash.findindex": "^4.6.0",
+    "lodash.sortby": "^4.7.0",
     "modern-normalize": "^0.6.0",
     "node-sass": "^4.13.0",
     "nuxt": "^2.14.4",

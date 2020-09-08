@@ -99,6 +99,10 @@ export default {
         { name: 'Form', pages: [
           { name: 'Switch', path: '/form/switch' },
         ] },
+        { name: 'Data', pages: [
+          { name: 'Table (WIP)', path: '/data/table' },
+          { name: 'Tree Table (WIP)', path: '/data/tree-table' },
+        ] },
         { name: 'Container', pages: [
           { name: 'Toolbar', path: '/container/toolbar' },
           { name: 'Toggle Bar', path: '/container/toggle-bar' },
