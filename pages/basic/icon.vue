@@ -7,6 +7,7 @@
 
     <h4>Color</h4>
     <jt-icon name="minus" color="red"></jt-icon>
+    <jt-icon name="plus" style="color: orange;"></jt-icon>
 
     <h4>Size</h4>
     <jt-icon name="plus" size="32"></jt-icon>
@@ -22,5 +23,36 @@
       <jt-icon name="plus"></jt-icon>
       <span>Open</span>
     </jt-button>
+
+
+    <h4>All Icons</h4>
+    <div v-for="(iconData, name) in allIcons" :key="name" class="icon-card">
+      <jt-icon :name="name" size="32"></jt-icon>
+      <div>{{ name }}</div>
+    </div>
+
   </div>
 </template>
+
+<script>
+import allIcons from '../../src/icon/icon-paths'
+
+export default {
+  data() {
+    return {
+      allIcons,
+    }
+  },
+}
+</script>
+
+<style lang="scss" scoped>
+.icon-card {
+  display: inline-block;
+  margin: 5px;
+  border: solid 1px silver;
+  border-radius: 5px;
+  text-align: center;
+  padding: 2px 4px;
+}
+</style>

@@ -12,7 +12,8 @@
       <tr>
         <th
           v-for="(column, index) in columns"
-          :class="{ sortable: isSortablePropTrue(column) }"
+          :key="index"
+          :class="{ sortable: isColumnSortable(column) }"
           :style="{ width: getColumnWidth(column)}"
           @click="onClickHead(index)"
         >
@@ -20,8 +21,10 @@
           <span>{{ getSortIconUrl(index) }}</span>
         </th>
       </tr>
-      <tr v-for="item in sortedList">
-        <td v-for="column in columns">{{getItemColumn(item, column)}}</td>
+      <tr v-for="(row, index) in sortedList" :key="index">
+        <td v-for="(column, cIndex) in columns" :key="cIndex">
+          <jt-table-cell :index="index" :row="row" :column="column"></jt-table-cell>
+        </td>
       </tr>
     </table>
   </div>
@@ -31,8 +34,13 @@
 import _sortBy from 'lodash.sortby'
 import _findIndex from 'lodash.findindex'
 
+import JtTableCell from './jt-table-cell.vue'
+
 export default {
   name: 'JtTable',
+  components: {
+    JtTableCell,
+  },
   props: {
     data: { type: Array, required: true },
   },
@@ -49,7 +57,7 @@ export default {
         return this.data
       }
 
-      const sorted = _sortBy(this.data, item => this.getItemColumn(item, this.columns[this.sortColumnIndex]))
+      const sorted = _sortBy(this.data, (row) => this.getCellContentAtColumn(row, this.columns[this.sortColumnIndex]))
       if (this.sortDirection === -1) {
         return sorted
       } else if (this.sortDirection === 1) {
@@ -62,7 +70,7 @@ export default {
       let opts = item.componentOptions
       return opts && opts.tag === 'jt-table-column'
     })
-    this.sortColumnIndex = _findIndex(this.columns, this.isSortablePropTrue)
+    this.sortColumnIndex = _findIndex(this.columns, this.isColumnSortable)
     // console.log('sortColumnIndex', this.sortColumnIndex)
   },
   methods: {
@@ -70,23 +78,23 @@ export default {
       if (this.sortColumnIndex === index) {
         this.toggleSortDirection()
       } else {
-        if (this.isSortablePropTrue(this.columns[index])) {
+        if (this.isColumnSortable(this.columns[index])) {
           this.sortColumnIndex = index
           this.sortDirection = -1
         }
       }
     },
-    isSortablePropTrue (column) {
+    isColumnSortable (column) {
       let val = column.componentOptions.propsData.sortable
       return val === true || val === ''
     },
-    getItemColumn (item, column) {
+    getCellContentAtColumn (row, column) {
       let prop = column.componentOptions.propsData.prop
       if (typeof prop === 'string') {
-        return item[prop]
+        return row[prop]
       } else if (typeof prop === 'function') {
-        return prop(item)
-      } else if (typeof prop === 'undefined') {
+        return prop(row)
+      } else if (prop == null) {
         let spareChildren = column.componentOptions.children
         return (spareChildren[0] && spareChildren[0].text) || '-'
       }
