@@ -14,6 +14,8 @@
     <h3>TODO</h3>
     <ul>
       <li>Sort arrow icons</li>
+      <li>Expand row</li>
+      <li>Default sort prop</li>
     </ul>
 
     <h3>Basic</h3>

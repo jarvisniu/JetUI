@@ -2,6 +2,12 @@
   <div>
     <h2>Input Number</h2>
 
+    <h4>TODO</h4>
+    <ul>
+      <li>Long press to continually change</li>
+      <li>Set max and min value</li>
+    </ul>
+
     <h4>Basic</h4>
     <jt-input-number v-model="count"></jt-input-number>
 

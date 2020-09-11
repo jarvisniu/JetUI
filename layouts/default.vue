@@ -101,6 +101,7 @@ export default {
         ] },
         { name: 'Data', pages: [
           { name: 'Table', path: '/data/table' },
+          { name: 'Tree', path: '/data/tree' },
           { name: 'Tree Table (WIP)', path: '/data/tree-table' },
         ] },
         { name: 'Container', pages: [
@@ -110,7 +111,7 @@ export default {
           { name: 'Popover', path: '/container/popover' },
           { name: 'Rotated View', path: '/container/rotated-view' },
           { name: 'Scroll View', path: '/container/scroll-view' },
-          { name: 'Split View', path: '/container/split-view' },
+          { name: 'Split View (WIP)', path: '/container/split-view' },
           { name: 'Contain View', path: '/container/contain-view' },
           { name: 'Nav View', path: '/container/nav-view' },
         ] },

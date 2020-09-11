@@ -1,9 +1,9 @@
 import './theme.scss'
 
 import Border from './border/jt-border.vue'
+import Breadcrumb from './breadcrumb/jt-breadcrumb.vue'
 import Button from './button/jt-button.vue'
 import ButtonGroup from './button/jt-button-group.vue'
-import Breadcrumb from './breadcrumb/jt-breadcrumb.vue'
 import ContainView from './contain-view/jt-contain-view.vue'
 import Icon from './icon/jt-icon.vue'
 import Input from './input/jt-input.vue'
@@ -21,21 +21,22 @@ import ScrollView from './scroll-view/jt-scroll-view.vue'
 import SplitView from './split-view/jt-split-view.vue'
 import SplitViewChild from './split-view/jt-split-view-child.vue'
 import Switch from './switch/jt-switch.vue'
-import Toolbar from './toolbar/jt-toolbar.vue'
 import Table from './table/jt-table.vue'
 import TableColumn from './table/jt-table-column.vue'
+import Toolbar from './toolbar/jt-toolbar.vue'
 import ToolbarButton from './toolbar/jt-toolbar-button.vue'
 import ToolbarDivider from './toolbar/jt-toolbar-divider.vue'
 import ToggleBar from './toggle-bar/jt-toggle-bar.vue'
 import ToggleBarButton from './toggle-bar/jt-toggle-bar-button.vue'
+import Tree from './tree/jt-tree.vue'
 import TreeTable from './tree-table/jt-tree-table.vue'
 
 export default {
   install(Vue) {
     Vue.component(Border.name, Border)
+    Vue.component(Breadcrumb.name, Breadcrumb)
     Vue.component(Button.name, Button)
     Vue.component(ButtonGroup.name, ButtonGroup)
-    Vue.component(Breadcrumb.name, Breadcrumb)
     Vue.component(ContainView.name, ContainView)
     Vue.component(Icon.name, Icon)
     Vue.component(Input.name, Input)
@@ -49,6 +50,10 @@ export default {
     Vue.component(PanelButton.name, PanelButton)
     Vue.component(Popover.name, Popover)
     Vue.component(RotatedView.name, RotatedView)
+    Vue.component(ScrollView.name, ScrollView)
+    Vue.component(SplitView.name, SplitView)
+    Vue.component(SplitViewChild.name, SplitViewChild)
+    Vue.component(Switch.name, Switch)
     Vue.component(ToggleBar.name, ToggleBar)
     Vue.component(Table.name, Table)
     Vue.component(TableColumn.name, TableColumn)
@@ -56,10 +61,7 @@ export default {
     Vue.component(Toolbar.name, Toolbar)
     Vue.component(ToolbarButton.name, ToolbarButton)
     Vue.component(ToolbarDivider.name, ToolbarDivider)
+    Vue.component(Tree.name, Tree)
     Vue.component(TreeTable.name, TreeTable)
-    Vue.component(ScrollView.name, ScrollView)
-    Vue.component(SplitView.name, SplitView)
-    Vue.component(SplitViewChild.name, SplitViewChild)
-    Vue.component(Switch.name, Switch)
   }
 }
