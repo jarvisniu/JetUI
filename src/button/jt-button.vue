@@ -45,7 +45,7 @@ export default {
   line-height: 22px;
   vertical-align: top;
   text-align: center;
-	color: inherit;
+  color: var(--jt-text);
 	font-family: inherit;
   font-size: 14px;
   padding: 0 8px;

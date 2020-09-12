@@ -6,7 +6,7 @@
 </docs>
 
 <template>
-  <div class="jt-table">
+  <div class="jt-table jt-util-container">
     <slot></slot>
     <table>
       <tr>
@@ -131,6 +131,9 @@ export default {
 
 <style lang="scss" scoped>
 .jt-table {
+  color: var(--jt-text);
+  line-height: 16px;
+
   table {
     width: 100%;
   }
@@ -148,7 +151,7 @@ export default {
     }
   }
   th, td {
-    padding: 3px 6px;
+    padding: 4px 6px;
   }
 }
 </style>

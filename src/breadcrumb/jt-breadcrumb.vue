@@ -25,6 +25,7 @@ export default {
   font-size: 14px;
   line-height: 24px;
   user-select: none;
+  color: var(--jt-text);
 
   .breadcrumb-item {
     cursor: pointer;
@@ -48,11 +49,17 @@ export default {
       border-bottom: solid 12px transparent;
       border-left: solid 7px var(--jt-bg-menu);
       vertical-align: top;
-      transition: color var(--jt-duration), border-color var(--jt-duration), border-color var(--jt-duration);
+      transition:
+        color var(--jt-duration),
+        border-color var(--jt-duration),
+        border-color var(--jt-duration);
       background-color: transparent;
     }
 
-    transition: color var(--jt-duration), background-color var(--jt-duration), border-color var(--jt-duration);
+    transition:
+      color var(--jt-duration),
+      background-color var(--jt-duration),
+      border-color var(--jt-duration);
     color: var(--jt-text);
     background-color: var(--jt-bg-menu);
     &:hover {

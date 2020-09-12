@@ -54,5 +54,6 @@ export default {
   border-radius: 5px;
   text-align: center;
   padding: 2px 4px;
+  background-color: var(--jt-bg-container-dark);
 }
 </style>

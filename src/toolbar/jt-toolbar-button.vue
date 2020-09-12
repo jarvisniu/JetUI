@@ -59,7 +59,9 @@ export default {
   }
   &:active {
     background-color: var(--jt-bg-button-active);
-    transition: background-color var(--jt-duration-active), border-color var(--jt-duration-active);
+    transition:
+      background-color var(--jt-duration-active),
+      border-color var(--jt-duration-active);
   }
   &.selected {
     border-color: var(--jt-border);

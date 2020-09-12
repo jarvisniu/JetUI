@@ -74,6 +74,7 @@ export default {
   box-sizing: border-box;
   display: inline-block;
   line-height: 1;
+  color: var(--jt-text);
 
   svg {
     vertical-align: top;

@@ -15,6 +15,10 @@
   --jt-text: hsl(0, 0%, 15%);
   --jt-icon: hsl(0, 0%, 30%);
   --jt-text-sub: hsl(0, 0%, 50%);
+  // link
+  --jt-link: var(--jt-text);
+  --jt-link-bg: hsla(var(--jt-primary-hue), 50%, 84%, 0.4);
+  --jt-link-bg-hover: hsla(var(--jt-primary-hue), 50%, 50%, 0.4);
   // background
   --jt-bg-container: hsl(0, 0%, 98%);
   --jt-bg-container-dark: hsl(0, 0%, 94%);
@@ -44,8 +48,6 @@
   --jt-bg-panel-button-active: hsla(0, 0%, 60%, .5);
 }
 .jt-theme-dark {
-  // TODO remove this, add to control styles
-  color: white;
   background-color: var(--jt-bg-container);
   // theme
   // border

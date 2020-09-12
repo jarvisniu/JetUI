@@ -34,6 +34,7 @@ export default {
   vertical-align: top;
   overflow: auto;
   font-size: 14px;
+  color: var(--jt-text);
   user-select: none;
   background-color: var(--jt-bg-container);
 }

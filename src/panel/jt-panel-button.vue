@@ -21,6 +21,7 @@ export default {
     line-height: 24px;
     cursor: default;
     user-select: none;
+    font-size: var(--jt-font-size);
     text-align: center;
 
     padding: 0 5px;
@@ -32,8 +33,11 @@ export default {
       border-left: solid 1px var(--jt-border);
     }
 
-    font-size: var(--jt-font-size);
-    transition: color var(--jt-duration), background-color var(--jt-duration), border-color var(--jt-duration);
+    transition:
+      color var(--jt-duration),
+      background-color var(--jt-duration),
+      border-color var(--jt-duration);
+    color: var(--jt-text);
     &:hover {
       background-color: var(--jt-bg-panel-button-hover);
     }

@@ -57,7 +57,9 @@ Toggle Bar Button
   }
 
   font-size: var(--jt-font-size);
-  transition: color var(--jt-duration), background-color var(--jt-duration);
+  transition:
+    color var(--jt-duration),
+    background-color var(--jt-duration);
   color: var(--jt-text);
   background-color: var(--jt-bg-container-dark);
   &:hover {

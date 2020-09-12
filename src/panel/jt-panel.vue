@@ -18,7 +18,7 @@ Panel
         </slot>
       </div>
     </div>
-    <div class="jt-panel-body" :class="{fold: fold}">
+    <div class="jt-panel-body jt-util-container" :class="{fold: fold}">
       <slot></slot>
     </div>
   </div>
@@ -47,6 +47,7 @@ export default {
   min-width: 10px;
   min-height: 1px;
   outline: none;
+  color: var(--jt-text);
   background-color: var(--jt-bg-container);
 }
 .jt-panel-title {
@@ -56,7 +57,11 @@ export default {
   line-height: 24px;
   user-select: none;
 
-  transition: color var(--jt-duration), background-color var(--jt-duration), border-color var(--jt-duration);
+  transition:
+    color var(--jt-duration),
+    background-color var(--jt-duration),
+    border-color var(--jt-duration);
+  color: var(--jt-text);
   background: var(--jt-bg-panel-title);
 
   .jt-panel:focus-within & {

@@ -77,7 +77,9 @@ export default {
   position: relative;
   width: 100%;
   height: 100%;
+  color: var(--jt-text);
 }
+
 .contain-wrapper {
   box-sizing: border-box;
   position: absolute;

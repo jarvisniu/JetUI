@@ -78,7 +78,7 @@ export default {
     background-color: var(--jt-bg-menu-hover);
   }
   &:active .selection {
-    transition: background-color 0.02s;
+    transition: background-color var(--jt-duration-active);
     background-color: var(--jt-bg-menu-active);
   }
 }

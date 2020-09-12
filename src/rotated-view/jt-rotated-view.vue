@@ -40,6 +40,7 @@
   .jt-rotated-view {
     display: inline-block;
     height: 100%;
+    color: var(--jt-text);
   }
   .rotate-wrapper {
     transform-origin: top left;

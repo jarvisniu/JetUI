@@ -14,7 +14,7 @@ to="bottom"
   :style="{'--slide-dist': slideDist + 'px', '--gap': gap + 'px'}">
     <slot></slot>
     <transition name="fade">
-      <div v-if="show" class="jt-popover-content" :class="'to-' + to">
+      <div v-if="show" class="jt-popover-content jt-util-container" :class="'to-' + to">
         <slot name="content"></slot>
       </div>
     </transition>
@@ -63,6 +63,7 @@ export default {
   .jt-popover-content {
     position: absolute;
     border: solid 1px var(--jt-border);
+    color: var(--jt-text);
     background-color: var(--jt-bg-container);
     padding: 6px 8px;
     border-radius: 5px;

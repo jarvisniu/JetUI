@@ -16,6 +16,7 @@ export default {
 .jt-scroll-view {
   overflow-x: hidden;
   overflow-y: scroll;
+  color: var(--jt-text);
 
   &::-webkit-scrollbar {
     -webkit-appearance: none;

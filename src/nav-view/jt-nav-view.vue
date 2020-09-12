@@ -43,6 +43,7 @@ export default {
 .jt-nav-view {
   box-sizing: border-box;
   height: 100vh;
+  color: var(--jt-text);
 
   .side {
     position: absolute;

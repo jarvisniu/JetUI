@@ -1,5 +1,5 @@
 <template>
-  <div class="jt-tree" :style="{
+  <div class="jt-tree jt-util-container" :style="{
     '--jt-tree-item-padding': itemPadding + 'px',
   }">
     <jt-tree-item v-for="(item, index) in data" :key="index" :data="item" />
@@ -16,7 +16,7 @@ export default {
   },
   props: {
     data: { type: Array, required: true },
-    itemPadding: { type: [Number, String], default: 2 },
+    itemPadding: { type: [Number, String], default: 3 },
   },
 }
 </script>

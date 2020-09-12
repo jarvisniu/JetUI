@@ -48,7 +48,7 @@ export default {
 .jt-label {
   box-sizing: border-box;
   display: inline-block;
-	color: inherit;
+  color: var(--jt-text);
 	font-family: inherit;
   font-size: 14px;
   user-select: none;

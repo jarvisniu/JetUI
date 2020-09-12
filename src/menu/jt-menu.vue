@@ -98,6 +98,7 @@ $vertical-gap: 4px;
   padding-left: 8px;
   user-select: none;
   border-bottom: solid 1px var(--jt-border);
+  color: var(--jt-text);
   background-color: var(--jt-bg-menu);
   z-index: 1;
 }

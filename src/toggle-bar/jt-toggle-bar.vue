@@ -22,7 +22,10 @@ Toggle Bar
   user-select: none;
   vertical-align: top;
 
-  transition: background-color var(--jt-duration);
+  transition:
+    color var(--jt-duration),
+    background-color var(--jt-duration);
+  color: var(--jt-text);
   background-color: var(--jt-bg-container-dark);
 }
 </style>

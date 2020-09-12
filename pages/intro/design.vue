@@ -14,6 +14,30 @@
         <div class="color-cell" :style="{ backgroundColor: `var(${ color.var })` }"></div>
       </li>
     </ul>
+
+    <h4>Dimensions</h4>
+    <h5>14px</h5>
+    <ul>
+      <li>Font size</li>
+      <li>Icon size (default)</li>
+    </ul>
+    <h5>20px</h5>
+    <ul>
+      <li>Data: Tree item (default), Menu item</li>
+    </ul>
+    <h5>24px</h5>
+    <ul>
+      <li>Basic: Button, Label</li>
+      <li>Form: Input, InputSearch, InputNumber, Switch</li>
+      <li>Bars: ToggleBar, Panel title, Breadcrumb</li>
+      <li>Data: List item, Table row</li>
+    </ul>
+    <h5>32px</h5>
+    <ul>
+      <li>Toolbar height, padding:2px and margin:2px on children</li>
+      <li>Table row (with controls inside)</li>
+    </ul>
+
   </div>
 </template>
 

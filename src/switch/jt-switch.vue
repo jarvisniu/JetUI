@@ -1,25 +1,27 @@
 <template>
-  <label
-    class="jt-switch"
-    :class="{
-      selected: on,
-      disabled: disabled,
-      'align-left': align == 'left',
-      'align-right': align == 'right',
-    }"
-    :style="{display: inline ? 'inline-block' : 'block'}"
+  <div
+    class="jt-switch" :class="{ inline: inline, disabled: disabled }"
+    @click="on = !on"
   >
-    <input type="checkbox" v-model="on"
-    ><span class="indicator">
-      <div class="inner-label" :class="{hide: !on}">
-        {{ onLabel }}
-      </div>
-      <div class="inner-label" :class="{hide: on}">
-        {{ offLabel }}
-      </div>
-    </span
-    ><span class="label">{{ label }}</span>
-  </label>
+    <label
+      class="wrapper"
+      :class="{
+        checked: on,
+        'align-left': align == 'left',
+        'align-right': align == 'right',
+      }"
+    >
+      <span class="indicator">
+        <div class="indicator-label" :class="{hide: !on}">
+          {{ onLabel }}
+        </div>
+        <div class="indicator-label" :class="{hide: on}">
+          {{ offLabel }}
+        </div>
+      </span
+      ><span class="label">{{ label }}</span>
+    </label>
+  </div>
 </template>
 
 <script>
@@ -52,78 +54,18 @@ export default {
 
 <style lang="scss" scoped>
 .jt-switch {
-  display: block;
-  position: relative;
-  padding-left: 30px;
   cursor: pointer;
+  user-select: none;
+  padding: 3px;
 
-  input[type="checkbox"] {
-    position: absolute;
-    left: 0;
-    top: 0;
-    opacity: 0;
-    z-index: -1;
-    width: 16px;
-    height: 16px;
+  transition: background-color var(--jt-duration);
+  background-color: var(--jt-bg-menu);
+  &:hover {
+    background-color: var(--jt-bg-menu-hover);
   }
-
-  .indicator {
-    position: relative;
-    display: inline-block;
-    background-color: var(--jt-bg-button);
-    margin-left: -30px;
-    height: 18px;
-    vertical-align: top;
-    min-width: 30px;
-    width: auto;
-    border-radius: 999px;
-    user-select: none;
-    transition: background-color var(--jt-duration);
-
-    &:before {
-      position: absolute;
-      display: block;
-      content: '';
-      width: 14px;
-      height: 14px;
-      margin: 2px;
-      background-color: var(--jt-bg-container);
-      border-radius: 999px;
-      border: solid 1px var(--jt-border);
-      left: 0;
-      transition: left var(--jt-duration);
-    }
-  }
-
-  .inner-label {
-    font-size: 12px;
-    line-height: 18px;
-    margin-left: 19px;
-    margin-right: 6px;
-
-    &.hide {
-      line-height: 0;
-      visibility: hidden;
-    }
-  }
-
-  .label {
-    vertical-align: top;
-    line-height: 18px;
-    margin-left: 10px;
-  }
-
-  // interactive
-  // TODO: Why is this not working
-  // & {
-    .jt-indicator:hover {
-      background-color: var(--jt-bg-button-hover);
-    }
-  // }
   &:active {
-    .jt-indicator {
-      background-color: var(--jt-bg-button-active);
-    }
+    transition: background-color var(--jt-duration-active);
+    background-color: var(--jt-bg-menu-active);
   }
 
   // disabled
@@ -132,15 +74,28 @@ export default {
     pointer-events: none;
   }
 
-  // selected
-  &.selected {
+  // inline
+  &.inline {
+    display: inline-block;
+  }
+}
+
+.wrapper {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  padding-left: 30px;
+
+  // checked
+  &.checked {
     .indicator {
       background-color: var(--jt-primary);
       &:before {
         left: calc(100% - 18px);
       }
     }
-    .inner-label {
+    .indicator-label {
+      color: white;
       margin-left: 6px;
       margin-right: 19px;
     }
@@ -162,5 +117,52 @@ export default {
       margin-left: 0;
     }
   }
+}
+
+.indicator {
+  position: relative;
+  display: inline-block;
+  color: var(--jt-text);
+  background-color: var(--jt-bg-button);
+  box-shadow: 0 0 0 1px hsla(0, 0%, 50%, 0.2);
+  margin-left: -30px;
+  height: 18px;
+  vertical-align: top;
+  min-width: 30px;
+  width: auto;
+  border-radius: 999px;
+  user-select: none;
+
+  &:before {
+    position: absolute;
+    display: block;
+    content: '';
+    width: 14px;
+    height: 14px;
+    margin: 2px;
+    background-color: var(--jt-bg-container);
+    border-radius: 999px;
+    border: solid 1px var(--jt-border);
+    left: 0;
+    transition: left var(--jt-duration);
+  }
+
+  .indicator-label {
+    font-size: 12px;
+    line-height: 18px;
+    margin-left: 19px;
+    margin-right: 6px;
+
+    &.hide {
+      line-height: 0;
+      visibility: hidden;
+    }
+  }
+}
+
+.label {
+  vertical-align: top;
+  line-height: 18px;
+  margin-left: 10px;
 }
 </style>

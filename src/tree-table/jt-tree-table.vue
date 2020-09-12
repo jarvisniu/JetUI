@@ -1,5 +1,5 @@
 <template>
-  <div class="jt-tree-table">
+  <div class="jt-tree-table jt-util-container">
     <table>
       <tr>
         <th style="width: 200px;">Full Name</th>
@@ -65,6 +65,9 @@ export default {
 
 <style lang="scss" scoped>
 .jt-tree-table {
+  line-height: 16px;
+  color: var(--jt-text);
+
   table {
     width: 100%;
   }
@@ -80,7 +83,7 @@ export default {
     text-align: left;
   }
   th, td {
-    padding: 3px 6px;
+    padding: 4px 6px;
   }
   tr.level-0 td {
     font-weight: bold;

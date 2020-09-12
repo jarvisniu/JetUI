@@ -35,5 +35,6 @@ export default {
   /* flex-basis: 0%; */
   flex-shrink: 1;
   overflow: auto;
+  color: var(--jt-text);
 }
 </style>

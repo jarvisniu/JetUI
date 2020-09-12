@@ -108,7 +108,11 @@ export default {
   width: 100%;
   height: 24px;
 
-  transition: color var(--jt-duration), border-color var(--jt-duration), background-color var(--jt-duration);
+  transition:
+    color var(--jt-duration),
+    border-color var(--jt-duration),
+    background-color var(--jt-duration);
+  color: var(--jt-text);
   background-color: var(--jt-bg-input);
   border-color: var(--jt-bg-input-border);
   &.not-empty {

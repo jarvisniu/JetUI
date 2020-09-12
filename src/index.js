@@ -1,4 +1,5 @@
 import './theme.scss'
+import './utils.scss'
 
 import Border from './border/jt-border.vue'
 import Breadcrumb from './breadcrumb/jt-breadcrumb.vue'

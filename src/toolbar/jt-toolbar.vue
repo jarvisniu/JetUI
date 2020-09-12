@@ -41,6 +41,7 @@
     width: 32px;
   }
   // theme
+  color: var(--jt-text);
   background-color: var(--jt-bg-container-dark);
 
   // TODO How to use /deep/ or >>>

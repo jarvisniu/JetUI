@@ -21,8 +21,8 @@
     </div>
 
     <h1>Align</h1>
-    <jt-border all style="margin-bottom: 10px; width: 200px; padding: 10px;">
-      <jt-switch v-model="isDarkMode" label="Align Right" align="right" style="margin-bottom: 10px;"></jt-switch>
+    <jt-border all style="margin-bottom: 10px; width: 200px">
+      <jt-switch v-model="isDarkMode" label="Align Right" align="right"></jt-switch>
       <jt-switch v-model="isDarkMode" label="Align Left"></jt-switch>
     </jt-border>
 
