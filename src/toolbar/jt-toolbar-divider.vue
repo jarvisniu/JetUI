@@ -1,5 +1,5 @@
 <template>
-  <div class="jt-toolbar-divider"
+  <div class="jt-toolbar-divider jt-inline-component"
     :class="{ 'through': through }"
   ></div>
 </template>
@@ -17,7 +17,6 @@ export default {
 .jt-toolbar-divider {
   display: inline-block;
   width: 1px;
-  margin: 2px 2px;
   &.through {
     margin: -2px 2px;
   }

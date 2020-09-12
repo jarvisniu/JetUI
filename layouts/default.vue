@@ -94,12 +94,12 @@ export default {
           { name: 'Input Number', path: '/basic/input-number' },
           { name: 'Input Search', path: '/basic/input-search' },
           { name: 'Label', path: '/basic/label' },
-          { name: 'List', path: '/basic/list' },
         ] },
         { name: 'Form', pages: [
           { name: 'Switch', path: '/form/switch' },
         ] },
         { name: 'Data', pages: [
+          { name: 'List', path: '/data/list' },
           { name: 'Table', path: '/data/table' },
           { name: 'Tree', path: '/data/tree' },
           { name: 'Tree Table (WIP)', path: '/data/tree-table' },

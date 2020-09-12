@@ -44,8 +44,7 @@
   color: var(--jt-text);
   background-color: var(--jt-bg-container-dark);
 
-  // TODO How to use /deep/ or >>>
-  & > .jt-inline-component {
+  & ::v-deep > .jt-inline-component {
     margin: 2px;
   }
 }

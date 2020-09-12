@@ -4,7 +4,7 @@ Toolbar Button
 
 <template>
   <div
-    class="jt-toolbar-button"
+    class="jt-toolbar-button jt-inline-component"
     :class="{selected: selected}"
     :title="tip"
     :style="{
@@ -41,7 +41,6 @@ export default {
   border: solid 1px var(--jt-border);
   width: 24px;
   height: 24px;
-  margin: 2px;
 
   img {
     width: 100%;

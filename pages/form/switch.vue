@@ -17,7 +17,6 @@
     <h1>Disabled</h1>
     <div style="margin-bottom: 10px;">
       <jt-switch v-model="isDarkMode" inline disabled label="Dark Mode"></jt-switch>
-      <jt-switch v-model="isDarkMode" inline disabled label="Dark Mode"></jt-switch>
     </div>
 
     <h1>Align</h1>

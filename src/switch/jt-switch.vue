@@ -59,7 +59,7 @@ export default {
   padding: 3px;
 
   transition: background-color var(--jt-duration);
-  background-color: var(--jt-bg-menu);
+  // background-color: var(--jt-bg-menu);
   &:hover {
     background-color: var(--jt-bg-menu-hover);
   }

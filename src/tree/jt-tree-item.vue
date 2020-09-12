@@ -21,12 +21,14 @@
       </span
       ><span class="label">{{ data.name }}</span>
     </div>
-    <div v-if="data.open" class="children">
-      <jt-tree-item
-        v-for="(item, index) in data.children" :key="index"
-        :data="item" class="child"
-      />
-    </div>
+    <transition name="curtain">
+      <div v-if="data.open" class="children">
+          <jt-tree-item
+            v-for="(item, index) in data.children" :key="index"
+            :data="item" class="child"
+          />
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -39,6 +41,12 @@ export default {
   computed: {
     isLeaf() {
       return this.data.children == null || this.data.children.length === 0
+    },
+  },
+  methods: {
+    beforeEnter: function (el) {
+      console.log('el', (el.getBoundingClientRect().height))
+
     },
   },
 }
@@ -101,5 +109,18 @@ export default {
 }
 .label {
   margin-left: 2px;
+}
+// transition: curtain
+.curtain-enter-active,
+.curtain-leave-active {
+  transition:
+    opacity var(--jt-duration),
+    transform var(--jt-duration);
+  transform-origin: 50% 0%;
+}
+.curtain-enter,
+.curtain-leave-to {
+  opacity: 0;
+  transform: scaleY(0.5);
 }
 </style>

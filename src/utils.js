@@ -9,4 +9,6 @@ function convertSizeToCSS(str='') {
   return str.trim().split(/ +/g).map(x => x + 'px').join(' ')
 }
 
-export { convertSizeToCSS }
+export {
+  convertSizeToCSS,
+}

@@ -8,6 +8,7 @@
       <li>Folding & Expanding</li>
       <li>Item padding</li>
       <li>Font size</li>
+      <li>Auto height (default)</li>
     </ul>
 
     <h4>TODO</h4>
@@ -19,9 +20,8 @@
       <li>Auto inject missing expanded prop, in order to be reactive</li>
     </ul>
 
-    <h4>Fixed height & Auto height</h4>
-    <jt-tree :data="treeData" style="display: inline-block; vertical-align: top; height: 200px;" />
-    <jt-tree :data="treeData" style="display: inline-block; vertical-align: top;" />
+    <h4>Basic</h4>
+    <jt-tree :data="treeData" style="display: inline-block; height: 200px;" />
 
     <h4>Font size</h4>
     <jt-tree :data="treeData" style="display: inline-block; height: 200px; font-size: 12px;" />
