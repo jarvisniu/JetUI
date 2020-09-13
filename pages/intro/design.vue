@@ -1,13 +1,13 @@
 <template>
   <div>
-    <h2>Design</h2>
+    <h1>Design</h1>
 
-    <h4>Global Styles</h4>
+    <h2>Global Styles</h2>
     <ul>
       <li>font-size: 14px;</li>
     </ul>
 
-    <h4>Theme Colors</h4>
+    <h2>Theme Colors</h2>
     <ul>
       <li v-for="(color, index) in colors" :key="index">
         <span>{{ color.label }}: </span>
@@ -15,24 +15,24 @@
       </li>
     </ul>
 
-    <h4>Dimensions</h4>
-    <h5>14px</h5>
+    <h2>Dimensions</h2>
+    <h3>14px</h3>
     <ul>
       <li>Font size</li>
       <li>Icon size (default)</li>
     </ul>
-    <h5>20px</h5>
+    <h3>20px</h3>
     <ul>
       <li>Data: Tree item (default), Menu item</li>
     </ul>
-    <h5>24px</h5>
+    <h3>24px</h3>
     <ul>
       <li>Basic: Button, Label</li>
       <li>Form: Input, InputSearch, InputNumber, Switch</li>
       <li>Bars: ToggleBar, Panel title, Breadcrumb</li>
       <li>Data: List item, Table row</li>
     </ul>
-    <h5>32px</h5>
+    <h3>32px</h3>
     <ul>
       <li>Toolbar height, padding:2px and margin:2px on children</li>
       <li>Table row (with controls inside)</li>

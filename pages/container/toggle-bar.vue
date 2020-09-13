@@ -1,8 +1,8 @@
 <template>
   <div>
-    <h2>Toggle Bar</h2>
+    <h1>Toggle Bar</h1>
 
-    <h4>Basic (Horizontal)</h4>
+    <h2>Basic (Horizontal)</h2>
     <jt-border inline all>
       <jt-toggle-bar>
         <jt-toggle-bar-button
@@ -16,7 +16,7 @@
       </jt-toggle-bar>
     </jt-border>
 
-    <h4>No Icon</h4>
+    <h2>No Icon</h2>
     <jt-border inline all>
       <jt-toggle-bar>
         <jt-toggle-bar-button
@@ -29,7 +29,7 @@
       </jt-toggle-bar>
     </jt-border>
 
-    <h4>Set Width</h4>
+    <h2>Set Width</h2>
     <jt-border inline all>
       <jt-toggle-bar>
         <jt-toggle-bar-button

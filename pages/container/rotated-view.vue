@@ -1,23 +1,23 @@
 <template>
   <div>
-    <h2>Rotated View</h2>
+    <h1>Rotated View</h1>
 
-    <h4>Note</h4>
+    <h2>Note</h2>
     <ul>
       <li>Must set width manually. Can't auto detect.</li>
     </ul>
 
-    <h4>Features</h4>
+    <h2>Features</h2>
     <ul>
       <li>Left or right.</li>
     </ul>
 
-    <h4>TODO</h4>
+    <h2>TODO</h2>
     <ul>
       <li>Auto detect the container width.</li>
     </ul>
 
-    <h4>Basic</h4>
+    <h2>Basic</h2>
     <div style="height: 250px; font-size: 0;">
       <jt-border inline all style="height: 100%;">
         <jt-rotated-view style="display: inline-block; width: 24px;">

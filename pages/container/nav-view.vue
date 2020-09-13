@@ -1,21 +1,21 @@
 <template>
   <div>
-    <h2>Nav View</h2>
+    <h1>Nav View</h1>
 
-    <h4>Features</h4>
+    <h2>Features</h2>
     <ul>
       <li>Set width</li>
       <li>[TODO] Dock side: left or right</li>
       <li>[TODO] Two modes: static or reactive</li>
     </ul>
 
-    <h4>TODO</h4>
+    <h2>TODO</h2>
     <ul>
       <li>Support static mode</li>
       <li>Allow dock to right</li>
     </ul>
 
-    <h4>Basic</h4>
+    <h2>Basic</h2>
     <div class="jt-docs-sim-window">
       <jt-button class="btn-show-side" @click="$refs.side.open()">≡</jt-button>
       <jt-nav-view ref="side" :width="150" style="height: 150px;">

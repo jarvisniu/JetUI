@@ -1,34 +1,34 @@
 <template>
   <div>
-    <h2>Contain View</h2>
+    <h1>Contain View</h1>
     <div>Make an element in a container that has features of fixed aspect ratio, adaptive size, vertical&horizontal align center, padding. Just like the <code>object-fit: contain;</code> CSS style.</div>
 
-    <h4>Tip</h4>
+    <h2>Tip</h2>
     <ul>
       <li>Resize the window to see the effects.</li>
     </ul>
 
-    <h4>Props</h4>
+    <h2>Props</h2>
     <ul>
       <li>ratio, default is 1</li>
       <li>padding, default is 20</li>
     </ul>
 
-    <h4>Basic</h4>
+    <h2>Basic</h2>
     <jt-border all style="width: 50vw; height: 50vh;">
       <jt-contain-view>
         <div class="body">Body</div>
       </jt-contain-view>
     </jt-border>
 
-    <h4>Padding</h4>
+    <h2>Padding</h2>
     <jt-border all style="width: 50vw; height: 50vh;">
       <jt-contain-view :padding="50">
         <div class="body">Body</div>
       </jt-contain-view>
     </jt-border>
 
-    <h4>Ratio</h4>
+    <h2>Ratio</h2>
     <jt-border all style="width: 50vw; height: 50vh;">
       <jt-contain-view :ratio="1.5">
         <div class="body">Body</div>

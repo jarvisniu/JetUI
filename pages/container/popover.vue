@@ -1,19 +1,19 @@
 <template>
   <div>
-    <h2>Popover</h2>
+    <h1>Popover</h1>
 
-    <h4>Features</h4>
+    <h2>Features</h2>
     <ul>
       <li>Show to 9 side.</li>
     </ul>
 
-    <h4>TODO</h4>
+    <h2>TODO</h2>
     <ul>
       <li>Add Triangle.</li>
       <li>Add prop `trigger`, 'hover', 'click'</li>
     </ul>
 
-    <h4>Basic</h4>
+    <h2>Basic</h2>
     <div>
       <jt-popover to="bottom-left">
         <jt-button>Hover me</jt-button>
@@ -21,7 +21,7 @@
       </jt-popover>
     </div>
 
-    <h4>Positions (prop `to`)</h4>
+    <h2>Positions (prop `to`)</h2>
     <div class="position-table">
       <table>
         <!-- L1 -->
@@ -127,7 +127,7 @@
       </table>
     </div>
 
-    <h4>Gap</h4>
+    <h2>Gap</h2>
     <div>
       <jt-popover to="right" :gap="10">
         <jt-button>Hover me</jt-button>

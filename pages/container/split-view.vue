@@ -1,8 +1,8 @@
 <template>
   <div>
-    <h2>Split View</h2>
+    <h1>Split View</h1>
 
-    <h4>Basic (1:3:1)</h4>
+    <h2>Basic (1:3:1)</h2>
     <jt-border all>
       <jt-split-view style="height: 150px;">
         <jt-split-view-child class="child-1">
@@ -17,7 +17,7 @@
       </jt-split-view>
     </jt-border>
 
-    <h4>Vertical</h4>
+    <h2>Vertical</h2>
     <jt-border all>
       <jt-split-view vertical style="height: 150px;">
         <jt-split-view-child class="child-1">
@@ -29,7 +29,7 @@
       </jt-split-view>
     </jt-border>
 
-    <h4>Basic (200+Rest)</h4>
+    <h2>Basic (200+Rest)</h2>
     <jt-border all>
       <jt-split-view style="height: 150px;">
         <jt-split-view-child class="child-1" size="200">

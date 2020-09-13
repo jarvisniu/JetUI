@@ -1,26 +1,25 @@
 <template>
   <div>
+    <h1>List</h1>
 
-    <h2>List</h2>
-
-    <h4>Features</h4>
+    <h2>Features</h2>
     <ul>
       <li>Two-way bind selected index.</li>
       <li>Specify prop.</li>
       <li>Item template.</li>
     </ul>
 
-    <h4>Basic</h4>
+    <h2>Basic</h2>
     <jt-border inline all>
       <jt-list style="width: 200px;" :data="list" v-model="selIndex"></jt-list>
     </jt-border>
 
-    <h4>Prop</h4>
+    <h2>Prop</h2>
     <jt-border inline all>
       <jt-list style="width: 200px;" :data="students" v-model="selStudentIndex" prop="name"></jt-list>
     </jt-border>
 
-    <h4>Item template</h4>
+    <h2>Item template</h2>
     <jt-border inline all>
       <jt-list style="width: 200px;" :data="students" v-model="selStudentIndex">
         <template v-slot:item="scope">

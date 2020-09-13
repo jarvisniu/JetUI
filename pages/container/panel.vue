@@ -1,14 +1,13 @@
 <template>
   <div>
+    <h1>Panel</h1>
 
-    <h2>Panel</h2>
-
-    <h4>Features</h4>
+    <h2>Features</h2>
     <ul>
       <li>Highlight title when focused.</li>
     </ul>
 
-    <h4>Basic</h4>
+    <h2>Basic</h2>
     <jt-border inline all>
       <jt-panel title="Message" style="width: 400px;">
         <div style="padding: 10px;">
@@ -17,7 +16,7 @@
       </jt-panel>
     </jt-border>
 
-    <h4>Slot Title & Control & Foldable</h4>
+    <h2>Slot Title & Control & Foldable</h2>
     <jt-border inline all>
       <jt-panel title="Message" :fold="!show" height="200" style="width: 400px;">
         <div slot="title">

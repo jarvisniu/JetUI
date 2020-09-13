@@ -1,21 +1,21 @@
 <template>
   <div>
-    <h2>Scroll View</h2>
+    <h1>Scroll View</h1>
 
-    <h4>Features</h4>
+    <h2>Features</h2>
     <ul>
       <li>Universal appearance.</li>
       <li>Always show scroll bar.</li>
       <li>Border between content and scroll bar.</li>
     </ul>
 
-    <h4>TODO</h4>
+    <h2>TODO</h2>
     <ul>
       <li>Dark theme.</li>
       <li>Direction x.</li>
     </ul>
 
-    <h4>Basic</h4>
+    <h2>Basic</h2>
     <jt-border all>
       <jt-scroll-view style="height: 150px; background: var(--jt-bg-container);">
         <div style="padding: 5px;">
@@ -24,7 +24,7 @@
       </jt-scroll-view>
     </jt-border>
 
-    <h4>Invalid</h4>
+    <h2>Invalid</h2>
     <jt-border all>
       <jt-scroll-view style="height: 150px; background: var(--jt-bg-container); ">
         <div style="padding: 5px;">

@@ -1,8 +1,8 @@
 <template>
   <div>
-    <h2>Toolbar</h2>
+    <h1>Toolbar</h1>
 
-    <h4>Basic (Horizontal)</h4>
+    <h2>Basic (Horizontal)</h2>
     <jt-border inline all>
       <jt-toolbar>
         <jt-toolbar-button :icon="iconDatabase"></jt-toolbar-button>
@@ -14,7 +14,7 @@
       </jt-toolbar>
     </jt-border>
 
-    <h4>Vertical</h4>
+    <h2>Vertical</h2>
     <jt-border inline all>
       <jt-toolbar vertical>
         <jt-toolbar-button :icon="iconDatabase"></jt-toolbar-button>

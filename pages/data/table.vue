@@ -1,8 +1,8 @@
 <template>
   <div>
-    <h2>Table</h2>
+    <h1>Table</h1>
 
-    <h3>Features</h3>
+    <h2>Features</h2>
     <ul>
       <li>ElementUI like API</li>
       <li>Column `prop` prop as a function</li>
@@ -11,14 +11,14 @@
       <li>Customize Columns</li>
     </ul>
 
-    <h3>TODO</h3>
+    <h2>TODO</h2>
     <ul>
       <li>Sort arrow icons</li>
       <li>Expand row</li>
       <li>Default sort prop</li>
     </ul>
 
-    <h3>Basic</h3>
+    <h2>Basic</h2>
     <jt-table :data="data">
       <jt-table-column label="Nickname" prop="nickname" :width="150"></jt-table-column>
       <jt-table-column label="FullName" prop="fullName" :width="200" sortable></jt-table-column>

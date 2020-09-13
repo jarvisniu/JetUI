@@ -17,6 +17,7 @@ import NavView from './nav-view/jt-nav-view.vue'
 import Panel from './panel/jt-panel.vue'
 import PanelButton from './panel/jt-panel-button.vue'
 import Popover from './popover/jt-popover.vue'
+import Radio from './radio/jt-radio.vue'
 import RotatedView from './rotated-view/jt-rotated-view.vue'
 import ScrollView from './scroll-view/jt-scroll-view.vue'
 import SplitView from './split-view/jt-split-view.vue'
@@ -50,6 +51,7 @@ export default {
     Vue.component(Panel.name, Panel)
     Vue.component(PanelButton.name, PanelButton)
     Vue.component(Popover.name, Popover)
+    Vue.component(Radio.name, Radio)
     Vue.component(RotatedView.name, RotatedView)
     Vue.component(ScrollView.name, ScrollView)
     Vue.component(SplitView.name, SplitView)

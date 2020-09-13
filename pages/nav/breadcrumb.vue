@@ -1,16 +1,19 @@
 <template>
   <div>
-    <h2>Breadcrumb</h2>
+    <h1>Breadcrumb</h1>
+
     <div style="margin-bottom: 10px;">
       <jt-button @click="selectedIndex = -1">Clear</jt-button>
       <jt-label>Selected Index: {{ selectedIndex }}</jt-label>
     </div>
+
     <jt-border inline all>
       <jt-breadcrumb
         :labels="labels"
         v-model="selectedIndex"
       ></jt-breadcrumb>
     </jt-border>
+
   </div>
 </template>
 

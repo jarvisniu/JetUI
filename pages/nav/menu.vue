@@ -1,8 +1,8 @@
 <template>
   <div class="jt-docs-sim-window" style="padding: 10px;">
-    <h2 style="margin-top: 30px;">Menu</h2>
+    <h1 style="margin-top: 30px;">Menu</h1>
 
-    <h4>TODO</h4>
+    <h2>TODO</h2>
     <ol>
       <li>Icon</li>
     </ol>

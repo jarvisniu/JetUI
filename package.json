@@ -31,7 +31,7 @@
     "@jarvisniu/upload-oss": "^1.1.1",
     "lodash.findindex": "^4.6.0",
     "lodash.sortby": "^4.7.0",
-    "modern-normalize": "^0.6.0",
+    "modern-normalize": "^1.0.0",
     "nuxt": "^2.14.4",
     "rollup": "^1.27.13",
     "rollup-plugin-commonjs": "^10.1.0",

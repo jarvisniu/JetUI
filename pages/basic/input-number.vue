@@ -1,20 +1,20 @@
 <template>
   <div>
-    <h2>Input Number</h2>
+    <h1>Input Number</h1>
 
-    <h4>TODO</h4>
+    <h2>TODO</h2>
     <ul>
       <li>Long press to continually change</li>
       <li>Set max and min value</li>
     </ul>
 
-    <h4>Basic</h4>
+    <h2>Basic</h2>
     <jt-input-number v-model="count"></jt-input-number>
 
-    <h4>Set Step (=0.5)</h4>
+    <h2>Set Step (=0.5)</h2>
     <jt-input-number v-model="count" :step="0.5"></jt-input-number>
 
-    <h4>Set Width</h4>
+    <h2>Set Width</h2>
     <jt-input-number style="width: 100px;" v-model="count"></jt-input-number>
 
   </div>

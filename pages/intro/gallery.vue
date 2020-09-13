@@ -19,12 +19,12 @@
             <jt-input-search ref="inputSearch" width="150"></jt-input-search>
             <jt-input width="80"></jt-input>
             <jt-input-number width="80" v-model="num1"></jt-input-number>
+            <jt-switch inline v-model="isDarkMode" on-label="暗" off-label="亮"></jt-switch>
             <jt-button>OK</jt-button>
           </jt-toolbar>
         </jt-border>
 
         <div style="padding: 10px;">
-          <jt-switch v-model="isDarkMode" label="Dark Mode"></jt-switch>
         </div>
       </jt-panel>
 

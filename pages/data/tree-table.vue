@@ -1,14 +1,14 @@
 <template>
   <div>
-    <h2>Tree Table</h2>
+    <h1>Tree Table</h1>
 
-    <h3>TODO</h3>
+    <h2>TODO</h2>
     <ul>
       <li>Customize Columns</li>
       <li>Unlimited Levels</li>
     </ul>
 
-    <h3>Basic</h3>
+    <h2>Basic</h2>
     <jt-tree-table :data="data"></jt-tree-table>
   </div>
 </template>

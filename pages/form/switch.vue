@@ -1,31 +1,31 @@
 <template>
   <div>
-    <h2>Switch</h2>
+    <h1>Switch</h1>
 
-    <h1>Features</h1>
+    <h2>Features</h2>
     <ul>
       <li>Disabled</li>
       <li>Align</li>
       <li>On/Off Label</li>
     </ul>
 
-    <h1>Basic</h1>
+    <h2>Basic</h2>
     <div style="margin-bottom: 10px;">
       <jt-switch v-model="isDarkMode" label="Dark Mode"></jt-switch>
     </div>
 
-    <h1>Disabled</h1>
+    <h2>Disabled</h2>
     <div style="margin-bottom: 10px;">
       <jt-switch v-model="isDarkMode" inline disabled label="Dark Mode"></jt-switch>
     </div>
 
-    <h1>Align</h1>
+    <h2>Align</h2>
     <jt-border all style="margin-bottom: 10px; width: 200px">
       <jt-switch v-model="isDarkMode" label="Align Right" align="right"></jt-switch>
       <jt-switch v-model="isDarkMode" label="Align Left"></jt-switch>
     </jt-border>
 
-    <h1>On/Off Label</h1>
+    <h2>On/Off Label</h2>
     <div style="margin-bottom: 10px;">
       <jt-switch v-model="isDarkMode" inline label="Dark Mode" on-label="on" off-label="off"></jt-switch>
       <jt-switch v-model="isDarkMode" inline label="Dark Mode" on-label="开" off-label="关"></jt-switch>

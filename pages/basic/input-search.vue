@@ -1,8 +1,8 @@
 <template>
   <div>
-    <h2>Input Search</h2>
+    <h1>Input Search</h1>
 
-    <h4>Basic</h4>
+    <h2>Basic</h2>
     <jt-border inline all style="background-color: var(--jt-bg-container-dark);">
       <jt-input-search v-model="keyword" @press-enter="onPressEnter"></jt-input-search>
     </jt-border>

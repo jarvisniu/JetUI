@@ -1,9 +1,8 @@
 <template>
   <div class="p-a-10">
+    <h1>Tree</h1>
 
-    <h2>Tree</h2>
-
-    <h4>Features</h4>
+    <h2>Features</h2>
     <ul>
       <li>Folding & Expanding</li>
       <li>Item padding</li>
@@ -11,7 +10,7 @@
       <li>Auto height (default)</li>
     </ul>
 
-    <h4>TODO</h4>
+    <h2>TODO</h2>
     <ul>
       <li>Selectable</li>
       <li>Item Template</li>
@@ -20,14 +19,14 @@
       <li>Auto inject missing expanded prop, in order to be reactive</li>
     </ul>
 
-    <h4>Basic</h4>
+    <h2>Basic</h2>
     <jt-tree :data="treeData" style="display: inline-block; height: 200px;" />
 
-    <h4>Font size</h4>
+    <h2>Font size</h2>
     <jt-tree :data="treeData" style="display: inline-block; height: 200px; font-size: 12px;" />
     <jt-tree :data="treeData" style="display: inline-block; height: 200px; font-size: 16px;" />
 
-    <h4>Item padding set</h4>
+    <h2>Item padding set</h2>
     <jt-tree :data="treeData" style="height: 200px;" item-padding="6" />
 
   </div>

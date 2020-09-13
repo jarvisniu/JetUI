@@ -1,26 +1,27 @@
 <template>
   <div
-    class="jt-switch" :class="{ inline: inline, disabled: disabled }"
-    @click="on = !on"
+    class="jt-switch jt-inline-component"
+    :class="{ inline: inline, disabled: disabled }"
+    @click="checked = !checked"
   >
-    <label
+    <div
       class="wrapper"
       :class="{
-        checked: on,
+        checked: checked,
         'align-left': align == 'left',
         'align-right': align == 'right',
       }"
     >
       <span class="indicator">
-        <div class="indicator-label" :class="{hide: !on}">
+        <div class="indicator-label" :class="{hide: !checked}">
           {{ onLabel }}
         </div>
-        <div class="indicator-label" :class="{hide: on}">
+        <div class="indicator-label" :class="{hide: checked}">
           {{ offLabel }}
         </div>
       </span
-      ><span class="label">{{ label }}</span>
-    </label>
+      ><span v-if="label"  class="label">{{ label }}</span>
+    </div>
   </div>
 </template>
 
@@ -29,7 +30,7 @@ export default {
   name: 'JtSwitch',
   props: {
     value: { type: Boolean, required: true },
-    label: { type: String, required: true },
+    label: { type: String, default: '' },
     inline: { type: Boolean, default: false },
     disabled: { type: Boolean, default: false },
     align: { type: String, default: 'left' }, // valid: right
@@ -38,14 +39,14 @@ export default {
   },
   data() {
     return {
-      on: this.value,
+      checked: this.value,
     }
   },
   watch: {
     value(val) {
-      this.on = val
+      this.checked = val
     },
-    on(val) {
+    checked(val) {
       this.$emit('input', val)
     },
   },
