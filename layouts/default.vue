@@ -98,6 +98,7 @@ export default {
         { name: 'Form', pages: [
           { name: 'Switch', path: '/form/switch' },
           { name: 'Radio', path: '/form/radio' },
+          { name: 'Checkbox', path: '/form/checkbox' },
         ] },
         { name: 'Data', pages: [
           { name: 'List', path: '/data/list' },

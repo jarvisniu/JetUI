@@ -17,15 +17,32 @@
         <jt-border bottom>
           <jt-toolbar>
             <jt-input-search ref="inputSearch" width="150"></jt-input-search>
-            <jt-input width="80"></jt-input>
             <jt-input-number width="80" v-model="num1"></jt-input-number>
-            <jt-switch inline v-model="isDarkMode" on-label="暗" off-label="亮"></jt-switch>
-            <jt-button>OK</jt-button>
+            <jt-switch inline v-model="isDarkMode" label="Dark mode"></jt-switch>
           </jt-toolbar>
         </jt-border>
 
-        <div style="padding: 10px;">
-        </div>
+        <jt-border all style="margin: 20px auto; padding: 8px; width: 300px; background: white">
+          <div style="margin-bottom: 10px;">
+            <jt-label style="width: 78px">Username</jt-label>
+            <jt-input width="200" v-model="form.username"></jt-input>
+          </div>
+          <div style="margin-bottom: 10px;">
+            <jt-label style="width: 78px">Password</jt-label>
+            <jt-input width="200" v-model="form.password" type="password"></jt-input>
+          </div>
+          <div style="margin-bottom: 10px;">
+            <jt-checkbox v-model="form.hasRead" label="I agree to the terms"></jt-checkbox>
+          </div>
+          <div style="margin-bottom: 10px;">
+            <jt-label>Sex</jt-label>
+            <jt-radio inline v-model="form.sex" value="male" label="Male"></jt-radio>
+            <jt-radio inline v-model="form.sex" value="female" label="Female"></jt-radio>
+          </div>
+          <div style="text-align: center">
+            <jt-button>Login</jt-button>
+          </div>
+        </jt-border>
       </jt-panel>
 
       <!-- Panel 2 -->
@@ -129,6 +146,12 @@ export default {
       isPanelToolbarFolded: false,
       isPanelListFolded: false,
       isDarkMode: false,
+      form: {
+        username: '',
+        password: '',
+        sex: '',
+        hasRead: false,
+      },
     }
   },
 }

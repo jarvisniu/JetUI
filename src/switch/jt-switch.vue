@@ -164,6 +164,6 @@ export default {
 .label {
   vertical-align: top;
   line-height: 18px;
-  margin-left: 10px;
+  margin-left: 8px;
 }
 </style>

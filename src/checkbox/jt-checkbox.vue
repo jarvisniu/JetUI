@@ -1,23 +1,26 @@
 <template>
   <div
-    class="jt-radio jt-inline-component"
+    class="jt-checkbox jt-inline-component"
     :class="{ inline: inline, disabled: disabled }"
-    @click="$emit('input', value)"
+    @click="$emit('input', !boundVal)"
   >
-    <span class="indicator" :class="{ checked: boundVal == value }"></span
+    <span class="indicator" :class="{ checked: boundVal }"
+    ><svg viewBox="0 0 16 16">
+      <path d="M2,7 L7,12 L14,3" stroke-width="2.5" ></path>
+    </svg
+    ></span
     ><span v-if="label"  class="label">{{ label }}</span>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'JtRadio',
+  name: 'JtCheckbox',
   model: {
     prop: 'boundVal'
   },
   props: {
-    boundVal: { type: String, required: true },
-    value: { type: String, required: true },
+    boundVal: { type: Boolean, required: true },
     label: { type: String, default: '' },
     inline: { type: Boolean, default: false },
     disabled: { type: Boolean, default: false },
@@ -26,7 +29,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.jt-radio {
+.jt-checkbox {
   cursor: pointer;
   user-select: none;
   padding: 4px;
@@ -56,36 +59,32 @@ export default {
 .indicator {
   position: relative;
   display: inline-block;
-  color: var(--jt-text);
-  background-color: var(--jt-bg-button);
   border: solid 1px hsla(0, 0%, 50%, 0.2);
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
+  margin: 1px;
   vertical-align: top;
-  border-radius: 999px;
+  border-radius: 3px;
+  background-color: var(--jt-bg-button);
 
   transition: border-color var(--jt-duration);
   &.checked {
     border-color: var(--jt-primary);
-
-    &:before {
-      background-color: var(--jt-primary);
-      transform: scale(1);
-    }
   }
 
-  &:before {
-    position: absolute;
-    display: block;
-    content: '';
-    width: 10px;
-    height: 10px;
-    margin: 2px;
-    background-color: var(--jt-bg-container);
-    border-radius: 999px;
-    left: 0;
-    transition: background-color var(--jt-duration), transform var(--jt-duration);
-    transform: scale(0);
+  svg {
+    width: 100%;
+    width: 100%;
+    background-color: var(--jt-primary);
+    stroke: white;
+    fill: none;
+    opacity: 0;
+    transition: opacity var(--jt-duration);
+  }
+  &.checked {
+    svg {
+      opacity: 1;
+    }
   }
 }
 

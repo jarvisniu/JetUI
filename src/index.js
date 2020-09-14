@@ -5,6 +5,7 @@ import Border from './border/jt-border.vue'
 import Breadcrumb from './breadcrumb/jt-breadcrumb.vue'
 import Button from './button/jt-button.vue'
 import ButtonGroup from './button/jt-button-group.vue'
+import Checkbox from './checkbox/jt-checkbox.vue'
 import ContainView from './contain-view/jt-contain-view.vue'
 import Icon from './icon/jt-icon.vue'
 import Input from './input/jt-input.vue'
@@ -39,6 +40,7 @@ export default {
     Vue.component(Breadcrumb.name, Breadcrumb)
     Vue.component(Button.name, Button)
     Vue.component(ButtonGroup.name, ButtonGroup)
+    Vue.component(Checkbox.name, Checkbox)
     Vue.component(ContainView.name, ContainView)
     Vue.component(Icon.name, Icon)
     Vue.component(Input.name, Input)

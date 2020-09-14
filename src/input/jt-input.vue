@@ -10,7 +10,7 @@ Events:
       width: convertSizeToCSS(width),
     }"
   >
-    <input type="text" v-model="text"
+    <input :type="type !== 'password' ? 'text' : 'password'" v-model="text"
       @keydown.enter="onKeyDownEnter"
       @compositionend="onCompositionEnd"
     >
@@ -25,6 +25,7 @@ export default {
   props: {
     value: { type: [String, Number], default: '' },
     width: { type: [Number, String], default: '' },
+    type: { type: String, default: '' }, // password
   },
   data() {
     return {
@@ -71,6 +72,7 @@ export default {
   border: solid 1px;
   vertical-align: top;
 
+  input[type="password"],
   input[type="text"] {
     box-sizing: border-box;
     display: block;

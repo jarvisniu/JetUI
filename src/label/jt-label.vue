@@ -4,7 +4,7 @@ Label
 
 <template>
   <div
-    class="jt-label"
+    class="jt-label jt-inline-component"
     :style="{
       margin: convertSizeToCSS(margin),
       width: convertSizeToCSS(width),
