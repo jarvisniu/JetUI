@@ -10,11 +10,23 @@ to="bottom"
 </docs>
 
 <template>
-  <div class="jt-popover" @mouseenter="onMouseEnter" @mouseleave="onMouseLeave"
-  :style="{'--slide-dist': slideDist + 'px', '--gap': gap + 'px'}">
+  <div
+    class="jt-popover"
+    @mouseenter="onMouseEnter" @mouseleave="onMouseLeave"
+    @click="onClick" v-click-outside="onClickOutside"
+    :style="{'--slide-dist': slideDist + 'px', '--gap': gap + 'px'}"
+  >
     <slot></slot>
     <transition name="fade">
-      <div v-if="show" class="jt-popover-content jt-util-container" :class="'to-' + to">
+      <div
+        v-if="show"
+        class="jt-popover-content jt-util-container"
+        :class="[theme, 'to-' + to]"
+        :style="{
+          width: width,
+        }"
+        @click.stop
+      >
         <slot name="content"></slot>
       </div>
     </transition>
@@ -22,14 +34,22 @@ to="bottom"
 </template>
 
 <script>
+import ClickOutside from 'vue-click-outside'
+
 export default {
   name: 'JtPopover',
+  directives: {
+    ClickOutside,
+  },
   props: {
     to: { type: String, default: 'bottom' },
     showDelay: { type: Number, default: 0.2 },
     hideDelay: { type: Number, default: 0.2 },
     slideDist: { type: Number, default: 10 },
     gap: { type: Number, default: 2 },
+    width: { type: String, default: 'max-content' },
+    trigger: { type: String, default: 'hover' },
+    theme: { type: String, default: '' },
   },
   data() {
     return {
@@ -39,13 +59,27 @@ export default {
     }
   },
   methods: {
+    onClick() {
+      if (this.trigger === 'hover') return
+
+      this.show = !this.show
+    },
+    onClickOutside() {
+      if (this.trigger === 'hover') return
+
+      if (this.show) this.show = false
+    },
     onMouseEnter() {
+      if (this.trigger === 'click') return
+
       this.showTimeout = setTimeout(() => {
         this.show = true
       }, this.showDelay * 1000)
       clearTimeout(this.hideTimeout)
     },
     onMouseLeave() {
+      if (this.trigger === 'click') return
+
       this.hideTimeout = setTimeout(() => {
         this.show = false
       }, this.hideDelay * 1000)
@@ -68,6 +102,13 @@ export default {
     padding: 6px 8px;
     border-radius: 5px;
     z-index: 1;
+
+    /* Theme: inverse */
+    &.inverse {
+      color: var(--jt-bg-container);
+      background-color: var(--jt-text);
+      border-color: var(--jt-text);
+    }
 
     &.to-bottom {
       left: 50%;
