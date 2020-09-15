@@ -10,7 +10,6 @@ import ContainView from './contain-view/jt-contain-view.vue'
 import Icon from './icon/jt-icon.vue'
 import Input from './input/jt-input.vue'
 import InputNumber from './input-number/jt-input-number.vue'
-import InputSearch from './input-search/jt-input-search.vue'
 import Label from './label/jt-label.vue'
 import List from './list/jt-list.vue'
 import Menu from './menu/jt-menu.vue'
@@ -45,7 +44,6 @@ export default {
     Vue.component(Icon.name, Icon)
     Vue.component(Input.name, Input)
     Vue.component(InputNumber.name, InputNumber)
-    Vue.component(InputSearch.name, InputSearch)
     Vue.component(Label.name, Label)
     Vue.component(List.name, List)
     Vue.component(Menu.name, Menu)

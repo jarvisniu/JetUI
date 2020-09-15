@@ -92,7 +92,6 @@ export default {
           { name: 'Icon', path: '/basic/icon' },
           { name: 'Input', path: '/basic/input' },
           { name: 'Input Number', path: '/basic/input-number' },
-          { name: 'Input Search', path: '/basic/input-search' },
           { name: 'Label', path: '/basic/label' },
         ] },
         { name: 'Form', pages: [

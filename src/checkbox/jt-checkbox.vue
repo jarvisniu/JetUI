@@ -6,7 +6,7 @@
   >
     <span class="indicator" :class="{ checked: boundVal }"
     ><svg viewBox="0 0 16 16">
-      <path d="M2,7 L7,12 L14,3" stroke-width="2.5" ></path>
+      <path d="M2,7.5 L7,12 L14,3" stroke-width="2.5" ></path>
     </svg
     ></span
     ><span v-if="label"  class="label">{{ label }}</span>
@@ -59,13 +59,13 @@ export default {
 .indicator {
   position: relative;
   display: inline-block;
-  border: solid 1px hsla(0, 0%, 50%, 0.2);
+  border: solid 1px hsla(0, 0%, 50%, 0.4);
   width: 14px;
   height: 14px;
   margin: 1px;
   vertical-align: top;
   border-radius: 3px;
-  background-color: var(--jt-bg-button);
+  background-color: var(--jt-bg-indicator);
 
   transition: border-color var(--jt-duration);
   &.checked {
@@ -75,6 +75,7 @@ export default {
   svg {
     width: 100%;
     width: 100%;
+    vertical-align: top;
     background-color: var(--jt-primary);
     stroke: white;
     fill: none;

@@ -16,13 +16,13 @@
         </div>
         <jt-border bottom>
           <jt-toolbar>
-            <jt-input-search ref="inputSearch" width="150"></jt-input-search>
+            <jt-input icon="search" rounded show-clear show-not-empty width="150"></jt-input>
             <jt-input-number width="80" v-model="num1"></jt-input-number>
             <jt-switch inline v-model="isDarkMode" label="Dark mode"></jt-switch>
           </jt-toolbar>
         </jt-border>
 
-        <jt-border all style="margin: 20px auto; padding: 8px; width: 300px; background: white">
+        <jt-border all style="margin: 20px auto; padding: 8px; width: 300px; background: var(--jt-bg-container-dark)">
           <div style="margin-bottom: 10px;">
             <jt-label style="width: 78px">Username</jt-label>
             <jt-input width="200" v-model="form.username"></jt-input>

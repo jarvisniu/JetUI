@@ -57,8 +57,8 @@ export default {
   position: relative;
   display: inline-block;
   color: var(--jt-text);
-  background-color: var(--jt-bg-button);
-  border: solid 1px hsla(0, 0%, 50%, 0.2);
+  background-color: var(--jt-bg-indicator);
+  border: solid 1px hsla(0, 0%, 50%, 0.4);
   width: 16px;
   height: 16px;
   vertical-align: top;

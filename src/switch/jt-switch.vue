@@ -87,21 +87,6 @@ export default {
   cursor: pointer;
   padding-left: 30px;
 
-  // checked
-  &.checked {
-    .indicator {
-      background-color: var(--jt-primary);
-      &:before {
-        left: calc(100% - 18px);
-      }
-    }
-    .indicator-label {
-      color: white;
-      margin-left: 6px;
-      margin-right: 19px;
-    }
-  }
-
   // align
   &.align-right {
     padding-right: 30px;
@@ -125,7 +110,7 @@ export default {
   display: inline-block;
   color: var(--jt-text);
   background-color: var(--jt-bg-button);
-  box-shadow: 0 0 0 1px hsla(0, 0%, 50%, 0.2);
+  box-shadow: 0 0 0 1px hsla(0, 0%, 50%, 0.4);
   margin-left: -30px;
   height: 18px;
   vertical-align: top;
@@ -133,6 +118,8 @@ export default {
   width: auto;
   border-radius: 999px;
   user-select: none;
+
+  transition: background-color var(--jt-duration);
 
   &:before {
     position: absolute;
@@ -147,17 +134,33 @@ export default {
     left: 0;
     transition: left var(--jt-duration);
   }
-
-  .indicator-label {
-    font-size: 12px;
-    line-height: 18px;
-    margin-left: 19px;
-    margin-right: 6px;
-
-    &.hide {
-      line-height: 0;
-      visibility: hidden;
+}
+.wrapper.checked {
+  .indicator {
+    background-color: var(--jt-primary);
+    &:before {
+      left: calc(100% - 18px);
     }
+  }
+}
+.indicator-label {
+  font-size: 12px;
+  line-height: 18px;
+  margin-left: 19px;
+  margin-right: 6px;
+
+  transition: color var(--jt-duration);
+
+  &.hide {
+    line-height: 0;
+    visibility: hidden;
+  }
+}
+.wrapper.checked {
+  .indicator-label {
+    color: white;
+    margin-left: 6px;
+    margin-right: 19px;
   }
 }
 
