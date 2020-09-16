@@ -9,11 +9,11 @@
       <li>Column sortable</li>
       <li>Column width</li>
       <li>Customize Columns</li>
+      <li>Sort arrow icons</li>
     </ul>
 
     <h2>TODO</h2>
     <ul>
-      <li>Sort arrow icons</li>
       <li>Expand row</li>
       <li>Default sort prop</li>
     </ul>

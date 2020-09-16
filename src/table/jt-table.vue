@@ -18,7 +18,7 @@
           @click="onClickHead(index)"
         >
           <span>{{column.componentOptions.propsData.label}}</span>
-          <span>{{ getSortIconUrl(index) }}</span>
+          <jt-icon class="sort-icon" size="16" :name="getSortIconName(index)"></jt-icon>
         </th>
       </tr>
       <tr v-for="(row, index) in sortedList" :key="index">
@@ -107,13 +107,13 @@ export default {
         return ''
       }
     },
-    getSortIconUrl (index) {
+    getSortIconName (index) {
       if (this.sortColumnIndex !== index || this.sortDirection === 0) {
         return ''
       } else if (this.sortDirection === -1) {
-        return '↓'
+        return 'triangleDown'
       } else if (this.sortDirection === 1) {
-        return '↑'
+        return 'triangleUp'
       }
     },
     toggleSortDirection () {
@@ -153,5 +153,9 @@ export default {
   th, td {
     padding: 4px 6px;
   }
+}
+
+.sort-icon {
+  float: right;
 }
 </style>

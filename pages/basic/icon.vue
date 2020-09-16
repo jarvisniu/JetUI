@@ -36,7 +36,7 @@
       <div class="icon">
         <jt-icon :name="name" size="48"></jt-icon>
       </div>
-      <div class="name">{{ name }}</div>
+      <div class="name" :title="name">{{ name }}</div>
     </div>
 
   </div>
@@ -62,19 +62,23 @@ export default {
 <style lang="scss" scoped>
 .icon-card {
   display: inline-block;
+  width: 64px;
   margin: 5px;
   border: solid 1px var(--jt-border);
   text-align: center;
 
   .icon {
-    padding: 4px 4px;
+    padding: 4px;
     background-color: var(--jt-bg-container);
   }
 
   .name {
-    padding: 2px 4px;
+    font-size: 12px;
+    padding: 4px 2px;
     border-top: solid 1px var(--jt-border);
     background-color: var(--jt-bg-container-dark);
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 </style>
