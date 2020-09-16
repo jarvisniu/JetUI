@@ -39,7 +39,9 @@ export default {
       border-color var(--jt-duration);
     color: var(--jt-text);
     &:hover {
-      background-color: var(--jt-bg-panel-button-hover);
+      @media (hover: hover) {
+        background-color: var(--jt-bg-panel-button-hover);
+      }
     }
     &:active {
       background-color: var(--jt-bg-panel-button-active);

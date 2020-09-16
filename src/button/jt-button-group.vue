@@ -22,7 +22,9 @@ export default {
     border-color: var(--jt-border);
 
     &:hover {
-      z-index: 1;
+      @media (hover: hover) {
+        z-index: 1;
+      }
     }
     &:first-child {
       border-top-right-radius: 0;

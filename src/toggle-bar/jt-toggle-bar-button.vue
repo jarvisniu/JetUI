@@ -63,7 +63,9 @@ Toggle Bar Button
   color: var(--jt-text);
   background-color: var(--jt-bg-container-dark);
   &:hover {
-    background-color: var(--jt-bg-button-hover);
+    @media (hover: hover) {
+      background-color: var(--jt-bg-button-hover);
+    }
   }
   &:active {
     background-color: var(--jt-bg-button-active);
@@ -71,7 +73,9 @@ Toggle Bar Button
   &.selected {
     background-color: var(--jt-bg-button-selected);
     &:hover {
-      background-color: var(--jt-bg-button-selected-hover);
+      @media (hover: hover) {
+        background-color: var(--jt-bg-button-selected-hover);
+      }
     }
     &:active {
       background-color: var(--jt-bg-button-selected-active);

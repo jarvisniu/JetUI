@@ -42,13 +42,13 @@ export default {
   border: solid 1px var(--jt-border);
   background-color: var(--jt-bg-button);
   height: 24px;
-  line-height: 22px;
+  line-height: 1;
   vertical-align: top;
   text-align: center;
   color: var(--jt-text);
 	font-family: inherit;
   font-size: 14px;
-  padding: 0 8px;
+  padding: 4px 8px;
   border-radius: 3px;
   cursor: pointer;
   user-select: none;
@@ -81,7 +81,9 @@ export default {
     border-color: var(--jt-border);
     background-color: var(--jt-bg-button-selected);
     &:hover {
-      background-color: var(--jt-bg-button-selected-hover);
+      @media (hover: hover) {
+        background-color: var(--jt-bg-button-selected-hover);
+      }
     }
     &:active {
       background-color: var(--jt-bg-button-selected-active);
@@ -101,6 +103,10 @@ export default {
       background-color: var(--jt-primary-active);
       transition: background-color var(--jt-duration-active), border-color var(--jt-duration-active);
     }
+  }
+
+  .jt-icon {
+    vertical-align: top;
   }
 }
 </style>

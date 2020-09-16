@@ -37,7 +37,9 @@ export default {
   transition: background-color var(--jt-duration);
   // background-color: var(--jt-bg-menu);
   &:hover {
-    background-color: var(--jt-bg-menu-hover);
+    @media (hover: hover) {
+      background-color: var(--jt-bg-menu-hover);
+    }
   }
   &:active {
     transition: background-color var(--jt-duration-active);

@@ -2,6 +2,13 @@
   <div>
     <h1>Icon</h1>
 
+    <h2>Features</h2>
+    <ul>
+      <li>Color</li>
+      <li>Size, Width, Height</li>
+      <li>Custom Path and ViewBox</li>
+    </ul>
+
     <h2>Basic</h2>
     <jt-icon name="plus"></jt-icon>
 
@@ -24,11 +31,12 @@
       <span>Open</span>
     </jt-button>
 
-
     <h2>All Icons</h2>
-    <div v-for="(iconData, name) in allIcons" :key="name" class="icon-card">
-      <jt-icon :name="name" size="32"></jt-icon>
-      <div>{{ name }}</div>
+    <div v-for="name in sortedIconNames" :key="name" class="icon-card">
+      <div class="icon">
+        <jt-icon :name="name" size="48"></jt-icon>
+      </div>
+      <div class="name">{{ name }}</div>
     </div>
 
   </div>
@@ -43,6 +51,11 @@ export default {
       allIcons,
     }
   },
+  computed: {
+    sortedIconNames() {
+      return Object.keys(this.allIcons).sort()
+    },
+  },
 }
 </script>
 
@@ -50,10 +63,18 @@ export default {
 .icon-card {
   display: inline-block;
   margin: 5px;
-  border: solid 1px silver;
-  border-radius: 5px;
+  border: solid 1px var(--jt-border);
   text-align: center;
-  padding: 2px 4px;
-  background-color: var(--jt-bg-container-dark);
+
+  .icon {
+    padding: 4px 4px;
+    background-color: var(--jt-bg-container);
+  }
+
+  .name {
+    padding: 2px 4px;
+    border-top: solid 1px var(--jt-border);
+    background-color: var(--jt-bg-container-dark);
+  }
 }
 </style>

@@ -1,6 +1,8 @@
 <template>
   <div :class="`jt-theme-${ selTheme }`">
-    <jt-button class="btn-show-side" @click="$refs.side.open()">≡</jt-button>
+    <jt-button class="btn-show-side" @click="$refs.side.open()">
+      <jt-icon name="menu" size="100%"></jt-icon>
+    </jt-button>
     <jt-nav-view ref="side">
       <jt-scroll-view class="sidebar" style="height: 100%;">
         <div style="padding: 10px;">
@@ -150,6 +152,7 @@ export default {
 
 .btn-show-side {
   position: absolute;
+  z-index: 1;
   margin: 5px;
   width: 40px;
   height: 40px;
@@ -187,7 +190,9 @@ export default {
       color: var(--jt-docs-side-link);
       transition: color 0.05s;
       &:hover {
-        color: var(--jt-primary);
+        @media (hover: hover) {
+          color: var(--jt-primary);
+        }
       }
       &.selected {
         color: var(--jt-primary);

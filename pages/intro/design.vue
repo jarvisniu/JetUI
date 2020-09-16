@@ -2,9 +2,10 @@
   <div>
     <h1>Design</h1>
 
-    <h2>Global Styles</h2>
+    <h2>Global</h2>
     <ul>
       <li>font-size: 14px;</li>
+      <li>Icons: Drawing by Sketch, and minified by <a href="https://vecta.io/nano" target="_blank">vecta.io/nano</a></li>
     </ul>
 
     <h2>Theme Colors</h2>

@@ -10,12 +10,31 @@
     </jt-button>
 
     <h2>Height & Width</h2>
-    <jt-button style="width: 100px;">Set Width</jt-button>
-    <jt-button style="height: 40px;">Set Height</jt-button>
-    <jt-button style="width: 100px; height: 40px;">Set Both</jt-button>
+    <div>
+      <jt-button style="width: 100px;">Set Width</jt-button>
+      <jt-button style="height: 40px;">Set Height</jt-button>
+      <jt-button style="width: 100px; height: 40px;">Set Both</jt-button>
+    </div>
+    <div style="margin-top: 10px;">
+      <jt-button style="width: 100px;">
+        <jt-icon name="plus"></jt-icon>
+        <span>Set Width</span>
+      </jt-button>
+      <jt-button style="height: 40px;">
+        <jt-icon name="minus"></jt-icon>
+        <span>Set Height</span>
+      </jt-button>
+      <jt-button style="width: 100px; height: 40px;">
+        <jt-icon name="search"></jt-icon>
+        <span>Set Both</span>
+      </jt-button>
+    </div>
 
     <h2>Primary</h2>
-    <jt-button type="primary">Search</jt-button>
+    <jt-button type="primary">
+      <jt-icon name="search"></jt-icon>
+      <span>Search</span>
+    </jt-button>
 
     <h2>Disabled</h2>
     <jt-button disabled>Search</jt-button>

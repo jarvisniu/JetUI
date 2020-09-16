@@ -35,7 +35,9 @@ export default {
     // transition background-color var(--jt-duration) // not work
     background-color: hsl(0, 0%, 70%);
     &:hover {
-      background-color: hsl(0, 0%, 60%);
+      @media (hover: hover) {
+        background-color: hsl(0, 0%, 60%);
+      }
     }
   }
 }

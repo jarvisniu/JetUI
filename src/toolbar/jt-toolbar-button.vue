@@ -53,8 +53,10 @@ export default {
   border-color: transparent;
   background-color: transparent;
   &:hover {
-    border-color: var(--jt-border);
-    background-color: var(--jt-bg-button-hover);
+    @media (hover: hover) {
+      border-color: var(--jt-border);
+      background-color: var(--jt-bg-button-hover);
+    }
   }
   &:active {
     background-color: var(--jt-bg-button-active);
@@ -66,7 +68,9 @@ export default {
     border-color: var(--jt-border);
     background-color: var(--jt-bg-button-selected);
     &:hover {
-      background-color: var(--jt-bg-button-selected-hover);
+      @media (hover: hover) {
+        background-color: var(--jt-bg-button-selected-hover);
+      }
     }
     &:active {
       background-color: var(--jt-bg-button-selected-active);

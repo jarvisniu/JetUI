@@ -63,7 +63,9 @@ export default {
     color: var(--jt-text);
     background-color: var(--jt-bg-menu);
     &:hover {
-      background-color: var(--jt-bg-menu-hover);
+      @media (hover: hover) {
+        background-color: var(--jt-bg-menu-hover);
+      }
     }
     &:active {
       background-color: var(--jt-bg-menu-active);
@@ -72,7 +74,9 @@ export default {
       background-color: var(--jt-bg-menu-selected);
     }
     &:hover:after {
-      border-left-color: var(--jt-bg-menu-hover);
+      @media (hover: hover) {
+        border-left-color: var(--jt-bg-menu-hover);
+      }
     }
     &:active:after {
       border-left-color: var(--jt-bg-menu-active);

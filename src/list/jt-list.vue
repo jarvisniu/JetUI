@@ -62,7 +62,9 @@ export default {
   &.selected {
     background-color: var(--jt-bg-menu-selected);
     &:hover {
-      background-color: var(--jt-bg-menu-selected-hover);
+      @media (hover: hover) {
+        background-color: var(--jt-bg-menu-selected-hover);
+      }
     }
     &:active {
       background-color: var(--jt-bg-menu-selected-active);

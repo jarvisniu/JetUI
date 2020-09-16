@@ -110,8 +110,10 @@ $vertical-gap: 4px;
     padding: 0 6px;
     line-height: 20px;
     transition: background-color 0.15s;
-    &:hover{
-      background-color: var(--jt-bg-menu-hover);
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--jt-bg-menu-hover);
+      }
     }
     &:active {
       background-color: var(--jt-bg-menu-active);
@@ -149,7 +151,9 @@ $vertical-gap: 4px;
 .menu-down li:not(.menu-split-line) {
   transition: background-color 0.15s;
   &:hover {
-    background-color: var(--jt-bg-menu-hover);
+    @media (hover: hover) {
+      background-color: var(--jt-bg-menu-hover);
+    }
   }
 }
 .menu-down .button {
@@ -164,7 +168,9 @@ $vertical-gap: 4px;
   line-height: 20px;
   transition: background-color 0.15s;
   &:hover {
-    background-color: var(--jt-bg-menu-hover);
+    @media (hover: hover) {
+      background-color: var(--jt-bg-menu-hover);
+    }
   }
   &:active {
     background-color: var(--jt-bg-menu-active) !important;

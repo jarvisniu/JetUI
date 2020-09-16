@@ -10,7 +10,9 @@
     background-color: var(--jt-link-bg);
 
     &:hover {
-      background-color: var(--jt-link-bg-hover);
+      @media (hover: hover) {
+        background-color: var(--jt-link-bg-hover);
+      }
     }
   }
 }

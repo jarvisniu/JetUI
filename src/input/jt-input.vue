@@ -181,7 +181,9 @@ export default {
     right: 0;
     transition: background-color 0.15s, opacity 0.15s;
     &:hover {
-      background-color: var(--jt-bg-menu-hover);
+      @media (hover: hover) {
+        background-color: var(--jt-bg-menu-hover);
+      }
     }
     &:active {
       background-color: var(--jt-bg-menu-active);

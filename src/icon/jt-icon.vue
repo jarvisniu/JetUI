@@ -74,7 +74,7 @@ export default {
   box-sizing: border-box;
   display: inline-block;
   line-height: 1;
-  color: var(--jt-text);
+  // color: var(--jt-icon); // TODO button primary not working
 
   svg {
     vertical-align: top;
