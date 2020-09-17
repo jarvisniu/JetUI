@@ -12,6 +12,6 @@ body {
   box-sizing: border-box;
   position: relative;
   height: 100%;
-  overflow: auto;
+  overflow: hidden;
   border: double 3px var(--jt-border);
 }

@@ -111,7 +111,6 @@ export default {
 .jt-input {
   box-sizing: border-box;
   display: inline-block;
-  margin: 4px;
   min-width: 100px;
   vertical-align: top;
 }

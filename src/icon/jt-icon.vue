@@ -32,7 +32,7 @@ export default {
     name: { type: String, default: '' },
     path: { type: String, default: '' },
     color: { type: String, default: '' },
-    viewBox: { type: String, default: '' },
+    viewBox: { type: String, default: '0 0 16 16' },
     size: { type: [Number, String], default: 14 },
     margin: { type: [Number, String], default: '' },
     width: { type: [Number, String], default: 0 },
@@ -62,8 +62,6 @@ export default {
       if (iconPaths[this.name] == null) {
         console.error(`[jet-ui] <jt-icon>: Icon "${ this.name }" doesn't exists.`)
       }
-    } else if (!this.path) {
-      console.error(`[jet-ui] <jt-icon>: You must set prop "name" or "path".`)
     }
   },
 }

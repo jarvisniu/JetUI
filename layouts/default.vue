@@ -3,7 +3,7 @@
     <jt-button class="btn-show-side" @click="$refs.side.open()">
       <jt-icon name="menu" size="100%"></jt-icon>
     </jt-button>
-    <jt-nav-view ref="side">
+    <jt-nav-view ref="side" z-index="10">
       <jt-scroll-view class="sidebar" style="height: 100%;">
         <div style="padding: 10px;">
           <div class="title">jet-ui docs</div>

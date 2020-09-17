@@ -142,12 +142,24 @@ export default {
     border: solid 1px var(--jt-border);
   }
   th {
-    background-color: var(--jt-bg-container-dark);
     text-align: left;
     user-select: none;
 
+    transition: background-color var(--jt-duration);
+    background-color: var(--jt-bg-container-dark);
+
     &.sortable {
       cursor: pointer;
+
+      &:hover {
+        @media (hover: hover) {
+          background-color: var(--jt-bg-menu-hover);
+        }
+      }
+      &:active {
+        transition: background-color var(--jt-duration-active);
+        background-color: var(--jt-bg-menu-active);
+      }
     }
   }
   th, td {

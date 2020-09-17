@@ -138,7 +138,7 @@
     <h2>Trigger (=click)</h2>
     <div>
       <jt-popover trigger="click">
-        <jt-button>Hover me</jt-button>
+        <jt-button>Click me</jt-button>
         <div slot="content">Hi, I am a tooltip.</div>
       </jt-popover>
     </div>
