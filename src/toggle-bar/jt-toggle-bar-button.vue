@@ -1,7 +1,3 @@
-<docs>
-Toggle Bar Button
-</docs>
-
 <template>
   <div
     class="jt-toggle-bar-button"

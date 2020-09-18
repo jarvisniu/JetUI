@@ -1,7 +1,3 @@
-<docs>
-  表格列。
-</docs>
-
 <template>
   <div></div>
 </template>

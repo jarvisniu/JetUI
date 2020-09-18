@@ -1,7 +1,3 @@
-<docs>
-  Rotated View
-</docs>
-
 <template>
   <div class="jt-rotated-view">
     <div ref="wrapper" class="rotate-wrapper">

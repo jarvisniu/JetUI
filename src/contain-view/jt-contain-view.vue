@@ -1,7 +1,3 @@
-<docs>
-  Contain View
-</docs>
-
 <template>
   <div class="jt-contain-view">
     <div class="contain-wrapper" :style="wrapperStyle">

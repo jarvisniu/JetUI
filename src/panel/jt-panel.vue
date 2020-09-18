@@ -1,7 +1,3 @@
-<docs>
-Panel
-</docs>
-
 <template>
   <div class="jt-panel" tabindex="0"
     :style="{

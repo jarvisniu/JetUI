@@ -1,9 +1,7 @@
-<docs>
-  表格：类似于el-table。
-  不用el-table是因为prop只能传字符串，不能传function，所以不能对数据进行二次加工。
-  支持：排序
-  不支持(希望支持，但太难，不会)：自定义列模板、展开行。
-</docs>
+// 表格：类似于el-table。
+// 不用el-table是因为prop只能传字符串，不能传function，所以不能对数据进行二次加工。
+// 支持：排序
+// 不支持(希望支持，但太难，不会)：自定义列模板、展开行。
 
 <template>
   <div class="jt-table jt-util-container">

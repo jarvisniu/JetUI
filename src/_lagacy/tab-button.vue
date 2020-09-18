@@ -1,7 +1,3 @@
-<docs>
-  标签按钮
-</docs>
-
 <template>
   <div class="tab-button" :class="{selected: selected}" :style="{left: left + 'px'}"
        @mousedown="onMouseDown" @mousemove="onMouseMove" @mouseup="onMouseUp">

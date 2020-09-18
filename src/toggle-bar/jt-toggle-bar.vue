@@ -1,7 +1,3 @@
-<docs>
-Toggle Bar
-</docs>
-
 <template>
   <div class="jt-toggle-bar">
     <slot></slot>

@@ -1,7 +1,5 @@
-<docs>
-Events:
-- `press-enter`: Filter the IME Enter keys.
-</docs>
+// Events:
+// - `press-enter`: Filter the IME Enter keys.
 
 <template>
   <div

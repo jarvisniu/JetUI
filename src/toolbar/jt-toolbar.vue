@@ -1,7 +1,3 @@
-<docs>
-  Toolbar
-</docs>
-
 <template>
   <div class="jt-toolbar" :class="direction">
     <slot></slot>

@@ -1,7 +1,7 @@
 const pkg = require('./package.json')
 
 module.exports = {
-  mode: 'spa',
+  components: true,
   server: {
     port: 7788,
     host: '0.0.0.0',
@@ -27,13 +27,9 @@ module.exports = {
   css: [
     "modern-normalize",
     // "jol",
-    // "@jarvisniu/unstyle",
-    // "@jarvisniu/unstyle/font-size.css",
     "~styles/main.scss",
   ],
-  // Plugins to load before mounting the App
   plugins: [
-    // { ssr: false, src: '~plugins/components' },
   ],
   // Nuxt.js modules
   modules: [
@@ -41,18 +37,6 @@ module.exports = {
   // Build configuration
   build: {
     publicPath: '//cdn.niujunwei.com/jet-ui/',
-    // You can extend webpack config here
-    extend(config, ctx) {
-      // Run ESLint on save
-      // if (ctx.isDev && ctx.isClient) {
-      //   config.module.rules.push({
-      //     enforce: 'pre',
-      //     test: /\.(js|vue)$/,
-      //     loader: 'eslint-loader',
-      //     exclude: /(node_modules)/
-      //   })
-      // }
-    }
   },
   generate: {
     dir: 'docs',

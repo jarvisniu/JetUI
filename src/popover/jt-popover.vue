@@ -1,13 +1,9 @@
-<docs>
-<jt-popover>
-  <button>Hover Me</button>
-  <div slot="content">
-    Content
-  </div>
-</jt-popover>
-Props:
-to="bottom"
-</docs>
+// <jt-popover>
+//   <button>Hover Me</button>
+//   <div slot="content">
+//     Content
+//   </div>
+// </jt-popover>
 
 <template>
   <div

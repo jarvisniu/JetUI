@@ -1,6 +1,4 @@
-<docs>
-Label
-</docs>
+// Label
 
 <template>
   <div

@@ -1,7 +1,3 @@
-<docs>
-Toolbar Button
-</docs>
-
 <template>
   <div
     class="jt-toolbar-button jt-inline-component"

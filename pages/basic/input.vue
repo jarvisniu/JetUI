@@ -14,28 +14,65 @@
     </ul>
 
     <h2>Basic</h2>
-    <jt-border inline all>
-      <jt-toolbar>
-        <jt-input width="200" v-model="keyword"></jt-input>
-      </jt-toolbar>
-    </jt-border>
+    <jt-snippet>
+      <textarea slot="code">
+        <jt-border inline all>
+          <jt-toolbar>
+            <jt-input width="200" v-model="keyword"></jt-input>
+          </jt-toolbar>
+        </jt-border>
+      </textarea>
+      <template>
+        <jt-border inline all>
+          <jt-toolbar>
+            <jt-input width="200" v-model="keyword"></jt-input>
+          </jt-toolbar>
+        </jt-border>
+      </template>
+    </jt-snippet>
 
     <h2>Type Password</h2>
-    <jt-border inline all>
-      <jt-toolbar>
-        <jt-input width="200" type="password" v-model="keyword"></jt-input>
-      </jt-toolbar>
-    </jt-border>
+    <jt-snippet>
+      <textarea slot="code">
+        <jt-border inline all>
+          <jt-toolbar>
+            <jt-input width="200" type="password" v-model="keyword"></jt-input>
+          </jt-toolbar>
+        </jt-border>
+      </textarea>
+      <template>
+        <jt-border inline all>
+          <jt-toolbar>
+            <jt-input width="200" type="password" v-model="keyword"></jt-input>
+          </jt-toolbar>
+        </jt-border>
+      </template>
+    </jt-snippet>
 
-    <h2>Search Box: rounded & icon="search" & show-clear & show-not-empty</h2>
-    <jt-border inline all>
-      <jt-toolbar>
-        <jt-input
-          width="200" v-model="keyword"
-          rounded icon="search" show-clear show-not-empty
-        ></jt-input>
-      </jt-toolbar>
-    </jt-border>
+    <h2>Search Box</h2>
+    <jt-snippet>
+      <textarea slot="code">
+        <jt-border inline all>
+          <jt-toolbar>
+            <jt-input
+              width="200" v-model="keyword"
+              rounded icon="search" show-clear show-not-empty
+            ></jt-input>
+          </jt-toolbar>
+        </jt-border>
+      </textarea>
+      <template>
+        <jt-border inline all>
+          <jt-toolbar>
+            <jt-input
+              width="200" v-model="keyword"
+              rounded icon="search" show-clear show-not-empty
+            ></jt-input>
+          </jt-toolbar>
+        </jt-border>
+      </template>
+    </jt-snippet>
+
 
   </div>
 </template>

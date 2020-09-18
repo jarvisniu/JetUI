@@ -3,75 +3,170 @@
     <h1>Button</h1>
 
     <h2>Basic</h2>
-    <jt-button>确定</jt-button>
-    <jt-button>Confirm</jt-button>
-    <jt-button>
-        <jt-icon name="plus"></jt-icon>
-    </jt-button>
+    <jt-snippet>
+      <textarea slot="code">
+        <jt-button>确定</jt-button>
+        <jt-button>Confirm</jt-button>
+        <jt-button>
+          <jt-icon name="plus"></jt-icon>
+        </jt-button>
+      </textarea>
+      <template>
+        <jt-button>确定</jt-button>
+        <jt-button>Confirm</jt-button>
+        <jt-button>
+          <jt-icon name="plus"></jt-icon>
+        </jt-button>
+      </template>
+    </jt-snippet>
 
     <h2>Height & Width</h2>
-    <div>
-      <jt-button style="width: 100px;">Set Width</jt-button>
-      <jt-button style="height: 40px;">Set Height</jt-button>
-      <jt-button style="width: 100px; height: 40px;">Set Both</jt-button>
-    </div>
-    <div style="margin-top: 10px;">
-      <jt-button style="width: 100px;">
-        <jt-icon name="plus"></jt-icon>
-        <span>Set Width</span>
-      </jt-button>
-      <jt-button style="height: 40px;">
-        <jt-icon name="minus"></jt-icon>
-        <span>Set Height</span>
-      </jt-button>
-      <jt-button style="width: 100px; height: 40px;">
-        <jt-icon name="search"></jt-icon>
-        <span>Set Both</span>
-      </jt-button>
-    </div>
+    <jt-snippet>
+      <textarea slot="code">
+        <div>
+          <jt-button style="width: 100px;">Set Width</jt-button>
+          <jt-button style="height: 40px;">Set Height</jt-button>
+          <jt-button style="width: 100px; height: 40px;">Set Both</jt-button>
+        </div>
+        <div style="margin-top: 10px;">
+          <jt-button style="width: 100px;">
+            <jt-icon name="plus"></jt-icon>
+            <span>Set Width</span>
+          </jt-button>
+          <jt-button style="height: 40px;">
+            <jt-icon name="minus"></jt-icon>
+            <span>Set Height</span>
+          </jt-button>
+          <jt-button style="width: 100px; height: 40px;">
+            <jt-icon name="search"></jt-icon>
+            <span>Set Both</span>
+          </jt-button>
+        </div>
+      </textarea>
+      <template>
+        <div>
+          <jt-button style="width: 100px;">Set Width</jt-button>
+          <jt-button style="height: 40px;">Set Height</jt-button>
+          <jt-button style="width: 100px; height: 40px;">Set Both</jt-button>
+        </div>
+        <div style="margin-top: 10px;">
+          <jt-button style="width: 100px;">
+            <jt-icon name="plus"></jt-icon>
+            <span>Set Width</span>
+          </jt-button>
+          <jt-button style="height: 40px;">
+            <jt-icon name="minus"></jt-icon>
+            <span>Set Height</span>
+          </jt-button>
+          <jt-button style="width: 100px; height: 40px;">
+            <jt-icon name="search"></jt-icon>
+            <span>Set Both</span>
+          </jt-button>
+        </div>
+      </template>
+    </jt-snippet>
 
     <h2>Primary</h2>
-    <jt-button type="primary">
-      <jt-icon name="search"></jt-icon>
-      <span>Search</span>
-    </jt-button>
+    <jt-snippet>
+      <textarea slot="code">
+        <jt-button type="primary">
+          <jt-icon name="search"></jt-icon>
+          <span>Search</span>
+        </jt-button>
+      </textarea>
+      <template>
+        <jt-button type="primary">
+          <jt-icon name="search"></jt-icon>
+          <span>Search</span>
+        </jt-button>
+      </template>
+    </jt-snippet>
 
     <h2>Disabled</h2>
-    <jt-button disabled>Search</jt-button>
+    <jt-snippet>
+      <textarea slot="code">
+        <jt-button disabled>Search</jt-button>
+      </textarea>
+      <template>
+        <jt-button disabled>Search</jt-button>
+      </template>
+    </jt-snippet>
 
     <h2>Selected (Click to toggle)</h2>
-    <jt-button :selected="isOn" @click="isOn = !isOn" style="width: 40px">
-      {{ isOn ? 'Off' : 'On' }}
-    </jt-button>
-    <jt-button :selected="isOn" @click="isOn = !isOn">
-        <jt-icon name="plus"></jt-icon>
-    </jt-button>
+    <jt-snippet>
+      <textarea slot="code">
+        <jt-button
+          :selected="isOn"
+          style="width: 40px"
+          v-text="isOn ? 'Off' : 'On'"
+          @click="isOn = !isOn"
+        ></jt-button>
+        <jt-button :selected="isOn" @click="isOn = !isOn">
+            <jt-icon name="plus"></jt-icon>
+        </jt-button>
+      </textarea>
+      <template>
+        <jt-button
+          :selected="isOn"
+          style="width: 40px"
+          v-text="isOn ? 'Off' : 'On'"
+          @click="isOn = !isOn"
+        ></jt-button>
+        <jt-button :selected="isOn" @click="isOn = !isOn">
+            <jt-icon name="plus"></jt-icon>
+        </jt-button>
+      </template>
+    </jt-snippet>
 
     <h2>Button Group</h2>
-    <jt-button-group>
-      <jt-button :selected="selCity == 'Beijing'"
-        @click="selCity = 'Beijing'">Beijing</jt-button>
-      <jt-button :selected="selCity == 'Shanghai'"
-        @click="selCity = 'Shanghai'">Shanghai</jt-button>
-      <jt-button :selected="selCity == 'Hong Kong'"
-        @click="selCity = 'Hong Kong'">Hong Kong</jt-button>
-    </jt-button-group>
+    <jt-snippet>
+      <textarea slot="code">
+        <jt-button-group>
+          <jt-button
+            v-for="city in ['Beijing', 'Shanghai', 'Hong Kong']"
+            :key="city"
+            :selected="selCity == city"
+            @click="selCity = city"
+          >Beijing</jt-button>
+        </jt-button-group>
+      </textarea>
+      <template>
+        <jt-button-group>
+          <jt-button
+            v-for="city in ['Beijing', 'Shanghai', 'Hong Kong']"
+            :key="city"
+            :selected="selCity == city"
+            @click="selCity = city"
+          >Beijing</jt-button>
+        </jt-button-group>
+      </template>
+    </jt-snippet>
 
     <h2>Button Group with Icon</h2>
-    <jt-button-group>
-      <jt-button :selected="selCity == 'Beijing'"
-        @click="selCity = 'Beijing'">
-        <jt-icon name="plus"></jt-icon>
-      </jt-button>
-      <jt-button :selected="selCity == 'Shanghai'"
-        @click="selCity = 'Shanghai'">
-        <jt-icon name="minus"></jt-icon>
-      </jt-button>
-      <jt-button :selected="selCity == 'Hong Kong'"
-        @click="selCity = 'Hong Kong'">
-        <jt-icon name="search"></jt-icon>
-      </jt-button>
-    </jt-button-group>
+    <jt-snippet>
+      <textarea slot="code">
+        <jt-button-group>
+          <jt-button
+            v-for="icon in ['plus', 'minus', 'search']"
+            :key="icon"
+            :selected="selIcon == icon"
+            @click="selIcon = icon">
+            <jt-icon :name="icon"></jt-icon>
+          </jt-button>
+        </jt-button-group>
+      </textarea>
+      <template>
+        <jt-button-group>
+          <jt-button
+            v-for="icon in ['plus', 'minus', 'search']"
+            :key="icon"
+            :selected="selIcon == icon"
+            @click="selIcon = icon">
+            <jt-icon :name="icon"></jt-icon>
+          </jt-button>
+        </jt-button-group>
+      </template>
+    </jt-snippet>
 
     <!-- end -->
   </div>
@@ -83,6 +178,7 @@ export default {
     return {
       isOn: true,
       selCity: 'Beijing',
+      selIcon: 'plus',
     }
   },
 }

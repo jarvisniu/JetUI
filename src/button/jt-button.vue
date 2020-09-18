@@ -1,7 +1,3 @@
-<docs>
-Button
-</docs>
-
 <template>
   <button
     class="jt-button jt-inline-component"

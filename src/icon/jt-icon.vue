@@ -1,7 +1,3 @@
-<docs>
-Icon
-</docs>
-
 <template>
   <div
     class="jt-icon"

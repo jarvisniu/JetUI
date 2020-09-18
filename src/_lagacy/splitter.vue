@@ -1,20 +1,18 @@
-<docs>
-水平分割器
-- 子元素 slot="a|b"
-- 初始值 按比例(:size<=1)，某个固定(:size>1)；
-- 竖向 vertical
-- 最小值 :min="300"（如果容器特别小，两个都设置了min，而最小值加起来都比容器大则自动锁住，并按比例分配 ）
-- 最大值 :max="600" （如果容器特别大，两个都设置了max，而加起来都不够则自动锁住，并按比例分配 ）
-- 折叠（max-size + 锁住，grow不变，所以还能恢复）
-- 锁住 :disabled=false
-- 读取 getSize => { a: 120, b: 200 }，要比例自己算。
+// 水平分割器
+// - 子元素 slot="a|b"
+// - 初始值 按比例(:size<=1)，某个固定(:size>1)；
+// - 竖向 vertical
+// - 最小值 :min="300"（如果容器特别小，两个都设置了min，而最小值加起来都比容器大则自动锁住，并按比例分配 ）
+// - 最大值 :max="600" （如果容器特别大，两个都设置了max，而加起来都不够则自动锁住，并按比例分配 ）
+// - 折叠（max-size + 锁住，grow不变，所以还能恢复）
+// - 锁住 :disabled=false
+// - 读取 getSize => { a: 120, b: 200 }，要比例自己算。
 
-属性 :a="200" :b="2" :max-a="200" :max-b="300"
-  <jv-split-pane verticla disabled>
-    <div slot="a" :init="200" :max="500" :min="100">A</div>
-    <div slot="b">B</div>
-  </jv-split-pane>
-</docs>
+// 属性 :a="200" :b="2" :max-a="200" :max-b="300"
+//   <jv-split-pane verticla disabled>
+//     <div slot="a" :init="200" :max="500" :min="100">A</div>
+//     <div slot="b">B</div>
+//   </jv-split-pane>
 
 <template>
   <div class="splitter" :class="direction"

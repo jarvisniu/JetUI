@@ -46,5 +46,8 @@
   },
   "files": [
     "dist/**/*"
-  ]
+  ],
+  "dependencies": {
+    "highlight.js": "^10.2.0"
+  }
 }

@@ -9,13 +9,34 @@
     </ul>
 
     <h2>Basic</h2>
-    <jt-input-number v-model="count"></jt-input-number>
+    <jt-snippet>
+      <textarea slot="code">
+        <jt-input-number v-model="count"></jt-input-number>
+      </textarea>
+      <template>
+        <jt-input-number v-model="count"></jt-input-number>
+      </template>
+    </jt-snippet>
 
     <h2>Set Step (=0.5)</h2>
-    <jt-input-number v-model="count" :step="0.5"></jt-input-number>
+    <jt-snippet>
+      <textarea slot="code">
+        <jt-input-number v-model="count" :step="0.5"></jt-input-number>
+      </textarea>
+      <template>
+        <jt-input-number v-model="count" :step="0.5"></jt-input-number>
+      </template>
+    </jt-snippet>
 
     <h2>Set Width</h2>
-    <jt-input-number style="width: 100px;" v-model="count"></jt-input-number>
+    <jt-snippet>
+      <textarea slot="code">
+        <jt-input-number style="width: 100px;" v-model="count"></jt-input-number>
+      </textarea>
+      <template>
+        <jt-input-number style="width: 100px;" v-model="count"></jt-input-number>
+      </template>
+    </jt-snippet>
 
   </div>
 </template>

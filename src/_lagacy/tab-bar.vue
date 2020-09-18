@@ -1,12 +1,10 @@
-<docs>
-  Tab Bar
-  Methods：
-    open(label, icon, meta)
-  Events：
-    change
-    close
-    sort
-</docs>
+// Tab Bar
+// Methods：
+//   open(label, icon, meta)
+// Events：
+//   change
+//   close
+//   sort
 
 <template>
   <div class="tab-bar">

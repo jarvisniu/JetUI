@@ -1,7 +1,3 @@
-<docs>
-List
-</docs>
-
 <template>
   <div class="jt-list">
     <div
