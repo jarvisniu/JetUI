@@ -29,8 +29,8 @@
 </template>
 
 <script>
-import _sortBy from 'lodash.sortby'
-import _findIndex from 'lodash.findindex'
+import _sortBy from 'lodash/sortBy'
+import _findIndex from 'lodash/findIndex'
 
 import JtTableCell from './jt-table-cell.vue'
 

@@ -1,6 +1,7 @@
 const pkg = require('./package.json')
 
 module.exports = {
+  mode: 'spa',
   components: true,
   server: {
     port: 7788,

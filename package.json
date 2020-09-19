@@ -10,7 +10,7 @@
     "build": "nuxt build",
     "upload": "upload-oss --output-dir docs --oss-base-dir jet-ui --clean",
     "index": "scp docs/index.html root@aliyun:/www/niujunwei.com/jet-ui",
-    "deploy": "npm run build && npm run upload && npm run index"
+    "deploy": "rm -rf docs && npm run build && npm run upload && npm run index"
   },
   "repository": {
     "type": "git",
@@ -29,8 +29,7 @@
   "homepage": "https://github.com/jarvisniu/jet-ui#readme",
   "devDependencies": {
     "@jarvisniu/upload-oss": "^1.1.1",
-    "lodash.findindex": "^4.6.0",
-    "lodash.sortby": "^4.7.0",
+    "lodash": "^4.17.20",
     "modern-normalize": "^1.0.0",
     "nuxt": "^2.14.4",
     "rollup": "^1.27.13",
