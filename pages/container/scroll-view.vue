@@ -16,22 +16,48 @@
     </ul>
 
     <h2>Basic</h2>
-    <jt-border all>
-      <jt-scroll-view style="height: 150px; background: var(--jt-bg-container);">
-        <div style="padding: 5px;">
-          <div v-for="i in 15" :key="i">{{ i }}</div>
-        </div>
-      </jt-scroll-view>
-    </jt-border>
+    <jt-snippet>
+      <template>
+        <jt-border all>
+          <jt-scroll-view style="height: 150px; background: var(--jt-bg-container);">
+            <div style="padding: 5px;">
+              <div v-for="i in 15" :key="i">{{ i }}</div>
+            </div>
+          </jt-scroll-view>
+        </jt-border>
+      </template>
+      <textarea slot="code">
+        <jt-border all>
+          <jt-scroll-view style="height: 150px; background: var(--jt-bg-container);">
+            <div style="padding: 5px;">
+              <div v-for="i in 15" :key="i">{${ i }}</div>
+            </div>
+          </jt-scroll-view>
+        </jt-border>
+      </textarea>
+    </jt-snippet>
 
     <h2>Invalid</h2>
-    <jt-border all>
-      <jt-scroll-view style="height: 150px; background: var(--jt-bg-container); ">
-        <div style="padding: 5px;">
-          <div v-for="i in 2" :key="i">{{ i }}</div>
-        </div>
-      </jt-scroll-view>
-    </jt-border>
+    <jt-snippet>
+      <template>
+        <jt-border all>
+          <jt-scroll-view style="height: 150px; background: var(--jt-bg-container); ">
+            <div style="padding: 5px;">
+              <div v-for="i in 2" :key="i">{{ i }}</div>
+            </div>
+          </jt-scroll-view>
+        </jt-border>
+      </template>
+      <textarea slot="code">
+        <jt-border all>
+          <jt-scroll-view style="height: 150px; background: var(--jt-bg-container); ">
+            <div style="padding: 5px;">
+              <div v-for="i in 2" :key="i">{${ i }}</div>
+            </div>
+          </jt-scroll-view>
+        </jt-border>
+      </textarea>
+    </jt-snippet>
 
   </div>
 </template>

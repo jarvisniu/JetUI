@@ -2,17 +2,35 @@
   <div>
     <h1>Breadcrumb</h1>
 
-    <div style="margin-bottom: 10px;">
-      <jt-button @click="selectedIndex = -1">Clear</jt-button>
-      <jt-label>Selected Index: {{ selectedIndex }}</jt-label>
-    </div>
+    <h2>Basic</h2>
+    <jt-snippet>
+      <template>
+        <div style="margin-bottom: 10px;">
+          <jt-button @click="selectedIndex = -1">Clear</jt-button>
+          <jt-label>Selected Index: {{ selectedIndex }}</jt-label>
+        </div>
 
-    <jt-border inline all>
-      <jt-breadcrumb
-        :labels="labels"
-        v-model="selectedIndex"
-      ></jt-breadcrumb>
-    </jt-border>
+        <jt-border inline all>
+          <jt-breadcrumb
+            :labels="labels"
+            v-model="selectedIndex"
+          ></jt-breadcrumb>
+        </jt-border>
+      </template>
+      <textarea slot="code">
+        <div style="margin-bottom: 10px;">
+          <jt-button @click="selectedIndex = -1">Clear</jt-button>
+          <jt-label>Selected Index: {${ selectedIndex }}</jt-label>
+        </div>
+
+        <jt-border inline all>
+          <jt-breadcrumb
+            :labels="labels"
+            v-model="selectedIndex"
+          ></jt-breadcrumb>
+        </jt-border>
+      </textarea>
+    </jt-snippet>
 
   </div>
 </template>

@@ -10,23 +10,54 @@
     </ul>
 
     <h2>Basic</h2>
-    <jt-border inline all>
-      <jt-list style="width: 200px;" :data="list" v-model="selIndex"></jt-list>
-    </jt-border>
+    <jt-snippet>
+      <template>
+        <jt-border inline all>
+          <jt-list style="width: 200px;" :data="list" v-model="selIndex"></jt-list>
+        </jt-border>
+      </template>
+      <textarea slot="code">
+        <jt-border inline all>
+          <jt-list style="width: 200px;" :data="list" v-model="selIndex"></jt-list>
+        </jt-border>
+      </textarea>
+    </jt-snippet>
 
     <h2>Prop</h2>
-    <jt-border inline all>
-      <jt-list style="width: 200px;" :data="students" v-model="selStudentIndex" prop="name"></jt-list>
-    </jt-border>
+    <jt-snippet>
+      <template>
+        <jt-border inline all>
+          <jt-list style="width: 200px;" :data="students" v-model="selStudentIndex" prop="name"></jt-list>
+        </jt-border>
+      </template>
+      <textarea slot="code">
+        <jt-border inline all>
+          <jt-list style="width: 200px;" :data="students" v-model="selStudentIndex" prop="name"></jt-list>
+        </jt-border>
+      </textarea>
+    </jt-snippet>
 
     <h2>Item template</h2>
-    <jt-border inline all>
-      <jt-list style="width: 200px;" :data="students" v-model="selStudentIndex">
-        <template v-slot:item="scope">
-          {{ scope.$index + 1 }}, {{ scope.item.name }} - {{ scope.item.score }}
-        </template>
-      </jt-list>
-    </jt-border>
+    <jt-snippet>
+      <template>
+        <jt-border inline all>
+          <jt-list style="width: 200px;" :data="students" v-model="selStudentIndex">
+            <template v-slot:item="scope">
+              {{ scope.$index + 1 }}, {{ scope.item.name }} - {{ scope.item.score }}
+            </template>
+          </jt-list>
+        </jt-border>
+      </template>
+      <textarea slot="code">
+        <jt-border inline all>
+          <jt-list style="width: 200px;" :data="students" v-model="selStudentIndex">
+            <template v-slot:item="scope">
+              {${ scope.$index + 1 }}, {${ scope.item.name }} - {${ scope.item.score }}
+            </template>
+          </jt-list>
+        </jt-border>
+      </textarea>
+    </jt-snippet>
 
   </div>
 </template>

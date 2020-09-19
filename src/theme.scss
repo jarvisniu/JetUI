@@ -1,6 +1,7 @@
 :root {
   // global
   --jt-font-size: 14px;
+  --jt-font-mono: Inconsolata, Consolas, Menlo, Monaco, Lucida Console, Liberation Mono,DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, DengXian;
   --jt-duration: 0.2s;
   --jt-duration-active: 0.05s;
   // theme colors
@@ -14,7 +15,7 @@
   // text
   --jt-text: hsl(0, 0%, 15%);
   --jt-icon: hsl(0, 0%, 30%);
-  --jt-text-sub: hsl(0, 0%, 50%);
+  --jt-text-sub: hsl(0, 0%, 40%);
   // link
   --jt-link: var(--jt-text);
   --jt-link-bg: hsla(var(--jt-primary-hue), 50%, 84%, 0.4);
@@ -51,7 +52,8 @@
 }
 .jt-theme-dark {
   background-color: var(--jt-bg-container);
-  // theme
+  // theme colors
+  // Note: Same with light theme for now
   // border
   --jt-border: hsl(0, 0%, 0%);
   --jt-border-hover: hsl(0, 0%, 6%);

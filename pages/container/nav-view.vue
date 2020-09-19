@@ -15,40 +15,84 @@
     </ul>
 
     <h2>Basic</h2>
-    <div class="jt-docs-sim-window">
-      <jt-button class="btn-show-side" @click="$refs.side.open()">
-        <jt-icon name="menu"></jt-icon>
-      </jt-button>
-      <jt-nav-view ref="side" :width="150" style="height: 150px;">
-        <div style="padding: 10px;">
-          <b>Nav View</b>
-          <ul>
-            <li>One</li>
-            <li>Twe</li>
-            <li>Three</li>
-          </ul>
+    <jt-snippet>
+      <template>
+        <div class="jt-docs-sim-window">
+          <jt-button class="btn-show-side" @click="$refs.side.open()">
+            <jt-icon name="menu" size="20"></jt-icon>
+          </jt-button>
+          <jt-nav-view ref="side" :width="150" style="height: 150px;">
+            <div style="padding: 10px;">
+              <b>Nav View</b>
+              <ul>
+                <li>One</li>
+                <li>Twe</li>
+                <li>Three</li>
+              </ul>
+            </div>
+            <div slot="content" style="padding: 10px">Content</div>
+          </jt-nav-view>
         </div>
-        <div slot="content" style="padding: 10px;">Content</div>
-      </jt-nav-view>
-    </div>
+      </template>
+      <textarea slot="code">
+        <div class="jt-docs-sim-window">
+          <jt-button class="btn-show-side" @click="$refs.side.open()">
+            <jt-icon name="menu" size="20"></jt-icon>
+          </jt-button>
+          <jt-nav-view ref="side" :width="150" style="height: 150px;">
+            <div style="padding: 10px;">
+              <b>Nav View</b>
+              <ul>
+                <li>One</li>
+                <li>Twe</li>
+                <li>Three</li>
+              </ul>
+            </div>
+            <div slot="content" style="padding: 10px">Content</div>
+          </jt-nav-view>
+        </div>
+      </textarea>
+    </jt-snippet>
 
     <h2>Dock Side (side="right")</h2>
-    <div class="jt-docs-sim-window">
-      <jt-button class="btn-show-side" @click="$refs.side2.open()">
-        <jt-icon name="menu"></jt-icon>
-      </jt-button>
-      <jt-nav-view ref="side2" :width="150" side="right" style="height: 150px;">
-        <div style="padding: 10px;">
-          <b>Nav View</b>
-          <ul>
-            <li>One</li>
-            <li>Twe</li>
-            <li>Three</li>
-          </ul>
+    <jt-snippet>
+      <template>
+        <div class="jt-docs-sim-window">
+          <jt-button class="btn-show-side right" @click="$refs.side2.open()">
+            <jt-icon name="menu" size="20"></jt-icon>
+          </jt-button>
+          <jt-nav-view ref="side2" :width="150" side="right" style="height: 150px;">
+            <div style="padding: 10px;">
+              <b>Nav View</b>
+              <ul>
+                <li>One</li>
+                <li>Twe</li>
+                <li>Three</li>
+              </ul>
+            </div>
+            <div slot="content" style="padding: 10px">Content</div>
+          </jt-nav-view>
         </div>
-        <div slot="content" style="padding: 10px;">Content</div>
-      </jt-nav-view>
-    </div>
+      </template>
+      <textarea slot="code">
+        <div class="jt-docs-sim-window">
+          <jt-button class="btn-show-side right" @click="$refs.side2.open()">
+            <jt-icon name="menu" size="20"></jt-icon>
+          </jt-button>
+          <jt-nav-view ref="side2" :width="150" side="right" style="height: 150px;">
+            <div style="padding: 10px;">
+              <b>Nav View</b>
+              <ul>
+                <li>One</li>
+                <li>Twe</li>
+                <li>Three</li>
+              </ul>
+            </div>
+            <div slot="content" style="padding: 10px">Content</div>
+          </jt-nav-view>
+        </div>
+      </textarea>
+    </jt-snippet>
 
   </div>
 </template>
@@ -56,7 +100,13 @@
 <style lang="scss" scoped>
 .btn-show-side {
   position: absolute;
+  padding: 5px;
+  height: auto;
   margin: 5px;
+
+  &.right {
+    right: 0;
+  }
 }
 @media screen and (min-width: 600px) {
   .btn-show-side {

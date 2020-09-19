@@ -20,14 +20,119 @@
     </ul>
 
     <h2>Basic</h2>
-    <jt-tree :data="treeData" style="display: inline-block; height: 200px;" />
+    <jt-snippet>
+      <template>
+        <jt-tree :data="treeData" style="display: inline-block; height: 200px;" />
+      </template>
+      <textarea slot="code">
+        <jt-tree :data="treeData" style="display: inline-block; height: 200px;" />
+      </textarea>
+    </jt-snippet>
+
+    <h2>(Data)</h2>
+    <jt-snippet>
+      <template>
+        See the codes
+      </template>
+      <textarea slot="code">
+        <script>
+        export default {
+          data () {
+            return {
+              treeData: [
+                {
+                  name: '学段',
+                  open: true,
+                  children: [
+                    {
+                      name: '考研',
+                      open: true,
+                      children: [
+                        {
+                          name: '应用文',
+                        },
+                        {
+                          name: '看图作文',
+                        },
+                      ],
+                    },
+                    {
+                      name: '四六级',
+                    },
+                    {
+                      name: '高中',
+                    },
+                    {
+                      name: '初中',
+                    },
+                  ],
+                },
+                {
+                  name: '学科',
+                  open: false,
+                  children: [
+                    {
+                      name: '理科',
+                      open: false,
+                      children: [
+                        {
+                          name: '物理',
+                        },
+                        {
+                          name: '化学',
+                        },
+                        {
+                          name: '生物',
+                        },
+                      ],
+                    },
+                    {
+                      name: '文科',
+                      open: false,
+                      children: [
+                        {
+                          name: '政治',
+                        },
+                        {
+                          name: '历史',
+                        },
+                        {
+                          name: '地理',
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ]
+            }
+          },
+        }
+        </script>
+
+      </textarea>
+    </jt-snippet>
 
     <h2>Font size</h2>
-    <jt-tree :data="treeData" style="display: inline-block; height: 200px; font-size: 12px;" />
-    <jt-tree :data="treeData" style="display: inline-block; height: 200px; font-size: 16px;" />
+    <jt-snippet>
+      <template>
+        <jt-tree :data="treeData" style="display: inline-block; height: 200px; font-size: 12px;" />
+        <jt-tree :data="treeData" style="display: inline-block; height: 200px; font-size: 16px;" />
+      </template>
+      <textarea slot="code">
+        <jt-tree :data="treeData" style="display: inline-block; height: 200px; font-size: 12px;" />
+        <jt-tree :data="treeData" style="display: inline-block; height: 200px; font-size: 16px;" />
+      </textarea>
+    </jt-snippet>
 
     <h2>Item padding set</h2>
-    <jt-tree :data="treeData" style="height: 200px;" item-padding="6" />
+    <jt-snippet>
+      <template>
+        <jt-tree :data="treeData" style="height: 200px;" item-padding="6" />
+      </template>
+      <textarea slot="code">
+        <jt-tree :data="treeData" style="height: 200px;" item-padding="6" />
+      </textarea>
+    </jt-snippet>
 
   </div>
 </template>

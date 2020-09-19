@@ -15,25 +15,58 @@
     </ul>
 
     <h2>Basic</h2>
-    <jt-border all style="width: 50vw; height: 50vh;">
-      <jt-contain-view>
-        <div class="body">Body</div>
-      </jt-contain-view>
-    </jt-border>
+    <jt-snippet>
+      <template>
+        <jt-border all style="width: 50vw; height: 50vh;">
+          <jt-contain-view>
+            <div class="body">Body</div>
+          </jt-contain-view>
+        </jt-border>
+      </template>
+      <textarea slot="code">
+        <jt-border all style="width: 50vw; height: 50vh;">
+          <jt-contain-view>
+            <div class="body">Body</div>
+          </jt-contain-view>
+        </jt-border>
+      </textarea>
+    </jt-snippet>
 
     <h2>Padding</h2>
-    <jt-border all style="width: 50vw; height: 50vh;">
-      <jt-contain-view :padding="50">
-        <div class="body">Body</div>
-      </jt-contain-view>
-    </jt-border>
+    <jt-snippet>
+      <template>
+        <jt-border all style="width: 50vw; height: 50vh;">
+          <jt-contain-view :padding="50">
+            <div class="body">Body</div>
+          </jt-contain-view>
+        </jt-border>
+      </template>
+      <textarea slot="code">
+        <jt-border all style="width: 50vw; height: 50vh;">
+          <jt-contain-view :padding="50">
+            <div class="body">Body</div>
+          </jt-contain-view>
+        </jt-border>
+      </textarea>
+    </jt-snippet>
 
     <h2>Ratio</h2>
-    <jt-border all style="width: 50vw; height: 50vh;">
-      <jt-contain-view :ratio="1.5">
-        <div class="body">Body</div>
-      </jt-contain-view>
-    </jt-border>
+    <jt-snippet>
+      <template>
+        <jt-border all style="width: 50vw; height: 50vh;">
+          <jt-contain-view :ratio="1.5">
+            <div class="body">Body</div>
+          </jt-contain-view>
+        </jt-border>
+      </template>
+      <textarea slot="code">
+        <jt-border all style="width: 50vw; height: 50vh;">
+          <jt-contain-view :ratio="1.5">
+            <div class="body">Body</div>
+          </jt-contain-view>
+        </jt-border>
+      </textarea>
+    </jt-snippet>
 
   </div>
 </template>

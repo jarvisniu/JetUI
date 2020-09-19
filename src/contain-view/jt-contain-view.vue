@@ -74,6 +74,7 @@ export default {
   width: 100%;
   height: 100%;
   color: var(--jt-text);
+  background-color: var(--jt-bg-container-dark);
 }
 
 .contain-wrapper {

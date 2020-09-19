@@ -1,3 +1,8 @@
+// TODO
+// 1.Expand animation
+// 2.Copy
+// 3.Reactive to right
+
 <template>
   <div class="jt-snippet">
     <!-- Preview -->
@@ -51,11 +56,17 @@ export default {
   },
   mounted() {
     const codes = this.$el.querySelector('.hidden-codes textarea').value.trimEnd()
+    // dedent
     const lines = codes.split('\n')
-    const minIndent = _min(lines.map(line => /( *)/.exec(line)[0].length))
+    const minIndent = _min(lines.map(line => {
+      // Blank line as infinite long
+      if (line.length === 0) return 9999
+      else return /( *)/.exec(line)[0].length
+    }))
     const dedentedCoded = lines.map(line => line.substr(minIndent)).join('\n')
     const highlightDestEl = this.$el.querySelector('.codes')
-    highlightDestEl.innerText = dedentedCoded
+    // replace double brackets
+    highlightDestEl.innerText = dedentedCoded.replaceAll('{${', '{{')
     hljs.highlightBlock(highlightDestEl)
   },
 }
@@ -64,6 +75,7 @@ export default {
 <style lang="scss" scoped>
 .preview {
   border: solid 1px var(--jt-border);
+  background-color: var(--jt-bg-container);
   padding: 10px;
 }
 .hidden-codes {
@@ -81,7 +93,7 @@ export default {
 }
 .codes {
   font-size: 14px;
-  font-family: inconsolata;
+  font-family: var(--jt-font-mono);
   white-space: pre-wrap;
   padding: 10px;
   background-color: #234;
