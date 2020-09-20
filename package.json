@@ -1,6 +1,6 @@
 {
   "name": "jet-ui",
-  "version": "0.1.6-wip",
+  "version": "0.1.6",
   "description": "JetBrains style Vue UI components",
   "main": "dist/jet-ui.min.js",
   "module": "dist/jet-ui.esm.js",
@@ -29,6 +29,7 @@
   "homepage": "https://github.com/jarvisniu/jet-ui#readme",
   "devDependencies": {
     "@jarvisniu/upload-oss": "^1.1.1",
+    "highlight.js": "^10.2.0",
     "lodash": "^4.17.20",
     "modern-normalize": "^1.0.0",
     "nuxt": "^2.14.4",
@@ -45,8 +46,5 @@
   },
   "files": [
     "dist/**/*"
-  ],
-  "dependencies": {
-    "highlight.js": "^10.2.0"
-  }
+  ]
 }
