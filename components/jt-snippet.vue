@@ -14,9 +14,15 @@
       <slot name="code"></slot>
     </div>
     <!-- Highlight Codes -->
-    <div class="highlighted-codes" :class="{ expanded: expanded }">
-      <div class="codes" :class="lang"></div>
-    </div>
+    <jt-fold-transition>
+      <div
+        ref="code"
+        v-show="expanded"
+        class="highlighted-codes" :class="{ expanded: expanded }"
+      >
+        <div class="codes" :class="lang"></div>
+      </div>
+    </jt-fold-transition>
     <!-- Toggle Button -->
     <div
       class="toggle-bar"
@@ -85,11 +91,6 @@ export default {
   border: solid 1px var(--jt-border);
   border-top: none;
   overflow: hidden;
-  transition: height var(--jt-duration);
-  display: none;
-  &.expanded {
-    display: block;
-  }
 }
 .codes {
   font-size: 14px;
@@ -104,6 +105,7 @@ export default {
   padding: 4px 10px;
   color: var(--jt-text-sub);
   text-align: center;
+  user-select: none;
   cursor: pointer;
 
   transition: background-color var(--jt-duration);

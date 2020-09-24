@@ -21,14 +21,14 @@
       </span
       ><span class="label">{{ data.name }}</span>
     </div>
-    <transition name="curtain">
+    <jt-fold-transition>
       <div v-if="data.open" class="children">
           <jt-tree-item
             v-for="(item, index) in data.children" :key="index"
             :data="item" class="child"
           />
       </div>
-    </transition>
+    </jt-fold-transition>
   </div>
 </template>
 
@@ -111,18 +111,5 @@ export default {
 }
 .label {
   margin-left: 2px;
-}
-// transition: curtain
-.curtain-enter-active,
-.curtain-leave-active {
-  transition:
-    opacity var(--jt-duration),
-    transform var(--jt-duration);
-  transform-origin: 50% 0%;
-}
-.curtain-enter,
-.curtain-leave-to {
-  opacity: 0;
-  transform: scaleY(0.5);
 }
 </style>

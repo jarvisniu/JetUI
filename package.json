@@ -1,6 +1,6 @@
 {
   "name": "jet-ui",
-  "version": "0.1.6",
+  "version": "0.1.7-wip",
   "description": "JetBrains style Vue UI components",
   "main": "dist/jet-ui.min.js",
   "module": "dist/jet-ui.esm.js",
