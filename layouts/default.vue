@@ -3,7 +3,7 @@
     <jt-button class="btn-show-side" @click="$refs.side.open()">
       <jt-icon name="menu" size="100%"></jt-icon>
     </jt-button>
-    <jt-nav-view ref="side" z-index="10">
+    <jt-drawer ref="side" z-index="10">
       <jt-scroll-view class="sidebar" style="height: 100%;">
         <div style="padding: 10px;">
           <div class="title">jet-ui docs</div>
@@ -60,7 +60,7 @@
           <router-view></router-view>
         </div>
       </jt-scroll-view>
-    </jt-nav-view>
+    </jt-drawer>
   </div>
 </template>
 
@@ -108,15 +108,15 @@ export default {
           { name: 'Tree Table (WIP)', path: '/data/tree-table' },
         ] },
         { name: 'Container', pages: [
+          { name: 'Popover', path: '/container/popover' },
           { name: 'Toolbar', path: '/container/toolbar' },
           { name: 'Toggle Bar', path: '/container/toggle-bar' },
           { name: 'Panel', path: '/container/panel' },
-          { name: 'Popover', path: '/container/popover' },
+          { name: 'Drawer', path: '/container/drawer' },
           { name: 'Rotated View', path: '/container/rotated-view' },
           { name: 'Scroll View', path: '/container/scroll-view' },
           { name: 'Split View (WIP)', path: '/container/split-view' },
           { name: 'Contain View', path: '/container/contain-view' },
-          { name: 'Nav View', path: '/container/nav-view' },
         ] },
         { name: 'Navigation', pages: [
           { name: 'Menu', path: '/nav/menu' },

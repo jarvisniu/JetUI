@@ -1,5 +1,5 @@
 <template>
-  <div class="jt-nav-view"
+  <div class="jt-drawer"
     :class="{
       open: sideOpen,
       'dock-right': side === 'right',
@@ -20,7 +20,7 @@
 import { convertSizeToCSS } from '../utils'
 
 export default {
-  name: 'JtNavView',
+  name: 'JtDrawer',
   props: {
     width: { type: [Number, String], default: 200 },
     side: { type: String, default: 'left' },
@@ -44,7 +44,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.jt-nav-view {
+.jt-drawer {
   box-sizing: border-box;
   height: 100vh;
   color: var(--jt-text);
@@ -65,12 +65,12 @@ export default {
     transform: translateX(-100%);
   }
 
-  .jt-nav-view.open & {
+  .jt-drawer.open & {
     transform: translateX(0);
   }
 
   // Dock right
-  .jt-nav-view.dock-right & {
+  .jt-drawer.dock-right & {
     right: 0;
     border-left: solid 1px var(--jt-border);
     border-right: none;
@@ -80,7 +80,7 @@ export default {
     }
   }
 
-  .jt-nav-view.dock-right.open & {
+  .jt-drawer.dock-right.open & {
     transform: translateX(0);
   }
 }
@@ -97,7 +97,7 @@ export default {
   pointer-events: none;
   transition: opacity var(--jt-duration);
 
-  .jt-nav-view.open & {
+  .jt-drawer.open & {
     opacity: 0.5;
     pointer-events: auto;
   }
@@ -115,7 +115,7 @@ export default {
   }
 
   // Dock right
-  .jt-nav-view.dock-right & {
+  .jt-drawer.dock-right & {
     margin-left: 0;
     margin-right: var(--jt-side-width);
 

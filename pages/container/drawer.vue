@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Nav View</h1>
+    <h1>Drawer</h1>
 
     <h2>Features</h2>
     <ul>
@@ -21,9 +21,9 @@
           <jt-button class="btn-show-side" @click="$refs.side.open()">
             <jt-icon name="menu" size="20"></jt-icon>
           </jt-button>
-          <jt-nav-view ref="side" :width="150" style="height: 150px;">
+          <jt-drawer ref="side" :width="150" style="height: 150px;">
             <div style="padding: 10px;">
-              <b>Nav View</b>
+              <b>Drawer</b>
               <ul>
                 <li>One</li>
                 <li>Twe</li>
@@ -31,7 +31,7 @@
               </ul>
             </div>
             <div slot="content" style="padding: 10px">Content</div>
-          </jt-nav-view>
+          </jt-drawer>
         </div>
       </template>
       <textarea slot="code">
@@ -39,9 +39,9 @@
           <jt-button class="btn-show-side" @click="$refs.side.open()">
             <jt-icon name="menu" size="20"></jt-icon>
           </jt-button>
-          <jt-nav-view ref="side" :width="150" style="height: 150px;">
+          <jt-drawer ref="side" :width="150" style="height: 150px;">
             <div style="padding: 10px;">
-              <b>Nav View</b>
+              <b>Drawer</b>
               <ul>
                 <li>One</li>
                 <li>Twe</li>
@@ -49,7 +49,7 @@
               </ul>
             </div>
             <div slot="content" style="padding: 10px">Content</div>
-          </jt-nav-view>
+          </jt-drawer>
         </div>
       </textarea>
     </jt-snippet>
@@ -61,9 +61,9 @@
           <jt-button class="btn-show-side right" @click="$refs.side2.open()">
             <jt-icon name="menu" size="20"></jt-icon>
           </jt-button>
-          <jt-nav-view ref="side2" :width="150" side="right" style="height: 150px;">
+          <jt-drawer ref="side2" :width="150" side="right" style="height: 150px;">
             <div style="padding: 10px;">
-              <b>Nav View</b>
+              <b>Drawer</b>
               <ul>
                 <li>One</li>
                 <li>Twe</li>
@@ -71,7 +71,7 @@
               </ul>
             </div>
             <div slot="content" style="padding: 10px">Content</div>
-          </jt-nav-view>
+          </jt-drawer>
         </div>
       </template>
       <textarea slot="code">
@@ -79,9 +79,9 @@
           <jt-button class="btn-show-side right" @click="$refs.side2.open()">
             <jt-icon name="menu" size="20"></jt-icon>
           </jt-button>
-          <jt-nav-view ref="side2" :width="150" side="right" style="height: 150px;">
+          <jt-drawer ref="side2" :width="150" side="right" style="height: 150px;">
             <div style="padding: 10px;">
-              <b>Nav View</b>
+              <b>Drawer</b>
               <ul>
                 <li>One</li>
                 <li>Twe</li>
@@ -89,7 +89,7 @@
               </ul>
             </div>
             <div slot="content" style="padding: 10px">Content</div>
-          </jt-nav-view>
+          </jt-drawer>
         </div>
       </textarea>
     </jt-snippet>

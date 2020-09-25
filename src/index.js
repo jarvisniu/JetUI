@@ -7,6 +7,7 @@ import Button from './button/jt-button.vue'
 import ButtonGroup from './button/jt-button-group.vue'
 import Checkbox from './checkbox/jt-checkbox.vue'
 import ContainView from './contain-view/jt-contain-view.vue'
+import Drawer from './drawer/jt-drawer.vue'
 import FoldTransition from './fold-transition/jt-fold-transition.vue'
 import Icon from './icon/jt-icon.vue'
 import Input from './input/jt-input.vue'
@@ -14,7 +15,6 @@ import InputNumber from './input-number/jt-input-number.vue'
 import Label from './label/jt-label.vue'
 import List from './list/jt-list.vue'
 import Menu from './menu/jt-menu.vue'
-import NavView from './nav-view/jt-nav-view.vue'
 import Panel from './panel/jt-panel.vue'
 import PanelButton from './panel/jt-panel-button.vue'
 import Popover from './popover/jt-popover.vue'
@@ -42,6 +42,7 @@ export default {
     Vue.component(ButtonGroup.name, ButtonGroup)
     Vue.component(Checkbox.name, Checkbox)
     Vue.component(ContainView.name, ContainView)
+    Vue.component(Drawer.name, Drawer)
     Vue.component(FoldTransition.name, FoldTransition)
     Vue.component(Icon.name, Icon)
     Vue.component(Input.name, Input)
@@ -49,7 +50,6 @@ export default {
     Vue.component(Label.name, Label)
     Vue.component(List.name, List)
     Vue.component(Menu.name, Menu)
-    Vue.component(NavView.name, NavView)
     Vue.component(Panel.name, Panel)
     Vue.component(PanelButton.name, PanelButton)
     Vue.component(Popover.name, Popover)

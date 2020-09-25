@@ -37,11 +37,11 @@
     <jt-snippet>
       <template>
         <jt-label>Water Temperature: </jt-label>
-        <jt-input-number :max="100" :min="0" :step="15" v-model="waterTemp"></jt-input-number>
+        <jt-input-number :max="100" :min="0" :step="30" v-model="waterTemp"></jt-input-number>
       </template>
       <textarea slot="code">
         <jt-label>Water Temperature: </jt-label>
-        <jt-input-number :max="100" :min="0" :step="15" v-model="waterTemp"></jt-input-number>
+        <jt-input-number :max="100" :min="0" :step="30" v-model="waterTemp"></jt-input-number>
       </textarea>
     </jt-snippet>
 
