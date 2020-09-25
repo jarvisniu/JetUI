@@ -1,9 +1,9 @@
 <template>
   <div class="jt-drawer"
-    :class="{
+    :class="[{
       open: sideOpen,
       'dock-right': side === 'right',
-    }"
+    }, mode]"
     :style="{ '--jt-side-width': convertSizeToCSS(width) }"
   >
     <div class="side" :style="{ 'z-index': +zIndex + 2 }">
@@ -24,6 +24,7 @@ export default {
   props: {
     width: { type: [Number, String], default: 200 },
     side: { type: String, default: 'left' },
+    mode: { type: String, default: 'reactive' }, // can be 'static'
     zIndex: { type: [Number, String], default: 0 },
   },
   data() {
@@ -61,7 +62,12 @@ export default {
   background-color: var(--jt-bg-container-dark);
   transition: transform var(--jt-duration);
 
-  @media screen and (max-width: 600px) {
+  .jt-drawer.reactive & {
+    @media screen and (max-width: 600px) {
+      transform: translateX(-100%);
+    }
+  }
+  .jt-drawer.static & {
     transform: translateX(-100%);
   }
 
@@ -74,10 +80,14 @@ export default {
     right: 0;
     border-left: solid 1px var(--jt-border);
     border-right: none;
-
+  }
+  .jt-drawer.dock-right.reactive & {
     @media screen and (max-width: 600px) {
       transform: translateX(100%);
     }
+  }
+  .jt-drawer.dock-right.static & {
+    transform: translateX(100%);
   }
 
   .jt-drawer.dock-right.open & {
@@ -110,7 +120,12 @@ export default {
   transition: margin-left var(--jt-duration);
   margin-left: var(--jt-side-width);
 
-  @media screen and (max-width: 600px) {
+  .jt-drawer.reactive & {
+    @media screen and (max-width: 600px) {
+      margin-left: 0;
+    }
+  }
+  .jt-drawer.static & {
     margin-left: 0;
   }
 
@@ -118,10 +133,15 @@ export default {
   .jt-drawer.dock-right & {
     margin-left: 0;
     margin-right: var(--jt-side-width);
+  }
 
+  .jt-drawer.dock-right.reactive & {
     @media screen and (max-width: 600px) {
       margin-right: 0;
     }
+  }
+  .jt-drawer.dock-right.static & {
+    margin-right: 0;
   }
 
 }
