@@ -24,13 +24,13 @@
     <jt-snippet>
       <template>
         <jt-label>Major: </jt-label>
-        <jt-radio inline v-model="major" value="engineer" label="Engineer"></jt-radio>
+        <jt-radio inline v-model="major" value="engineering" label="Engineering"></jt-radio>
         <jt-radio inline v-model="major" value="cs" label="Computer Science"></jt-radio>
         <jt-radio inline v-model="major" value="art" label="Art" disabled></jt-radio>
       </template>
       <textarea slot="code">
         <jt-label>Major: </jt-label>
-        <jt-radio inline v-model="major" value="engineer" label="Engineer"></jt-radio>
+        <jt-radio inline v-model="major" value="engineering" label="Engineering"></jt-radio>
         <jt-radio inline v-model="major" value="cs" label="Computer Science"></jt-radio>
         <jt-radio inline v-model="major" value="art" label="Art" disabled></jt-radio>
       </textarea>

@@ -6,13 +6,13 @@
     }"
   >
     <input
-      type="text"
+      type="text" size="3"
       v-model.number="num"
     ><div class="stepper">
-      <div class="button" style="padding-top: 1px;" @click="num += step">
+      <div class="button" :class="{ disabled: num >= max }" @click="num += step">
         <jt-icon width="18" height="10" view-box="0 0 18 10" path="M5.5,5 L9,2 L12.5,5 Z"></jt-icon>
       </div>
-      <div class="button" @click="num -= step">
+      <div class="button" :class="{ disabled: num <= min }" @click="num -= step">
         <jt-icon width="18" height="10" view-box="0 0 18 10" path="M5.5,3 L9,6 L12.5,3 Z"></jt-icon>
       </div>
     </div>
@@ -28,6 +28,8 @@ export default {
     value: { type: Number, default: '' },
     step: { type: Number, default: 1 },
     width: { type: [Number, String], default: '' },
+    min: { type: Number, default: -Infinity },
+    max: { type: Number, default: Infinity },
   },
   data() {
     return {
@@ -39,6 +41,8 @@ export default {
       this.num = val
     },
     num(val) {
+      if (val > this.max) val = this.max
+      else if (val < this.min) val = this.min
       this.$emit('input', val)
     },
   },
@@ -54,7 +58,6 @@ export default {
   display: inline-block;
   border: solid 1px;
   vertical-align: top;
-  width: 60px;
   height: 24px;
 
   input[type="text"] {
@@ -89,17 +92,29 @@ export default {
   height: 100%;;
   border-left: solid 1px var(--jt-bg-input-border);
   vertical-align: top;
+  user-select: none; /* prevent double click to select */
 
   .button {
     box-sizing: border-box;
-    height: 11px;
-    user-select: none; /* prevent double click to select */
+    position: relative;
+    z-index: 2;
+    overflow: hidden; /* icon will extend */
 
+    &:first-child {
+      height: 12px;
+      padding-top: 1px;
+      border-bottom: solid 1px var(--jt-bg-input-border);
+      margin-bottom: -1px;
+    }
     &:last-child {
+      height: 11px;
       border-top: solid 1px var(--jt-bg-input-border);
     }
 
-    transition: color var(--jt-duration), background-color var(--jt-duration), border-color var(--jt-duration);
+    transition:
+      color var(--jt-duration),
+      background-color var(--jt-duration),
+      border-color var(--jt-duration);
     background-color: var(--jt-bg-button);
     &:hover {
       @media (hover: hover) {
@@ -108,12 +123,15 @@ export default {
     }
     &:active {
       background-color: var(--jt-bg-button-active);
-      transition: background-color var(--jt-duration-active), border-color var(--jt-duration-active);
+      transition:
+        background-color var(--jt-duration-active),
+        border-color var(--jt-duration-active);
     }
 
     &.disabled {
       opacity: 0.5;
       pointer-events: none;
+      z-index: 1;
     }
   }
 }

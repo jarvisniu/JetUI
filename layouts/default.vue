@@ -97,9 +97,9 @@ export default {
           { name: 'Label', path: '/basic/label' },
         ] },
         { name: 'Form', pages: [
-          { name: 'Switch', path: '/form/switch' },
           { name: 'Radio', path: '/form/radio' },
           { name: 'Checkbox', path: '/form/checkbox' },
+          { name: 'Switch', path: '/form/switch' },
         ] },
         { name: 'Data', pages: [
           { name: 'List', path: '/data/list' },

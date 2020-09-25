@@ -15,7 +15,7 @@
             <jt-icon
               :name="item.expanded ? 'minus' : 'plus'"
               style="cursor: pointer; margin-right: 4px;"
-              @click.native="item.expanded = !item.expanded"
+              clickable @click="item.expanded = !item.expanded"
             ></jt-icon
             ><span>{{ item.fullName }}</span>
           </td>

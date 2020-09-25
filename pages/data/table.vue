@@ -10,11 +10,11 @@
       <li>Column width</li>
       <li>Customize Columns</li>
       <li>Sort arrow icons</li>
+      <li>Expandable row</li>
     </ul>
 
     <h2>TODO</h2>
     <ul>
-      <li>Expand row</li>
       <li>Default sort prop</li>
     </ul>
 
@@ -45,8 +45,8 @@
     <jt-snippet>
       <template>
         <jt-table :data="data">
+          <jt-table-column label="Full Name" prop="fullName" :width="200" sortable></jt-table-column>
           <jt-table-column label="Nickname" prop="nickname" :width="150"></jt-table-column>
-          <jt-table-column label="FullName" prop="fullName" :width="200" sortable></jt-table-column>
           <jt-table-column label="Followers" prop="followers" :width="100" sortable></jt-table-column>
           <jt-table-column label="GitHub" :width="100">
             <a
@@ -65,8 +65,8 @@
       </template>
       <textarea slot="code">
         <jt-table :data="data">
+          <jt-table-column label="Full Name" prop="fullName" :width="200" sortable></jt-table-column>
           <jt-table-column label="Nickname" prop="nickname" :width="150"></jt-table-column>
-          <jt-table-column label="FullName" prop="fullName" :width="200" sortable></jt-table-column>
           <jt-table-column label="Followers" prop="followers" :width="100" sortable></jt-table-column>
           <jt-table-column label="GitHub" :width="100">
             <a
@@ -81,6 +81,82 @@
             >{${ scope.row.twitter }}</a>
           </jt-table-column>
           <jt-table-column label="Works" :prop="scope => scope.row.works.join(', ')"></jt-table-column>
+        </jt-table>
+      </textarea>
+    </jt-snippet>
+
+    <h2>Expandable row</h2>
+    <jt-snippet>
+      <template>
+        <jt-table :data="data">
+          <jt-table-column label="Full Name" prop="fullName" :width="200" sortable></jt-table-column>
+          <jt-table-column label="Nickname" prop="nickname" :width="150"></jt-table-column>
+          <jt-table-column label="Followers" prop="followers" :width="900" sortable></jt-table-column>
+          <!-- expandable -->
+          <jt-table-column :width="25" type="expandable">
+            <div slot-scope="scope">
+              <jt-label>
+                <b>Full Name: </b>
+                <span>{{ scope.row.fullName }}</span>
+              </jt-label>
+              <jt-label>
+                <b>GitHub: </b>
+                <a
+                  target="_blank"
+                  :href="`https://github.com/${scope.row.github}`"
+                >{{ scope.row.github }}</a>
+              </jt-label>
+              <jt-label>
+                <b>Twitter: </b>
+                <a
+                  target="_blank"
+                  :href="`https://twitter.com/${scope.row.twitter}`"
+                >{{ scope.row.twitter }}</a>
+              </jt-label>
+              <jt-label>
+                <b>Works: </b>
+                <jt-button v-for="(work, index) in scope.row.works" :key="index">
+                  {{ work }}
+                </jt-button>
+              </jt-label>
+            </div>
+          </jt-table-column>
+        </jt-table>
+      </template>
+      <textarea slot="code">
+        <jt-table :data="data">
+          <jt-table-column label="Full Name" prop="fullName" :width="200" sortable></jt-table-column>
+          <jt-table-column label="Nickname" prop="nickname" :width="150"></jt-table-column>
+          <jt-table-column label="Followers" prop="followers" :width="900" sortable></jt-table-column>
+          <!-- expandable -->
+          <jt-table-column :width="25" type="expandable">
+            <div slot-scope="scope">
+              <jt-label>
+                <b>Full Name: </b>
+                <span>{${ scope.row.fullName }}</span>
+              </jt-label>
+              <jt-label>
+                <b>GitHub: </b>
+                <a
+                  target="_blank"
+                  :href="`https://github.com/${scope.row.github}`"
+                >{${ scope.row.github }}</a>
+              </jt-label>
+              <jt-label>
+                <b>Twitter: </b>
+                <a
+                  target="_blank"
+                  :href="`https://twitter.com/${scope.row.twitter}`"
+                >{${ scope.row.twitter }}</a>
+              </jt-label>
+              <jt-label>
+                <b>Works: </b>
+                <jt-button v-for="(work, index) in scope.row.works" :key="index">
+                  {${ work }}
+                </jt-button>
+              </jt-label>
+            </div>
+          </jt-table-column>
         </jt-table>
       </textarea>
     </jt-snippet>

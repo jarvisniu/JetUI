@@ -1,9 +1,11 @@
 <template>
   <div
     class="jt-icon"
+    :class="{ clickable: clickable }"
     :style="{
       margin: convertSizeToCSS(margin),
     }"
+    @click="$emit('click', $event)"
   >
     <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
       :viewBox="myViewBox"
@@ -33,6 +35,7 @@ export default {
     margin: { type: [Number, String], default: '' },
     width: { type: [Number, String], default: 0 },
     height: { type: [Number, String], default: 0 },
+    clickable: { type: Boolean, default: false },
   },
   computed: {
     myPathData() {
@@ -68,7 +71,22 @@ export default {
   box-sizing: border-box;
   display: inline-block;
   line-height: 1;
+  user-select: none;
   // color: var(--jt-icon); // TODO button primary not working
+
+  &.clickable {
+    cursor: pointer;
+    margin: -2px;
+    transition: background-color var(--jt-duration);
+    &:hover {
+      @media screen and (hover: hover) {
+        background-color: var(--jt-bg-menu-hover);
+      }
+    }
+    &:active {
+      background-color: var(--jt-bg-menu-active);
+    }
+  }
 
   svg {
     vertical-align: top;

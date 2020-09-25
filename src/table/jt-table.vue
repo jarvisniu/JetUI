@@ -7,23 +7,52 @@
   <div class="jt-table jt-util-container">
     <slot></slot>
     <table>
+      <!-- column width -->
+      <colgroup>
+        <col v-if="expandColumn" :width="getColumnWidth(expandColumn)"/>
+        <col
+          v-for="(column, index) in columns"
+          :key="index"
+          :width="getColumnWidth(column)"
+        />
+      </colgroup>
+      <!-- header -->
       <tr>
+        <th v-if="expandColumn"></th>
         <th
           v-for="(column, index) in columns"
           :key="index"
           :class="{ sortable: isColumnSortable(column) }"
-          :style="{ width: getColumnWidth(column)}"
           @click="onClickHead(index)"
         >
           <span>{{column.componentOptions.propsData.label}}</span>
           <jt-icon class="sort-icon" size="16" :name="getSortIconName(index)"></jt-icon>
         </th>
       </tr>
-      <tr v-for="(row, index) in sortedList" :key="index">
-        <td v-for="(column, cIndex) in columns" :key="cIndex">
-          <jt-table-cell :index="index" :row="row" :column="column"></jt-table-cell>
-        </td>
-      </tr>
+      <!-- rows -->
+      <template v-for="(row, index) in sortedList">
+        <!-- normal row -->
+        <tr :key="'row-' + index">
+          <!-- expanding button cell -->
+          <td v-if="expandColumn">
+            <jt-button @click="row.$expanded = !row.$expanded">
+              <jt-icon :name="row.$expanded ? 'triangleUp' : 'triangleDown'"></jt-icon>
+            </jt-button>
+          </td>
+          <!-- normal cells -->
+          <td v-for="(column, cIndex) in columns" :key="cIndex">
+            <jt-table-cell :index="index" :row="row" :column="column"></jt-table-cell>
+          </td>
+        </tr>
+        <!-- expandable row -->
+        <!-- <jt-fold-transition :key="'expandable-' + index"> -->
+        <tr v-if="expandColumn && row.$expanded" :key="'expandable-' + index">
+          <td :colspan="columns.length + 1">
+            <jt-table-cell :index="index" :row="row" :column="expandColumn"></jt-table-cell>
+          </td>
+        </tr>
+        <!-- </jt-fold-transition> -->
+      </template>
     </table>
   </div>
 </template>
@@ -45,6 +74,7 @@ export default {
   data () {
     return {
       columns: [],
+      expandColumn: null,
       sortColumnIndex: -1,
       sortDirection: -1,
     }
@@ -65,11 +95,23 @@ export default {
   },
   mounted () {
     this.columns = this.$slots.default.filter(item => {
-      let opts = item.componentOptions
-      return opts && opts.tag === 'jt-table-column'
+      const opts = item.componentOptions
+      const inst = item.componentInstance
+      const isTableColumn = opts && opts.tag === 'jt-table-column'
+      if (isTableColumn) {
+        if (inst && inst.$attrs.type === 'expandable') {
+          this.expandColumn = item
+          return false
+        } else {
+          return true
+        }
+      }
     })
     this.sortColumnIndex = _findIndex(this.columns, this.isColumnSortable)
     // console.log('sortColumnIndex', this.sortColumnIndex)
+    this.data.forEach((item, index) => {
+      this.$set(item, '$expanded', false)
+    })
   },
   methods: {
     onClickHead (index) {
@@ -100,9 +142,9 @@ export default {
     getColumnWidth (column) {
       let widthProp = column.componentOptions.propsData.width
       if (widthProp > -1) {
-        return widthProp + 'px'
+        return widthProp
       } else {
-        return ''
+        return 0
       }
     },
     getSortIconName (index) {

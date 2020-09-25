@@ -105,4 +105,7 @@ export default {
     vertical-align: top;
   }
 }
+.jt-button + .jt-button {
+  margin-left: 4px;
+}
 </style>
