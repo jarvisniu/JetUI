@@ -4,7 +4,7 @@
 // 不支持(希望支持，但太难，不会)：自定义列模板、展开行。
 
 <template>
-  <div class="jt-table jt-util-container" :class="{ striped: striped }">
+  <div class="jt-table" :class="{ striped: striped }">
     <slot></slot>
     <table>
       <!-- column width -->

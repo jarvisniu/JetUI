@@ -19,16 +19,6 @@
       <li>Auto inject missing expanded prop, in order to be reactive</li>
     </ul>
 
-    <h2>Basic</h2>
-    <jt-snippet>
-      <template>
-        <jt-tree :data="treeData" style="display: inline-block; height: 200px;" />
-      </template>
-      <textarea slot="code">
-        <jt-tree :data="treeData" style="display: inline-block; height: 200px;" />
-      </textarea>
-    </jt-snippet>
-
     <h2>(Data)</h2>
     <jt-snippet>
       <template>
@@ -108,7 +98,16 @@
           },
         }
         </script>
+      </textarea>
+    </jt-snippet>
 
+    <h2>Basic</h2>
+    <jt-snippet>
+      <template>
+        <jt-tree :data="treeData" style="display: inline-block; height: 200px;" />
+      </template>
+      <textarea slot="code">
+        <jt-tree :data="treeData" style="display: inline-block; height: 200px;" />
       </textarea>
     </jt-snippet>
 

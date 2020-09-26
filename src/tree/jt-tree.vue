@@ -1,5 +1,5 @@
 <template>
-  <div class="jt-tree jt-util-container" :style="{
+  <div class="jt-tree" :style="{
     '--jt-tree-item-padding': itemPadding + 'px',
   }">
     <jt-tree-item v-for="(item, index) in data" :key="index" :data="item" />

@@ -50,16 +50,16 @@
           <jt-table-column label="Nickname" prop="nickname" :width="150"></jt-table-column>
           <jt-table-column label="Followers" prop="followers" :width="100" sortable></jt-table-column>
           <jt-table-column label="GitHub" :width="100">
-            <a
-              slot-scope="scope" target="_blank"
-              :href="`https://github.com/${scope.row.github}`"
-            >{{ scope.row.github }}</a>
+            <jt-link
+              slot-scope="scope"
+              :url="`https://github.com/${scope.row.github}`"
+            >{{ scope.row.github }}</jt-link>
           </jt-table-column>
           <jt-table-column label="Twitter" :width="120">
-            <a
-              slot-scope="scope" target="_blank"
-              :href="`https://twitter.com/${scope.row.twitter}`"
-            >{{ scope.row.twitter }}</a>
+            <jt-link
+              slot-scope="scope"
+              :url="`https://twitter.com/${scope.row.twitter}`"
+            >{{ scope.row.twitter }}</jt-link>
           </jt-table-column>
           <jt-table-column label="Works" :prop="scope => scope.row.works.join(', ')"></jt-table-column>
         </jt-table>
@@ -70,15 +70,15 @@
           <jt-table-column label="Nickname" prop="nickname" :width="150"></jt-table-column>
           <jt-table-column label="Followers" prop="followers" :width="100" sortable></jt-table-column>
           <jt-table-column label="GitHub" :width="100">
-            <a
-              slot-scope="scope" target="_blank"
-              :href="`https://github.com/${scope.row.github}`"
+            <jt-link
+              slot-scope="scope"
+              :url="`https://github.com/${scope.row.github}`"
             >{${ scope.row.github }}</a>
           </jt-table-column>
           <jt-table-column label="Twitter" :width="120">
-            <a
-              slot-scope="scope" target="_blank"
-              :href="`https://twitter.com/${scope.row.twitter}`"
+            <jt-link
+              slot-scope="scope"
+              :url="`https://twitter.com/${scope.row.twitter}`"
             >{${ scope.row.twitter }}</a>
           </jt-table-column>
           <jt-table-column label="Works" :prop="scope => scope.row.works.join(', ')"></jt-table-column>
@@ -102,17 +102,15 @@
               </jt-label>
               <jt-label>
                 <b>GitHub: </b>
-                <a
-                  target="_blank"
-                  :href="`https://github.com/${scope.row.github}`"
-                >{{ scope.row.github }}</a>
+                <jt-link
+                  :url="`https://github.com/${scope.row.github}`"
+                >{{ scope.row.github }}</jt-link>
               </jt-label>
               <jt-label>
                 <b>Twitter: </b>
-                <a
-                  target="_blank"
-                  :href="`https://twitter.com/${scope.row.twitter}`"
-                >{{ scope.row.twitter }}</a>
+                <jt-link
+                  :url="`https://twitter.com/${scope.row.twitter}`"
+                >{{ scope.row.twitter }}</jt-link>
               </jt-label>
               <jt-label>
                 <b>Works: </b>

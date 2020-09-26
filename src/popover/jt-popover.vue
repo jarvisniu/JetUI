@@ -16,7 +16,7 @@
     <transition name="fade">
       <div
         v-if="show"
-        class="jt-popover-content jt-util-container"
+        class="jt-popover-content"
         :class="[theme, 'to-' + to]"
         :style="{
           width: width,

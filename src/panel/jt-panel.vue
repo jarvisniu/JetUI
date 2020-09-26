@@ -14,7 +14,7 @@
         </slot>
       </div>
     </div>
-    <div class="jt-panel-body jt-util-container" :class="{fold: fold}">
+    <div class="jt-panel-body" :class="{fold: fold}">
       <slot></slot>
     </div>
   </div>

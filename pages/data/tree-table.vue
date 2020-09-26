@@ -15,6 +15,7 @@
       </template>
       <textarea slot="code">
         <jt-tree-table :data="data"></jt-tree-table>
+
         <script>
         export default {
           data () {

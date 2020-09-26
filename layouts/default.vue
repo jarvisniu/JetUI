@@ -92,14 +92,15 @@ export default {
         { name: 'Basic', pages: [
           { name: 'Button', path: '/basic/button' },
           { name: 'Icon', path: '/basic/icon' },
-          { name: 'Input', path: '/basic/input' },
-          { name: 'Input Number', path: '/basic/input-number' },
-          { name: 'Label', path: '/basic/label' },
+          { name: 'Link', path: '/basic/link' },
         ] },
         { name: 'Form', pages: [
+          { name: 'Input', path: '/form/input' },
+          { name: 'Input Number', path: '/form/input-number' },
           { name: 'Radio', path: '/form/radio' },
           { name: 'Checkbox', path: '/form/checkbox' },
           { name: 'Switch', path: '/form/switch' },
+          { name: 'Label', path: '/form/label' },
         ] },
         { name: 'Data', pages: [
           { name: 'List', path: '/data/list' },

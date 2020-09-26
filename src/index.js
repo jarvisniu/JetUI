@@ -1,5 +1,4 @@
 import './theme.scss'
-import './utils.scss'
 
 import Border from './border/jt-border.vue'
 import Breadcrumb from './breadcrumb/jt-breadcrumb.vue'
@@ -14,6 +13,7 @@ import Input from './input/jt-input.vue'
 import InputNumber from './input-number/jt-input-number.vue'
 import Label from './label/jt-label.vue'
 import List from './list/jt-list.vue'
+import Link from './link/jt-link.vue'
 import Menu from './menu/jt-menu.vue'
 import Panel from './panel/jt-panel.vue'
 import PanelButton from './panel/jt-panel-button.vue'
@@ -48,6 +48,7 @@ export default {
     Vue.component(Input.name, Input)
     Vue.component(InputNumber.name, InputNumber)
     Vue.component(Label.name, Label)
+    Vue.component(Link.name, Link)
     Vue.component(List.name, List)
     Vue.component(Menu.name, Menu)
     Vue.component(Panel.name, Panel)

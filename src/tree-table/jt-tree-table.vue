@@ -1,5 +1,5 @@
 <template>
-  <div class="jt-tree-table jt-util-container">
+  <div class="jt-tree-table">
     <table>
       <tr>
         <th style="width: 200px;">Full Name</th>
@@ -33,14 +33,14 @@
               <td>{{ item.fullName }}</td>
               <td>{{ item.nickname }}</td>
               <td>
-                <a :href="`https://github.com/${item.github}`" target="_blank">
+                <jt-link :url="`https://github.com/${item.github}`">
                   {{ item.github }}
-                </a>
+                </jt-link>
               </td>
               <td>
-                <a :href="`https://twitter.com/${item.twitter}`" target="_blank">
+                <jt-link :url="`https://twitter.com/${item.twitter}`">
                   {{ item.twitter }}
-                </a>
+                </jt-link>
               </td>
               <td>{{ item.works.join(', ') }}</td>
             </tr>
