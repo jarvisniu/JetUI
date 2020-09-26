@@ -35,8 +35,8 @@
         <tr :key="'row-' + index">
           <!-- expanding button cell -->
           <td v-if="expandColumn">
-            <jt-button @click="row.$expanded = !row.$expanded">
-              <jt-icon :name="row.$expanded ? 'triangleUp' : 'triangleDown'"></jt-icon>
+            <jt-button type="flat" squared @click="row.$expanded = !row.$expanded">
+              <jt-icon :name="row.$expanded ? 'triangleDown' : 'triangleRight'"></jt-icon>
             </jt-button>
           </td>
           <!-- normal cells -->

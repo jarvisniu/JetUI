@@ -66,7 +66,7 @@
       </textarea>
     </jt-snippet>
 
-    <h2>Primary</h2>
+    <h2>Type Primary</h2>
     <jt-snippet>
       <template>
         <jt-button type="primary">
@@ -82,6 +82,28 @@
       </textarea>
     </jt-snippet>
 
+    <h2>Type Flat</h2>
+    <jt-snippet>
+      <template>
+        <jt-button type="flat">
+          <jt-icon name="search"></jt-icon>
+          <span>Search</span>
+        </jt-button>
+        <jt-button type="flat" squared>
+          <jt-icon name="search"></jt-icon>
+        </jt-button>
+      </template>
+      <textarea slot="code">
+        <jt-button type="flat">
+          <jt-icon name="search"></jt-icon>
+          <span>Search</span>
+        </jt-button>
+        <jt-button type="flat" squared>
+          <jt-icon name="search"></jt-icon>
+        </jt-button>
+      </textarea>
+    </jt-snippet>
+
     <h2>Disabled</h2>
     <jt-snippet>
       <template>
@@ -89,6 +111,20 @@
       </template>
       <textarea slot="code">
         <jt-button disabled>Search</jt-button>
+      </textarea>
+    </jt-snippet>
+
+    <h2>Squared</h2>
+    <jt-snippet>
+      <template>
+        <jt-button squared>
+          <jt-icon name="search"></jt-icon>
+        </jt-button>
+      </template>
+      <textarea slot="code">
+        <jt-button squared>
+          <jt-icon name="search"></jt-icon>
+        </jt-button>
       </textarea>
     </jt-snippet>
 

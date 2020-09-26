@@ -12,12 +12,14 @@
       <template v-for="(item, index0) in data">
         <tr :key="index0" class="level-0">
           <td>
-            <jt-icon
-              :name="item.expanded ? 'minus' : 'plus'"
-              style="cursor: pointer; margin-right: 4px;"
-              clickable @click="item.expanded = !item.expanded"
-            ></jt-icon
-            ><span>{{ item.fullName }}</span>
+            <jt-button squared
+              @click="item.expanded = !item.expanded"
+            >
+              <jt-icon
+                :name="item.expanded ? 'minus' : 'plus'"
+              ></jt-icon>
+            </jt-button
+            ><jt-label>{{ item.fullName }}</jt-label>
           </td>
           <td></td>
           <td></td>

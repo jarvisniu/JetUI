@@ -4,6 +4,7 @@
     :class="[type, {
       disabled: disabled,
       selected: selected,
+      squared: squared,
     }]"
     :style="{
       width: convertSizeToCSS(width),
@@ -20,9 +21,10 @@ import { convertSizeToCSS } from '../utils'
 export default {
   name: 'JtButton',
   props: {
-    type: { type: String, default: '' },
+    type: { type: String, default: '' }, // primary, flat
     disabled: { type: Boolean, default: false },
     selected: { type: Boolean, default: false },
+    squared: { type: Boolean, default: false },
     width: { type: [Number, String], default: '' },
   },
   methods: {
@@ -51,6 +53,7 @@ export default {
   outline: none;
   -webkit-tap-highlight-color: transparent;
 
+  // interactions
   transition:
     color var(--jt-duration),
     background-color var(--jt-duration),
@@ -68,11 +71,13 @@ export default {
       border-color var(--jt-duration-active);
   }
 
+  // disabled
   &.disabled {
     opacity: 0.5;
     pointer-events: none;
   }
 
+  // selected
   &.selected {
     border-color: var(--jt-border);
     background-color: var(--jt-bg-button-selected);
@@ -86,6 +91,12 @@ export default {
     }
   }
 
+  // squared
+  &.squared {
+    padding: 4px;
+  }
+
+  // type: primary
   &.primary {
     color: white;
     background-color: var(--jt-primary);
@@ -101,11 +112,33 @@ export default {
     }
   }
 
+  // type: flat
+  &.flat {
+    background-color: transparent;
+    border-color: transparent;
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--jt-bg-menu-hover);
+      }
+    }
+    &:active {
+      transition: background-color var(--jt-duration-active), border-color var(--jt-duration-active);
+      background-color: var(--jt-bg-menu-active);
+    }
+  }
+
+  // inner
   .jt-icon {
     vertical-align: top;
   }
 }
+
+// Gap between multiple buttons
 .jt-button + .jt-button {
   margin-left: 4px;
+
+  .jt-button-group & {
+    margin-left: 0;
+  }
 }
 </style>
