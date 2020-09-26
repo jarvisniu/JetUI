@@ -25,7 +25,7 @@
     </jt-fold-transition>
     <!-- Toggle Button -->
     <div
-      class="toggle-bar"
+      class="toggle-button"
       :class="{ expanded: expanded }"
       @click="expanded = !expanded"
     >
@@ -99,7 +99,7 @@ export default {
   padding: 10px;
   background-color: #234;
 }
-.toggle-bar {
+.toggle-button {
   border: solid 1px var(--jt-border);
   border-top: none;
   padding: 4px 10px;

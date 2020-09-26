@@ -13,12 +13,9 @@
         <tr :key="index0" class="level-0">
           <td>
             <jt-button squared
+              :icon="item.expanded ? 'minus' : 'plus'"
               @click="item.expanded = !item.expanded"
-            >
-              <jt-icon
-                :name="item.expanded ? 'minus' : 'plus'"
-              ></jt-icon>
-            </jt-button
+            ></jt-button
             ><jt-label>{{ item.fullName }}</jt-label>
           </td>
           <td></td>

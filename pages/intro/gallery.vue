@@ -47,7 +47,7 @@
 
       <!-- Panel 2 -->
       <jt-border top>
-        <jt-panel title="Toolbar" style="width: 500px;" :fold="isPanelToolbarFolded">
+        <jt-panel title="List" style="width: 500px;" :fold="isPanelToolbarFolded">
           <div slot="control">
             <jt-panel-button v-if="isPanelToolbarFolded" @click="isPanelToolbarFolded = false">
               <jt-icon name="plus"></jt-icon>
@@ -83,41 +83,13 @@
             </jt-toolbar>
           </jt-border>
 
-          <div style="padding: 10px;">
-            <jt-border inline all>
-              <jt-toggle-bar>
-                <jt-toggle-bar-button
-                  v-for="(button, index) in toggleBarButtons" :key="index"
-                  :icon="button.icon"
-                  :value="button.value"
-                  :tip="button.tip"
-                  :selected="toggleBarValue === button.value"
-                  @click="toggleBarValue = button.value"
-                >{{ button.label }}</jt-toggle-bar-button>
-              </jt-toggle-bar>
-            </jt-border>
-          </div>
+          <jt-border inline all style="margin: 10px;">
+              <jt-list style="width: 100px;" :data="list" v-model="selListIndex"></jt-list>
+          </jt-border>
         </jt-panel>
       </jt-border>
 
-      <!-- Panel 3 -->
-      <jt-border top>
-        <jt-panel title="List" style="width: 500px;" :fold="isPanelListFolded">
-          <div slot="control">
-            <jt-panel-button v-if="isPanelListFolded" @click="isPanelListFolded = false">
-              <jt-icon name="plus"></jt-icon>
-            </jt-panel-button>
-            <jt-panel-button v-else @click="isPanelListFolded = true">
-              <jt-icon name="minus"></jt-icon>
-            </jt-panel-button>
-          </div>
-          <div style="padding: 10px;">
-            <jt-border inline all>
-              <jt-list style="width: 100px;" :data="list" v-model="selListIndex"></jt-list>
-            </jt-border>
-          </div>
-        </jt-panel>
-      </jt-border>
+      <!-- End -->
     </jt-border>
 
   </div>

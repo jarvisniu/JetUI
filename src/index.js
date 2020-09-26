@@ -29,8 +29,6 @@ import TableColumn from './table/jt-table-column.vue'
 import Toolbar from './toolbar/jt-toolbar.vue'
 import ToolbarButton from './toolbar/jt-toolbar-button.vue'
 import ToolbarDivider from './toolbar/jt-toolbar-divider.vue'
-import ToggleBar from './toggle-bar/jt-toggle-bar.vue'
-import ToggleBarButton from './toggle-bar/jt-toggle-bar-button.vue'
 import Tree from './tree/jt-tree.vue'
 import TreeTable from './tree-table/jt-tree-table.vue'
 
@@ -60,10 +58,8 @@ export default {
     Vue.component(SplitView.name, SplitView)
     Vue.component(SplitViewChild.name, SplitViewChild)
     Vue.component(Switch.name, Switch)
-    Vue.component(ToggleBar.name, ToggleBar)
     Vue.component(Table.name, Table)
     Vue.component(TableColumn.name, TableColumn)
-    Vue.component(ToggleBarButton.name, ToggleBarButton)
     Vue.component(Toolbar.name, Toolbar)
     Vue.component(ToolbarButton.name, ToolbarButton)
     Vue.component(ToolbarDivider.name, ToolbarDivider)

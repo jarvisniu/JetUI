@@ -11,6 +11,10 @@
     }"
     @click="$emit('click')"
   >
+    <template v-if="icon">
+      <jt-icon v-if="!isIconImage" :name="icon"></jt-icon>
+      <img v-else :src="icon" class="image-icon" alt="button icon">
+    </template>
     <slot></slot>
   </button>
 </template>
@@ -22,10 +26,16 @@ export default {
   name: 'JtButton',
   props: {
     type: { type: String, default: '' }, // primary, flat
+    icon: { type: String, default: null },
     disabled: { type: Boolean, default: false },
     selected: { type: Boolean, default: false },
     squared: { type: Boolean, default: false },
     width: { type: [Number, String], default: '' },
+  },
+  computed: {
+    isIconImage() {
+      return this.icon && /[\/\\\.]/.test(this.icon)
+    },
   },
   methods: {
     convertSizeToCSS,
@@ -131,6 +141,13 @@ export default {
   .jt-icon {
     vertical-align: top;
   }
+}
+
+.image-icon {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+    vertical-align: top;
 }
 
 // Gap between multiple buttons

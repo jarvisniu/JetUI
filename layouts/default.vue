@@ -9,34 +9,30 @@
           <div class="title">jet-ui docs</div>
           <div class="version">v{{version}}</div>
 
-          <jt-border inline all>
-            <jt-toggle-bar>
-              <jt-toggle-bar-button
-                v-for="theme in themes" :key="theme.value"
-                :selected="selTheme === theme.value"
-                style="width: 80px;"
-                @click="selTheme = theme.value"
-              >{{ theme.label }}</jt-toggle-bar-button>
-            </jt-toggle-bar>
-          </jt-border>
+          <jt-button-group sharp>
+            <jt-button
+              v-for="theme in themes" :key="theme.value"
+              :selected="selTheme === theme.value"
+              width="80"
+              @click="selTheme = theme.value"
+            >{{ theme.label }}</jt-button>
+          </jt-button-group>
 
-          <jt-border inline all style="margin-top: -1px;">
-            <jt-toggle-bar>
-              <jt-toggle-bar-button
-                v-for="hue in primaryHues" :key="hue.value"
-                :selected="selPrimaryHue === hue.value"
-                style="width: 32px;"
-                @click="selPrimaryHue = hue.value"
-              >
-              <jt-border all inline style="margin: 5px;">
-                <div
-                  :style="{ backgroundColor: `hsl(${ hue.value }, 66%, 40%)` }"
-                  style="height: 12px; width: 18px;"
-                ></div>
-              </jt-border>
-              </jt-toggle-bar-button>
-            </jt-toggle-bar>
-          </jt-border>
+          <jt-button-group sharp style="margin-top: -1px;">
+            <jt-button
+              v-for="hue in primaryHues" :key="hue.value"
+              :selected="selPrimaryHue === hue.value"
+              squared width="32"
+              @click="selPrimaryHue = hue.value"
+            >
+            <jt-border all inline style="width: 100%; height: 100%">
+              <div
+                style="height: 100%"
+                :style="{ backgroundColor: `hsl(${ hue.value }, 66%, 40%)` }"
+              ></div>
+            </jt-border>
+            </jt-button>
+          </jt-button-group>
 
           <div v-for="(pageGroup, groupIndex) in pageGroups" :key="groupIndex">
             <div class="section-title">{{ pageGroup.name }}</div>
@@ -111,7 +107,6 @@ export default {
         { name: 'Container', pages: [
           { name: 'Popover', path: '/container/popover' },
           { name: 'Toolbar', path: '/container/toolbar' },
-          { name: 'Toggle Bar', path: '/container/toggle-bar' },
           { name: 'Panel', path: '/container/panel' },
           { name: 'Drawer', path: '/container/drawer' },
           { name: 'Rotated View', path: '/container/rotated-view' },
