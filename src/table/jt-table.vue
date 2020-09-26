@@ -4,7 +4,7 @@
 // 不支持(希望支持，但太难，不会)：自定义列模板、展开行。
 
 <template>
-  <div class="jt-table jt-util-container">
+  <div class="jt-table jt-util-container" :class="{ striped: striped }">
     <slot></slot>
     <table>
       <!-- column width -->
@@ -32,7 +32,7 @@
       <!-- rows -->
       <template v-for="(row, index) in sortedList">
         <!-- normal row -->
-        <tr :key="'row-' + index">
+        <tr :key="'row-' + index" :class="{ striped: striped && (index % 2 == 1) }">
           <!-- expanding button cell -->
           <td v-if="expandColumn">
             <jt-button type="flat" squared @click="row.$expanded = !row.$expanded">
@@ -70,6 +70,7 @@ export default {
   },
   props: {
     data: { type: Array, required: true },
+    striped: { type: Boolean, default: false },
   },
   data () {
     return {
@@ -181,6 +182,14 @@ export default {
     border-collapse: collapse;
     border: solid 1px var(--jt-border);
   }
+  th, td {
+    padding: 4px 6px;
+  }
+  // tr.striped
+  tr.striped {
+    background-color: var(--jt-bg-container-dark);
+  }
+  // th
   th {
     text-align: left;
     user-select: none;
@@ -201,9 +210,6 @@ export default {
         background-color: var(--jt-bg-menu-active);
       }
     }
-  }
-  th, td {
-    padding: 4px 6px;
   }
 }
 

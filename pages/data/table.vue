@@ -8,9 +8,10 @@
       <li>Column `prop` prop as a function</li>
       <li>Column sortable</li>
       <li>Column width</li>
-      <li>Customize Columns</li>
+      <li>Customize columns</li>
       <li>Sort arrow icons</li>
-      <li>Expandable row</li>
+      <li>Expandable rows</li>
+      <li>Striped rows</li>
     </ul>
 
     <h2>TODO</h2>
@@ -44,7 +45,7 @@
     <h2>Basic</h2>
     <jt-snippet>
       <template>
-        <jt-table :data="data">
+        <jt-table striped :data="data">
           <jt-table-column label="Full Name" prop="fullName" :width="200" sortable></jt-table-column>
           <jt-table-column label="Nickname" prop="nickname" :width="150"></jt-table-column>
           <jt-table-column label="Followers" prop="followers" :width="100" sortable></jt-table-column>
@@ -64,7 +65,7 @@
         </jt-table>
       </template>
       <textarea slot="code">
-        <jt-table :data="data">
+        <jt-table striped :data="data">
           <jt-table-column label="Full Name" prop="fullName" :width="200" sortable></jt-table-column>
           <jt-table-column label="Nickname" prop="nickname" :width="150"></jt-table-column>
           <jt-table-column label="Followers" prop="followers" :width="100" sortable></jt-table-column>
