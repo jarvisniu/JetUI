@@ -7,13 +7,16 @@
       'border-top-width': topBorderWidth,
       'border-right-width': rightBorderWidth,
       'border-bottom-width': bottomBorderWidth,
-    }"
+      'padding': convertSizeToCSS(padding),
+  }"
   >
     <slot></slot>
   </div>
 </template>
 
 <script>
+import { convertSizeToCSS } from '../utils'
+
 export default {
   name: 'JtBorder',
   props: {
@@ -25,6 +28,7 @@ export default {
     vertical: { type: Boolean, default: false },
     horizontal: { type: Boolean, default: false },
     all: { type: Boolean, default: false },
+    padding: { type: [Number, String], default: null },
   },
   computed: {
     leftBorderWidth() {
@@ -43,6 +47,9 @@ export default {
       if (this.bottom || this.vertical || this.all) return 1 + 'px'
       return '0'
     },
+  },
+  methods: {
+    convertSizeToCSS,
   },
 }
 </script>

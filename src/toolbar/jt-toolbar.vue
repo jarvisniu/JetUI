@@ -28,7 +28,9 @@
   padding: 2px;
   box-sizing: border-box;
   transition: background-color 0.3s;
-  overflow: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
+
   &.horizontal {
     display: flex;
     height: 32px;

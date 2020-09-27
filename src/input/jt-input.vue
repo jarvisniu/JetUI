@@ -11,10 +11,13 @@
     @mouseleave="hovered = false"
   >
     <div
-      class="search-box"
+      class="jt-input-container"
       :class="{
         'not-empty': showNotEmpty && text !== '',
         'rounded': rounded,
+      }"
+      :style="{
+        padding: convertSizeToCSS(padding),
       }"
     >
       <!-- prepend icon -->
@@ -32,14 +35,13 @@
       >
         <jt-icon name="cross" margin="2"></jt-icon>
       </div>
-      <!-- input -->
       <input
         ref="input"
         v-model="text"
         :type="type !== 'password' ? 'text' : 'password'"
         :style="{
-          'padding-left': icon ? '20px' : rounded ? '8px' : '4px',
-          'padding-right': showClear ? '20px' : rounded ? '8px' : '4px',
+          'padding-left': icon ? '16px' : rounded ? '4px' : '0',
+          'padding-right': showClear ? '16px' : rounded ? '4px' : '0',
         }"
         @focus="focused = true"
         @blur="focused = false"
@@ -59,6 +61,7 @@ export default {
   props: {
     value: { type: String, default: '' },
     width: { type: [Number, String], default: '' },
+    padding: { type: [Number, String], default: '4' },
     icon: { type: String, default: '' },
     type: { type: String, default: '' }, // text, password
     rounded: { type: Boolean, default: false },
@@ -109,16 +112,18 @@ export default {
 .jt-input {
   box-sizing: border-box;
   display: inline-block;
-  min-width: 100px;
-  vertical-align: top;
+  font-size: 14px;
 }
-.search-box {
+.jt-input-container {
   box-sizing: border-box;
   display: inline-block;
   position: relative;
   border: solid 1px;
   width: 100%;
-  height: 24px;
+  // height: 24px;
+  padding: 4px;
+  line-height: 1em;
+  vertical-align: top;
 
   transition:
     color var(--jt-duration),
@@ -148,11 +153,10 @@ export default {
     vertical-align: top;
     border: none;
     width: 100%;
-    height: 22px;
-    line-height: 22px;
+    height: 1em;
+    line-height: 1em;
     padding-left: 20px;
     outline: none;
-    font-size: 14px;
     color: inherit;
     background-color: transparent;
   }
@@ -166,16 +170,16 @@ export default {
   background-size: 12px 12px;
   background-position: 3px 3px;
   background-repeat: no-repeat;
-  margin: 2px;
+  margin: -2px;
   line-height: 14px;
   text-align: center;
 
-  .search-box.rounded & {
+  .jt-input-container.rounded & {
     border-radius: 999px;
   }
 
   &.clear {
-    right: 0;
+    right: 4px;
     transition: background-color 0.15s, opacity 0.15s;
     &:hover {
       @media (hover: hover) {
