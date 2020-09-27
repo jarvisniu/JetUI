@@ -21,6 +21,9 @@ export default {
 <style lang="scss" scoped>
 .jt-link {
   color: var(--jt-text);
+  padding-left: 2px;
+  padding-right: 2px;
+  padding-bottom: 1px;
   text-decoration: none;
   border-bottom: solid 1px hsla(0, 0%, 0%, 0.25);
 

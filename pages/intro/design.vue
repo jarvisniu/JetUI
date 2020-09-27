@@ -22,6 +22,10 @@
       <li>Font size</li>
       <li>Icon size (default)</li>
     </ul>
+    <h3>16px</h3>
+    <ul>
+      <li>Link height</li>
+    </ul>
     <h3>20px</h3>
     <ul>
       <li>Data: Tree item (default), Menu item</li>
