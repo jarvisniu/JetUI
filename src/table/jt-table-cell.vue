@@ -21,7 +21,7 @@ export default {
     },
   },
   render (h) {
-    return h('div', this.getContent())
+    return h('div', { style: { display: 'inline-block' } }, this.getContent())
   },
 }
 </script>

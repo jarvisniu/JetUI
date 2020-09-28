@@ -72,11 +72,10 @@ export default {
   display: inline-block;
   line-height: 1;
   user-select: none;
-  // color: var(--jt-icon); // TODO button primary not working
+  // color: var(--jt-icon); // TODO Not suitable for button primary
 
   &.clickable {
     cursor: pointer;
-    margin: -2px;
     transition: background-color var(--jt-duration);
     &:hover {
       @media screen and (hover: hover) {

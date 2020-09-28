@@ -30,7 +30,6 @@ import Toolbar from './toolbar/jt-toolbar.vue'
 import ToolbarButton from './toolbar/jt-toolbar-button.vue'
 import ToolbarDivider from './toolbar/jt-toolbar-divider.vue'
 import Tree from './tree/jt-tree.vue'
-import TreeTable from './tree-table/jt-tree-table.vue'
 
 export default {
   install(Vue) {
@@ -64,6 +63,5 @@ export default {
     Vue.component(ToolbarButton.name, ToolbarButton)
     Vue.component(ToolbarDivider.name, ToolbarDivider)
     Vue.component(Tree.name, Tree)
-    Vue.component(TreeTable.name, TreeTable)
   }
 }

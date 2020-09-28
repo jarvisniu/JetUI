@@ -102,7 +102,6 @@ export default {
           { name: 'List', path: '/data/list' },
           { name: 'Table', path: '/data/table' },
           { name: 'Tree', path: '/data/tree' },
-          { name: 'Tree Table (WIP)', path: '/data/tree-table' },
         ] },
         { name: 'Container', pages: [
           { name: 'Popover', path: '/container/popover' },

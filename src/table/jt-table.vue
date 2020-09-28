@@ -30,29 +30,14 @@
         </th>
       </tr>
       <!-- rows -->
-      <template v-for="(row, index) in sortedList">
-        <!-- normal row -->
-        <tr :key="'row-' + index" :class="{ striped: striped && (index % 2 == 1) }">
-          <!-- expanding button cell -->
-          <td v-if="expandColumn">
-            <jt-button type="flat" squared @click="row.$expanded = !row.$expanded">
-              <jt-icon :name="row.$expanded ? 'triangleDown' : 'triangleRight'"></jt-icon>
-            </jt-button>
-          </td>
-          <!-- normal cells -->
-          <td v-for="(column, cIndex) in columns" :key="cIndex">
-            <jt-table-cell :index="index" :row="row" :column="column"></jt-table-cell>
-          </td>
-        </tr>
-        <!-- expandable row -->
-        <!-- <jt-fold-transition :key="'expandable-' + index"> -->
-        <tr v-if="expandColumn && row.$expanded" :key="'expandable-' + index">
-          <td :colspan="columns.length + 1">
-            <jt-table-cell :index="index" :row="row" :column="expandColumn"></jt-table-cell>
-          </td>
-        </tr>
-        <!-- </jt-fold-transition> -->
-      </template>
+      <jt-table-rows
+        :is-tree-table="!!tree"
+        :tree-children-key="myTreeChildrenKey"
+        :list="sortedList"
+        :columns="columns"
+        :expand-column="expandColumn"
+        :striped="striped"
+      ></jt-table-rows>
     </table>
   </div>
 </template>
@@ -61,15 +46,18 @@
 import _sortBy from 'lodash/sortBy'
 import _findIndex from 'lodash/findIndex'
 
-import JtTableCell from './jt-table-cell.vue'
+import treeProcessor from '../tree-processor.js'
+
+import JtTableRows from './jt-table-rows.vue'
 
 export default {
   name: 'JtTable',
   components: {
-    JtTableCell,
+    JtTableRows,
   },
   props: {
     data: { type: Array, required: true },
+    tree: { type: [Boolean, String], default: false },
     striped: { type: Boolean, default: false },
   },
   data () {
@@ -81,12 +69,17 @@ export default {
     }
   },
   computed: {
+    myTreeChildrenKey() {
+      return typeof this.tree == 'string' ? this.tree : 'children'
+    },
     sortedList () {
       if (this.sortDirection === 0 || this.sortColumnIndex === -1) {
         return this.data
       }
 
-      const sorted = _sortBy(this.data, (row) => this.getCellContentAtColumn(row, this.columns[this.sortColumnIndex]))
+      const sorted = _sortBy(this.data, (row) => {
+        return this.getCellContentAtColumn(row, this.columns[this.sortColumnIndex])
+      })
       if (this.sortDirection === -1) {
         return sorted
       } else if (this.sortDirection === 1) {
@@ -110,9 +103,10 @@ export default {
     })
     this.sortColumnIndex = _findIndex(this.columns, this.isColumnSortable)
     // console.log('sortColumnIndex', this.sortColumnIndex)
-    this.data.forEach((item, index) => {
-      this.$set(item, '$expanded', false)
-    })
+    treeProcessor.traverse(this.data, ({ node }) => {
+      this.$set(node, '$expanded', false)
+      if (this.tree) this.$set(node, '$expandedChildren', false)
+    }, this.myTreeChildrenKey)
   },
   methods: {
     onClickHead (index) {
@@ -134,7 +128,7 @@ export default {
       if (typeof prop === 'string') {
         return row[prop]
       } else if (typeof prop === 'function') {
-        return prop(row)
+        return prop({row: row})
       } else if (prop == null) {
         let spareChildren = column.componentOptions.children
         return (spareChildren[0] && spareChildren[0].text) || '-'
@@ -152,9 +146,9 @@ export default {
       if (this.sortColumnIndex !== index || this.sortDirection === 0) {
         return ''
       } else if (this.sortDirection === -1) {
-        return 'triangleDown'
-      } else if (this.sortDirection === 1) {
         return 'triangleUp'
+      } else if (this.sortDirection === 1) {
+        return 'triangleDown'
       }
     },
     toggleSortDirection () {
@@ -170,7 +164,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .jt-table {
   color: var(--jt-text);
   line-height: 16px;
@@ -184,6 +178,7 @@ export default {
   }
   th, td {
     padding: 4px 6px;
+    vertical-align: middle;
   }
   // tr.striped
   tr.striped {
@@ -210,10 +205,10 @@ export default {
         background-color: var(--jt-bg-menu-active);
       }
     }
-  }
-}
 
-.sort-icon {
-  float: right;
+    .sort-icon {
+      float: right;
+    }
+  }
 }
 </style>
