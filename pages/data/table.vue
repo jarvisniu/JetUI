@@ -13,6 +13,7 @@
       <li>Expandable rows</li>
       <li>Striped rows</li>
       <li>Tree table</li>
+      <li>Column alignment</li>
     </ul>
 
     <h2>TODO</h2>
@@ -26,9 +27,9 @@
       <template>
         <jt-table striped :data="basicTableData">
           <jt-table-column label="姓名" prop="name" :width="120" sortable></jt-table-column>
-          <jt-table-column label="语文" prop="chinese" :width="80" sortable></jt-table-column>
-          <jt-table-column label="数学" prop="math" :width="80" sortable></jt-table-column>
-          <jt-table-column label="英语" prop="english" :width="80" sortable></jt-table-column>
+          <jt-table-column label="语文" prop="chinese" :width="80"  align="right" sortable></jt-table-column>
+          <jt-table-column label="数学" prop="math" :width="80"  align="right" sortable></jt-table-column>
+          <jt-table-column label="英语" prop="english" :width="80"  align="right" sortable></jt-table-column>
           <jt-table-column label="总分" :prop="scope => scope.row.chinese + scope.row.math + scope.row.english" sortable></jt-table-column>
         </jt-table>
       </template>
@@ -44,9 +45,9 @@
 
         <jt-table striped :data="basicTableData">
           <jt-table-column label="姓名" prop="name" :width="120" sortable></jt-table-column>
-          <jt-table-column label="语文" prop="chinese" :width="80" sortable></jt-table-column>
-          <jt-table-column label="数学" prop="math" :width="80" sortable></jt-table-column>
-          <jt-table-column label="英语" prop="english" :width="80" sortable></jt-table-column>
+          <jt-table-column label="语文" prop="chinese" :width="80"  align="right" sortable></jt-table-column>
+          <jt-table-column label="数学" prop="math" :width="80"  align="right" sortable></jt-table-column>
+          <jt-table-column label="英语" prop="english" :width="80"  align="right" sortable></jt-table-column>
           <jt-table-column label="总分" :prop="scope => scope.row.chinese + scope.row.math + scope.row.english" sortable></jt-table-column>
         </jt-table>
       </textarea>
@@ -145,7 +146,6 @@
         </jt-table>
       </template>
       <textarea slot="code">
-
         <script>
         export default {
           data () {
@@ -190,6 +190,66 @@
           <jt-table-column label="WebAPI" prop="name"></jt-table-column>
           <jt-table-column label="Chrome" prop="chrome" :width="150"></jt-table-column>
           <jt-table-column label="Firefox" prop="firefox" :width="150"></jt-table-column>
+        </jt-table>
+      </textarea>
+    </jt-snippet>
+
+    <h2>Tree Table Editor</h2>
+    <jt-snippet>
+      <template>
+        <jt-table tree :data="treeData">
+          <!-- Name -->
+          <jt-table-column label="WebAPI" width="auto">
+            <jt-input slot-scope="scope" width="250" v-model="scope.row.name"></jt-input>
+          </jt-table-column>
+          <!-- Chrome -->
+          <jt-table-column label="Chrome" :width="150">
+            <div slot-scope="scope">
+              <jt-input v-model="scope.row.chrome"></jt-input>
+            </div>
+          </jt-table-column>
+          <!-- Firefox -->
+          <jt-table-column label="Firefox" prop="firefox" :width="150">
+            <div slot-scope="scope">
+              <jt-input v-model="scope.row.firefox"></jt-input>
+            </div>
+          </jt-table-column>
+          <!-- Operations -->
+          <jt-table-column label="Operations" :width="160" align="center">
+            <div slot-scope="scope">
+              <jt-button icon="plus" @click="addTreeChildNode(scope.row)">Child</jt-button>
+              <jt-button icon="plus" @click="addTreeNodeAt(scope.index)">Sibling</jt-button>
+            </div>
+          </jt-table-column>
+        </jt-table>
+        <div style="margin-top: 10px">JSON Output:</div>
+        <textarea class="input-area" v-text="treeData"></textarea>
+      </template>
+      <textarea slot="code">
+        <jt-table tree :data="treeData">
+          <!-- Name -->
+          <jt-table-column label="WebAPI" width="auto">
+            <jt-input slot-scope="scope" width="250" v-model="scope.row.name"></jt-input>
+          </jt-table-column>
+          <!-- Chrome -->
+          <jt-table-column label="Chrome" :width="150">
+            <div slot-scope="scope">
+              <jt-input v-model="scope.row.chrome"></jt-input>
+            </div>
+          </jt-table-column>
+          <!-- Firefox -->
+          <jt-table-column label="Firefox" prop="firefox" :width="150">
+            <div slot-scope="scope">
+              <jt-input v-model="scope.row.firefox"></jt-input>
+            </div>
+          </jt-table-column>
+          <!-- Operations -->
+          <jt-table-column label="Firefox" prop="firefox" :width="160" align="center">
+            <div slot-scope="scope">
+              <jt-button icon="plus" @click="addTreeChildNode(scope.row)">Child</jt-button>
+              <jt-button icon="plus" @click="addTreeNodeAt(scope.index)">Sibling</jt-button>
+            </div>
+          </jt-table-column>
         </jt-table>
       </textarea>
     </jt-snippet>
@@ -246,5 +306,40 @@ export default {
       ],
     }
   },
+  methods: {
+    newTreeNode() {
+      return {
+        $expandedRow: false,
+        $expandedChildren: false,
+        name: '',
+        chrome: '',
+        firefox: '',
+      }
+    },
+    addTreeChildNode(node) {
+      if (node.children == null) this.$set(node, 'children', [])
+      node.children.push(this.newTreeNode())
+      this.$set(node, '$expandedChildren', true)
+    },
+    addTreeNodeAt(index) {
+      this.treeData.splice(index, 0, this.newTreeNode())
+    },
+  },
 }
 </script>
+
+<style lang="scss" scoped>
+.input-area {
+  margin-top: 10px;
+  padding: 5px;
+  outline: none;
+  width: 100%;
+  height: 200px;
+  font-size: 12px;
+  font-family: var(--jt-font-monospace);
+  border: solid 1px var(--jt-border);
+  color: var(--jt-text);
+  background-color: var(--jt-bg-container);
+  resize: none;
+}
+</style>

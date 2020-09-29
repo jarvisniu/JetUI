@@ -58,6 +58,7 @@ export default {
   cursor: pointer;
   user-select: none;
   padding: 3px;
+  line-height: 1;
 
   transition: background-color var(--jt-duration);
   // background-color: var(--jt-bg-menu);

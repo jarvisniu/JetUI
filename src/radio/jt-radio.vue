@@ -28,6 +28,7 @@ export default {
 <style lang="scss" scoped>
 .jt-radio {
   cursor: pointer;
+  line-height: 1;
   user-select: none;
   padding: 4px;
 

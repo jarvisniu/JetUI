@@ -4,7 +4,11 @@
 
     <h2>Features</h2>
     <ul>
+      <li>Type Password</li>
       <li>Rounded</li>
+      <li>Flat</li>
+      <li>Bind Number</li>
+      <li>Set Height (by setting prop padding)</li>
       <li>Show clear</li>
       <li>Show not empty</li>
     </ul>
@@ -37,20 +41,40 @@
     <h2>Type Password</h2>
     <jt-snippet>
       <template>
-        <jt-input type="password" v-model="keyword"></jt-input>
+        <jt-input type="password" v-model="password"></jt-input>
       </template>
       <textarea slot="code">
-        <jt-input type="password" v-model="keyword"></jt-input>
+        <jt-input type="password" v-model="password"></jt-input>
       </textarea>
     </jt-snippet>
 
-    <h2>Height (by setting padding)</h2>
+    <h2>Flat</h2>
     <jt-snippet>
       <template>
-        <jt-input padding="2 3" width="60" v-model="keyword"></jt-input>
+        <jt-input flat v-model.number="age" width="50"></jt-input>
       </template>
       <textarea slot="code">
-        <jt-input padding="2 3" width="60" v-model="keyword"></jt-input>
+        <jt-input flat v-model.number="age" width="50"></jt-input>
+      </textarea>
+    </jt-snippet>
+
+    <h2>Bind Number</h2>
+    <jt-snippet>
+      <template>
+        <jt-input v-model.number="age" width="50"></jt-input>
+      </template>
+      <textarea slot="code">
+        <jt-input v-model.number="age" width="50"></jt-input>
+      </textarea>
+    </jt-snippet>
+
+    <h2>Height (by setting prop padding)</h2>
+    <jt-snippet>
+      <template>
+        <jt-input padding="0 3" width="60" v-model="keyword"></jt-input>
+      </template>
+      <textarea slot="code">
+        <jt-input padding="0 3" width="60" v-model="keyword"></jt-input>
       </textarea>
     </jt-snippet>
 
@@ -87,6 +111,8 @@ export default {
   data() {
     return {
       keyword: '',
+      password: '',
+      age: 30,
     }
   },
   methods: {

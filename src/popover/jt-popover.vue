@@ -89,6 +89,7 @@ export default {
 .jt-popover {
   position: relative;
   display: inline-block;
+  line-height: 1;
 
   .jt-popover-content {
     position: absolute;

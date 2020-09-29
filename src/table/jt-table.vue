@@ -23,10 +23,17 @@
           v-for="(column, index) in columns"
           :key="index"
           :class="{ sortable: isColumnSortable(column) }"
+          :style="{
+            textAlign: column.componentOptions.propsData.align,
+          }"
           @click="onClickHead(index)"
         >
           <span>{{column.componentOptions.propsData.label}}</span>
-          <jt-icon class="sort-icon" size="16" :name="getSortIconName(index)"></jt-icon>
+          <jt-icon
+            v-show="getSortIconName(index)"
+            class="sort-icon" size="16"
+            :name="getSortIconName(index)"
+          ></jt-icon>
         </th>
       </tr>
       <!-- rows -->
@@ -101,10 +108,11 @@ export default {
         }
       }
     })
+    // console.log('this.columns', this.columns)
     this.sortColumnIndex = _findIndex(this.columns, this.isColumnSortable)
     // console.log('sortColumnIndex', this.sortColumnIndex)
     treeProcessor.traverse(this.data, ({ node }) => {
-      this.$set(node, '$expanded', false)
+      this.$set(node, '$expandedRow', false)
       if (this.tree) this.$set(node, '$expandedChildren', false)
     }, this.myTreeChildrenKey)
   },
@@ -167,7 +175,7 @@ export default {
 <style lang="scss">
 .jt-table {
   color: var(--jt-text);
-  line-height: 16px;
+  line-height: 1;
 
   table {
     width: 100%;
@@ -178,7 +186,11 @@ export default {
   }
   th, td {
     padding: 4px 6px;
+    height: 33px; // as min-height
     vertical-align: middle;
+    & > * {
+      vertical-align: middle;
+    }
   }
   // tr.striped
   tr.striped {

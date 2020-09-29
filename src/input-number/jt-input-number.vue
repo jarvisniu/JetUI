@@ -58,6 +58,7 @@ export default {
   display: inline-block;
   border: solid 1px;
   vertical-align: top;
+  line-height: 1;
   height: 24px;
 
   input[type="text"] {
@@ -102,12 +103,13 @@ export default {
 
     &:first-child {
       height: 12px;
-      padding-top: 1px;
+      padding-top: 2px;
       border-bottom: solid 1px var(--jt-bg-input-border);
       margin-bottom: -1px;
     }
     &:last-child {
       height: 11px;
+      padding-top: 1px;
       border-top: solid 1px var(--jt-bg-input-border);
     }
 

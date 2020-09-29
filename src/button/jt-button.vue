@@ -56,7 +56,7 @@ export default {
   color: var(--jt-text);
 	font-family: inherit;
   font-size: 14px;
-  padding: 4px 8px;
+  padding: 4px 6px;
   border-radius: 3px;
   cursor: pointer;
   user-select: none;

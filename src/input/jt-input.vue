@@ -15,6 +15,7 @@
       :class="{
         'not-empty': showNotEmpty && text !== '',
         'rounded': rounded,
+        'flat': flat,
       }"
       :style="{
         padding: convertSizeToCSS(padding),
@@ -59,11 +60,12 @@ import { convertSizeToCSS } from '../utils'
 export default {
   name: 'JtInput',
   props: {
-    value: { type: String, default: '' },
+    value: { type: [String, Number], default: '' },
     width: { type: [Number, String], default: '' },
-    padding: { type: [Number, String], default: '4' },
+    padding: { type: [Number, String], default: '2 3' },
     icon: { type: String, default: '' },
     type: { type: String, default: '' }, // text, password
+    flat: { type: Boolean, default: false },
     rounded: { type: Boolean, default: false },
     showClear: { type: Boolean, default: false },
     showNotEmpty: { type: Boolean, default: false },
@@ -113,6 +115,8 @@ export default {
   box-sizing: border-box;
   display: inline-block;
   font-size: 14px;
+  vertical-align: top;
+  line-height: 1;
 }
 .jt-input-container {
   box-sizing: border-box;
@@ -121,9 +125,9 @@ export default {
   border: solid 1px;
   width: 100%;
   // height: 24px;
-  padding: 4px;
-  line-height: 1em;
-  vertical-align: top;
+  // padding: 4px;
+  // line-height: 1em;
+  // vertical-align: top;
 
   transition:
     color var(--jt-duration),
@@ -132,9 +136,12 @@ export default {
   color: var(--jt-text);
   background-color: var(--jt-bg-input);
   border-color: var(--jt-bg-input-border);
-  &.not-empty {
-    background-color: var(--jt-bg-input-warning);
+  // flat - Note: need to have a lower priority than :focus
+  &.flat {
+    border-color: transparent;
+    background-color: transparent;
   }
+  // interaction
   &:focus {
     transition: background-color 0.1s;
     background-color: hsl(0, 0%, 100%);
@@ -143,6 +150,12 @@ export default {
     border-color: var(--jt-primary);
   }
 
+  // not-empty
+  &.not-empty {
+    background-color: var(--jt-bg-input-warning);
+  }
+
+  // rounded
   &.rounded {
     border-radius: 999px;
   }
@@ -153,9 +166,12 @@ export default {
     vertical-align: top;
     border: none;
     width: 100%;
-    height: 1em;
+    height: calc(1em + 4px);
     line-height: 1em;
+    // line-height: 1em;
     padding-left: 20px;
+    padding-top: 2px;
+    padding-bottom: 2px;
     outline: none;
     color: inherit;
     background-color: transparent;

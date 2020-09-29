@@ -94,7 +94,7 @@ export default {
 }
 .codes {
   font-size: 14px;
-  font-family: var(--jt-font-mono);
+  font-family: var(--jt-font-monospace);
   white-space: pre-wrap;
   padding: 10px;
   background-color: #234;
@@ -104,6 +104,7 @@ export default {
   border-top: none;
   padding: 4px 10px;
   color: var(--jt-text-sub);
+  line-height: 1;
   text-align: center;
   user-select: none;
   cursor: pointer;

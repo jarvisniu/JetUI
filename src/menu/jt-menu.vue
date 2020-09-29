@@ -101,6 +101,7 @@ $vertical-gap: 4px;
   color: var(--jt-text);
   background-color: var(--jt-bg-menu);
   z-index: 1;
+  line-height: 1;
 }
 .menu-item {
   cursor: default;

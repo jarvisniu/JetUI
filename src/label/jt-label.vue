@@ -53,5 +53,6 @@ export default {
   height: 24px;
   line-height: 24px;
   padding: 0 6px;
+  vertical-align: middle;
 }
 </style>

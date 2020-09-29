@@ -5,25 +5,28 @@
       <tr :key="'row-' + index" :class="{ striped: striped && (index % 2 == 1) }">
         <!-- expanding button cell -->
         <td v-if="expandColumn">
-          <jt-button type="flat" squared @click="row.$expanded = !row.$expanded">
-            <jt-icon :name="row.$expanded ? 'triangleDown' : 'triangleRight'"></jt-icon>
+          <jt-button type="flat" squared @click="row.$expandedRow = !row.$expandedRow">
+            <jt-icon :name="row.$expandedRow ? 'triangleDown' : 'triangleRight'"></jt-icon>
           </jt-button>
         </td>
         <!-- normal cells -->
         <td v-for="(column, cIndex) in columns" :key="cIndex" :style="{
-          paddingLeft: 6 + (cIndex == 0 ? level * 16 : 0) + 'px',
+          paddingLeft: 6 + (cIndex == 0 ? level * 28 : 0) + 'px',
+          textAlign: column.componentOptions.propsData.align,
         }">
-          <jt-icon clickable class="icon-expand-children"
-            v-if="isTreeTable && row[treeChildrenKey] && cIndex == 0"
-            :name="row.$expandedChildren ? 'minus' : 'plus'"
-            @click="row.$expandedChildren = !row.$expandedChildren"
-          ></jt-icon
-          ><jt-table-cell :index="index" :row="row" :column="column"></jt-table-cell>
+          <div class="jt-table-cell-wrapper">
+            <jt-button squared type="flat" padding="0" class="expand-children-button"
+              v-if="isTreeTable && row[treeChildrenKey] && cIndex == 0"
+              :icon="row.$expandedChildren ? 'minus' : 'plus'"
+              @click="row.$expandedChildren = !row.$expandedChildren"
+            ></jt-button
+            ><jt-table-cell :index="index" :row="row" :column="column"></jt-table-cell>
+          </div>
         </td>
       </tr>
       <!-- expandable row -->
       <!-- <jt-fold-transition :key="'expandable-' + index"> -->
-      <tr v-if="expandColumn && row.$expanded" :key="'expandable-' + index">
+      <tr v-if="expandColumn && row.$expandedRow" :key="'expandable-' + index">
         <td :colspan="columns.length + 1">
           <jt-table-cell :index="index" :row="row" :column="expandColumn"></jt-table-cell>
         </td>
@@ -66,7 +69,13 @@ export default {
 .jt-table-rows {
   display: contents;
 }
-.icon-expand-children {
-  margin-right: 2px;
+.expand-children-button {
+  margin-right: 4px;
+}
+.jt-table-cell-wrapper {
+  height: auto;
+  * {
+    vertical-align: middle;
+  }
 }
 </style>
