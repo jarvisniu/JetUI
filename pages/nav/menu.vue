@@ -80,11 +80,11 @@
                       },
                       {
                         label: 'Cut',
-                        shortcut: '⌘X',
+                        shortcut: '⌥X',
                       },
                       {
                         label: 'Copy',
-                        shortcut: '⌘C',
+                        shortcut: '⌃C',
                       },
                       {
                         label: 'Paste',
@@ -177,11 +177,11 @@ export default {
             },
             {
               label: 'Cut',
-              shortcut: '⌘X',
+              shortcut: '⌥X',
             },
             {
               label: 'Copy',
-              shortcut: '⌘C',
+              shortcut: '⌃C',
             },
             {
               label: 'Paste',

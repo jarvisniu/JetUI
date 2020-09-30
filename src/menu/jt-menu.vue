@@ -1,3 +1,5 @@
+// ⌘⇧⌥⌃►
+
 <template>
   <div
     :class="{ active: active }"
@@ -20,12 +22,13 @@
             @click="trigger(menu2)">
             <div class="button">
               <span>{{ menu2.label }}</span>
-              <span
+              <jt-icon
                 v-if="menu2.subs"
-                class="float-right">►</span>
-              <span
+                name="kbRight" class="jt-menu-right-icon"></jt-icon>
+              <jt-menu-shortcut
                 v-else-if="menu2.shortcut"
-                class="float-right">{{ menu2.shortcut }}</span>
+                :value="menu2.shortcut"
+              ></jt-menu-shortcut>
             </div>
             <ul
               v-if="menu2.subs"
@@ -55,8 +58,13 @@
 </template>
 
 <script>
+import JtMenuShortcut from './jt-menu-shortcut.vue'
+
 export default {
   name: 'JtMenu',
+  components: {
+    JtMenuShortcut,
+  },
   props: {
     data: { type: Array, required: true },
   },
@@ -197,5 +205,8 @@ $vertical-gap: 4px;
 .jt-menu.active li:hover > .menu-right {
   visibility: visible;
 }
-
+.jt-menu-right-icon {
+  float: right;
+  margin: 3px 0;
+}
 </style>
