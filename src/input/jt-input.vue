@@ -22,7 +22,7 @@
       }"
     >
       <!-- prepend icon -->
-      <div v-if="icon" class="icon">
+      <div v-if="icon" class="icon prepend">
         <jt-icon :name="icon" margin="2"></jt-icon>
       </div>
       <!-- append icon -->
@@ -186,7 +186,6 @@ export default {
   background-size: 12px 12px;
   background-position: 3px 3px;
   background-repeat: no-repeat;
-  margin: -2px;
   line-height: 14px;
   text-align: center;
 
@@ -194,8 +193,12 @@ export default {
     border-radius: 999px;
   }
 
+  &.prepend {
+    left: 2px;
+  }
+
   &.clear {
-    right: 4px;
+    right: 2px;
     transition: background-color 0.15s, opacity 0.15s;
     &:hover {
       @media (hover: hover) {

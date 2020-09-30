@@ -26,10 +26,10 @@
     <jt-snippet>
       <template>
         <jt-table striped :data="basicTableData">
-          <jt-table-column label="姓名" prop="name" :width="120" sortable></jt-table-column>
-          <jt-table-column label="语文" prop="chinese" :width="80"  align="right" sortable></jt-table-column>
-          <jt-table-column label="数学" prop="math" :width="80"  align="right" sortable></jt-table-column>
-          <jt-table-column label="英语" prop="english" :width="80"  align="right" sortable></jt-table-column>
+          <jt-table-column label="姓名" prop="name" :width="120" align="center" sortable></jt-table-column>
+          <jt-table-column label="语文" prop="chinese" :width="80" align="right" sortable></jt-table-column>
+          <jt-table-column label="数学" prop="math" :width="80" align="right" sortable></jt-table-column>
+          <jt-table-column label="英语" prop="english" :width="80" align="right" sortable></jt-table-column>
           <jt-table-column label="总分" :prop="scope => scope.row.chinese + scope.row.math + scope.row.english" sortable></jt-table-column>
         </jt-table>
       </template>
@@ -200,7 +200,7 @@
         <jt-table tree :data="treeData">
           <!-- Name -->
           <jt-table-column label="WebAPI" width="auto">
-            <jt-input slot-scope="scope" width="250" v-model="scope.row.name"></jt-input>
+            <jt-input slot-scope="scope" width="100%" v-model="scope.row.name"></jt-input>
           </jt-table-column>
           <!-- Chrome -->
           <jt-table-column label="Chrome" :width="150">

@@ -22,10 +22,9 @@
         <th
           v-for="(column, index) in columns"
           :key="index"
-          :class="{ sortable: isColumnSortable(column) }"
-          :style="{
-            textAlign: column.componentOptions.propsData.align,
-          }"
+          :class="[`align-${column.componentOptions.propsData.align}`, {
+            sortable: isColumnSortable(column),
+          }]"
           @click="onClickHead(index)"
         >
           <span>{{column.componentOptions.propsData.label}}</span>
@@ -218,8 +217,28 @@ export default {
       }
     }
 
+    &.align-right {
+      text-align: right;
+    }
+    &.align-center {
+      text-align: center;
+    }
+
     .sort-icon {
       float: right;
+    }
+  }
+  // td
+  td {
+    &.align-right {
+      .jt-table-cell {
+        justify-content: flex-end;
+      }
+    }
+    &.align-center {
+      .jt-table-cell {
+        justify-content: center;
+      }
     }
   }
 }

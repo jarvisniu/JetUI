@@ -19,7 +19,7 @@ module.exports = {
       { hid: 'description', name: 'description', content: pkg.description }
     ],
     link: [
-      { rel: 'icon', type: 'image/png', href: '/favicon.png' }
+      { rel: 'icon', type: 'image/png', href: '/jet-ui.png' }
     ]
   },
   // Customize the progress-bar color

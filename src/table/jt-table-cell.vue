@@ -21,7 +21,15 @@ export default {
     },
   },
   render (h) {
-    return h('div', { style: { display: 'inline-block' } }, this.getContent())
+    return h('div', { class: 'jt-table-cell' }, this.getContent())
   },
 }
 </script>
+
+<style lang="scss" scoped>
+.jt-table-cell {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+</style>

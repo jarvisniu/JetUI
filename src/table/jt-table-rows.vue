@@ -10,10 +10,13 @@
           </jt-button>
         </td>
         <!-- normal cells -->
-        <td v-for="(column, cIndex) in columns" :key="cIndex" :style="{
-          paddingLeft: 6 + (cIndex == 0 ? level * 28 : 0) + 'px',
-          textAlign: column.componentOptions.propsData.align,
-        }">
+        <td
+          v-for="(column, cIndex) in columns" :key="cIndex"
+          :class="`align-${column.componentOptions.propsData.align}`"
+          :style="{
+            paddingLeft: 6 + (cIndex == 0 ? level * 28 : 0) + 'px',
+          }"
+        >
           <div class="jt-table-cell-wrapper">
             <jt-button squared type="flat" padding="0" class="expand-children-button"
               v-if="isTreeTable && row[treeChildrenKey] && cIndex == 0"
@@ -73,6 +76,7 @@ export default {
   margin-right: 4px;
 }
 .jt-table-cell-wrapper {
+  display: flex;
   height: auto;
   * {
     vertical-align: middle;
