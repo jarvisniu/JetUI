@@ -39,7 +39,6 @@
         </td>
       </tr>
       <!-- expandable row -->
-      <!-- <jt-fold-transition :key="'expandable-' + index"> -->
       <tr v-if="expandColumn && row.$expandedRow" :key="'expandable-' + index">
         <td :colspan="columns.length + 1">
           <jt-table-cell
@@ -50,10 +49,11 @@
           ></jt-table-cell>
         </td>
       </tr>
-      <!-- </jt-fold-transition> -->
       <!-- children rows -->
       <jt-table-rows
-        v-if="isTreeTable && row[treeChildrenKey] && row.$expandedChildren" :key="'children-' + index"
+        v-if="isTreeTable && row[treeChildrenKey]"
+        v-show="row.$expandedChildren"
+        :key="'children-' + index"
         :list="row[treeChildrenKey]" :level="level + 1"
         :columns="columns" :expandColumn="expandColumn"
         :striped="striped" :is-tree-table="isTreeTable" :tree-children-key="treeChildrenKey"

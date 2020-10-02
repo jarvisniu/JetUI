@@ -22,7 +22,7 @@
             <jt-button
               v-for="hue in primaryHues" :key="hue.value"
               :selected="selPrimaryHue === hue.value"
-              squared width="32"
+              squared width="32" height="24"
               @click="selPrimaryHue = hue.value"
             >
             <jt-border all inline style="width: 100%; height: 100%">
@@ -51,8 +51,8 @@
           </div>
         </div>
       </jt-scroll-view>
-      <jt-scroll-view slot="content" style="height: 100%;">
-        <div style="padding: 10px; overflow-x: auto;">
+      <jt-scroll-view slot="content" style="height: 100%;" height="100%">
+        <div style="padding: 10px; overflow-x: auto; height: 100%">
           <router-view></router-view>
         </div>
       </jt-scroll-view>

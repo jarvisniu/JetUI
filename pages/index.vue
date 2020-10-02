@@ -5,7 +5,7 @@
 <script>
 export default {
   created() {
-    this.$router.push('/intro/gallery')
+    this.$router.replace('/intro/gallery')
   },
 }
 </script>

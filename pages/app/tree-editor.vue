@@ -1,49 +1,62 @@
 <template>
-  <div>
-    <h2>Tree Table Editor</h2>
+  <div class="app-tree-editor">
     <div class="row">
       <div class="left">
-        <jt-border left top right>
-          <jt-toolbar>
-            <jt-button icon="plus" style="float: right" @click="addTopNode()"></jt-button>
-          </jt-toolbar>
+        <jt-border all style="height: 100%">
+          <jt-panel title="Tree Table Editor">
+            <div slot="control">
+              <jt-panel-button @click="addTopNode">
+                <jt-icon name="plus"></jt-icon>
+                <span>Add</span>
+              </jt-panel-button>
+            </div>
+            <div style="padding: 10px; height: 100%; overflow-y: scroll;">
+              <jt-table tree :data="treeData">
+                <!-- Name -->
+                <jt-table-column label="Name" width="auto">
+                  <jt-input slot-scope="scope" width="100%" v-model="scope.row.name"></jt-input>
+                </jt-table-column>
+                <!-- Field1 -->
+                <jt-table-column label="Field 1" :width="100">
+                  <div slot-scope="scope">
+                    <jt-input v-model="scope.row.field1"></jt-input>
+                  </div>
+                </jt-table-column>
+                <!-- Field2 -->
+                <jt-table-column label="Field 2" prop="field2" :width="100">
+                  <div slot-scope="scope">
+                    <jt-input v-model="scope.row.field2"></jt-input>
+                  </div>
+                </jt-table-column>
+                <!-- Field2 -->
+                <jt-table-column label="Field 3" prop="field3" :width="100">
+                  <div slot-scope="scope">
+                    <jt-input v-model="scope.row.field3"></jt-input>
+                  </div>
+                </jt-table-column>
+                <!-- Operations -->
+                <jt-table-column label="Operations" :width="160" align="center">
+                  <div slot-scope="scope">
+                    <jt-button icon="plus" @click="addChild(scope.row)"></jt-button>
+                    <jt-button icon="close" @click="remove(scope)"></jt-button>
+                    <jt-button icon="triangleUp" :disabled="scope.index == 0" @click="moveUp(scope)"></jt-button>
+                    <jt-button icon="triangleDown" :disabled="scope.index == scope.parentList.length - 1" @click="moveDown(scope)"></jt-button>
+                  </div>
+                </jt-table-column>
+              </jt-table>
+            </div>
+          </jt-panel>
         </jt-border>
-        <jt-table tree :data="treeData">
-          <!-- Name -->
-          <jt-table-column label="WebAPI" width="auto">
-            <jt-input slot-scope="scope" width="100%" v-model="scope.row.name"></jt-input>
-          </jt-table-column>
-          <!-- Field1 -->
-          <jt-table-column label="Field1" :width="100">
-            <div slot-scope="scope">
-              <jt-input v-model="scope.row.field1"></jt-input>
-            </div>
-          </jt-table-column>
-          <!-- Field2 -->
-          <jt-table-column label="Field2" prop="field2" :width="100">
-            <div slot-scope="scope">
-              <jt-input v-model="scope.row.field2"></jt-input>
-            </div>
-          </jt-table-column>
-          <!-- Field2 -->
-          <jt-table-column label="Field3" prop="field3" :width="100">
-            <div slot-scope="scope">
-              <jt-input v-model="scope.row.field3"></jt-input>
-            </div>
-          </jt-table-column>
-          <!-- Operations -->
-          <jt-table-column label="Op" :width="160" align="center">
-            <div slot-scope="scope">
-              <jt-button icon="plus" @click="addChild(scope.row)"></jt-button>
-              <jt-button icon="close" @click="remove(scope)"></jt-button>
-              <jt-button icon="triangleUp" :disabled="scope.index == 0" @click="moveUp(scope)"></jt-button>
-              <jt-button icon="triangleDown" :disabled="scope.index == scope.parentList.length - 1" @click="moveDown(scope)"></jt-button>
-            </div>
-          </jt-table-column>
-        </jt-table>
       </div>
       <div class="right">
-        <textarea class="input-area" v-text="treeData"></textarea>
+        <jt-border top right bottom style="height: 100%">
+          <jt-panel title="JSON">
+            <div slot="control">
+              <jt-panel-button @click="load">Load</jt-panel-button>
+            </div>
+            <textarea ref="textarea" class="input-area" :value="treeDataValue"></textarea>
+          </jt-panel>
+        </jt-border>
       </div>
     </div>
 </div>
@@ -56,7 +69,16 @@ export default {
       treeData: [],
     }
   },
+  computed: {
+    treeDataValue() {
+      return JSON.stringify(this.treeData, null, 2)
+    },
+  },
   methods: {
+    load() {
+      this.treeData = JSON.parse(this.$refs.textarea.value)
+    },
+    // node operations
     newTreeNode() {
       return {
         $expandedRow: false,
@@ -91,16 +113,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.app-tree-editor {
+  height: 100%;
+}
 .row {
   display: flex;
-  padding: 5px;
+  height: 100%;
 
   .left {
-    margin: 5px;
     width: 70%;
   }
   .right {
-    margin: 5px;
     width: 30%;
   }
 }
@@ -111,9 +134,11 @@ export default {
   height: 100%;
   font-size: 12px;
   font-family: var(--jt-font-monospace);
-  border: solid 1px var(--jt-border);
+  // border: solid 1px var(--jt-border);
+  border: none;
   color: var(--jt-text);
   background-color: var(--jt-bg-container);
   resize: none;
+  vertical-align: top;
 }
 </style>

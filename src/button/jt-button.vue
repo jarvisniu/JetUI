@@ -8,6 +8,7 @@
     }]"
     :style="{
       width: convertSizeToCSS(width),
+      height: convertSizeToCSS(height),
     }"
     @click="$emit('click')"
   >
@@ -31,6 +32,7 @@ export default {
     selected: { type: Boolean, default: false },
     squared: { type: Boolean, default: false },
     width: { type: [Number, String], default: '' },
+    height: { type: [Number, String], default: '' },
   },
   computed: {
     isIconImage() {
@@ -49,7 +51,7 @@ export default {
   display: inline-block;
   border: solid 1px var(--jt-border);
   background-color: var(--jt-bg-button);
-  height: 24px;
+  // height: 24px;
   line-height: 1;
   vertical-align: top;
   text-align: center;
@@ -144,10 +146,10 @@ export default {
 }
 
 .image-icon {
-  width: 14px;
-  height: 14px;
+  width: 1em;
+  height: 1em;
   object-fit: contain;
-    vertical-align: top;
+  vertical-align: top;
 }
 
 // Gap between multiple buttons

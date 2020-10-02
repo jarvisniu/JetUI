@@ -2,6 +2,9 @@
   <div class="jt-scroll-view" :class="scroll">
     <div class="jt-scroll-view-container" :class="scroll">
       <jt-border
+        :style="{
+          height: convertSizeToCSS(height),
+        }"
         :bottom="scroll == 'x'"
         :right="scroll == 'y'"
       >
@@ -17,10 +20,16 @@
 </template>
 
 <script>
+import { convertSizeToCSS } from '../utils'
+
 export default {
   name: 'JtScrollView',
   props: {
     scroll: { type: String, default: 'y' }, // x, both
+    height: { type: [Number, String], default: 'y' }, // x, both
+  },
+  methods: {
+    convertSizeToCSS,
   },
 }
 </script>
