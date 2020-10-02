@@ -4,11 +4,12 @@ export default {
     index: { type: Number, required: true },
     row: { type: Object, required: true },
     column: { type: Object, required: true },
+    parentList: { type: Array, required: true },
   },
   methods: {
     getContent () {
       let instance = this.column.componentInstance
-      let prop = this.column.componentOptions.propsData.prop
+      let prop = this.column.componentInstance.prop
       if (instance.$scopedSlots.default) {
         return instance.$scopedSlots.default(this)
       } else if (instance.$slots.default) {
@@ -29,7 +30,6 @@ export default {
 <style lang="scss" scoped>
 .jt-table-cell {
   display: flex;
-  width: 100%;
   align-items: center;
 }
 </style>

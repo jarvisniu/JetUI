@@ -12,18 +12,29 @@
         <!-- normal cells -->
         <td
           v-for="(column, cIndex) in columns" :key="cIndex"
-          :class="`align-${column.componentOptions.propsData.align}`"
+          :class="`align-${column.componentInstance.align}`"
           :style="{
             paddingLeft: 6 + (cIndex == 0 ? level * 28 : 0) + 'px',
           }"
         >
           <div class="jt-table-cell-wrapper">
-            <jt-button squared type="flat" padding="0" class="expand-children-button"
-              v-if="isTreeTable && row[treeChildrenKey] && cIndex == 0"
-              :icon="row.$expandedChildren ? 'minus' : 'plus'"
-              @click="row.$expandedChildren = !row.$expandedChildren"
-            ></jt-button
-            ><jt-table-cell :index="index" :row="row" :column="column"></jt-table-cell>
+            <template v-if="isTreeTable && cIndex == 0">
+              <jt-button squared type="flat" padding="0" class="expand-children-button"
+                v-if="row[treeChildrenKey] && row[treeChildrenKey].length > 0"
+                :icon="row.$expandedChildren ? 'minus' : 'plus'"
+                @click="row.$expandedChildren = !row.$expandedChildren"
+              ></jt-button>
+              <jt-button disabled squared type="flat" padding="0"
+                v-else
+                class="expand-children-button" icon="dot"
+              ></jt-button>
+            </template
+            ><jt-table-cell
+              :index="index"
+              :row="row"
+              :column="column"
+              :parent-list="list"
+            ></jt-table-cell>
           </div>
         </td>
       </tr>
@@ -31,7 +42,12 @@
       <!-- <jt-fold-transition :key="'expandable-' + index"> -->
       <tr v-if="expandColumn && row.$expandedRow" :key="'expandable-' + index">
         <td :colspan="columns.length + 1">
-          <jt-table-cell :index="index" :row="row" :column="expandColumn"></jt-table-cell>
+          <jt-table-cell
+            :index="index"
+            :row="row"
+            :column="expandColumn"
+            :parent-list="list"
+          ></jt-table-cell>
         </td>
       </tr>
       <!-- </jt-fold-transition> -->
@@ -65,10 +81,19 @@ export default {
     isTreeTable: { type: Boolean, default: false, },
     treeChildrenKey: { type: String, default: 'children' },
   },
+  methods: {
+    getExpandChildrenIcon(row) {
+      if (row[this.treeChildrenKey] && row[this.treeChildrenKey].length > 0) {
+        return row.$expandedChildren ? 'minus' : 'plus'
+      } else {
+        return 'dot'
+      }
+    },
+  },
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .jt-table-rows {
   display: contents;
 }
@@ -78,8 +103,12 @@ export default {
 .jt-table-cell-wrapper {
   display: flex;
   height: auto;
+
   * {
     vertical-align: middle;
+  }
+  .jt-table-cell {
+    flex: 1;
   }
 }
 </style>

@@ -34,7 +34,7 @@
         class="icon clear"
         @click="text = ''"
       >
-        <jt-icon name="cross" margin="2"></jt-icon>
+        <jt-icon name="close" margin="2"></jt-icon>
       </div>
       <input
         ref="input"

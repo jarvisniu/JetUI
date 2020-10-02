@@ -117,6 +117,9 @@ export default {
           { name: 'Menu', path: '/nav/menu' },
           { name: 'Breadcrumb', path: '/nav/breadcrumb' },
         ] },
+        { name: 'App', pages: [
+          { name: 'Tree Editor', path: '/app/tree-editor' },
+        ] },
       ],
     }
   },

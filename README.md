@@ -2,14 +2,32 @@
 
 JetBrains style Vue UI components
 
-[docs](http://niujunwei.com/jet-ui/) - [npm](https://www.npmjs.com/package/jet-ui)
 
 ![](screenshot.png)
 
-## Features
+## Demo
 
-- Theme: light & dark
-- High-definition screen support
+[Demo](http://niujunwei.com/jet-ui/)
+
+## Usage
+
+Install:
+```sh
+npm install jet-ui
+```
+
+Import:
+```js
+import Vue from 'vue'
+import JetUI from 'jet-ui'
+
+Vue.use(JetUI)
+```
+
+Use:
+```html
+<jt-button>OK<jt-button>
+```
 
 ## License
 

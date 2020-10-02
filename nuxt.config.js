@@ -31,6 +31,7 @@ module.exports = {
     "~styles/main.scss",
   ],
   plugins: [
+    "~plugins/jet-ui.js"
   ],
   // Nuxt.js modules
   modules: [

@@ -22,17 +22,22 @@
         <th
           v-for="(column, index) in columns"
           :key="index"
-          :class="[`align-${column.componentOptions.propsData.align}`, {
+          :class="{
             sortable: isColumnSortable(column),
-          }]"
+          }"
           @click="onClickHead(index)"
         >
-          <span>{{column.componentOptions.propsData.label}}</span>
-          <jt-icon
-            v-show="getSortIconName(index)"
-            class="sort-icon" size="16"
-            :name="getSortIconName(index)"
-          ></jt-icon>
+          <div
+            class="jt-table-th-wrapper"
+            :class="`align-${column.componentInstance.align}`"
+          >
+            <div class="jt-table-th-cell">{{column.componentInstance.label}}</div>
+            <jt-icon
+              v-show="getSortIconName(index)"
+              class="sort-icon"
+              :name="getSortIconName(index)"
+            ></jt-icon>
+          </div>
         </th>
       </tr>
       <!-- rows -->
@@ -107,7 +112,7 @@ export default {
         }
       }
     })
-    // console.log('this.columns', this.columns)
+    // console.log('table columns', this.columns)
     this.sortColumnIndex = _findIndex(this.columns, this.isColumnSortable)
     // console.log('sortColumnIndex', this.sortColumnIndex)
     treeProcessor.traverse(this.data, ({ node }) => {
@@ -127,11 +132,11 @@ export default {
       }
     },
     isColumnSortable (column) {
-      let val = column.componentOptions.propsData.sortable
+      let val = column.componentInstance.sortable
       return val === true || val === ''
     },
     getCellContentAtColumn (row, column) {
-      let prop = column.componentOptions.propsData.prop
+      let prop = column.componentInstance.prop
       if (typeof prop === 'string') {
         return row[prop]
       } else if (typeof prop === 'function') {
@@ -142,7 +147,7 @@ export default {
       }
     },
     getColumnWidth (column) {
-      let widthProp = column.componentOptions.propsData.width
+      let widthProp = column.componentInstance.width
       if (widthProp > -1) {
         return widthProp
       } else {
@@ -185,7 +190,8 @@ export default {
   }
   th, td {
     padding: 4px 6px;
-    height: 33px; // as min-height
+    // In <td></td>, use height as min-height
+    height: 23px; // 33px with controls in
     vertical-align: middle;
     & > * {
       vertical-align: middle;
@@ -217,15 +223,8 @@ export default {
       }
     }
 
-    &.align-right {
-      text-align: right;
-    }
-    &.align-center {
-      text-align: center;
-    }
-
     .sort-icon {
-      float: right;
+      font-size: 1em;
     }
   }
   // td
@@ -240,6 +239,23 @@ export default {
         justify-content: center;
       }
     }
+  }
+}
+
+// th-wrapper
+.jt-table-th-wrapper {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  &.align-right {
+    justify-content: flex-end;
+  }
+  &.align-center {
+    justify-content: center;
+  }
+
+  .jt-table-th-cell {
+    flex: 1;
   }
 }
 </style>
