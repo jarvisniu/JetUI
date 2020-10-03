@@ -5,7 +5,7 @@
     @click="$emit('input', value)"
   >
     <span class="indicator" :class="{ checked: boundVal == value }"></span
-    ><span v-if="label"  class="label">{{ label }}</span>
+    ><span v-if="label != null"  class="label">{{ label }}</span>
   </div>
 </template>
 

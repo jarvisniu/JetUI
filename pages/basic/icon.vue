@@ -6,6 +6,7 @@
     <ul>
       <li>Color</li>
       <li>Size, Width, Height</li>
+      <li>Rotation</li>
       <li>Custom Path and ViewBox</li>
     </ul>
 
@@ -38,6 +39,25 @@
       </template>
       <textarea slot="code">
         <jt-icon name="plus" size="32"></jt-icon>
+      </textarea>
+    </jt-snippet>
+
+    <h2>Rotation</h2>
+    <jt-snippet>
+      <template>
+        <jt-border all>
+          <jt-toolbar>
+            <jt-label>Rotate</jt-label>
+            <jt-radio
+              v-for="val in [0, 90, 180, 270]" :key="val"
+              v-model="rotate" :value="val" :label="val"
+            ></jt-radio>
+          </jt-toolbar>
+        </jt-border>
+        <jt-icon name="triangleRight" size="32" :rotate="rotate"></jt-icon>
+      </template>
+      <textarea slot="code">
+        <jt-icon name="triangleRight" size="32" :rotate="rotate"></jt-icon>
       </textarea>
     </jt-snippet>
 
@@ -94,6 +114,7 @@ import allIcons from '../../src/icon/icon-paths'
 export default {
   data() {
     return {
+      rotate: 0,
       allIcons,
     }
   },

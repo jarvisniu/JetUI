@@ -3,10 +3,10 @@
     <template v-for="(row, index) in list">
       <!-- normal row -->
       <tr :key="'row-' + index" :class="{ striped: striped && (index % 2 == 1) }">
-        <!-- expanding button cell -->
+        <!-- expand row button cell -->
         <td v-if="expandColumn">
           <jt-button type="flat" squared @click="row.$expandedRow = !row.$expandedRow">
-            <jt-icon :name="row.$expandedRow ? 'triangleDown' : 'triangleRight'"></jt-icon>
+            <jt-icon name="triangleRight" :rotate="row.$expandedRow ? 90 : 0"></jt-icon>
           </jt-button>
         </td>
         <!-- normal cells -->

@@ -4,6 +4,7 @@
     :class="{ clickable: clickable }"
     :style="{
       margin: convertSizeToCSS(margin),
+      transform: myTransform,
     }"
     @click="$emit('click', $event)"
   >
@@ -32,12 +33,16 @@ export default {
     color: { type: String, default: '' },
     viewBox: { type: String, default: '0 0 16 16' },
     size: { type: [Number, String], default: 14 },
+    rotate: { type: [Number, String], default: 0 },
     margin: { type: [Number, String], default: '' },
     width: { type: [Number, String], default: 0 },
     height: { type: [Number, String], default: 0 },
     clickable: { type: Boolean, default: false },
   },
   computed: {
+    myTransform() {
+      return `rotate(${this.rotate}deg)`
+    },
     myPathData() {
       if (this.name && iconPaths[this.name]) {
         return iconPaths[this.name].d
@@ -73,6 +78,7 @@ export default {
   line-height: 1;
   user-select: none;
   // color: var(--jt-icon); // TODO Not suitable for button primary
+  transition: transform var(--jt-duration);
 
   &.clickable {
     cursor: pointer;
