@@ -9,9 +9,15 @@
 
     <h2>Basic</h2>
     <jt-snippet>
+      <jt-border all style="margin-bottom: 10px">
+        <jt-toolbar>
+          <jt-label>Props:</jt-label>
+          <jt-switch v-model="hightlightTitle" label="Highlight title"></jt-switch>
+        </jt-toolbar>
+      </jt-border>
       <template>
         <jt-border inline all>
-          <jt-panel title="Message" style="width: 400px;">
+          <jt-panel title="Message" :highlight-title="hightlightTitle" style="width: 400px;">
             <div style="padding: 10px;">
               Hello World!
             </div>
@@ -110,6 +116,7 @@ export default {
     return {
       isHTML: true,
       show: true,
+      hightlightTitle: true,
     }
   },
 }

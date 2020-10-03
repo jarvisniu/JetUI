@@ -1,5 +1,8 @@
 <template>
   <div class="jt-panel" tabindex="0"
+    :class="{
+      'highlight-table': highlightTitle,
+    }"
     :style="{
       height: height == 0 ? '' : (fold ? '' : convertSizeToCSS(height)),
     }">
@@ -29,6 +32,7 @@ export default {
     title: { type: String, default: '' },
     fold: { type: Boolean, default: false },
     height: { type: [Number, String], default: 0 },
+    highlightTitle: { type: Boolean, default: true },
   },
   methods: {
     convertSizeToCSS,
@@ -60,7 +64,7 @@ export default {
   color: var(--jt-text);
   background: var(--jt-bg-panel-title);
 
-  .jt-panel:focus-within & {
+  .jt-panel.highlight-table:focus-within & {
     filter: sepia(25%) hue-rotate(10deg);
   }
   .default-title-label {
