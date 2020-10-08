@@ -17,9 +17,9 @@
                   <jt-input slot-scope="scope" width="100%" v-model="scope.row.name"></jt-input>
                 </jt-table-column>
                 <!-- Field1 -->
-                <jt-table-column label="Field 1" :width="100">
-                  <div slot-scope="scope">
-                    <jt-input v-model="scope.row.field1"></jt-input>
+                <jt-table-column label="Field 1" :width="250">
+                  <div slot-scope="scope" style="width: 100%">
+                    <jt-input v-model="scope.row.field1" width="100%"></jt-input>
                   </div>
                 </jt-table-column>
                 <!-- Field2 -->
@@ -121,10 +121,10 @@ export default {
   height: 100%;
 
   .left {
-    width: 70%;
+    width: 80%;
   }
   .right {
-    width: 30%;
+    width: 20%;
   }
 }
 .input-area {

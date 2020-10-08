@@ -197,9 +197,18 @@ export default {
       vertical-align: middle;
     }
   }
-  // tr.striped
-  tr.striped {
-    background-color: var(--jt-bg-container-dark);
+  // tr
+  tr {
+    transition: background-color var(--jt-duration);
+    &:hover {
+      background-color: var(--jt-bg-container-dark);
+    }
+    &.striped {
+      background-color: var(--jt-bg-container-dark);
+      &:hover {
+        background-color: var(--jt-bg-container-darker);
+      }
+    }
   }
   // th
   th {

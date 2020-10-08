@@ -319,6 +319,8 @@
 
 <style lang="scss" scoped>
 .position-table {
+  margin: 0 150px;
+
   .jt-button {
     width: 100px;
   }

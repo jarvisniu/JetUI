@@ -17,19 +17,15 @@
       </jt-border>
       <template>
         <jt-border inline all>
-          <jt-panel title="Message" :highlight-title="hightlightTitle" style="width: 400px;">
-            <div style="padding: 10px;">
-              Hello World!
-            </div>
+          <jt-panel title="Message" :highlight-title="hightlightTitle" padding="10" style="width: 400px;">
+            Hello World!
           </jt-panel>
         </jt-border>
       </template>
       <textarea slot="code">
         <jt-border inline all>
-          <jt-panel title="Message" style="width: 400px;">
-            <div style="padding: 10px;">
-              Hello World!
-            </div>
+          <jt-panel title="Message" :highlight-title="hightlightTitle" padding="10" style="width: 400px;">
+            Hello World!
           </jt-panel>
         </jt-border>
       </textarea>

@@ -17,7 +17,15 @@
         </slot>
       </div>
     </div>
-    <div class="jt-panel-body" :class="{fold: fold}">
+    <div
+      class="jt-panel-body"
+      :class="{
+        fold: fold,
+      }"
+      :style="{
+        padding: convertSizeToCSS(padding),
+      }"
+    >
       <slot></slot>
     </div>
   </div>
@@ -33,6 +41,7 @@ export default {
     fold: { type: Boolean, default: false },
     height: { type: [Number, String], default: 0 },
     highlightTitle: { type: Boolean, default: true },
+    padding: { type: [Number, String], default: null },
   },
   methods: {
     convertSizeToCSS,

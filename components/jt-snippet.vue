@@ -83,6 +83,7 @@ export default {
   border: solid 1px var(--jt-border);
   background-color: var(--jt-bg-container);
   padding: 10px;
+  overflow: auto;
 }
 .hidden-codes {
   display: none;
