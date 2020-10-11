@@ -1,5 +1,5 @@
 <template>
-  <div class="app-tree-editor">
+  <div class="page-app">
     <div class="row">
       <div class="left">
         <jt-border all style="height: 100%">
@@ -13,23 +13,26 @@
             <div style="padding: 10px; height: 100%; overflow-y: scroll;">
               <jt-table tree :data="treeData">
                 <!-- Name -->
-                <jt-table-column label="Name" width="auto">
-                  <jt-input slot-scope="scope" width="100%" v-model="scope.row.name"></jt-input>
+                <jt-table-column label="Name" width="300">
+                  <div slot-scope="scope" style="display: flex; width: 100%">
+                  <jt-label style="padding-left: 0; text-align: right">{{ scope.index + 1 }}.</jt-label>
+                  <jt-input style="flex: 1" v-model="scope.row.name"></jt-input>
+                  </div>
                 </jt-table-column>
                 <!-- Field1 -->
-                <jt-table-column label="Field 1" :width="250">
+                <jt-table-column label="Field 1" width="auto">
                   <div slot-scope="scope" style="width: 100%">
                     <jt-input v-model="scope.row.field1" width="100%"></jt-input>
                   </div>
                 </jt-table-column>
                 <!-- Field2 -->
-                <jt-table-column label="Field 2" prop="field2" :width="100">
+                <jt-table-column label="Field 2" prop="field2" width="150">
                   <div slot-scope="scope">
                     <jt-input v-model="scope.row.field2"></jt-input>
                   </div>
                 </jt-table-column>
                 <!-- Field2 -->
-                <jt-table-column label="Field 3" prop="field3" :width="100">
+                <jt-table-column label="Field 3" prop="field3" width="150">
                   <div slot-scope="scope">
                     <jt-input v-model="scope.row.field3"></jt-input>
                   </div>
@@ -113,7 +116,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.app-tree-editor {
+.page-app {
   height: 100%;
 }
 .row {
@@ -121,10 +124,10 @@ export default {
   height: 100%;
 
   .left {
-    width: 80%;
+    flex: 1;
   }
   .right {
-    width: 20%;
+    width: 100px;
   }
 }
 .input-area {

@@ -7,7 +7,7 @@
       <jt-scroll-view class="sidebar" style="height: 100%;">
         <div style="padding: 10px;">
           <div class="title">jet-ui docs</div>
-          <div class="version">v{{version}}</div>
+          <div class="version" @dblclick="toggleShowApp">v{{version}}</div>
 
           <jt-button-group sharp>
             <jt-button
@@ -35,19 +35,21 @@
           </jt-button-group>
 
           <div v-for="(pageGroup, groupIndex) in pageGroups" :key="groupIndex">
-            <div class="section-title">{{ pageGroup.name }}</div>
-            <div
-              class="page-link"
-              v-for="(page, pageIndex) in pageGroup.pages"
-              :key="pageIndex"
-            >
-              <span style="padding-right: 4px;">·</span><router-link
-                :to="page.path"
-                :class="{selected: $route.path == page.path}"
+            <template v-if="pageGroup.name != 'App' || showApp">
+              <div class="section-title">{{ pageGroup.name }}</div>
+              <div
+                class="page-link"
+                v-for="(page, pageIndex) in pageGroup.pages"
+                :key="pageIndex"
               >
-                <span>{{ page.name }}</span>
-              </router-link>
-            </div>
+                <span style="padding-right: 4px;">·</span><router-link
+                  :to="page.path"
+                  :class="{selected: $route.path == page.path}"
+                >
+                  <span>{{ page.name }}</span>
+                </router-link>
+              </div>
+            </template>
           </div>
         </div>
       </jt-scroll-view>
@@ -67,6 +69,7 @@ export default {
   data() {
     return {
       version: pkg.version,
+      showApp: !!window.localStorage.showApp,
       themes: [
         { label: 'Light', value: 'light' },
         { label: 'Dark', value: 'dark' },
@@ -81,6 +84,10 @@ export default {
       ],
       selPrimaryHue: 180,
       pageGroups: [
+        { name: 'App', pages: [
+          { name: 'Tree Editor', path: '/app/tree-editor' },
+          { name: 'Standard Libraries', path: '/app/standard-libraries' },
+        ] },
         { name: 'Intro', pages: [
           { name: 'Gallery', path: '/intro/gallery' },
           { name: 'Design', path: '/intro/design' },
@@ -117,9 +124,6 @@ export default {
           { name: 'Menu', path: '/nav/menu' },
           { name: 'Breadcrumb', path: '/nav/breadcrumb' },
         ] },
-        { name: 'App', pages: [
-          { name: 'Tree Editor', path: '/app/tree-editor' },
-        ] },
       ],
     }
   },
@@ -134,6 +138,17 @@ export default {
   mounted() {
     // enable css :active on some mobile browser
     document.addEventListener("touchstart", function() {}, false);
+  },
+  methods: {
+    toggleShowApp() {
+      if (!this.showApp) {
+        this.showApp = true
+        window.localStorage.showApp = '1'
+      } else {
+        this.showApp = false
+        window.localStorage.showApp = ''
+      }
+    },
   },
 }
 </script>
@@ -171,6 +186,7 @@ export default {
     font-size: 14px;
     color: var(--jt-text-sub);
     padding: 5px 0 10px 0;
+    user-select: none;
   }
   .section-title {
     font-size: 18px;
