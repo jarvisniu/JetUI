@@ -51,8 +51,7 @@
       </tr>
       <!-- children rows -->
       <jt-table-rows
-        v-if="isTreeTable && row[treeChildrenKey]"
-        v-show="row.$expandedChildren"
+        v-if="isTreeTable && row[treeChildrenKey] && row.$expandedChildren"
         :key="'children-' + index"
         :list="row[treeChildrenKey]" :level="level + 1"
         :columns="columns" :expandColumn="expandColumn"

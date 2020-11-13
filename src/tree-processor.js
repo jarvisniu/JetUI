@@ -23,27 +23,30 @@ function getTreeList(tree, childrenKey) {
   }
   return tree
 }
+async function traverse(tree, visit, childrenKey = 'children') {
+  const rootIsList = Array.isArray(tree)
+  const rootNode = rootIsList ? wrapToNode(tree, childrenKey) : tree
+  await _traverse(rootNode)
 
-function traverse(tree, fn, childrenKey = 'children') {
-  const list = getTreeList(tree, childrenKey)
-  _traverse(list)
-
-  function _traverse(list, level = 0) {
-    list.forEach((item, index) => {
-      fn({
+  async function _traverse(node, level = 0) {
+    const list = node[childrenKey]
+    if (list == null) return
+    for(let i = 0; i < list.length; i++) {
+      const item = list[i]
+      await visit({
         node: item,
-        parentList: list,
+        index: i,
         level,
-        index,
+        parent: rootIsList && level === 0 ? null : node,
+        list,
         count: list.length,
       })
       if (item[childrenKey]) {
-        _traverse(item[childrenKey], level + 1)
+        await _traverse(item, level + 1)
       }
-    })
+    }
   }
 }
-
 function trim(tree, fn, childrenKey = 'children') {
   const list = getTreeList(tree, childrenKey)
   _traverse(list)
@@ -63,6 +66,14 @@ function trim(tree, fn, childrenKey = 'children') {
     })
   }
 }
+
+// private --------------------------------------------------------------------
+
+function wrapToNode(arr, childrenKey) {
+  return { [childrenKey]: arr }
+}
+
+// export ---------------------------------------------------------------------
 
 export default {
   buildFromList,

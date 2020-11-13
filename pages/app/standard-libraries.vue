@@ -1,92 +1,82 @@
 <template>
   <div class="page-app">
-    <div class="row">
-      <div class="left">
-        <jt-border all style="height: 100%">
-          <jt-panel title="Standard Libraries">
-            <div slot="control">
-              <!-- Panel Buttons -->
-              <jt-panel-button @click="expandAll">Expand All</jt-panel-button>
-              <jt-panel-button @click="foldAll">Fold All</jt-panel-button>
-              <jt-panel-button @click="addTopNode">
-                <jt-icon name="plus"></jt-icon>
-                <span>Add</span>
-              </jt-panel-button>
-            </div>
-            <div style="padding: 10px; height: 100%; overflow-y: scroll;">
-              <jt-table tree :data="treeData">
-                <!-- Name -->
-                <jt-table-column label="Name" :width="350">
-                  <div slot-scope="scope" style="width: 100%">
-                    <div style="display: flex;">
-                      <jt-input width="40%" style="margin-right: 4px" v-model="scope.row.name"></jt-input>
-                      <jt-input width="60%" style="margin-right: 4px" v-model="scope.row.enName"></jt-input>
-                      <jt-button icon="triangleUp" :disabled="scope.index == 0" @click="moveUp(scope)"></jt-button>
-                    </div>
-                    <div style="display: flex; padding-top: 4px">
-                      <jt-button icon="plus" @click="addChild(scope.row)"></jt-button>
-                      <jt-input style="flex: 1; margin: 0 4px" v-model="scope.row.desc"></jt-input>
-                      <jt-button icon="triangleDown" :disabled="scope.index == scope.parentList.length - 1" @click="moveDown(scope)"></jt-button>
-                    </div>
-                  </div>
-                </jt-table-column>
-                <!-- Package Names -->
-                <jt-table-column label="Package Names" width="auto">
-                  <div slot-scope="scope" style="width: 100%">
-                    <!-- 第一行：Go, Python, Julia -->
-                    <div style="display: flex; width: 100%">
-                      <img class="lang-icon" :src="iconGo">
-                      <jt-input v-model="scope.row.go" style="flex: 1"></jt-input>
-                      <img class="lang-icon" :src="iconPython">
-                      <jt-input v-model="scope.row.python" style="flex: 1"></jt-input>
-                      <img class="lang-icon" :src="iconJulia">
-                      <jt-input v-model="scope.row.julia" style="flex: 1"></jt-input>
-                      <img class="lang-icon" :src="iconLua">
-                      <jt-input v-model="scope.row.lua" style="flex: 1"></jt-input>
-                      <img class="lang-icon" :src="iconSwift">
-                      <jt-input v-model="scope.row.swift" style="flex: 1"></jt-input>
-                    </div>
-                    <!-- 第二行：Java, .NET -->
-                    <div style="display: flex; width: 100%; margin-top: 4px">
-                      <img class="lang-icon" :src="iconNode">
-                      <jt-input v-model="scope.row.node" style="flex: 1"></jt-input>
-                      <img class="lang-icon" :src="iconNet">
-                      <jt-input v-model="scope.row.net" style="flex: 1"></jt-input>
-                      <img class="lang-icon" :src="iconJava">
-                      <jt-input v-model="scope.row.java" style="flex: 1"></jt-input>
-                      <img class="lang-icon" :src="iconRust">
-                      <jt-input v-model="scope.row.rust" style="flex: 1"></jt-input>
-                      <img class="lang-icon" :src="iconRaku">
-                      <jt-input v-model="scope.row.raku" style="flex: 1"></jt-input>
-                    </div>
-                  </div>
-                </jt-table-column>
-                <!-- Operations -->
-                <jt-table-column label="Delete" :width="50" align="center">
-                  <div slot-scope="scope">
-                    <jt-button icon="close" @click="remove(scope)"></jt-button>
-                  </div>
-                </jt-table-column>
-              </jt-table>
-            </div>
-          </jt-panel>
-        </jt-border>
-      </div>
-      <div class="right">
-        <jt-border top right bottom style="height: 100%">
-          <jt-panel title="JSON">
-            <div slot="control">
-              <jt-panel-button @click="load">Load</jt-panel-button>
-            </div>
-            <textarea ref="textarea" class="input-area" :value="treeDataValue"></textarea>
-          </jt-panel>
-        </jt-border>
-      </div>
-    </div>
+    <jt-border all style="height: 100%">
+      <jt-panel title="Standard Libraries">
+        <div slot="control">
+          <!-- Panel Buttons -->
+          <jt-panel-button @click="load">Load</jt-panel-button>
+          <jt-panel-button @click="save">Save</jt-panel-button>
+          <jt-panel-button @click="expandAll">Expand All</jt-panel-button>
+          <jt-panel-button @click="foldAll">Fold All</jt-panel-button>
+          <jt-panel-button @click="addTopNode">
+            <jt-icon name="plus"></jt-icon>
+            <span>Add</span>
+          </jt-panel-button>
+        </div>
+        <div style="padding: 10px; height: 100%; overflow-y: scroll;">
+          <jt-table tree :data="treeData">
+            <!-- Name -->
+            <jt-table-column label="Name" :width="350">
+              <div slot-scope="scope" style="width: 100%">
+                <div style="display: flex;">
+                  <jt-input width="40%" style="margin-right: 4px" v-model="scope.row.name"></jt-input>
+                  <jt-input width="60%" style="margin-right: 4px" v-model="scope.row.enName"></jt-input>
+                  <jt-button icon="triangleUp" :disabled="scope.index == 0" @click="moveUp(scope)"></jt-button>
+                </div>
+                <div style="display: flex; padding-top: 4px">
+                  <jt-button icon="plus" @click="addChild(scope.row)"></jt-button>
+                  <jt-input style="flex: 1; margin: 0 4px" v-model="scope.row.desc"></jt-input>
+                  <jt-button icon="triangleDown" :disabled="scope.index == scope.parentList.length - 1" @click="moveDown(scope)"></jt-button>
+                </div>
+              </div>
+            </jt-table-column>
+            <!-- Package Names -->
+            <jt-table-column label="Package Names" width="auto">
+              <div slot-scope="scope" style="width: 100%">
+                <!-- 第一行：Go, Python, Julia -->
+                <div style="display: flex; width: 100%">
+                  <img class="lang-icon" :src="iconGo">
+                  <jt-input v-model="scope.row.go" style="flex: 1"></jt-input>
+                  <img class="lang-icon" :src="iconPython">
+                  <jt-input v-model="scope.row.python" style="flex: 1"></jt-input>
+                  <img class="lang-icon" :src="iconJulia">
+                  <jt-input v-model="scope.row.julia" style="flex: 1"></jt-input>
+                  <img class="lang-icon" :src="iconLua">
+                  <jt-input v-model="scope.row.lua" style="flex: 1"></jt-input>
+                  <img class="lang-icon" :src="iconSwift">
+                  <jt-input v-model="scope.row.swift" style="flex: 1"></jt-input>
+                </div>
+                <!-- 第二行：Java, .NET -->
+                <div style="display: flex; width: 100%; margin-top: 4px">
+                  <img class="lang-icon" :src="iconNode">
+                  <jt-input v-model="scope.row.node" style="flex: 1"></jt-input>
+                  <img class="lang-icon" :src="iconNet">
+                  <jt-input v-model="scope.row.net" style="flex: 1"></jt-input>
+                  <img class="lang-icon" :src="iconJava">
+                  <jt-input v-model="scope.row.java" style="flex: 1"></jt-input>
+                  <img class="lang-icon" :src="iconRust">
+                  <jt-input v-model="scope.row.rust" style="flex: 1"></jt-input>
+                  <img class="lang-icon" :src="iconRaku">
+                  <jt-input v-model="scope.row.raku" style="flex: 1"></jt-input>
+                </div>
+              </div>
+            </jt-table-column>
+            <!-- Operations -->
+            <jt-table-column label="Delete" :width="50" align="center">
+              <div slot-scope="scope">
+                <jt-button icon="close" @click="remove(scope)"></jt-button>
+              </div>
+            </jt-table-column>
+          </jt-table>
+        </div>
+      </jt-panel>
+    </jt-border>
 </div>
 </template>
 
 <script>
+import _clone from 'lodash/clone'
+import _cloneDeep from 'lodash/cloneDeep'
 import treeProcessor from '../../src/tree-processor'
 const langs = ['go', 'python', 'julia', 'node', 'net', 'java', 'lua', 'rust', 'raku', 'swift']
 
@@ -97,24 +87,120 @@ export default {
       iconJulia: 'http://cdn.niujunwei.com/docs-data/logos/julia.png',
       iconGo: 'http://cdn.niujunwei.com/docs-data/logos/go.png',
       iconNode: 'http://cdn.niujunwei.com/docs-data/logos/node-js.png',
-      iconNet: 'http://cdn.niujunwei.com/docs-data/logos/dot-net.png',
+      iconNet: 'http://cdn.niujunwei.com/docs-data/logos/dotnet.png',
       iconJava: 'http://cdn.niujunwei.com/docs-data/logos/java.png',
       iconLua: 'http://cdn.niujunwei.com/docs-data/logos/lua.png',
       iconRust: 'http://cdn.niujunwei.com/docs-data/logos/rust.png',
       iconRaku: 'http://cdn.niujunwei.com/docs-data/logos/raku.svg',
       iconSwift: 'http://cdn.niujunwei.com/docs-data/logos/swift.png',
       treeData: [],
+      oldIdNodeMap: {},
     }
   },
-  computed: {
-    treeDataValue() {
-      return JSON.stringify(this.treeData, null, 2)
-    },
-  },
   methods: {
-    load() {
+    async load() {
+      const resp = await fetch('//niujunwei.com/api/standard-libraries')
+      const list = await resp.json()
+      const rootList = []
+      const idNodeMap = {}
+      list.forEach((node) => {
+        node.children = node.children || []
+        node.$expandedChildren = false
+        for (let lang of langs) {
+          node[lang] = node[lang] || ''
+        }
+        idNodeMap[node.id] = node
+        if (node.parentId == null) {
+          rootList.push(node)
+        } else if (node.parentId && idNodeMap[node.parentId]) {
+          idNodeMap[node.parentId].children.push(node)
+        }
+      })
+      this.treeData = rootList
+      this.snapshot()
+    },
+    snapshot() {
+      this.oldIdNodeMap = {}
+      treeProcessor.traverse(this.treeData, ({node}) => {
+        this.oldIdNodeMap[node.id] = _clone(node)
+      })
+    },
+    async save() {
+      await treeProcessor.traverse(this.treeData, async ({node, parent}) => {
+        if (node.id == null) {
+          // 新建的
+          const cloneNode = this.cloneAndWash(node, parent)
+          node.id = await this.add(cloneNode)
+        } else {
+          // 修改的
+          if (!this.isNodeSame(node, this.oldIdNodeMap[node.id])) {
+            const cloneNode = this.cloneAndWash(node, parent)
+            await this.edit(cloneNode)
+          }
+          delete this.oldIdNodeMap[node.id]
+        }
+      })
+      // 删除的
+      for (let id of Object.keys(this.oldIdNodeMap)) {
+        await this.delete(id)
+      }
+      this.snapshot()
+    },
+    cloneAndWash(node, parent) {
+      const cloneNode = _clone(node)
+      if (parent) cloneNode.parentId = parent.id
+      delete cloneNode['children']
+      delete cloneNode['$expandedChildren']
+      for (let lang of langs) {
+        if (cloneNode[lang] === '') delete cloneNode[lang]
+      }
+      return _cloneDeep(cloneNode)
+    },
+    async add(node) {
+      const resp = await fetch('//niujunwei.com/api/standard-libraries', {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json'
+        },
+        body: JSON.stringify(node),
+      })
+      const data = await resp.json()
+      return data.id
+    },
+    async edit(node) {
+      const resp = await fetch('//niujunwei.com/api/standard-libraries/' + node.id, {
+        method: 'PUT',
+        headers: {
+          'content-type': 'application/json'
+        },
+        body: JSON.stringify(node),
+      })
+    },
+    async delete(id) {
+      const resp = await fetch('//niujunwei.com/api/standard-libraries/' + id, {
+        method: 'DELETE',
+        headers: {
+          'content-type': 'application/json'
+        },
+      })
+    },
+    isNodeSame(node1, node2) {
+      let same = true
+      for (let lang of langs) {
+        if (node1[lang] !== node2[lang]) {
+          same = false
+          break
+        }
+      }
+      ;['name', 'enName', 'desc', 'parentId'].forEach(key => {
+        if (node1[key] !== node2[key]) same = false
+      })
+      return same
+    },
+    loadJson() {
       const treeData = JSON.parse(this.$refs.textarea.value)
       treeProcessor.traverse(treeData, ({node}) => {
+        node.children = node.children || []
         for (let lang of langs) {
           treeData[lang] = treeData[lang] || ''
         }
