@@ -16,9 +16,9 @@ export default {
     prop: 'boundVal'
   },
   props: {
-    boundVal: { type: String, required: true },
-    value: { type: String, required: true },
-    label: { type: String, default: '' },
+    boundVal: { type: [String, Number, Boolean], required: true },
+    value: { type: [String, Number, Boolean], required: true },
+    label: { type: [String, Number, Boolean], default: '' },
     inline: { type: Boolean, default: false },
     disabled: { type: Boolean, default: false },
   },

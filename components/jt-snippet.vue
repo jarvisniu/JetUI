@@ -72,7 +72,7 @@ export default {
     const dedentedCoded = lines.map(line => line.substr(minIndent)).join('\n')
     const highlightDestEl = this.$el.querySelector('.codes')
     // replace double brackets
-    highlightDestEl.innerText = dedentedCoded.replace(/{${/g, '{{')
+    highlightDestEl.innerText = dedentedCoded.replace(/{\${/g, '{{')
     hljs.highlightBlock(highlightDestEl)
   },
 }

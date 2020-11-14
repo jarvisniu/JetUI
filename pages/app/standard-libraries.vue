@@ -19,14 +19,11 @@
             <jt-table-column label="Name" :width="350">
               <div slot-scope="scope" style="width: 100%">
                 <div style="display: flex;">
-                  <jt-input width="40%" style="margin-right: 4px" v-model="scope.row.name"></jt-input>
-                  <jt-input width="60%" style="margin-right: 4px" v-model="scope.row.enName"></jt-input>
-                  <jt-button icon="triangleUp" :disabled="scope.index == 0" @click="moveUp(scope)"></jt-button>
+                  <jt-input flat width="40%" style="margin-right: 4px" v-model="scope.row.name"></jt-input>
+                  <jt-input flat width="60%" style="margin-right: 4px" v-model="scope.row.enName"></jt-input>
                 </div>
                 <div style="display: flex; padding-top: 4px">
-                  <jt-button icon="plus" @click="addChild(scope.row)"></jt-button>
-                  <jt-input style="flex: 1; margin: 0 4px" v-model="scope.row.desc"></jt-input>
-                  <jt-button icon="triangleDown" :disabled="scope.index == scope.parentList.length - 1" @click="moveDown(scope)"></jt-button>
+                  <jt-input flat style="flex: 1; margin: 0 4px" v-model="scope.row.desc"></jt-input>
                 </div>
               </div>
             </jt-table-column>
@@ -36,35 +33,47 @@
                 <!-- 第一行：Go, Python, Julia -->
                 <div style="display: flex; width: 100%">
                   <img class="lang-icon" :src="iconGo">
-                  <jt-input v-model="scope.row.go" style="flex: 1"></jt-input>
+                  <jt-input flat v-model="scope.row.go" class="flex-grow"></jt-input>
                   <img class="lang-icon" :src="iconPython">
-                  <jt-input v-model="scope.row.python" style="flex: 1"></jt-input>
+                  <jt-input flat v-model="scope.row.python" class="flex-grow"></jt-input>
                   <img class="lang-icon" :src="iconJulia">
-                  <jt-input v-model="scope.row.julia" style="flex: 1"></jt-input>
+                  <jt-input flat v-model="scope.row.julia" class="flex-grow"></jt-input>
                   <img class="lang-icon" :src="iconLua">
-                  <jt-input v-model="scope.row.lua" style="flex: 1"></jt-input>
+                  <jt-input flat v-model="scope.row.lua" class="flex-grow"></jt-input>
                   <img class="lang-icon" :src="iconSwift">
-                  <jt-input v-model="scope.row.swift" style="flex: 1"></jt-input>
+                  <jt-input flat v-model="scope.row.swift" class="flex-grow"></jt-input>
                 </div>
                 <!-- 第二行：Java, .NET -->
                 <div style="display: flex; width: 100%; margin-top: 4px">
                   <img class="lang-icon" :src="iconNode">
-                  <jt-input v-model="scope.row.node" style="flex: 1"></jt-input>
+                  <jt-input flat v-model="scope.row.node" class="flex-grow"></jt-input>
                   <img class="lang-icon" :src="iconNet">
-                  <jt-input v-model="scope.row.net" style="flex: 1"></jt-input>
+                  <jt-input flat v-model="scope.row.net" class="flex-grow"></jt-input>
                   <img class="lang-icon" :src="iconJava">
-                  <jt-input v-model="scope.row.java" style="flex: 1"></jt-input>
+                  <jt-input flat v-model="scope.row.java" class="flex-grow"></jt-input>
                   <img class="lang-icon" :src="iconRust">
-                  <jt-input v-model="scope.row.rust" style="flex: 1"></jt-input>
+                  <jt-input flat v-model="scope.row.rust" class="flex-grow"></jt-input>
                   <img class="lang-icon" :src="iconRaku">
-                  <jt-input v-model="scope.row.raku" style="flex: 1"></jt-input>
+                  <jt-input flat v-model="scope.row.raku" class="flex-grow"></jt-input>
                 </div>
               </div>
             </jt-table-column>
             <!-- Operations -->
-            <jt-table-column label="Delete" :width="50" align="center">
+            <jt-table-column label="Delete" :width="80" align="center">
               <div slot-scope="scope">
-                <jt-button icon="close" @click="remove(scope)"></jt-button>
+                <div>
+                  <jt-button icon="close" @click="remove(scope)"></jt-button>
+                  <jt-button icon="triangleUp"
+                    :disabled="scope.index == 0" @click="moveUp(scope)"
+                  ></jt-button>
+                </div>
+                <div style="margin-top: 4px">
+                  <jt-button icon="plus" @click="addChild(scope.row)"></jt-button>
+                  <jt-button icon="triangleDown"
+                    :disabled="scope.index == scope.parentList.length - 1"
+                    @click="moveDown(scope)"
+                  ></jt-button>
+                </div>
               </div>
             </jt-table-column>
           </jt-table>

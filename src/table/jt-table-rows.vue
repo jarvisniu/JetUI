@@ -19,11 +19,19 @@
         >
           <div class="jt-table-cell-wrapper">
             <template v-if="isTreeTable && cIndex == 0">
-              <jt-button squared type="flat" padding="0" class="expand-children-button"
+              <!-- Choice 1: Plus/Minus -->
+              <!-- <jt-button squared type="flat" padding="0" class="expand-children-button"
                 v-if="row[treeChildrenKey] && row[treeChildrenKey].length > 0"
                 :icon="row.$expandedChildren ? 'minus' : 'plus'"
                 @click="row.$expandedChildren = !row.$expandedChildren"
-              ></jt-button>
+              ></jt-button> -->
+              <!-- Choice 2: Triangle -->
+              <jt-button
+                v-if="row[treeChildrenKey] && row[treeChildrenKey].length > 0"
+                type="flat" squared padding="0"
+                @click="row.$expandedChildren = !row.$expandedChildren">
+                <jt-icon name="triangleRight" :rotate="row.$expandedChildren ? 90 : 0"></jt-icon>
+              </jt-button>
               <jt-button disabled squared type="flat" padding="0"
                 v-else
                 class="expand-children-button" icon="dot"

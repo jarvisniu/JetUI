@@ -29,6 +29,7 @@ module.exports = {
     "modern-normalize",
     // "jol",
     "~styles/main.scss",
+    "~styles/flex.scss",
   ],
   plugins: [
     "~plugins/jet-ui.js"
