@@ -2,18 +2,36 @@
   <a
     class="jt-link"
     :href="url"
-    :target="open == 'new' ? '_blank' : '_self'"
+    :target="isExternal ? '_blank' : null"
+    :rel="isExternal ? 'noreferrer noopener' : null"
   >
-    <slot></slot>
+    <slot>{{ url }}</slot
+    ><jt-icon
+      v-if="showExternalIcon && isExternal"
+      size="10"
+      class="icon-external"
+      name="externalLink"
+    ></jt-icon>
   </a>
 </template>
 
 <script>
+const RE_URL_DOMAIN = /^https?:/i
+
 export default {
   name: 'JtLink',
   props: {
-    url: { type: String, default: null },
-    open: { type: String, default: 'new' }, // can be 'current'
+    url: { type: String, required: true },
+    internal: { type: Boolean, default: undefined },
+    external: { type: Boolean, default: undefined },
+    showExternalIcon: { type: Boolean, default: true },
+  },
+  computed: {
+    isExternal() {
+      if (this.external) return true
+      else if (this.internal) return false
+      else return RE_URL_DOMAIN.test(this.url)
+    },
   },
 }
 </script>
@@ -34,6 +52,12 @@ export default {
     @media (hover: hover) {
       background-color: var(--jt-link-bg-hover);
     }
+  }
+
+  .icon-external {
+    vertical-align: top;
+    margin-top: 2px;
+    margin-left: 3px;
   }
 }
 </style>
