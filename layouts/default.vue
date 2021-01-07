@@ -95,6 +95,7 @@ export default {
         { name: 'Basic', pages: [
           { name: 'Button', path: '/basic/button' },
           { name: 'Icon', path: '/basic/icon' },
+          { name: 'Image', path: '/basic/image' },
           { name: 'Link', path: '/basic/link' },
         ] },
         { name: 'Form', pages: [

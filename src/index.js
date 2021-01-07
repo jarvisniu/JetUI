@@ -9,6 +9,7 @@ import ContainView from './contain-view/jt-contain-view.vue'
 import Drawer from './drawer/jt-drawer.vue'
 import FoldTransition from './fold-transition/jt-fold-transition.vue'
 import Icon from './icon/jt-icon.vue'
+import Image from './image/jt-image.vue'
 import Input from './input/jt-input.vue'
 import InputNumber from './input-number/jt-input-number.vue'
 import Label from './label/jt-label.vue'
@@ -42,6 +43,7 @@ export default {
     Vue.component(Drawer.name, Drawer)
     Vue.component(FoldTransition.name, FoldTransition)
     Vue.component(Icon.name, Icon)
+    Vue.component(Image.name, Image)
     Vue.component(Input.name, Input)
     Vue.component(InputNumber.name, InputNumber)
     Vue.component(Label.name, Label)
