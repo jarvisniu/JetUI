@@ -85,6 +85,11 @@ export default {
     background-color: var(--jt-bg-input-hover);
     border-color: var(--jt-primary);
   }
+
+  // inner
+  .jt-icon {
+    vertical-align: top;
+  }
 }
 .stepper {
   box-sizing: border-box;

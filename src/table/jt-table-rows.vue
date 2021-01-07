@@ -70,13 +70,11 @@
 </template>
 
 <script>
-import JtTableRows from './jt-table-rows.vue'
 import JtTableCell from './jt-table-cell.vue'
 
 export default {
   name: 'JtTableRows',
   components: {
-    JtTableRows,
     JtTableCell,
   },
   props: {
