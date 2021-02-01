@@ -19,12 +19,12 @@ export default {
     display: inline-block;
     height: 24px;
     line-height: 24px;
+    min-width: 24px;
     cursor: default;
     user-select: none;
     font-size: var(--jt-font-size);
     text-align: center;
-
-    padding: 0 5px;
+    padding: 0 6px;
     .jt-panel-slot-title & {
       padding: 0 8px;
     }
